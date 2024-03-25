@@ -1,86 +1,20 @@
 {
-  "application_name": {
-    "sensitive": false,
-    "type": "string",
-    "value": "application_name"
-  },
-  "application_shortname": {
-    "sensitive": false,
-    "type": "string",
-    "value": "application_shortname"
-  },
-  "aws_access_key": {
-    "sensitive": true,
-    "type": "string",
-    "value": "aws_access_key"
-  },
-  "aws_profile": {
-    "sensitive": false,
-    "type": "string",
-    "value": "aws_profile"
-  },
-  "aws_resource_location": {
-    "sensitive": false,
-    "type": "string",
-    "value": "eu-west-1"
-  },
-
-  "azure_subscription_display_name": {
-    "value": "subscription_display_name",
-    "description": "The current subscription name",
+  "unique-seed": {
+    "value": "example-unique-seed-value",
     "sensitive": false
   },
-
-  "azure_subscription_id": {
-    "value": "subscription_id",
-    "description": "The current subscription id",
+  "validation": {
+    "value": "example-validation-value",
     "sensitive": false
   },
-
-  "azuredevops_project_name": {
-    "value": "project_name",
-    "description": "The current Azure DevOps name",
+  "organization": {
+    "value": "example-organization-value",
+    "description": "Azure DevOps Organization",
     "sensitive": false
   },
-
-  "azdo_orgurl": {
-    "sensitive": false,
-    "type": "string",
-    "value": "https://dev.azure.com/"
-  },
-  "azdo_pat": { "sensitive": true, "type": "string", "value": "azdo_pat" },
-  "azrm_client_id": {
-    "sensitive": false,
-    "type": "string",
-    "value": "azrm_client_id"
-  },
-  "azrm_resource_location": {
-    "sensitive": false,
-    "type": "string",
-    "value": "northeurope"
-  },
-  "environment": { "sensitive": false, "type": "string", "value": "dev" },
-  "tags": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "ADO-Project": "string",
-        "Application": "string",
-        "Environment": "string",
-        "Managed-By": "string",
-        "Owner": "string",
-        "Repository": "string"
-      }
-    ],
-    "value": {
-      "ADO-Project": "project_name",
-      "Application": "application_name",
-      "Environment": "dev",
-      "Managed-By": "Terraform",
-      "Owner": "project_name Contributors",
-      "Repository": "repo_name"
-    }
-  },
-  "tenant_id": { "sensitive": false, "type": "string", "value": "tenant_id" }
+  "project": {
+    "value": "example-project-value",
+    "description": "Azure DevOps Project",
+    "sensitive": false
+  }
 }
