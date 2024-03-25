@@ -1,0 +1,293 @@
+name: auto maintain main before creating new release
+concurrency:
+  group: ${{ github.ref }}-${{ github.workflow }}
+  cancel-in-progress: true
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    branches:
+      - main
+
+  ## Trigger mega-linter at every push. Action will also be visible from Pull Requests to main
+  #push: # Comment this line to trigger action only on pull-requests (not recommended if you don't pay for GH Actions)
+  #pull_request:
+  #  branches: [master, main]
+
+env: # Comment env block if you don't want to apply fixes
+  # Apply linter fixes configuration
+  APPLY_FIXES: all # When active, APPLY_FIXES must also be defined as environment variable (in github/workflows/mega-linter.yml or other CI tool)
+  APPLY_FIXES_EVENT: all # Decide which event triggers application of fixes in a commit or a PR (pull_request, push, all)
+  APPLY_FIXES_MODE: pull_request # If APPLY_FIXES is used, defines if the fixes are directly committed (commit) or posted in a PR (pull_request)
+  CLEAR_REPORT_FOLDER: true
+  DISABLE_ERRORS: true #allows MegaLinter to pass with linter errors
+  JAVASCRIPT_DEFAULT_STYLE: prettier
+  JSON_REPORTER: true
+  JSON_REPORTER_OUTPUT_DETAIL: detailed
+  LOG_LEVEL: warning
+  MARKDOWN_DEFAULT_STYLE: markdownlint
+  MEGALINTER_CONFIG: ./.config/.mega-linter.yml
+  PRINT_ALL_FILES: true
+  PRINT_ALPACA: true
+  SARIF_REPORTER: true
+  SHOW_ELAPSED_TIME: true
+  SHOW_SKIPPED_LINTERS: true
+  TAP_REPORTER: true
+  TAP_REPORTER_SUB_FOLDER: tap
+  TERRAFORM_CHECKOV_ARGUMENTS: --include-all-checkov-policies
+  TERRAFORM_CHECKOV_CLI_LINT_MODE: file
+  TERRAFORM_TERRASCAN_ARGUMENTS: "--show-passed"
+  TERRAFORM_TFLINT_ARGUMENTS: --color
+  TYPESCRIPT_DEFAULT_STYLE: prettier
+  VALIDATE_ALL_CODEBASE: false
+jobs:
+  ###################################################################
+  ###################################################################
+  #######              TERRAFORM DOCUMENTATION                #######
+  ###################################################################
+  ###################################################################
+
+  terraform-docs:
+    if: "!cancelled()"
+    name: "terraform-docs"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+
+      - name: Render terraform docs inside the README.md and push changes back to PR branch
+        uses: terraform-docs/gh-actions@v1.1.0
+        if: "!cancelled()"
+        with:
+          #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
+          config-file: "/.config/.readme-terraform-docs.yml"
+          find-dir: .
+          git-commit-message: "[Terraform-docs] Updated readme.md"
+          git-push: true
+          git-push-sign-off: true
+          git-push-user-email: DBMH-terraform-docs@ca-grp.com
+          git-push-user-name: DBMH-terraform-docs
+          indention: 4
+          output-file: README.md
+          #output-format: "markdown table"
+          #output-method: inject
+          ##recursive: true
+          ##recursive-path: "modules"
+          template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
+          ##working-dir: .
+
+      - name: Render terraform docs inside the TERRAFORM.md and push changes back to PR branch
+        uses: terraform-docs/gh-actions@v1.1.0
+        if: "!cancelled()"
+        with:
+          #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
+          config-file: "/.config/.terraform-terraform-docs.yml"
+          find-dir: .
+          git-commit-message: "[Terraform-docs] Updated TERRAFORM.md"
+          git-push: true
+          git-push-sign-off: true
+          git-push-user-email: DBMH-terraform-docs@ca-grp.com
+          git-push-user-name: DBMH-terraform-docs
+          indention: 4
+          output-file: TERRAFORM.md
+          #output-format: "markdown table"
+          #output-method: inject
+          #recursive: true
+          #recursive-path: "modules"
+          template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
+          #working-dir: .
+
+  ###################################################################
+  ###################################################################
+  ####### MEGALINTER - LINTING AND VULNERABILITY SLEDGEHAMMER #######
+  ###################################################################
+  ###################################################################
+
+  megalinter:
+    if: "!cancelled()"
+    name: MegaLinter
+    needs: [terraform-docs]
+    runs-on: ubuntu-latest
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push, comment issues & post new PR
+      # Remove the ones you do not need
+      contents: write
+      issues: write
+      pull-requests: write
+    steps:
+      # Git Checkout
+      - name: Checkout Code
+        if: "!cancelled()"
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+          fetch-depth: 0 # If you use VALIDATE_ALL_CODEBASE = true, you can remove this line to improve performances
+
+      # MegaLinter
+      - name: MegaLinter
+        id: ml
+        if: "!cancelled()"
+        # You can override MegaLinter flavor used to have faster performances
+        # More info at https://megalinter.io/flavors/
+        uses: oxsecurity/megalinter@v7.10.0
+        env:
+          # All available variables are described in documentation
+          # https://megalinter.io/configuration/
+          VALIDATE_ALL_CODEBASE: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }} # Validates all source when push on main, else just the git diff with main. Override with true if you always want to lint all sources
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # ADD YOUR CUSTOM ENV VARIABLES HERE OR DEFINE THEM IN A FILE .mega-linter.yml AT THE ROOT OF YOUR REPOSITORY
+          # DISABLE: COPYPASTE,SPELL # Uncomment to disable copy-paste and spell checks
+
+      # Upload MegaLinter artifacts
+      - name: Archive production artifacts
+        if: "!cancelled()"
+        uses: actions/upload-artifact@v4
+        with:
+          name: MegaLinter reports
+          path: |
+            megalinter-reports
+            mega-linter.log
+
+      # Create pull request if applicable (for now works only on PR from same repository, not from forks)
+      - name: Create Pull Request with applied fixes
+        id: cpr
+        if: steps.ml.outputs.has_updated_sources == 1 && (env.APPLY_FIXES_EVENT == 'all' || env.APPLY_FIXES_EVENT == github.event_name) && env.APPLY_FIXES_MODE == 'pull_request' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) && !contains(github.event.head_commit.message, 'skip fix')
+        uses: peter-evans/create-pull-request@v6.0.2
+        with:
+          body: |
+            <!---
+            5 Tips to creating a (good) pull request
+
+            1. Keep it short - add/change/fix/remove what you came for!
+
+            2. Add more information - explain what you've done, what, why, provide supportive material and link to related pull requests/issues
+
+            3. Comment your code, please.
+
+            4. Assign people or groups as reviewers - encourage peer review
+
+            5. Let your colleagues know your PR is ready for review
+
+            --->
+
+            ## What?
+            <!--- Explain what the pull request is for. it doesn't need to be technical --->
+
+            Linting fixes
+
+            ## Why?
+            <!--- what goal does this pull request fulfill --->
+
+            There have been fixes automatically generated by Megalinter
+
+            ## How?
+            <!--- Meaningful explanation of how you achieved the goal --->
+
+            Auto-generated by [create-pull-request][1] and [Megalinter][2]
+
+            ## Related
+            <!--- Links to related isses/PBIs please specify if the pr will close them. referenced toany other related PR --->
+
+            Please see the previous run of Nightly Scheduled Maintenance against [Module_Name](https://github.com/DownAtTheBottomOfTheMoleHole/Module_Name/actions/workflows/scheduled_maintenance.yml)
+
+            ## Testing?
+            <!--- Please include details of any relevant testing and the results --->
+
+            N/A
+
+            ## Screenshots (optional)
+            <!--- terraform plans, UI changes etc--->
+
+            N/A
+
+            ## Anything Else?
+            <!--- You may want to delve into possible architecture changes or technical debt here. Call out challenges, optimizations, etc. --->
+
+            [1]: https://github.com/peter-evans/create-pull-request
+            [2]: https://github.com/oxsecurity/megalinter
+          branch: fix/megalinter-automatic-fixes # The pull request branch name.
+          #branch-suffix: random #The branch suffix type when using the alternative branching strategy. Valid values are random, timestamp and short-commit-hash. See Alternative strategy for details.
+          committer: DBMH-megalinter-bot <megalinter@ca-grp.com>
+          commit-message: "[MegaLinter] Apply linters automatic fixes"
+          delete-branch: true # Delete the branch when closing pull requests, and when undeleted after merging.
+          labels: bot # A comma or newline-separated list of labels.
+          #team-reviewers:  /platform-automation # A comma or newline-separated list of GitHub teams to request a review from. Note that a repo scoped PAT, or equivalent GitHub App permissions, are required.
+          title: "[MegaLinter] Apply linters automatic fixes" # The title of the pull request.
+          token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
+
+      - name: Create PR output
+        if: steps.ml.outputs.has_updated_sources == 1 && (env.APPLY_FIXES_EVENT == 'all' || env.APPLY_FIXES_EVENT == github.event_name) && env.APPLY_FIXES_MODE == 'pull_request' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) && !contains(github.event.head_commit.message, 'skip fix')
+        run: |
+          echo "Pull Request Number - ${{ steps.cpr.outputs.pull-request-number }}"
+          echo "Pull Request URL - ${{ steps.cpr.outputs.pull-request-url }}"
+
+      # Push new commit if applicable (for now works only on PR from same repository, not from forks)
+      - name: Prepare commit
+        if: steps.ml.outputs.has_updated_sources == 1 && (env.APPLY_FIXES_EVENT == 'all' || env.APPLY_FIXES_EVENT == github.event_name) && env.APPLY_FIXES_MODE == 'commit' && github.ref != 'refs/heads/main' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) && !contains(github.event.head_commit.message, 'skip fix')
+        run: sudo chown -Rc $UID .git/
+
+      - name: Commit and push applied linter fixes
+        if: steps.ml.outputs.has_updated_sources == 1 && (env.APPLY_FIXES_EVENT == 'all' || env.APPLY_FIXES_EVENT == github.event_name) && env.APPLY_FIXES_MODE == 'commit' && github.ref != 'refs/heads/main' && (github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository) && !contains(github.event.head_commit.message, 'skip fix')
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          branch: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
+          commit_message: "[MegaLinter] Apply linters fixes"
+          commit_user_name: DBMH-code-cleaner
+          commit_user_email: code.cleaner@ca-grp.com
+
+  new_release:
+    if: "!cancelled()"
+    name: "Create new tagged release"
+    needs: [terraform-docs, MegaLinter]
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        if: "!cancelled()"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install GitVersion
+        if: "!cancelled()"
+        uses: gittools/actions/gitversion/setup@v1.1.1
+        with:
+          preferLatestVersion: true
+          versionSpec: "5.x"
+
+      - name: Determine Version
+        if: "!cancelled()"
+        uses: gittools/actions/gitversion/execute@v1.1.1
+        with:
+          useConfigFile: true
+          configFilePath: .config/GitVersion.yml
+
+      - name: Bump version and push tag
+        if: "!cancelled()"
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v6.2
+        with:
+          custom_tag: ${{ env.GitVersion_SemVer }}
+          create_annotated_tag: true
+          fetch_all_tags: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag_prefix: "v"
+
+      - name: Create a GitHub release
+        if: "!cancelled()"
+        uses: ncipollo/release-action@v1.14.0
+        with:
+          allowUpdates: true
+          body: ${{ steps.tag_version.outputs.changelog }}
+          discussionCategory: "General"
+          generateReleaseNotes: true
+          makeLatest: true
+          name: Release ${{ steps.tag_version.outputs.new_tag }}
+          tag: ${{ steps.tag_version.outputs.new_tag }}

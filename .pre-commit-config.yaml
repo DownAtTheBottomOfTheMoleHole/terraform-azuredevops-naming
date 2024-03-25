@@ -1,0 +1,242 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-added-large-files
+        name: Check for newly added large files
+        log_file: ./.pre-commit_logs/check-large.log
+
+      - id: check-case-conflict
+        name: Check for unnecessary text case changes
+        log_file: ./.pre-commit_logs/check-case-conflict.log
+
+      - id: check-merge-conflict
+        name: check for git merge conflicts
+        log_file: ./.pre-commit_logs/check-merge-conflict.log
+
+      - id: check-json
+        name: check JSON validity
+        exclude: (config/.cspell.json|build/arm_templates/blank_arm_template.json)
+        log_file: ./.pre-commit_logs/check-json.log
+
+      - id: check-yaml
+        name: check YAML and YML validity
+        log_file: ./.pre-commit_logs/check-yml.log
+
+      - id: detect-aws-credentials
+        name: find AWS credentials
+        args: ["--allow-missing-credentials"]
+        log_file: ./.pre-commit_logs/detect-aws-credentials.log
+
+      - id: detect-private-key
+        name: check for unencrypted secrets
+        log_file: ./.pre-commit_logs/private-key.log
+
+      - id: end-of-file-fixer
+        name: ensure all file ends are consistent
+        log_file: ./.pre-commit_logs/file-end.log
+
+      - id: mixed-line-ending
+        name: fix line endings
+        args: [--fix=lf]
+        log_file: ./.pre-commit_logs/line-end.log
+
+      - id: trailing-whitespace
+        name: remove trailing whitespace
+        args: [--markdown-linebreak-ext=md]
+        log_file: ./.pre-commit_logs/trail whitespace.log
+
+  - repo: https://github.com/Yelp/detect-secrets
+    rev: v1.4.0
+    hooks:
+      - id: detect-secrets
+        name: check repo for secrets
+        log_file: ./.pre-commit_logs/detect-secrets.log
+
+  - repo: https://github.com/streetsidesoftware/cspell-cli
+    rev: v8.3.0
+    hooks:
+      - id: cspell
+        args:
+          - --config ./config/.cspell.json
+        name: code spell check for whole repository
+        log_file: ./.pre-commit_logs/cspell.log
+
+  - repo: https://github.com/pre-commit/mirrors-prettier
+    rev: v4.0.0-alpha.8
+    hooks:
+      - id: prettier
+        name: run Prettier by Prettier
+        files: \.(js|ts|jsx|tsx|css|less|html|json|markdown|md|yaml|yml)$ # include the listed extensions
+        #exclude:  # files are excluded using the prettierignore files
+        log_file: ./.pre-commit_logs/prettier.log
+
+  - repo: https://github.com/antonbabenko/pre-commit-terraform
+    rev: v1.86.0 # Get the latest from: https://github.com/antonbabenko/pre-commit-terraform/releases
+    hooks:
+      # run native terraform validate to ensure IAC configuration is valid
+      - id: terraform_validate
+        name: Run terraform validate against terraform
+        args:
+          - --hook-config=--retry-once-with-cleanup=true # Boolean. true or false
+        verbose: true
+        log_file: ./.pre-commit_logs/tfvalidate.log
+
+      ##############################################################
+      #######        Terraform version updates               #######
+      ##############################################################
+
+      - id: tfupdate
+        name: Autoupdate Terraform required version in terraform to latest
+        verbose: true
+        log_file: ./.pre-commit_logs/tfupdate_terraform.log
+
+      - id: tfupdate
+        name: Autoupdate aws provider version in terraform
+        args:
+          - --args=provider aws
+        verbose: true
+        log_file: ./.pre-commit_logs/tfupdate_aws.log
+
+      - id: tfupdate
+        name: Autoupdate azuredevops provider version in terraform
+        args:
+          - --args=provider azuredevops
+        verbose: true
+        log_file: ./.pre-commit_logs/tfupdate_azuredevops.log
+
+      - id: tfupdate
+        name: Autoupdate AzureRM provider version in terraform
+        args:
+          - --args=provider azurerm
+        verbose: true
+        log_file: ./.pre-commit_logs/tfupdate_azurerm.log
+
+      - id: tfupdate
+        name: Autoupdate random provider version in terraform
+        args:
+          - --args=provider random
+        verbose: true
+        log_file: ./.pre-commit_logs/tfupdate_random.log
+
+      - id: tfupdate
+        name: Autoupdate time provider version in terraform
+        args:
+          - --args=provider time
+        verbose: true
+        log_file: ./.pre-commit_logs/tfupdate_time.log
+
+      ##############################################################
+      #######        Terraform Cost Analysis                 #######
+      ##############################################################
+
+      - id: infracost_breakdown
+        name: Run infracost breakdown against terraform
+        args:
+          #- --args=--path='.'
+          - --args=--project-name="github/RolfMoleman/repo_name"
+          - --args=--format=json
+          - --args=--out-file=/.pre-commit_logs/infracost-precommit-terraform-dev.json
+          - --hook-config='.currency == "GBP"'
+          - --hook-config='.totalHourlyCost|tonumber > 0.1'
+          - --hook-config='.totalHourlyCost|tonumber > 1'
+          - --hook-config='.projects[].diff.totalMonthlyCost|tonumber != 10000'
+        verbose: true # Always Show Costs
+        log_file: ./.pre-commit_logs/infracost.log
+
+  ##############################################################
+  #######       Generate Terraform Documentation         #######
+  ##############################################################
+
+  - repo: https://github.com/terraform-docs/terraform-docs
+    rev: v0.16.0 # Git tag specifying the hook
+    hooks:
+      - id: terraform-docs-go
+        name: Put terraform-docs terraform.md in ROOT
+        args: [markdown, ., --config, '.config\.terraform-terraform-docs.yml']
+        verbose: false
+        log_file: ./.pre-commit_logs/terraform-docs_terraform_root.log
+
+      - id: terraform-docs-go
+        name: Put terraform-docs into main readme.md
+        args: [markdown, ., --config, '.config\.readme-terraform-docs.yml']
+        verbose: false
+        log_file: ./.pre-commit_logs/terraform-docs_terraform_root.log
+
+  ###############################################################
+  #######  Full repo multi-language security and linting  #######
+  ###############################################################
+  - repo: https://github.com/oxsecurity/megalinter
+    rev: v7.9.0 # Git tag specifying the hook, not mega-linter-runner, version
+    hooks:
+      - id: megalinter-incremental # Faster, less thorough
+        name: Run megalinter incremental scan
+        args:
+          - mega-linter-runner
+          - --containername
+          - "megalinter-incremental"
+          - --remove-container
+          - --fix
+          - --env
+          - "'APPLY_FIXES=all'"
+          - --env
+          - "'CLEAR_REPORT_FOLDER=true'"
+          - --env
+          - "'JAVASCRIPT_DEFAULT_STYLE=prettier'"
+          - --env
+          - "'JSON_REPORTER=true'"
+          - --env
+          - "'JSON_REPORTER_OUTPUT_DETAIL=detailed'"
+          - --env
+          - "'LOG_LEVEL=warning'"
+          - --env
+          - "'MARKDOWN_DEFAULT_STYLE=markdownlint'"
+          - --env
+          - "'PRINT_ALL_FILES=true'"
+          - --env
+          - "'PRINT_ALPACA=true'"
+          - --env
+          - "'SARIF_REPORTER=true'"
+          - --env
+          - "'SHOW_ELAPSED_TIME=true'"
+          - --env
+          - "'SHOW_SKIPPED_LINTERS=true'"
+          - --env
+          - "'TAP_REPORTER=true'"
+          - --env
+          - "'TAP_REPORTER_SUB_FOLDER=tap'"
+          - --env
+          - "'TERRAFORM_CHECKOV_ARGUMENTS=--include-all-checkov-policies'"
+          - --env
+          - "'TERRAFORM_CHECKOV_CLI_LINT_MODE=file '"
+          - --env
+          - "'TERRAFORM_TERRASCAN_ARGUMENTS=--verbose'"
+          - --env
+          - "'TERRAFORM_TERRASCAN_ARGUMENTS=--show-passed'"
+          - --env
+          - "'TERRAFORM_TFLINT_ARGUMENTS=--color'"
+          - --env
+          - "'TYPESCRIPT_DEFAULT_STYLE=prettier'"
+          - --env
+          - "'VALIDATE_ALL_CODEBASE=false'"
+        stages:
+          - commit
+        verbose: true # Always show costs
+        log_file: ./.pre-commit_logs/megalinter_local_root.log
+
+  ###############################################################
+  #######         Commit verification and signing         #######
+  ###############################################################
+
+  - repo: https://github.com/mattlqx/pre-commit-sign
+    rev: v1.1.3
+    hooks:
+      - id: sign-commit
+        name: sign commits to identify pre-commit has been ran
+        stages:
+          - commit
+          - pre-commit
+          - pre-merge-commit
+          - pre-push
+        verbose: true # Always show costs
+        log_file: ./.pre-commit_logs/sign-commit.log

@@ -1,0 +1,16 @@
+**/.git
+**/.svn
+**/.hg
+**/node_modules
+
+TERRAFORM.md
+TERRAFORM_REMOTE.md
+TERRAFORM_LOCAL.md
+
+**/TERRAFORM_LOCAL.md
+**/TERRAFORM_REMOTE.md
+
+**/terraform/README.md
+**/terraform_local/README.md
+
+!**/docs/terraform.md

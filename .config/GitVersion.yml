@@ -1,0 +1,223 @@
+assembly-versioning-scheme: MajorMinorPatch
+assembly-file-versioning-scheme: MajorMinorPatch
+assembly-informational-format: "{InformationalVersion}"
+#mode: ContinuousDelivery
+tag-prefix: "[vV]"
+continuous-delivery-fallback-tag: ""
+next-version: 1.0.0
+major-version-bump-message: '\+semver:\s?(breaking|major)'
+minor-version-bump-message: '\+semver:\s?(feature|minor)'
+patch-version-bump-message: '\+semver:\s?(fix|patch)'
+no-bump-message: '\+semver:\s?(none|skip)'
+legacy-semver-padding: 4
+build-metadata-padding: 4
+commits-since-version-source-padding: 4
+tag-pre-release-weight: 60000
+commit-message-incrementing: Enabled
+branches:
+  custom:
+    "dependabot/terraform*":
+      mode: ContinuousDeployment
+      tag: useBranchName
+      increment: Minor
+      prevent-increment-of-merged-branch-version: false
+      track-merge-target: false
+      tracks-release-branches: false
+      is-release-branch: false
+
+    "renovate/aws*":
+      mode: ContinuousDeployment
+      tag: useBranchName
+      increment: Minor
+      prevent-increment-of-merged-branch-version: false
+      track-merge-target: false
+      tracks-release-branches: false
+      is-release-branch: false
+
+    "renovate/azuread*":
+      mode: ContinuousDeployment
+      tag: useBranchName
+      increment: Minor
+      prevent-increment-of-merged-branch-version: false
+      track-merge-target: false
+      tracks-release-branches: false
+      is-release-branch: false
+
+    "renovate/azuredevops*":
+      mode: ContinuousDeployment
+      tag: useBranchName
+      increment: Minor
+      prevent-increment-of-merged-branch-version: false
+      track-merge-target: false
+      tracks-release-branches: false
+      is-release-branch: false
+
+    "renovate/azurerm*":
+      mode: ContinuousDeployment
+      tag: useBranchName
+      increment: Minor
+      prevent-increment-of-merged-branch-version: false
+      track-merge-target: false
+      tracks-release-branches: false
+      is-release-branch: false
+
+    "renovate/hashicorp-terraform*":
+      mode: ContinuousDeployment
+      tag: useBranchName
+      increment: Minor
+      prevent-increment-of-merged-branch-version: false
+      track-merge-target: false
+      tracks-release-branches: false
+      is-release-branch: false
+
+    "renovate/mongodbatlas*":
+      mode: ContinuousDeployment
+      tag: useBranchName
+      increment: Minor
+      prevent-increment-of-merged-branch-version: false
+      track-merge-target: false
+      tracks-release-branches: false
+      is-release-branch: false
+
+    "renovate/random*":
+      mode: ContinuousDeployment
+      tag: useBranchName
+      increment: Minor
+      prevent-increment-of-merged-branch-version: false
+      track-merge-target: false
+      tracks-release-branches: false
+      is-release-branch: false
+
+    "renovate/time*":
+      mode: ContinuousDeployment
+      tag: useBranchName
+      increment: Minor
+      prevent-increment-of-merged-branch-version: false
+      track-merge-target: false
+      tracks-release-branches: false
+      is-release-branch: false
+
+  main:
+    mode: ContinuousDelivery
+    tag: ""
+    increment: Patch
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    #regex: ^master$|^main$
+    source-branches:
+      - develop
+      - release
+    tracks-release-branches: false
+    is-release-branch: false
+    is-mainline: true
+    pre-release-weight: 55000
+  develop:
+    mode: ContinuousDeployment
+    tag: alpha
+    increment: Minor
+    prevent-increment-of-merged-branch-version: false
+    track-merge-target: true
+    #regex: ^dev(elop)?(ment)?$
+    source-branches: []
+    tracks-release-branches: true
+    is-release-branch: false
+    is-mainline: false
+    pre-release-weight: 0
+  release:
+    mode: ContinuousDeployment
+    tag: beta
+    increment: None
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    #regex: ^release?[/-]
+    source-branches:
+      - develop
+      - main
+      - bug
+      - release
+    tracks-release-branches: false
+    is-release-branch: true
+    is-mainline: false
+    pre-release-weight: 30000
+  feature:
+    mode: ContinuousDeployment
+    tag: useBranchName
+    increment: Inherit
+    prevent-increment-of-merged-branch-version: false
+    track-merge-target: false
+    #regex: ^feature?[/-]
+    source-branches:
+      - develop
+      - main
+      - release
+      - feature
+      - bug
+      - hotfix
+    tracks-release-branches: false
+    is-release-branch: false
+    is-mainline: false
+    pre-release-weight: 30000
+  pull-request:
+    mode: ContinuousDeployment
+    tag: PullRequest
+    increment: Inherit
+    prevent-increment-of-merged-branch-version: false
+    tag-number-pattern: '[/-](?<number>\d+)[-/]'
+    track-merge-target: false
+    #regex: ^(pull|pull\-requests|pr)[/-]
+    source-branches:
+      - develop
+      - main
+      - release
+      - feature
+      - bug
+      - hotfix
+    tracks-release-branches: false
+    is-release-branch: false
+    is-mainline: false
+    pre-release-weight: 30000
+  hotfix:
+    mode: ContinuousDeployment
+    tag: beta
+    increment: Patch
+    prevent-increment-of-merged-branch-version: false
+    track-merge-target: false
+    #regex: ^hotfix(es)?[/-]
+    source-branches:
+      - develop
+      - main
+      - support
+    tracks-release-branches: false
+    is-release-branch: false
+    is-mainline: false
+    pre-release-weight: 30000
+  bug:
+    mode: ContinuousDeployment
+    tag: ""
+    increment: Patch
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    regex: ^bug[/-]
+    source-branches:
+      - main
+    tracks-release-branches: false
+    is-release-branch: false
+    is-mainline: true
+    pre-release-weight: 55000
+#ignore:
+#  commits-before:
+#    date-time: 2020-01-01T00:00:00.00
+#    utc-date-time: 2020-01-01T00:00:00.0
+#    local-date-time: 2020-01-01T00:00:00.00+00:00
+#    date: 2020-01-01T00:00:00.00
+#    day: 1
+#    day-of-week: Wednesday
+#    day-of-year: 1
+#    month: 1
+#    ticks: 637134336000000000
+#    utc-ticks: 637134336000000000
+#    year: 2020
+#  sha: []
+increment: Inherit
+merge-message-formats: {}
+update-build-number: true

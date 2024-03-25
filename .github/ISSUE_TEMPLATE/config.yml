@@ -1,0 +1,17 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Module_Name Bug Reports and Feature Requests
+    url: https://github.com/DownAtTheBottomOfTheMoleHole/Module_Name/issues/new/choose
+    about: Down At The Bottom Of The Mole Hole - Terraform Module Module_Name, (Module_Description) has it's own issue log.
+
+  - name: Module_Name Roadmap
+    url: https://github.com/DownAtTheBottomOfTheMoleHole/Module_Name/blob/main/README.md
+    about: View the Roadmap for the upcoming work planned on the module template.
+
+  - name: Module Template Bug Reports and Feature Requests
+    url: https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template/issues/new/choose
+    about: Down At The Bottom Of The Mole Hole - Terraform Module Template, which provides the workflow files, issue templates, and other base files that makes up all our modules has it's own issue log.
+
+  - name: Module Template Roadmap
+    url: https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template/blob/main/README.md
+    about: View the Roadmap for the upcoming work planned on the module template.
