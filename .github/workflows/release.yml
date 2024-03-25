@@ -195,7 +195,7 @@ jobs:
             ## Related
             <!--- Links to related isses/PBIs please specify if the pr will close them. referenced toany other related PR --->
 
-            Please see the previous run of Nightly Scheduled Maintenance against [Module_Name](https://github.com/DownAtTheBottomOfTheMoleHole/Module_Name/actions/workflows/scheduled_maintenance.yml)
+            Please see the previous run of Nightly Scheduled Maintenance against [terraform-azuredevops-naming](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/scheduled_maintenance.yml)
 
             ## Testing?
             <!--- Please include details of any relevant testing and the results --->

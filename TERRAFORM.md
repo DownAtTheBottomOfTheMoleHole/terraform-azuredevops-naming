@@ -29,13 +29,13 @@ The below documentation was generated via Terraform docs using pre-commit
 
 ---
 
-<!-- consuming Module_Name -->
-## Consuming Module_Name
+<!-- consuming terraform-azuredevops-naming -->
+## Consuming terraform-azuredevops-naming
 
   To consume this module add the following to your module.tf:
 ```hcl
-  module "Module_Name" {
-    	 source  = "github.com/DownAtTheBottomOfTheMoleHole/Module_Name.git"
+  module "terraform-azuredevops-naming" {
+    	 source  = "github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming.git"
     
 	 # Optional variables
     	 prefix  = []

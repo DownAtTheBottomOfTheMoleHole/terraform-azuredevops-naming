@@ -1,11 +1,11 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Module_Name Bug Reports and Feature Requests
-    url: https://github.com/DownAtTheBottomOfTheMoleHole/Module_Name/issues/new/choose
-    about: Down At The Bottom Of The Mole Hole - Terraform Module Module_Name, (Module_Description) has it's own issue log.
+  - name: terraform-azuredevops-naming Bug Reports and Feature Requests
+    url: https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/issues/new/choose
+    about: Down At The Bottom Of The Mole Hole - Terraform Module terraform-azuredevops-naming, (A terrafomr module to enable consistent naming of Azure DevOps resources) has it's own issue log.
 
-  - name: Module_Name Roadmap
-    url: https://github.com/DownAtTheBottomOfTheMoleHole/Module_Name/blob/main/README.md
+  - name: terraform-azuredevops-naming Roadmap
+    url: https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/blob/main/README.md
     about: View the Roadmap for the upcoming work planned on the module template.
 
   - name: Module Template Bug Reports and Feature Requests

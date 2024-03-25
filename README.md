@@ -1,23 +1,23 @@
-# Down At The Bottom Of The Mole HoleTerraform module template
+# Azure DevOps Naming Module
 
-[![terraform_module_template][logo-image]](https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template)
+[![terraform-azuredevops-naming][logo-image]](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming)
 
 <!-- Github Badges -->
 <!--
 *** replace with badges relevant to your repo
 -->
 
-[![CAG Standard Terraform Module Pull Request](https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template/actions/workflows/pullrequest.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template/actions/workflows/pullrequest.yml)
+[![rm Standard Terraform Module Pull Request](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/pullrequest.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/pullrequest.yml)
 
-[![create new release](https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template/actions/workflows/release.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template/actions/workflows/release.yml)
+[![Create New Release](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/release.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/release.yml)
 
-[![Nightly MegaLinter Scan of Full Codebase](https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template/actions/workflows/nightly_mega-linter.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template/actions/workflows/nightly_mega-linter.yml)
+[![Nightly MegaLinter Scan of Full Codebase](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/nightly_mega-linter.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/nightly_mega-linter.yml)
 
-[![Terraform Dependencies and Documentation](https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template/actions/workflows/terraform_dependencies.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template/actions/workflows/terraform_dependencies.yml)
+[![Terraform Dependencies and Documentation](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/terraform_dependencies.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/terraform_dependencies.yml)
 
 <!-- Made With Badges -->
 <!--
-*** Replace with badges relevant to your repo
+*** replace with badges relevant to your repo
 -->
 
 <!-- Made Badge for latest version of terraform_module_template not currently working -->
@@ -33,7 +33,7 @@
 
 <!-- Precommit Badges -->
 <!--
-*** Replace with badges relevant to your repo
+*** replace with badges relevant to your repo
 -->
 
 these are the pre-commit hooks used for this repo:
@@ -62,32 +62,10 @@ these are the pre-commit hooks used for this repo:
 
 ## Table of Contents
 
-- [Down At The Bottom Of The Mole HoleTerraform module template](#down-at-the-bottom-of-the-mole-holeterraform-module-template)
+- [Azure DevOps Naming Module](#azure-devops-naming-module)
   - [Table of Contents](#table-of-contents)
   - [About The Project](#about-the-project)
   - [Built With](#built-with)
-- [Terraform](#terraform)
-    - [Requirements](#requirements)
-    - [Consuming Module\_Name](#consuming-module_name)
-  - [Example 1](#example-1)
-    - [Resources](#resources)
-    - [Inputs](#inputs)
-    - [Outputs](#outputs)
-    - [Modules](#modules)
-      - [Automatically generated Terraform variables](#automatically-generated-terraform-variables)
-        - [Terraform versions](#terraform-versions)
-        - [Installing Tfupdate](#installing-tfupdate)
-        - [Terraform version](#terraform-version)
-        - [Azure Naming module version](#azure-naming-module-version)
-        - [AWS version](#aws-version)
-        - [AzureAD version](#azuread-version)
-        - [AzureDevOps version](#azuredevops-version)
-        - [AzureRm version](#azurerm-version)
-        - [Random version](#random-version)
-        - [Time version](#time-version)
-  - [terraform\_module\_template Usage](#terraform_module_template-usage)
-    - [Creating your own terraform module using terraform\_module\_template](#creating-your-own-terraform-module-using-terraform_module_template)
-    - [Backfitting terraform\_module\_template to an existing module](#backfitting-terraform_module_template-to-an-existing-module)
   - [Roadmap](#roadmap)
   - [Contributing](#contributing)
     - [Contributing Prerequisites](#contributing-prerequisites)
@@ -98,8 +76,7 @@ these are the pre-commit hooks used for this repo:
 
 ## About The Project
 
-This is a repository template to be used for all of 
-Down At The Bottom Of The Mole Hole's Terraform modules.
+A terrafomr module to enable consistent naming of Azure DevOps resources
 
 ---
 
@@ -113,7 +90,6 @@ Down At The Bottom Of The Mole Hole's Terraform modules.
 
 - [cspell](https://github.com/streetsidesoftware/cspell-cli)
 - [GitVersion](https://github.com/GitTools/GitVersion)
-- [Infracost](https://github.com/infracost/infracos)
 - [Markdown](https://www.markdownguide.org/)
 - [Mermaid](https://mermaid.live/)
 - [Pre-Commit](https://pre-commit.com/)
@@ -166,13 +142,13 @@ The below documentation was generated via Terraform docs using pre-commit
 
 ---
 
-<!-- consuming Module_Name -->
-### Consuming Module_Name
+<!-- consuming terraform-azuredevops-naming -->
+### Consuming terraform-azuredevops-naming
 
   To consume this module add the following to your module.tf:
 ```hcl
-  module "Module_Name" {
-    	 source  = "github.com/DownAtTheBottomOfTheMoleHole/Module_Name.git"
+  module "terraform-azuredevops-naming" {
+    	 source  = "github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming.git"
     
 	 # Optional variables
     	 prefix  = []
@@ -353,251 +329,6 @@ tfupdate provider time . --version "$(tfupdate release latest hashicorp/time --s
 <!-- prettier-ignore-end -->
 <!-- markdown-table-prettify-ignore-end -->
 
-<!-- usage -->
-
-## terraform_module_template Usage
-
-Below are instructions on how to using the terraform module template to create
-a new module or to apply to a pre-existing module.
-
-### Creating your own terraform module using terraform_module_template
-
-1. [browse to RolfMoleman organisation on github and create a new repository](https://github.com/organizations/DownAtTheBottomOfTheMoleHole/repositories/new)
-
-2. Choose the Repository template as **RolfMoleman/terraform_module_template**
-
-3. Leave the owner as **RolfMoleman**
-
-4. Give the repository a name following the naming convention of
-  `terraform-<provider name>-<resource name replacing spaces with ->`
-    _Note:_ this will be the name of the module
-
-5. Give the repository a meaningful concise description
-
-6. Leave the repository visibility as private
-
-7. clone your newly created repository using `git clone https://github.com/DownAtTheBottomOfTheMoleHole/Module_Name.git`
-
-8. Create your readme:
-
-9. In your vscode terminal do the following:
-
-    1. `Rename-Item -Path ".\README.md" -NewName "README.OLD"`
-
-    2. `Rename-Item -Path ".\BLANK_README.md" -NewName "README.md"`
-
-10. In the new README.md do the following:
-
-    1. Find & replace (CTRL+SHIFT+H in vs code) `Module_Name`
-       with your module name.
-       _Note:_ **Please** use snake_case e.g. azurerm_awesome_module
-
-    2. Find and replace (CTRL+SHIFT+H in vs code) `Your_Email_Address`
-       with your email address e.g. `carl.dawson@bca.com`
-
-    3. Find and replace (CTRL+SHIFT+H in vs code) `Your_Team`
-       with the name of your team
-
-    4. Find and replace (CTRL+SHIFT+H in vs code) `Team_Email_List`
-       with a comma separated list of your team member's email addresses
-
-    5. Find and replace (CTRL+SHIFT+H in vs code) `Team_Email_Address`
-       with your team's email address if you have one, else remove it.
-
-    6. Find and replace (CTRL+SHIFT+H in vs code) `Module_Title`
-       with a sensible name
-       e.g. `
-Down At The Bottom Of The Mole Hole Terraform module template`
-
-    7. Find and replace (CTRL+SHIFT+H in vs code) `Module_Description`
-       with some details about what the module is and what it is for
-
-    8. Find and replace (CTRL+SHIFT+H in vs code) `Your_Name`
-       with your name e.g. `Carl Dawson`
-
-11. Update the roadmap so other staff can see your progress
-
-12. Start creating/editing your terraform files - **Note:**
-    use tflint to help you remove unneeded variables, outputs, resources & locals.
-    This will also help ensure you have good descriptions, sensitive flags set etc.
-    use validation on input variables where possible.
-
-13. Generate your default_values.json
-    this is a json file that populates your values in your documentation with
-    actual values. You can either do this manually or
-    by running `terraform output --json > default_values.json`
-    once you have done a successful plan and apply.
-
-14. Use [terraform-docs] to generate your documentation.
-    1. README.md
-
-       either run:
-
-       ```shell
-       terraform-docs markdown table . --config '.config\.readme-terraform-docs.yml'
-       ```
-
-       or:
-
-       ```shell
-       pre-commit run terraform-docs-go
-       ```
-
-    2. TERRAFORM.md
-
-       either run:
-
-       ```shell
-       terraform-docs markdown table . --config '.config\.terraform-terraform-docs.yml'
-       ```
-
-       or:
-
-       ```shell
-       pre-commit run terraform-docs-go
-       ```
-
-15. Create a really useful module!
-
-16. Tag your finished code using [GitVersion] - powershell one liner to do so:
-    `$gitversion = (gitversion |ConvertFrom-Json);git tag $GitVersion.SemVer -m
-     'My awesome release';git push --tags`
-
-17. Push your finished code up to github
-    _Note:_ dont forget to push your tags as well with `git push --tags`
-
-18. The rest of CAG can consume your module :clap:
-
----
-
-<!-- Readme Navigation -->
-
-[(Back to the Table of Contents)](#table-of-contents)
-
----
-
-### Backfitting terraform_module_template to an existing module
-
-1. Clone the terraform module template using
-   `git clone https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template.git`
-
-2. rename your existing README.md using
-   `Rename-Item -Path ".\README.md" -NewName "README.OLD"`
-
-3. copy the following basic directories from the template to the root of your repo
-   1. .assets
-   2. .config
-   3. .github
-   4. .infracost
-   5. .pre-commit_logs - you may need to create this
-   6. scripts
-   7. terraform-docs
-
-4. copy the following files from the template to the root of your repo
-   1. LICENSE
-   2. .gitignore - replace your own or merge them.
-   3. .tflint.hcl
-   4. BLANK_README.md - we will rename this later to become your new readme
-   5. CODE_OF_CONDUCT.md
-   6. TERRAFORM.md
-   7. .prettierignore
-   8. .pre-commit-config.yml
-
-5. merge the .tf files from the template with your own to achieve the following structure
-   1. main.tf - contains the core resources and locals
-      use tflint to help you remove unneeded resources and locals.
-   2. data.tf - contains any data sources your module requires
-      use tflint to help you remove unneeded data sources.
-   3. modules.tf - contains any external modules you may be calling.
-      use tflint to help you remove unneeded modules.
-   4. outputs.tf - contains all your module outputs.
-      use tflint to help you remove unneeded outputs.
-   5. variables.tf - contains your input variables.
-      Please ensure you use our standard inputs to ensure consistency.
-      use tflint to help you remove unneeded variables.
-   6. versions.tf - contains the required versions for terraform and required providers.
-      you must use the latest possible versions.
-      You must be No more than 3 minor versions out of date.
-
-6. update the `./terraform-docs/default_values.json`
-   this must match the your terraform outputs in json format.
-   this is a json file that populates your values in your documentation with
-    actual values. You can either do this manually or
-    by running `terraform output --json > default_values.json`
-    once you have done a successful plan and apply.
-
-7. create your readme from BLANK_README.md
-   1. Find & replace (CTRL+SHIFT+H in vs code) `Module_Name`
-       with your module name.
-       _Note:_ **Please** use snake_case e.g. azurerm_awesome_module
-
-   2. Find and replace (CTRL+SHIFT+H in vs code) `Your_Email_Address`
-       with your email address e.g. `carl.dawson@bca.com`
-
-   3. Find and replace (CTRL+SHIFT+H in vs code) `Your_Team`
-       with the name of your team
-
-   4. Find and replace (CTRL+SHIFT+H in vs code) `Team_Email_List`
-       with a comma separated list of your team member's email addresses
-
-   5. Find and replace (CTRL+SHIFT+H in vs code) `Team_Email_Address`
-       with your team's email address if you have one, else remove it.
-
-   6. Find and replace (CTRL+SHIFT+H in vs code) `Module_Title`
-       with a sensible name
-       e.g. `Down At The Bottom Of The Mole Hole Terraform module template`
-
-   7. Find and replace (CTRL+SHIFT+H in vs code) `Module_Description`
-       with some details about what the module is and what it is for
-
-   8. Find and replace (CTRL+SHIFT+H in vs code) `Your_Name`
-       with your name e.g. `Carl Dawson`
-
-   9. Update the roadmap so other staff can see your progress
-
-   10. rename BLANK_README.md to README.md using:
-       1. `Rename-Item -Path ".\BLANK_README.md" -NewName "README.md"`
-
-8. Use [terraform-docs] to generate your documentation.
-    1. README.md
-
-       either run:
-
-       ```shell
-       terraform-docs markdown table . --config '.config\.readme-terraform-docs.yml'
-       ```
-
-       or:
-
-       ```shell
-       pre-commit run terraform-docs-go
-       ```
-
-    2. TERRAFORM.md
-
-       either run:
-
-       ```shell
-       terraform-docs markdown table . --config '.config\.terraform-terraform-docs.yml'
-       ```
-
-       or:
-
-       ```shell
-       pre-commit run terraform-docs-go
-       ```
-
-9. Create a really useful module!
-
-10. Tag your finished code using [GitVersion] - powershell one liner to do so:
-    `$gitversion = (gitversion |ConvertFrom-Json);git tag $GitVersion.SemVer -m
-     'My awesome release';git push --tags`
-
-11. Push your finished code back to your source control
-    _Note:_ dont forget to push your tags as well with `git push --tags`
-
-12. Anyone can consume your module :clap:
-
 ---
 
 <!-- Readme Navigation -->
@@ -610,21 +341,10 @@ Down At The Bottom Of The Mole Hole Terraform module template`
 
 ## Roadmap
 
-- [x] Basic template
-- [x] Finish readme guide
-- [x] Refine BLANK_README.md
-- [x] Terraform-docs config per output markdown file :toolbox:
-- [x] Basic GitHub actions
-- [x] GitHub Issue Templates :toolbox:
-- [x] GitHub Pull Request Template :toolbox:
-- [x] Automated releases on push/merge/rebase to main :champagne: :toolbox: :dog::cut_of_meat:
-- [ ] Consolidate workflows
-- [x] Auto add issues to Platform & Automation backlog :champagne: :toolbox: :dog::cut_of_meat:
-- [x] Megalinter automatic fixes via pull request :toolbox: :dog::cut_of_meat:
-- [x] Dependabot automated dependency management :toolbox: :dog::cut_of_meat:
-- [x] Renovate automated dependency management :toolbox: :dog::cut_of_meat:
-- [x] Automated issue assignment to the Platform and Automation team :toolbox: :dog::cut_of_meat:
-- [x] Add instructions on how to backfit the template :toolbox: :dog::cut_of_meat:
+- [ ] Feature 1
+- [ ] Feature 2
+- [ ] Feature 3
+  - [ ] Nested Feature
 
 See the [issues][issues] for a full list of proposed features (and known issues).
 
@@ -640,7 +360,7 @@ See the [issues][issues] for a full list of proposed features (and known issues)
 
 ## Contributing
 
-**Everyone is encouraged to contribute**
+**All CAG employees are encouraged to contribute**
 Contributions are what make the open source community such a great way to learn,
 inspire, and create.
 Any contributions you make are **greatly appreciated**.
@@ -650,7 +370,7 @@ create a pull request. You can also simply open an issue with the tag "enhanceme
 
 Don't forget to give the project a star! Thanks again!
 
-1. Clone the Repo (`git clone https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template`)
+1. Clone the Repo (`git clone https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming`)
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
 3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
@@ -687,19 +407,20 @@ To replicate the setup used to initially create this repository you will need
 1. Clone the Repo
 
    ```sh
-   git clone https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template.git
+   git clone https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming.git
    ```
 
-2. Install Chocolatey
+2. Install pip
+
+   ```cmd
+   curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+   python get-pip.py
+   ```
+
+3. Install Chocolatey
 
    ```powershell
    Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-   ```
-
-3. Install Node
-
-   ```cmd
-   choco install nodejs
    ```
 
 4. Install Terraform
@@ -724,32 +445,19 @@ To replicate the setup used to initially create this repository you will need
    choco install terraform-docs
    ```
 
-7. Install Python
-
-   ```cmd
-   choco install python
-   ```
-
-8. Install pip
-
-   ```cmd
-   curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-   python get-pip.py
-   ```
-
-9. Install pre-commit
+7. Install pre-commit
 
    ```cmd
    pip install pre-commit
    ```
 
-10. Install vscode
+8. Install vscode
 
-    ```cmd
-    choco install vscode
-    ```
+   ```cmd
+   choco install vscode
+   ```
 
-11. Install tfupdate
+9. Install tfupdate
 
 Download the latest compiled binaries from [here][tfupdate_releases]
 then put it in your executable path.
@@ -766,7 +474,9 @@ then put it in your executable path.
 
 ## License
 
-for more information about the license please see [LICENSE.md]
+We don't currently distribute our modules publicly.
+However, these modules are intended to be used solely by
+Constellation Automotive Group.
 
 ---
 
@@ -780,9 +490,9 @@ for more information about the license please see [LICENSE.md]
 
 ## Contact
 
-RolfMoleman - @RolfMoleman
+Rolf Moleman - @RolfMoleman
 
-Module Link: [https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template](https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template)
+Module Link: [https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming)
 
 ---
 
@@ -798,8 +508,7 @@ Module Link: [https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_t
 <!-- URLs -->
 
 [gitversion_website]: https://gitversion.net/docs/reference/version-increments
-[terraform-docs]: https://terraform-docs.io
-[issues]: https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template/issues
+[issues]: https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/issues
 [tfupdate_releases]: https://github.com/minamijoyo/tfupdate/releases
 
 [tflint-ruleset-aws]: https://github.com/terraform-linters/tflint-ruleset-aws/releases
@@ -808,6 +517,3 @@ Module Link: [https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_t
 <!-- IMAGES AND ICONS -->
 
 [logo-image]: ./.assets/RolfMoleman.png
-
-<!-- FILE LINKS -->
-[LICENSE.md]: ./LICENSE.md

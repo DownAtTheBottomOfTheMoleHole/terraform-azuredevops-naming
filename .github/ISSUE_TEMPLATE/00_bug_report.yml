@@ -10,7 +10,7 @@ body:
 
         Before submitting a bug report, we ask that you first search existing issues to see if someone else may have experienced the same issue. This helps to keep all relevant information in one place, including any potential workarounds.
 
-        We also ask that you consider whether your issue may be related to a specific module. If you are running into one of the following scenarios, we recommend [opening an issue](https://github.com/DownAtTheBottomOfTheMoleHole/Module_Name/issues/new/choose) in the Module_Name repository instead:
+        We also ask that you consider whether your issue may be related to a specific module. If you are running into one of the following scenarios, we recommend [opening an issue](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/issues/new/choose) in the terraform-azuredevops-naming repository instead:
 
         * [Configuration Language](https://www.terraform.io/docs/configuration/index.html) or resource ordering issues
         * [State](https://www.terraform.io/docs/state/index.html) and [State Backend](https://www.terraform.io/docs/backends/index.html) issues
