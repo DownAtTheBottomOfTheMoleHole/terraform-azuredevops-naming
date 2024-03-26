@@ -450,10 +450,7 @@ then put it in your executable path.
 
 ## License
 
-We don't currently distribute our modules publicly.
-However, these modules are intended to be used solely by
-Constellation Automotive Group.
-
+This module is licensed under the MIT locese which can be found here: [LICENSE.md]
 ---
 
 <!-- Readme Navigation -->
@@ -492,4 +489,5 @@ Module Link: [https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredev
 
 <!-- IMAGES AND ICONS -->
 
+[LICENSE.md]: ./LICENSE.md
 [logo-image]: ./.assets/RolfMoleman.png
