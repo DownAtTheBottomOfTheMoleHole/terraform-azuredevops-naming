@@ -1,43 +1,43 @@
-##############################################################
-##############################################################
-#######                Standard Variables              #######
-##############################################################
-##############################################################
+# Purpose: Define the variables that will be used in the module
 
 variable "prefix" {
-  type        = list(string)
   default     = []
   description = "It is not recommended that you use prefix by azure you should be using a suffix for your resources."
+  nullable    = false
+  sensitive   = false
+  type        = list(string)
 }
 
 variable "suffix" {
-  type        = list(string)
   default     = []
   description = "It is recommended that you specify a suffix for consistency. please use only lowercase characters when possible"
+  nullable    = false
+  sensitive   = false
+  type        = list(string)
 }
 
 variable "unique-seed" {
-  description = "Custom value for the random characters to be used"
-  type        = string
   default     = ""
+  description = "Custom value for the random characters to be used"
+  nullable    = false
+  sensitive   = false
+  type        = string
 }
 
 variable "unique-length" {
-  description = "Max length of the uniqueness suffix to be added"
-  type        = number
   default     = 4
+  description = "Max length of the uniqueness suffix to be added"
+  nullable    = false
+  sensitive   = false
+  type        = number
 }
 
 variable "unique-include-numbers" {
-  description = "If you want to include numbers in the unique generation"
-  type        = bool
   default     = true
+  description = "If you want to include numbers in the unique generation"
+  nullable    = false
+  sensitive   = false
+  type        = bool
 }
-
-##############################################################
-##############################################################
-#######        provider specific variables             #######
-##############################################################
-##############################################################
 
 
