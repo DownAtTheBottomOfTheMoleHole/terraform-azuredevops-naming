@@ -1,4 +1,4 @@
-name: CAG Standard Terraform Module Pull Request
+name: DBMH Standard Terraform Module Pull Request
 concurrency:
   group: ${{ github.ref }}-${{ github.workflow }}
   cancel-in-progress: true
@@ -194,52 +194,7 @@ jobs:
           commit_user_name: DBMH-code-cleaner
           commit_user_email: code.cleaner@ca-grp.com
 
-  ###################################################################
-  ###################################################################
-  #######              TERRAFORM DEPENDENCIES                 #######
-  ###################################################################
-  ###################################################################
-
-  tfupdate:
-    if: "!cancelled()"
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      ##############################################################
-      #######                TERRAFORM                       #######
-      ##############################################################
-
-      - name: Update terraform
-        if: success() || failure()
-        uses: HENNGE/tfupdate-action@v1.0.8
-        env:
-          USER_EMAIL: DBMH-tfupdate@ca-grp.com
-          USER_NAME: DBMH-tfupdate
-        with:
-          base_branch: "main"
-          file_path: "./"
-          label: "dependencies"
-          recursive: true
-          resource: "terraform"
-
-      ##############################################################
-      #######             PRIVATE MODULES                    #######
-      ##############################################################
-
-      # - name: Update CAG terraform-azurerm-subnet module
-      #   if: success() || failure()
-      #   uses: HENNGE/tfupdate-action@v1.0.7
-      #   env:
-      #     USER_EMAIL: DBMH-tfupdate@ca-grp.com
-      #     USER_NAME: DBMH-tfupdate
-      #   with:
-      #     base_branch: "main"
-      #     resource: "module"
-      #     module_name: "DownAtTheBottomOfTheMoleHole/terraform-azurerm-subnet"
-      #     source_type: "github"
-      #     file_path: "./"
-
+  
   ###################################################################
   ###################################################################
   #######              TERRAFORM DOCUMENTATION                #######
@@ -247,8 +202,8 @@ jobs:
   ###################################################################
 
   terraform-docs:
-    needs: tfupdate
-    if: ${{ always() && (needs.tfupdate.result == 'success' || needs.tfupdate.result == 'failure') && github.event_name != 'cancel' }}
+    needs: Megalinter
+    if: ${{ always() && (needs.Megalinter.result == 'success' || needs.Megalinter.result == 'failure') && github.event_name != 'cancel' }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
