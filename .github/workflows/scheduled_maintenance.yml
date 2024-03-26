@@ -45,48 +45,13 @@ env:
   VALIDATE_ALL_CODEBASE: true
 
 jobs:
-  tfupdate:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-
-      ##############################################################
-      #######             PRIVATE MODULES                    #######
-      ##############################################################
-
-      #- name: Update CAG terraform-azurerm-subnet module
-      #  uses: HENNGE/tfupdate-action@v1.0.7
-      #  if: success() || failure()
-      #  with:
-      #    base_branch: "main"
-      #    recursive: true
-      #    resource: "module"
-      #    module_name: "DownAtTheBottomOfTheMoleHole//terraform-azurerm-subnet"
-      #    source_type: "github"
-      #    file_path: "./"
-
-      ##############################################################
-      #######             PUBLIC MODULES                     #######
-      ##############################################################
-
-      - name: Update terraform AzureRM Naming module
-        uses: HENNGE/tfupdate-action@v1.0.8
-        if: success() || failure()
-        with:
-          base_branch: "main"
-          recursive: true
-          #recursive_path: "./"
-          resource: "module"
-          module_name: "Azure/naming/azurerm"
-          source_type: "tfregistryModule"
-          file_path: "./"
 
   ##############################################################
   #######                update docs after               #######
   ##############################################################
 
   terraform-docs:
-    if: ${{ !cancelled() && (needs.tfupdate.result == 'success' || needs.tfupdate.result == 'failure') }} }} # only run after tfupdate job has finished
+    if: ${{ !cancelled() }} # only run after tfupdate job has finished
     needs: tfupdate
     runs-on: ubuntu-latest
     steps:
