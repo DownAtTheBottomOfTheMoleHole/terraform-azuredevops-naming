@@ -31,10 +31,87 @@ locals {
   suffix_safe            = lower(join("", var.suffix))
   suffix_unique_safe     = lower(join("", concat(var.suffix, [local.random])))
 
-  ## Names based on the recomendations of
+  ## Names based on the recommendations of
   ## https://learn.microsoft.com/en-us/azure/devops/organizations/settings/naming-restrictions?view=azure-devops
 
   azdo = {
+
+    area_path = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 255)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 255)
+      dashes      = true
+      slug        = "arpth"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Organization"
+      regex       = "^(?!.*[\\/\\:*?\"<>|#$*+])(?!^(PRN|COM[1-9]|COM10|LPT[1-9]|NUL|CON|AUX)$)[^\\x00-\\x1F]*$"
+    }
+
+    artifact = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "art"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Organization"
+      regex       = "^(?![-_.])(?!.*[-_.]{2})[a-z0-9_.-]+(?<![-_.])$"
+    }
+
+    board_column = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "brdcol"
+      min_length  = 1
+      max_length  = 64
+      scope       = "Organization"
+      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+    }
+
+    board_swimlane = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "brdswm"
+      min_length  = 1
+      max_length  = 64
+      scope       = "Organization"
+      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+    }
+
+    field_name = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "fld"
+      min_length  = 1
+      max_length  = 64
+      scope       = "Organization"
+      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+    }
+
+    git_repo = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "gitrepo"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Organization"
+      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+    }
+
+    iteration_path = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 255)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 255)
+      dashes      = true
+      slug        = "itpth"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Organization"
+      regex       = "^(?!.*[\\/\\:*?\"<>|#$*+])(?!^(PRN|COM[1-9]|COM10|LPT[1-9]|NUL|CON|AUX)$)[^\\x00-\\x1F]*$"
+    }
 
     organization = {
       name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 50)
@@ -44,7 +121,51 @@ locals {
       min_length  = 1
       max_length  = 50
       scope       = "AzureDevOps"
-      regex       = "^[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$"
+      regex       = "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$"
+    }
+
+    pipeline_expression = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "pexp"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Organization"
+      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+    }
+
+    pipeline_job = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "pljob"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Organization"
+      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+    }
+
+    pipeline_stage = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "plstg"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Organization"
+      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+    }
+
+    process = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "proc"
+      min_length  = 1
+      max_length  = 256
+      scope       = "AzureDevOps"
+      regex       = "^[^\\x00-\\x1F\\uD800-\\uDFFF]{1,256}$"
     }
 
     project = {
@@ -55,18 +176,96 @@ locals {
       min_length  = 1
       max_length  = 64
       scope       = "Organization"
-      regex       = "^[^\\/\"\\[\\]:|<>+=;,?*@&_][^\\/\"\\[\\]:|<>+=;,?*@&]+[^\\/\"\\[\\]:|<>+=;,?*@&.-]$"
+      regex       = "^(?![_\\.])(?!^(App_Browsers|App_code|App_Data|App_GlobalResources|App_LocalResources|App_Themes|App_WebResources|bin|web\\.config)$)(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
     }
-  }
-  validation = {
 
-    organization = {
-      valid_name        = length(regexall(local.azdo.organization.regex, local.azdo.organization.name)) > 0 && length(local.azdo.organization.name) > local.azdo.organization.min_length
-      valid_name_unique = length(regexall(local.azdo.organization.regex, local.azdo.organization.name_unique)) > 0
+    security_group = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "secgrp"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Organization"
+      regex       = "^(?!.*\\$NAMESPACE)([^\\/\\[\\]:|<>+=;?*,\\x01-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
     }
-    project = {
-      valid_name        = length(regexall(local.azdo.project.regex, local.azdo.project.name)) > 0 && length(local.azdo.project.name) > local.azdo.project.min_length
-      valid_name_unique = length(regexall(local.azdo.project.regex, local.azdo.project.name_unique)) > 0
+
+    team = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "team"
+      min_length  = 1
+      max_length  = 64
+      scope       = "Organization"
+      regex       = "^(?![_\\.\\.\\.\\.])(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
     }
-  }
+    
+    tfvc_file = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 260)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 260)
+      dashes      = true
+      slug        = "tfvcfile"
+      min_length  = 1
+      max_length  = 260
+      scope       = "Organization"
+      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+    }
+
+    tfvc_label = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "tfvclbl"
+      min_length  = 1
+      max_length  = 64
+      scope       = "Organization"
+      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+    }
+
+    tfvc_repo = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "tfvcrepo"
+      min_length  = 1
+      max_length  = 64
+      scope       = "Organization"
+      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+    }
+
+    tfvc_shelveset = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "tfvcss"
+      min_length  = 1
+      max_length  = 64
+      scope       = "Organization"
+      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+    }
+
+    tfvc_workspace = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "tfvcws"
+      min_length  = 1
+      max_length  = 64
+      scope       = "Organization"
+      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+    }
+
+    work_item_tag = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "witg"
+      min_length  = 1
+      max_length  = 64
+      scope       = "Organization"
+      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+    }
+
+}
 }

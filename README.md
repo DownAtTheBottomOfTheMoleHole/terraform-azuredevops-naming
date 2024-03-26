@@ -201,12 +201,31 @@ The below documentation was generated via Terraform docs using pre-commit
 
 ### Outputs
 
-| Name | Description | Value | Sensitive |
-|------|-------------|-------|:---------:|
-| <a name="output_organization"></a> [organization](#output\_organization) | Azure DevOps Organization | `"example-organization-value"` | no |
-| <a name="output_project"></a> [project](#output\_project) | Azure DevOps Project | `"example-project-value"` | no |
-| <a name="output_unique-seed"></a> [unique-seed](#output\_unique-seed) | Custom value for the random characters to be used | `"example-unique-seed-value"` | no |
-| <a name="output_validation"></a> [validation](#output\_validation) | Validtion rules applied | `"example-validation-value"` | no |
+| Name | Description |
+|------|-------------|
+| <a name="output_area_path"></a> [area\_path](#output\_area\_path) | Azure DevOps Area Path |
+| <a name="output_artifact"></a> [artifact](#output\_artifact) | Azure DevOps Artifact |
+| <a name="output_board_column"></a> [board\_column](#output\_board\_column) | Azure DevOps Board Column |
+| <a name="output_board_swimlane"></a> [board\_swimlane](#output\_board\_swimlane) | Azure DevOps Board Swimlane |
+| <a name="output_field_name"></a> [field\_name](#output\_field\_name) | Azure DevOps Field Name |
+| <a name="output_git_repo"></a> [git\_repo](#output\_git\_repo) | Azure DevOps Git Repository |
+| <a name="output_iteration_path"></a> [iteration\_path](#output\_iteration\_path) | Azure DevOps Iteration Path |
+| <a name="output_organization"></a> [organization](#output\_organization) | Azure DevOps Organization |
+| <a name="output_pipeline_expression"></a> [pipeline\_expression](#output\_pipeline\_expression) | Azure DevOps Pipeline Expression |
+| <a name="output_pipeline_job"></a> [pipeline\_job](#output\_pipeline\_job) | Azure DevOps Pipeline job Name |
+| <a name="output_pipeline_stage"></a> [pipeline\_stage](#output\_pipeline\_stage) | Azure DevOps Pipeline atage Name |
+| <a name="output_process"></a> [process](#output\_process) | Azure DevOps Process |
+| <a name="output_project"></a> [project](#output\_project) | Azure DevOps Project |
+| <a name="output_security_group"></a> [security\_group](#output\_security\_group) | Azure Security Group |
+| <a name="output_team"></a> [team](#output\_team) | Azure DevOps Team |
+| <a name="output_tfvc_file"></a> [tfvc\_file](#output\_tfvc\_file) | Azure DevOps TFVC File |
+| <a name="output_tfvc_label"></a> [tfvc\_label](#output\_tfvc\_label) | Azure DevOps TFVC Label |
+| <a name="output_tfvc_repo"></a> [tfvc\_repo](#output\_tfvc\_repo) | Azure DevOps TFVC repo |
+| <a name="output_tfvc_shelveset"></a> [tfvc\_shelveset](#output\_tfvc\_shelveset) | Azure DevOps TFVC Shelveset |
+| <a name="output_tfvc_workspace"></a> [tfvc\_workspace](#output\_tfvc\_workspace) | Azure DevOps TFVC Workspace |
+| <a name="output_unique-seed"></a> [unique-seed](#output\_unique-seed) | Custom value for the random characters to be used |
+| <a name="output_validation"></a> [validation](#output\_validation) | Validation rules applied |
+| <a name="output_work_item_tag"></a> [work\_item\_tag](#output\_work\_item\_tag) | Azure DevOps Work Item Tag |
 
 ---
 
