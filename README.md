@@ -11,9 +11,7 @@
 
 [![Create New Release](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/release.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/release.yml)
 
-[![Nightly MegaLinter Scan of Full Codebase](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/nightly_mega-linter.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/nightly_mega-linter.yml)
-
-[![Terraform Dependencies and Documentation](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/terraform_dependencies.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/terraform_dependencies.yml)
+[![Nightly Maintenance Scan of Full Codebase](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/scheduled_maintenance.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/nightly_mega-linter.yml)
 
 <!-- Made With Badges -->
 <!--
@@ -76,7 +74,7 @@ these are the pre-commit hooks used for this repo:
 
 ## About The Project
 
-A terrafomr module to enable consistent naming of Azure DevOps resources
+A terraform module to enable consistent naming of Azure DevOps resources
 
 ---
 
@@ -360,7 +358,7 @@ See the [issues][issues] for a full list of proposed features (and known issues)
 
 ## Contributing
 
-**All CAG employees are encouraged to contribute**
+**All are encouraged to contribute**
 Contributions are what make the open source community such a great way to learn,
 inspire, and create.
 Any contributions you make are **greatly appreciated**.
