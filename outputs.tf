@@ -1,9 +1,11 @@
 output "unique-seed" {
-  value = coalesce(var.unique-seed, local.random_safe_generation)
+  description = "Custom value for the random characters to be used"
+  value       = coalesce(var.unique-seed, local.random_safe_generation)
 }
 
 output "validation" {
-  value = local.validation
+  description = "Validtion rules applied"
+  value       = local.validation
 }
 output "organization" {
   value       = local.azdo.organization

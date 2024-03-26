@@ -37,7 +37,8 @@ content: |-
     To consume this module add the following to your module.tf:
   ```hcl
     module "terraform-azuredevops-naming" {
-      {{"\t"}} source  = "github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming.git"
+      {{"\t"}} source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
+      {{"\t"}} version  = "1.0.0"
   {{- if .Module.RequiredInputs }}
       {{"\n\t"}} # Required variables
       {{- range .Module.RequiredInputs }}
@@ -52,12 +53,6 @@ content: |-
       {{- end }}
     }
     ```
-
-  ## Example 1
-
-  ```hcl
-  {{ include "examples/example-1/modules.tf" }}
-  ```
 
   ---
 
