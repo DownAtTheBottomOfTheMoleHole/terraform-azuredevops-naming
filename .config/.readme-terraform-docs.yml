@@ -54,12 +54,6 @@ content: |-
     }
     ```
 
-  ## Example 1
-
-  ```hcl
-  {{ include "examples/example-1/modules.tf" }}
-  ```
-
   ---
 
   <!-- Readme Navigation -->
