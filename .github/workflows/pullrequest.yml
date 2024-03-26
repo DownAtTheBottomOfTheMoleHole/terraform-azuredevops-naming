@@ -64,8 +64,7 @@ jobs:
   ###################################################################
 
   MegaLinter:
-    needs: terraform-docs
-    if: ${{ always() && (needs.terraform-docs.result == 'success' || needs.terraform-docs.result == 'failure') && github.event_name != 'cancel' }}
+    if: ${{ always() && github.event_name != 'cancel' }}
     name: MegaLinter
     runs-on: ubuntu-latest
     permissions:
