@@ -38,46 +38,8 @@ tfupdate terraform . --version "$(tfupdate release latest hashicorp/terraform)" 
 
 please also add the terraform version to the `terraform_installer_version` variable in `build/pipelines/iac_templates/variables.yml`
 
-
-##### Azure Naming module version
-
-```shell
-tfupdate module Azure/naming/azurerm . --version "$(tfupdate release latest Azure/naming/azurerm --source-type tfregistryModule)" --recursive
-```
-
-##### AWS version
-
-```shell
-tfupdate provider aws . --version "$(tfupdate release latest hashicorp/aws --source-type tfregistryProvider)" --recursive
-```
-
-##### AzureAD version
-
-```shell
-tfupdate provider azuread . --version "$(tfupdate release latest hashicorp/azuread --source-type tfregistryProvider)" --recursive
-```
-
-##### AzureDevOps version
-
-```shell
-tfupdate provider azuredevops . --version "$(tfupdate release latest microsoft/azuredevops --source-type tfregistryProvider)" --recursive
-```
-
-##### AzureRm version
-
-```shell
-tfupdate provider azurerm . --version "$(tfupdate release latest hashicorp/azurerm --source-type tfregistryProvider)" --recursive
-```
-
 ##### Random version
 
 ```shell
 tfupdate provider random . --version "$(tfupdate release latest hashicorp/random --source-type tfregistryProvider)" --recursive
-```
-
-
-##### Time version
-
-```shell
-tfupdate provider time . --version "$(tfupdate release latest hashicorp/time --source-type tfregistryProvider)" --recursive
 ```
