@@ -146,7 +146,8 @@ The below documentation was generated via Terraform docs using pre-commit
   To consume this module add the following to your module.tf:
 ```hcl
   module "terraform-azuredevops-naming" {
-    	 source  = "github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming.git"
+    	 source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
+    	 version  = "1.0.0"
     
 	 # Optional variables
     	 prefix  = []
@@ -156,12 +157,6 @@ The below documentation was generated via Terraform docs using pre-commit
     	 unique-seed  = ""
   }
   ```
-
-## Example 1
-
-```hcl
-##### Put your example Terraform code in this file and it will be displayed in the read me. ######
-```
 
 ---
 
@@ -210,8 +205,8 @@ The below documentation was generated via Terraform docs using pre-commit
 |------|-------------|-------|:---------:|
 | <a name="output_organization"></a> [organization](#output\_organization) | Azure DevOps Organization | `"example-organization-value"` | no |
 | <a name="output_project"></a> [project](#output\_project) | Azure DevOps Project | `"example-project-value"` | no |
-| <a name="output_unique-seed"></a> [unique-seed](#output\_unique-seed) | n/a | `"example-unique-seed-value"` | no |
-| <a name="output_validation"></a> [validation](#output\_validation) | n/a | `"example-validation-value"` | no |
+| <a name="output_unique-seed"></a> [unique-seed](#output\_unique-seed) | Custom value for the random characters to be used | `"example-unique-seed-value"` | no |
+| <a name="output_validation"></a> [validation](#output\_validation) | Validtion rules applied | `"example-validation-value"` | no |
 
 ---
 
@@ -273,46 +268,10 @@ tfupdate terraform . --version "$(tfupdate release latest hashicorp/terraform)" 
 
 please also add the terraform version to the `terraform_installer_version` variable in `build/pipelines/iac_templates/variables.yml`
 
-##### Azure Naming module version
-
-```shell
-tfupdate module Azure/naming/azurerm . --version "$(tfupdate release latest Azure/naming/azurerm --source-type tfregistryModule)" --recursive
-```
-
-##### AWS version
-
-```shell
-tfupdate provider aws . --version "$(tfupdate release latest hashicorp/aws --source-type tfregistryProvider)" --recursive
-```
-
-##### AzureAD version
-
-```shell
-tfupdate provider azuread . --version "$(tfupdate release latest hashicorp/azuread --source-type tfregistryProvider)" --recursive
-```
-
-##### AzureDevOps version
-
-```shell
-tfupdate provider azuredevops . --version "$(tfupdate release latest microsoft/azuredevops --source-type tfregistryProvider)" --recursive
-```
-
-##### AzureRm version
-
-```shell
-tfupdate provider azurerm . --version "$(tfupdate release latest hashicorp/azurerm --source-type tfregistryProvider)" --recursive
-```
-
 ##### Random version
 
 ```shell
 tfupdate provider random . --version "$(tfupdate release latest hashicorp/random --source-type tfregistryProvider)" --recursive
-```
-
-##### Time version
-
-```shell
-tfupdate provider time . --version "$(tfupdate release latest hashicorp/time --source-type tfregistryProvider)" --recursive
 ```
 
 ---
