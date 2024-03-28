@@ -52,7 +52,7 @@ env: # Comment env block if you don't want to apply fixes
   TERRAFORM_TERRASCAN_ARGUMENTS: "--show-passed"
   TERRAFORM_TFLINT_ARGUMENTS: --color
   TYPESCRIPT_DEFAULT_STYLE: prettier
-  USER_EMAIL: DBMH-tfupdate@ca-grp.com
+  USER_EMAIL: DBMH-tfupdate@dbmh.com
   USER_NAME: DBMH-tfupdate
   VALIDATE_ALL_CODEBASE: false
 
@@ -166,7 +166,7 @@ jobs:
             [2]: https://github.com/oxsecurity/megalinter
           branch: fix/megalinter-automatic-fixes # The pull request branch name.
           #branch-suffix: random #The branch suffix type when using the alternative branching strategy. Valid values are random, timestamp and short-commit-hash. See Alternative strategy for details.
-          committer: DBMH-megalinter-bot <megalinter@ca-grp.com>
+          committer: DBMH-megalinter-bot <megalinter@dbmh.com>
           commit-message: "[MegaLinter] Apply linters automatic fixes"
           delete-branch: true # Delete the branch when closing pull requests, and when undeleted after merging.
           labels: bot # A comma or newline-separated list of labels.
@@ -191,9 +191,8 @@ jobs:
           branch: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
           commit_message: "[MegaLinter] Apply linters fixes"
           commit_user_name: DBMH-code-cleaner
-          commit_user_email: code.cleaner@ca-grp.com
+          commit_user_email: code.cleaner@dbmh.com
 
-  
   ###################################################################
   ###################################################################
   #######              TERRAFORM DOCUMENTATION                #######
@@ -219,7 +218,7 @@ jobs:
           git-commit-message: "[Terraform-docs] Updated readme.md"
           git-push: true
           git-push-sign-off: true
-          git-push-user-email: DBMH-terraform-docs@ca-grp.com
+          git-push-user-email: DBMH-terraform-docs@dbmh.com
           git-push-user-name: DBMH-terraform-docs
           indention: 4
           output-file: README.md
@@ -240,7 +239,7 @@ jobs:
           git-commit-message: "[Terraform-docs] Updated TERRAFORM.md"
           git-push: true
           git-push-sign-off: true
-          git-push-user-email: DBMH-terraform-docs@ca-grp.com
+          git-push-user-email: DBMH-terraform-docs@dmbh.com
           git-push-user-name: DBMH-terraform-docs
           indention: 4
           output-file: TERRAFORM.md
@@ -258,14 +257,14 @@ jobs:
         with:
           addAssignees: true
           addReviewers: true
-          assignees: /platform-automation
+          assignees: /the-main-team
           #excludeLabels
           GITHUB_TOKEN: ${{ secrets.PAT }}
           # using the `org/team_slug` or `/team_slug` syntax to add git team as reviewers
           #includeLabels:
           numberOfAssignees: 2
           numberOfReviewers: 0
-          reviewers: /platform-automation
+          reviewers: /the-main-team
           skipDraft: true
           skipKeywords: wip, draft
 
