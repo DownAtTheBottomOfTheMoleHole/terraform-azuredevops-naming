@@ -36,137 +36,107 @@ locals {
 
   azdo = {
 
-    area_path = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 255)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 255)
+    agent_pool = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "agtpol"
+      min_length  = 1
+      max_length  = 64
+      scope       = "Organization"
+      regex       = "^[^<,>,%,&,,:,\\,?,/,*,|,\",#,$,+,.,']*$"
+    }
+
+    branch_policy_build_validation = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "bpbv"
+      min_length  = 1
+      max_length  = 256
+      scope       = "repository"
+      regex       = "^[^/:\\~&%;@'\"?<>|#$*}{,+=\\[\\]]*$"
+    }
+
+    build_definition = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 260)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 260)
+      dashes      = true
+      slug        = "blddef"
+      min_length  = 1
+      max_length  = 260
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|]*$"
+    }
+
+
+    build_folder = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 260)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 260)
       dashes      = true
       slug        = "arpth"
       min_length  = 1
-      max_length  = 255
+      max_length  = 260
       scope       = "Organization"
-      regex       = "^[^\\/\\:*?\"<>|#$*+\\x00-\\x1F]*$"
+      regex       = "^[^/\\:*?\"<>|]*$"
     }
 
-    artifact = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+    elastic_pool = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
       dashes      = true
-      slug        = "art"
+      slug        = "eapool"
       min_length  = 1
-      max_length  = 256
+      max_length  = 64
       scope       = "Organization"
-      regex       = "^[a-z0-9_.-]+$"
+      regex       = "^[^<,>,%,&,,:,\\,?,/,*,|,\",#,,$,+,.,']*$"
     }
 
-    board_column = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+    environment = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 240)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 240)
       dashes      = true
-      slug        = "brdcol"
+      slug        = "env"
       min_length  = 1
-      max_length  = 256
-      scope       = "Organization"
-      regex       = "^[^\\x00-\\x1F]{1,256}$"
+      max_length  = 240
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|]*$"
     }
 
-    board_swimlane = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
-      dashes      = true
-      slug        = "brdswm"
-      min_length  = 1
-      max_length  = 256
-      scope       = "Organization"
-      regex       = "^[^\\x00-\\x1F]{1,256}$"
-    }
 
-    field_name = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 128)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 128)
-      dashes      = true
-      slug        = "fld"
-      min_length  = 1
-      max_length  = 128
-      scope       = "Organization"
-      regex       = "^[^ .,;':~\\/\\*|?\"&%$!+=()\\[\\]{}<>-]*$"
-    }
-
-    git_repo = {
+    git_repository = {
       name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64))
       name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64))
       dashes      = true
       slug        = "gitrepo"
       min_length  = 1
       max_length  = 64
-      scope       = "Organization"
-      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
     }
 
-    iteration_path = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 255)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 255)
+    git_repository_branch = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 255))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 255))
       dashes      = true
-      slug        = "itpth"
+      slug        = "gitbranch"
       min_length  = 1
       max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    }
+
+    group = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "grp"
+      min_length  = 1
+      max_length  = 1024
       scope       = "Organization"
-      regex       = "^[^\\/\\:*?\"<>|#$*+\\x00-\\x1F]*$"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
     }
 
-    organization = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 50)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 50)
-      dashes      = true
-      slug        = "org"
-      min_length  = 1
-      max_length  = 50
-      scope       = "AzureDevOps"
-      regex       = "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$"
-    }
-
-    pipeline_expression = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
-      dashes      = true
-      slug        = "pexp"
-      min_length  = 1
-      max_length  = 256
-      scope       = "Organization"
-      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
-    }
-
-    pipeline_job = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
-      dashes      = true
-      slug        = "pljob"
-      min_length  = 1
-      max_length  = 256
-      scope       = "Organization"
-      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
-    }
-
-    pipeline_stage = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
-      dashes      = true
-      slug        = "plstg"
-      min_length  = 1
-      max_length  = 256
-      scope       = "Organization"
-      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
-    }
-
-    process = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
-      dashes      = true
-      slug        = "proc"
-      min_length  = 1
-      max_length  = 256
-      scope       = "AzureDevOps"
-      regex       = "^[^\\x00-\\x1F]{1,256}$"
-    }
 
     project = {
       name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
@@ -179,92 +149,369 @@ locals {
       regex       = "^[^_\\.\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
     }
 
-    security_group = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+
+    serviceendpoint_argocd = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
       dashes      = true
-      slug        = "secgrp"
+      slug        = "seargocd"
       min_length  = 1
-      max_length  = 256
-      scope       = "Organization"
-      regex       = "^[^\\/\\[\\]:|<>+=;?*,\\x01-\\x1F]*$"
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
     }
+
+    serviceendpoint_artifactory = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "seart"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_aws = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "seaws"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_azurecr = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "seazcr"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_azuredevops = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "seazdo"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_azurerm = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "seazrm"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+    serviceendpoint_bitbucket = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sebitb"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_dockerregistry = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sedr"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_externaltfs = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "setfs"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_gcp_terraform = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "segcptf"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_generic = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "seg"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_generic_git = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "seggit"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_github = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "segh"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_github_enterprise = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "segh"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_incomingwebhook = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "seiw"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_jenkins = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sej"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+    serviceendpoint_jfrog_artifactory_v2 = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sejfa"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_jfrog_distribution_v2 = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sejfd"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_jfrog_platform_v2 = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sejfp"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_jfrog_xray_v2 = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sejx"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_kubernetes = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sek"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_maven = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "semvn"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_nexus = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sen"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_npm = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "senpm"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_nuget = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "senug"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_octopusdeploy = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "seod"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+
+    serviceendpoint_runpipeline = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "serp"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_servicefabric = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sesf"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_sonarcloud = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sesc"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_sonarqube = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sesq"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_ssh = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sessh"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
 
     team = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 255))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 255))
       dashes      = true
-      slug        = "team"
+      slug        = "adt"
       min_length  = 1
-      max_length  = 64
-      scope       = "Organization"
-      regex       = "^[^_\\.\\.\\.\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
+      max_length  = 255
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
     }
 
-    tfvc_file = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 260)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 260)
+    variable_group = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256))
       dashes      = true
-      slug        = "tfvcfile"
+      slug        = "advg"
       min_length  = 1
-      max_length  = 260
-      scope       = "Organization"
-      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
+      max_length  = 256
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
     }
-
-    tfvc_label = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
-      dashes      = true
-      slug        = "tfvclbl"
-      min_length  = 1
-      max_length  = 64
-      scope       = "Organization"
-      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
-    }
-
-    tfvc_repo = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
-      dashes      = true
-      slug        = "tfvcrepo"
-      min_length  = 1
-      max_length  = 64
-      scope       = "Organization"
-      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
-    }
-
-    tfvc_shelveset = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
-      dashes      = true
-      slug        = "tfvcss"
-      min_length  = 1
-      max_length  = 64
-      scope       = "Organization"
-      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
-    }
-
-    tfvc_workspace = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
-      dashes      = true
-      slug        = "tfvcws"
-      min_length  = 1
-      max_length  = 64
-      scope       = "Organization"
-      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
-    }
-    work_item_tag = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
-      dashes      = true
-      slug        = "witg"
-      min_length  = 1
-      max_length  = 64
-      scope       = "Organization"
-      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
-    }
-
   }
+
 }
