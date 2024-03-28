@@ -160,7 +160,7 @@ The below documentation was generated via Terraform docs using pre-commit
 ```hcl
   module "terraform-azuredevops-naming" {
     	 source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-    	 version  = "1.0.0"
+    	 version  = "1.0.2"
     
 	 # Optional variables
     	 prefix  = []
