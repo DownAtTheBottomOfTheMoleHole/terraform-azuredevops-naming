@@ -17,7 +17,7 @@ env:
   # To use hub command in Github Action: https://github.com/github/hub#github-actions
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   # If you use personal token, replace email/user accordingly
-  USER_EMAIL: DBMH-tfupdate@ca-grp.com
+  USER_EMAIL: DBMH-tfupdate@dbmh.com
   USER_NAME: DBMH-tfupdate
   # Apply linter fixes configuration
   APPLY_FIXES: all # When active, APPLY_FIXES must also be defined as environment variable (in github/workflows/mega-linter.yml or other CI tool)
@@ -52,7 +52,6 @@ jobs:
 
   terraform-docs:
     if: ${{ !cancelled() }} # only run after tfupdate job has finished
-    needs: tfupdate
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -69,7 +68,7 @@ jobs:
           git-commit-message: "[Terraform-docs] Updated readme.md"
           git-push: true
           git-push-sign-off: true
-          git-push-user-email: DBMH-terraform-docs@ca-grp.com
+          git-push-user-email: DBMH-terraform-docs@dbmh.com
           git-push-user-name: DBMH-terraform-docs
           indention: 4
           output-file: README.md
@@ -90,7 +89,7 @@ jobs:
           git-commit-message: "[Terraform-docs] Updated TERRAFORM.md"
           git-push: true
           git-push-sign-off: true
-          git-push-user-email: DBMH-terraform-docs@ca-grp.com
+          git-push-user-email: DBMH-terraform-docs@dbmh.com
           git-push-user-name: DBMH-terraform-docs
           indention: 4
           output-file: TERRAFORM.md
@@ -205,7 +204,7 @@ jobs:
             [2]: https://github.com/oxsecurity/megalinter
           branch: fix/megalinter-automatic-fixes # The pull request branch name.
           #branch-suffix: random #The branch suffix type when using the alternative branching strategy. Valid values are random, timestamp and short-commit-hash. See Alternative strategy for details.
-          committer: DBMH-megalinter-bot <megalinter@ca-grp.com>
+          committer: DBMH-megalinter-bot <megalinter@dbmh.com>
           commit-message: "[MegaLinter] Apply linters automatic fixes"
           delete-branch: true # Delete the branch when closing pull requests, and when undeleted after merging.
           labels: bot # A comma or newline-separated list of labels.
@@ -231,4 +230,4 @@ jobs:
           branch: ${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
           commit_message: "[MegaLinter] Apply linters fixes"
           commit_user_name: DBMH-megalinter-bot
-          commit_user_email: megalinter@ca-grp.com
+          commit_user_email: megalinter@dbmh.com
