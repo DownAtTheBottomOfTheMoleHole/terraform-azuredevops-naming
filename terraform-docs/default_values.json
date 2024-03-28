@@ -1,135 +1,5 @@
 {
-  "area_path": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 255,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\/\\:*?\"\u003c\u003e|#$*+\\x00-\\x1F]*$",
-      "scope": "Organization",
-      "slug": "arpth"
-    }
-  },
-  "artifact": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 256,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[a-z0-9_.-]+$",
-      "scope": "Organization",
-      "slug": "art"
-    }
-  },
-  "board_column": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 256,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\x00-\\x1F]{1,256}$",
-      "scope": "Organization",
-      "slug": "brdcol"
-    }
-  },
-  "board_swimlane": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 256,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\x00-\\x1F]{1,256}$",
-      "scope": "Organization",
-      "slug": "brdswm"
-    }
-  },
-  "field_name": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 128,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^ .,;':~\\/\\*|?\"\u0026%$!+=()\\[\\]{}\u003c\u003e-]*$",
-      "scope": "Organization",
-      "slug": "fld"
-    }
-  },
-  "git_repo": {
+  "agent_pool": {
     "sensitive": false,
     "type": [
       "object",
@@ -150,12 +20,168 @@
       "min_length": 1,
       "name": "testprefix-testsuffix",
       "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
+      "regex": "^[^\u003c,\u003e,%,\u0026,,:,\\,?,/,*,|,\",#,$,+,.,']*$",
       "scope": "Organization",
+      "slug": "agtpol"
+    }
+  },
+  "branch_policy_build_validation": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 256,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/:\\~\u0026%;@'\"?\u003c\u003e|#$*}{,+=\\[\\]]*$",
+      "scope": "repository",
+      "slug": "bpbv"
+    }
+  },
+  "build_definition": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 260,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+      "scope": "Project",
+      "slug": "blddef"
+    }
+  },
+  "build_folder": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 260,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+      "scope": "Organization",
+      "slug": "arpth"
+    }
+  },
+  "elastic_pool": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 64,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\u003c,\u003e,%,\u0026,,:,\\,?,/,*,|,\",#,,$,+,.,']*$",
+      "scope": "Organization",
+      "slug": "eapool"
+    }
+  },
+  "environment": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 240,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+      "scope": "Project",
+      "slug": "env"
+    }
+  },
+  "git_repository": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 64,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
       "slug": "gitrepo"
     }
   },
-  "iteration_path": {
+  "git_repository_branch": {
     "sensitive": false,
     "type": [
       "object",
@@ -176,139 +202,35 @@
       "min_length": 1,
       "name": "testprefix-testsuffix",
       "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\/\\:*?\"\u003c\u003e|#$*+\\x00-\\x1F]*$",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+      "scope": "Repository",
+      "slug": "gitbranch"
+    }
+  },
+  "group": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
       "scope": "Organization",
-      "slug": "itpth"
-    }
-  },
-  "organization": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 50,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
-      "scope": "AzureDevOps",
-      "slug": "org"
-    }
-  },
-  "pipeline_expression": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 256,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
-      "scope": "Organization",
-      "slug": "pexp"
-    }
-  },
-  "pipeline_job": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 256,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
-      "scope": "Organization",
-      "slug": "pljob"
-    }
-  },
-  "pipeline_stage": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 256,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
-      "scope": "Organization",
-      "slug": "plstg"
-    }
-  },
-  "process": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 256,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\x00-\\x1F]{1,256}$",
-      "scope": "AzureDevOps",
-      "slug": "proc"
+      "slug": "grp"
     }
   },
   "project": {
@@ -337,7 +259,1316 @@
       "slug": "prj"
     }
   },
-  "security_group": {
+  "serviceendpoint_argocd": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "seargocd"
+    }
+  },
+  "serviceendpoint_artifactory": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "seart"
+    }
+  },
+  "serviceendpoint_aws": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "seaws"
+    }
+  },
+  "serviceendpoint_azurecr": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "seazcr"
+    }
+  },
+  "serviceendpoint_azuredevops": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "seazdo"
+    }
+  },
+  "serviceendpoint_azurerm": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "seazrm"
+    }
+  },
+  "serviceendpoint_bitbucket": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "sebitb"
+    }
+  },
+  "serviceendpoint_dockerregistry": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "sedr"
+    }
+  },
+  "serviceendpoint_externaltfs": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "setfs"
+    }
+  },
+  "serviceendpoint_gcp_terraform": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "segcptf"
+    }
+  },
+  "serviceendpoint_generic": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "seg"
+    }
+  },
+  "serviceendpoint_generic_git": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "seggit"
+    }
+  },
+  "serviceendpoint_github": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "segh"
+    }
+  },
+  "serviceendpoint_github_enterprise": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "segh"
+    }
+  },
+  "serviceendpoint_incomingwebhook": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "seiw"
+    }
+  },
+  "serviceendpoint_jenkins": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "sej"
+    }
+  },
+  "serviceendpoint_jfrog_artifactory_v2": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "sejfa"
+    }
+  },
+  "serviceendpoint_jfrog_distribution_v2": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "sejfd"
+    }
+  },
+  "serviceendpoint_jfrog_platform_v2": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "sejfp"
+    }
+  },
+  "serviceendpoint_jfrog_xray_v2": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "sejx"
+    }
+  },
+  "serviceendpoint_kubernetes": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "sek"
+    }
+  },
+  "serviceendpoint_maven": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "semvn"
+    }
+  },
+  "serviceendpoint_nexus": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "sen"
+    }
+  },
+  "serviceendpoint_npm": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "senpm"
+    }
+  },
+  "serviceendpoint_nuget": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "senug"
+    }
+  },
+  "serviceendpoint_octopusdeploy": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "seod"
+    }
+  },
+  "serviceendpoint_runpipeline": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "serp"
+    }
+  },
+  "serviceendpoint_servicefabric": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "sesf"
+    }
+  },
+  "serviceendpoint_sonarcloud": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "sesc"
+    }
+  },
+  "serviceendpoint_sonarqube": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "sesq"
+    }
+  },
+  "serviceendpoint_ssh": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 1024,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "sessh"
+    }
+  },
+  "team": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 255,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "adt"
+    }
+  },
+  "unique_seed": {
+    "sensitive": false,
+    "type": "string",
+    "value": "h6lft43juihfyd9pp0qi3hldl6evepm2su9aztf5mqnyuwzzx48lniw479adc"
+  },
+  "validation": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "agent_pool": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "branch_policy_build_validation": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "build_definition": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "elastic_pool": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "environment": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "git_repository": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "git_repository_branch": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "group": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "project": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_argocd": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_artifactory": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_aws": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_azurecr": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_azuredevops": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_azurerm": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_bitbucket": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_dockerregistry": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_externaltfs": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_gcp_terraform": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_generic": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_generic_git": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_github": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_github_enterprise": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_incomingwebhook": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_jenkins": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_jfrog_artifactory_v2": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_jfrog_distribution_v2": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_jfrog_platform_v2": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_jfrog_xray_v2": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_kubernetes": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_maven": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_nexus": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_npm": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_nuget": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_octopusdeploy": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_runpipeline": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_servicefabric": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_sonarcloud": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_sonarqube": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_ssh": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "team": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "variable_group": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "agent_pool": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "branch_policy_build_validation": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "build_definition": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "elastic_pool": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "environment": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "git_repository": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "git_repository_branch": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "group": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "project": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_argocd": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_artifactory": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_aws": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_azurecr": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_azuredevops": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_azurerm": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_bitbucket": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_dockerregistry": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_externaltfs": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_gcp_terraform": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_generic": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_generic_git": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_github": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_github_enterprise": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_incomingwebhook": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_jenkins": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_jfrog_artifactory_v2": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_jfrog_distribution_v2": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_jfrog_platform_v2": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_jfrog_xray_v2": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_kubernetes": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_maven": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_nexus": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_npm": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_nuget": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_octopusdeploy": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_runpipeline": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_servicefabric": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_sonarcloud": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_sonarqube": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_ssh": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "team": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "variable_group": {
+        "valid_name": true,
+        "valid_name_unique": true
+      }
+    }
+  },
+  "variable_group": {
     "sensitive": false,
     "type": [
       "object",
@@ -358,437 +1589,9 @@
       "min_length": 1,
       "name": "testprefix-testsuffix",
       "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\/\\[\\]:|\u003c\u003e+=;?*,\\x01-\\x1F]*$",
-      "scope": "Organization",
-      "slug": "secgrp"
-    }
-  },
-  "team": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 64,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^_\\.\\.\\.\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
-      "scope": "Organization",
-      "slug": "team"
-    }
-  },
-  "tfvc_file": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 260,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
-      "scope": "Organization",
-      "slug": "tfvcfile"
-    }
-  },
-  "tfvc_label": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 64,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
-      "scope": "Organization",
-      "slug": "tfvclbl"
-    }
-  },
-  "tfvc_repo": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 64,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
-      "scope": "Organization",
-      "slug": "tfvcrepo"
-    }
-  },
-  "tfvc_shelveset": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 64,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
-      "scope": "Organization",
-      "slug": "tfvcss"
-    }
-  },
-  "tfvc_workspace": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 64,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
-      "scope": "Organization",
-      "slug": "tfvcws"
-    }
-  },
-  "unique_seed": {
-    "sensitive": false,
-    "type": "string",
-    "value": "h6lft43juihfyd9pp0qi3hldl6evepm2su9aztf5mqnyuwzzx48lniw479adc"
-  },
-  "validation": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "area_path": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "artifact": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "board_column": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "board_swimlane": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "filed_name": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "git_repo": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "iteration_path": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "organization": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "pipeline_expression": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "pipeline_job": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "pipeline_stage": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "process": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "project": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "security_group": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "team": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "tfvc_file": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "tfvc_label": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "tfvc_repo": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "tfvc_shelveset": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "tfvc_workspace": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ],
-        "work_item_tag": [
-          "object",
-          {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
-          }
-        ]
-      }
-    ],
-    "value": {
-      "area_path": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "artifact": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "board_column": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "board_swimlane": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "filed_name": {
-        "valid_name": false,
-        "valid_name_unique": false
-      },
-      "git_repo": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "iteration_path": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "organization": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "pipeline_expression": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "pipeline_job": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "pipeline_stage": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "process": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "project": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "security_group": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "team": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "tfvc_file": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "tfvc_label": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "tfvc_repo": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "tfvc_shelveset": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "tfvc_workspace": {
-        "valid_name": true,
-        "valid_name_unique": true
-      },
-      "work_item_tag": {
-        "valid_name": true,
-        "valid_name_unique": true
-      }
-    }
-  },
-  "work_item_tag": {
-    "sensitive": false,
-    "type": [
-      "object",
-      {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
-      }
-    ],
-    "value": {
-      "dashes": true,
-      "max_length": 64,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
-      "scope": "Organization",
-      "slug": "witg"
+      "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",
+      "scope": "Project",
+      "slug": "advg"
     }
   }
 }
