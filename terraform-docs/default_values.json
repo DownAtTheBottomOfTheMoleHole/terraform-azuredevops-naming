@@ -1,20 +1,794 @@
 {
-  "unique-seed": {
-    "value": "example-unique-seed-value",
-    "sensitive": false
+  "area_path": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 255,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\/\\:*?\"\u003c\u003e|#$*+\\x00-\\x1F]*$",
+      "scope": "Organization",
+      "slug": "arpth"
+    }
   },
-  "validation": {
-    "value": "example-validation-value",
-    "sensitive": false
+  "artifact": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 256,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[a-z0-9_.-]+$",
+      "scope": "Organization",
+      "slug": "art"
+    }
+  },
+  "board_column": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 256,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\x00-\\x1F]{1,256}$",
+      "scope": "Organization",
+      "slug": "brdcol"
+    }
+  },
+  "board_swimlane": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 256,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\x00-\\x1F]{1,256}$",
+      "scope": "Organization",
+      "slug": "brdswm"
+    }
+  },
+  "field_name": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 128,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^ .,;':~\\/\\*|?\"\u0026%$!+=()\\[\\]{}\u003c\u003e-]*$",
+      "scope": "Organization",
+      "slug": "fld"
+    }
+  },
+  "git_repo": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 64,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
+      "scope": "Organization",
+      "slug": "gitrepo"
+    }
+  },
+  "iteration_path": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 255,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\/\\:*?\"\u003c\u003e|#$*+\\x00-\\x1F]*$",
+      "scope": "Organization",
+      "slug": "itpth"
+    }
   },
   "organization": {
-    "value": "example-organization-value",
-    "description": "Azure DevOps Organization",
-    "sensitive": false
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 50,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",
+      "scope": "AzureDevOps",
+      "slug": "org"
+    }
+  },
+  "pipeline_expression": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 256,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
+      "scope": "Organization",
+      "slug": "pexp"
+    }
+  },
+  "pipeline_job": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 256,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
+      "scope": "Organization",
+      "slug": "pljob"
+    }
+  },
+  "pipeline_stage": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 256,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
+      "scope": "Organization",
+      "slug": "plstg"
+    }
+  },
+  "process": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 256,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\x00-\\x1F]{1,256}$",
+      "scope": "AzureDevOps",
+      "slug": "proc"
+    }
   },
   "project": {
-    "value": "example-project-value",
-    "description": "Azure DevOps Project",
-    "sensitive": false
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 64,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^_\\.\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
+      "scope": "Organization",
+      "slug": "prj"
+    }
+  },
+  "security_group": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 256,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\/\\[\\]:|\u003c\u003e+=;?*,\\x01-\\x1F]*$",
+      "scope": "Organization",
+      "slug": "secgrp"
+    }
+  },
+  "team": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 64,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^_\\.\\.\\.\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
+      "scope": "Organization",
+      "slug": "team"
+    }
+  },
+  "tfvc_file": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 260,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
+      "scope": "Organization",
+      "slug": "tfvcfile"
+    }
+  },
+  "tfvc_label": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 64,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
+      "scope": "Organization",
+      "slug": "tfvclbl"
+    }
+  },
+  "tfvc_repo": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 64,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
+      "scope": "Organization",
+      "slug": "tfvcrepo"
+    }
+  },
+  "tfvc_shelveset": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 64,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
+      "scope": "Organization",
+      "slug": "tfvcss"
+    }
+  },
+  "tfvc_workspace": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 64,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
+      "scope": "Organization",
+      "slug": "tfvcws"
+    }
+  },
+  "unique_seed": {
+    "sensitive": false,
+    "type": "string",
+    "value": "h6lft43juihfyd9pp0qi3hldl6evepm2su9aztf5mqnyuwzzx48lniw479adc"
+  },
+  "validation": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "area_path": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "artifact": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "board_column": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "board_swimlane": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "filed_name": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "git_repo": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "iteration_path": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "organization": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "pipeline_expression": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "pipeline_job": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "pipeline_stage": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "process": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "project": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "security_group": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "team": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "tfvc_file": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "tfvc_label": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "tfvc_repo": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "tfvc_shelveset": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "tfvc_workspace": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "work_item_tag": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "area_path": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "artifact": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "board_column": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "board_swimlane": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "filed_name": {
+        "valid_name": false,
+        "valid_name_unique": false
+      },
+      "git_repo": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "iteration_path": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "organization": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "pipeline_expression": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "pipeline_job": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "pipeline_stage": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "process": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "project": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "security_group": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "team": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "tfvc_file": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "tfvc_label": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "tfvc_repo": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "tfvc_shelveset": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "tfvc_workspace": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "work_item_tag": {
+        "valid_name": true,
+        "valid_name_unique": true
+      }
+    }
+  },
+  "work_item_tag": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "dashes": "bool",
+        "max_length": "number",
+        "min_length": "number",
+        "name": "string",
+        "name_unique": "string",
+        "regex": "string",
+        "scope": "string",
+        "slug": "string"
+      }
+    ],
+    "value": {
+      "dashes": true,
+      "max_length": 64,
+      "min_length": 1,
+      "name": "testprefix-testsuffix",
+      "name_unique": "testprefix-testsuffix-h6lf",
+      "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
+      "scope": "Organization",
+      "slug": "witg"
+    }
   }
 }

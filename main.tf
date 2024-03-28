@@ -6,7 +6,7 @@ resource "random_string" "main" {
   length  = 60
   special = false
   upper   = false
-  numeric = var.unique-include-numbers
+  numeric = var.unique_include_numbers
 }
 
 resource "random_string" "first_letter" {
@@ -23,7 +23,7 @@ resource "random_string" "first_letter" {
 locals {
   ## adding a first letter to guarantee that you always start with a letter
   random_safe_generation = join("", [random_string.first_letter.result, random_string.main.result])
-  random                 = substr(coalesce(var.unique-seed, local.random_safe_generation), 0, var.unique-length)
+  random                 = substr(coalesce(var.unique_seed, local.random_safe_generation), 0, var.unique_length)
   prefix                 = join("-", var.prefix)
   prefix_safe            = lower(join("", var.prefix))
   suffix                 = join("-", var.suffix)
@@ -44,7 +44,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Organization"
-      regex       = "^(?!.*[\\/\\:*?\"<>|#$*+])(?!^(PRN|COM[1-9]|COM10|LPT[1-9]|NUL|CON|AUX)$)[^\\x00-\\x1F]*$"
+      regex       = "^[^\\/\\:*?\"<>|#$*+\\x00-\\x1F]*$"
     }
 
     artifact = {
@@ -55,51 +55,51 @@ locals {
       min_length  = 1
       max_length  = 256
       scope       = "Organization"
-      regex       = "^(?![-_.])(?!.*[-_.]{2})[a-z0-9_.-]+(?<![-_.])$"
+      regex       = "^[a-z0-9_.-]+$"
     }
 
     board_column = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
-      dashes      = true
-      slug        = "brdcol"
-      min_length  = 1
-      max_length  = 64
-      scope       = "Organization"
-      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
-    }
-
-    board_swimlane = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
-      dashes      = true
-      slug        = "brdswm"
-      min_length  = 1
-      max_length  = 64
-      scope       = "Organization"
-      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
-    }
-
-    field_name = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
-      dashes      = true
-      slug        = "fld"
-      min_length  = 1
-      max_length  = 64
-      scope       = "Organization"
-      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
-    }
-
-    git_repo = {
       name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
       name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
       dashes      = true
-      slug        = "gitrepo"
+      slug        = "brdcol"
       min_length  = 1
       max_length  = 256
       scope       = "Organization"
-      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+      regex       = "^[^\\x00-\\x1F]{1,256}$"
+    }
+
+    board_swimlane = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "brdswm"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Organization"
+      regex       = "^[^\\x00-\\x1F]{1,256}$"
+    }
+
+    field_name = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 128)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 128)
+      dashes      = true
+      slug        = "fld"
+      min_length  = 1
+      max_length  = 128
+      scope       = "Organization"
+      regex       = "^[^ .,;':~\\/\\*|?\"&%$!+=()\\[\\]{}<>-]*$"
+    }
+
+    git_repo = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64))
+      dashes      = true
+      slug        = "gitrepo"
+      min_length  = 1
+      max_length  = 64
+      scope       = "Organization"
+      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
     }
 
     iteration_path = {
@@ -110,7 +110,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Organization"
-      regex       = "^(?!.*[\\/\\:*?\"<>|#$*+])(?!^(PRN|COM[1-9]|COM10|LPT[1-9]|NUL|CON|AUX)$)[^\\x00-\\x1F]*$"
+      regex       = "^[^\\/\\:*?\"<>|#$*+\\x00-\\x1F]*$"
     }
 
     organization = {
@@ -132,7 +132,7 @@ locals {
       min_length  = 1
       max_length  = 256
       scope       = "Organization"
-      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
     }
 
     pipeline_job = {
@@ -143,7 +143,7 @@ locals {
       min_length  = 1
       max_length  = 256
       scope       = "Organization"
-      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
     }
 
     pipeline_stage = {
@@ -154,7 +154,7 @@ locals {
       min_length  = 1
       max_length  = 256
       scope       = "Organization"
-      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
     }
 
     process = {
@@ -165,7 +165,7 @@ locals {
       min_length  = 1
       max_length  = 256
       scope       = "AzureDevOps"
-      regex       = "^[^\\x00-\\x1F\\uD800-\\uDFFF]{1,256}$"
+      regex       = "^[^\\x00-\\x1F]{1,256}$"
     }
 
     project = {
@@ -176,7 +176,7 @@ locals {
       min_length  = 1
       max_length  = 64
       scope       = "Organization"
-      regex       = "^(?![_\\.])(?!^(App_Browsers|App_code|App_Data|App_GlobalResources|App_LocalResources|App_Themes|App_WebResources|bin|web\\.config)$)(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+      regex       = "^[^_\\.\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
     }
 
     security_group = {
@@ -187,7 +187,7 @@ locals {
       min_length  = 1
       max_length  = 256
       scope       = "Organization"
-      regex       = "^(?!.*\\$NAMESPACE)([^\\/\\[\\]:|<>+=;?*,\\x01-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+      regex       = "^[^\\/\\[\\]:|<>+=;?*,\\x01-\\x1F]*$"
     }
 
     team = {
@@ -198,9 +198,9 @@ locals {
       min_length  = 1
       max_length  = 64
       scope       = "Organization"
-      regex       = "^(?![_\\.\\.\\.\\.])(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+      regex       = "^[^_\\.\\.\\.\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
     }
-    
+
     tfvc_file = {
       name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 260)
       name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 260)
@@ -209,7 +209,7 @@ locals {
       min_length  = 1
       max_length  = 260
       scope       = "Organization"
-      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
     }
 
     tfvc_label = {
@@ -220,7 +220,7 @@ locals {
       min_length  = 1
       max_length  = 64
       scope       = "Organization"
-      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
     }
 
     tfvc_repo = {
@@ -231,7 +231,7 @@ locals {
       min_length  = 1
       max_length  = 64
       scope       = "Organization"
-      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
     }
 
     tfvc_shelveset = {
@@ -242,7 +242,7 @@ locals {
       min_length  = 1
       max_length  = 64
       scope       = "Organization"
-      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
     }
 
     tfvc_workspace = {
@@ -253,9 +253,8 @@ locals {
       min_length  = 1
       max_length  = 64
       scope       = "Organization"
-      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
     }
-
     work_item_tag = {
       name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
       name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
@@ -264,8 +263,8 @@ locals {
       min_length  = 1
       max_length  = 64
       scope       = "Organization"
-      regex       = "^(?!.*[\\/\\:*?\"<>|;#$*{}+,=\\[\\]])([^\\x00-\\x1F\\uD800-\\uDFFF]*)(?<!\\.)$"
+      regex       = "^[^\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$"
     }
 
-}
+  }
 }

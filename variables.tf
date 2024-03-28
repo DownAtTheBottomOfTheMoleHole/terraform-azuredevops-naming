@@ -16,7 +16,7 @@ variable "suffix" {
   type        = list(string)
 }
 
-variable "unique-seed" {
+variable "unique_seed" {
   default     = ""
   description = "Custom value for the random characters to be used"
   nullable    = false
@@ -24,7 +24,7 @@ variable "unique-seed" {
   type        = string
 }
 
-variable "unique-length" {
+variable "unique_length" {
   default     = 4
   description = "Max length of the uniqueness suffix to be added"
   nullable    = false
@@ -32,7 +32,7 @@ variable "unique-length" {
   type        = number
 }
 
-variable "unique-include-numbers" {
+variable "unique_include_numbers" {
   default     = true
   description = "If you want to include numbers in the unique generation"
   nullable    = false
