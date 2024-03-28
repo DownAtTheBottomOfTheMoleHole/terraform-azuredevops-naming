@@ -65,17 +65,17 @@ these are the pre-commit hooks used for this repo:
   - [About The Project](#about-the-project)
   - [Built With](#built-with)
 - [Terraform](#terraform)
-    - [Requirements](#requirements)
-    - [Consuming terraform-azuredevops-naming](#consuming-terraform-azuredevops-naming)
-    - [Resources](#resources)
-    - [Inputs](#inputs)
-    - [Outputs](#outputs)
-    - [Modules](#modules)
-      - [Automatically generated Terraform variables](#automatically-generated-terraform-variables)
-        - [Terraform versions](#terraform-versions)
-        - [Installing Tfupdate](#installing-tfupdate)
-        - [Terraform version](#terraform-version)
-        - [Random version](#random-version)
+  - [Requirements](#requirements)
+  - [Consuming terraform-azuredevops-naming](#consuming-terraform-azuredevops-naming)
+  - [Resources](#resources)
+  - [Inputs](#inputs)
+  - [Outputs](#outputs)
+  - [Modules](#modules)
+    - [Automatically generated Terraform variables](#automatically-generated-terraform-variables)
+      - [Terraform versions](#terraform-versions)
+      - [Installing Tfupdate](#installing-tfupdate)
+      - [Terraform version](#terraform-version)
+      - [Random version](#random-version)
   - [Roadmap](#roadmap)
   - [Contributing](#contributing)
     - [Contributing Prerequisites](#contributing-prerequisites)
@@ -160,7 +160,7 @@ The below documentation was generated via Terraform docs using pre-commit
 ```hcl
   module "terraform-azuredevops-naming" {
     	 source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-    	 version  = "1.0.2"
+    	 version  = "1.1.0"
     
 	 # Optional variables
     	 prefix  = []

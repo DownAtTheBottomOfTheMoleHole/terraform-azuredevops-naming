@@ -36,7 +36,7 @@ The below documentation was generated via Terraform docs using pre-commit
 ```hcl
   module "terraform-azuredevops-naming" {
     	 source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-    	 version  = "1.0.2"
+    	 version  = "1.1.0"
     
 	 # Optional variables
     	 prefix  = []
