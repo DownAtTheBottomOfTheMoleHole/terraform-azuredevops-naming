@@ -64,10 +64,23 @@ these are the pre-commit hooks used for this repo:
   - [Table of Contents](#table-of-contents)
   - [About The Project](#about-the-project)
   - [Built With](#built-with)
+- [Terraform](#terraform)
+    - [Requirements](#requirements)
+    - [Consuming terraform-azuredevops-naming](#consuming-terraform-azuredevops-naming)
+    - [Resources](#resources)
+    - [Inputs](#inputs)
+    - [Outputs](#outputs)
+    - [Modules](#modules)
+      - [Automatically generated Terraform variables](#automatically-generated-terraform-variables)
+        - [Terraform versions](#terraform-versions)
+        - [Installing Tfupdate](#installing-tfupdate)
+        - [Terraform version](#terraform-version)
+        - [Random version](#random-version)
   - [Roadmap](#roadmap)
   - [Contributing](#contributing)
     - [Contributing Prerequisites](#contributing-prerequisites)
   - [License](#license)
+  - [This module is licensed under the MIT locese which can be found here: LICENSE.md](#this-module-is-licensed-under-the-mit-locese-which-can-be-found-here-licensemd)
   - [Contact](#contact)
 
 <!-- ABOUT THE PROJECT -->
@@ -317,8 +330,9 @@ tfupdate provider random . --version "$(tfupdate release latest hashicorp/random
 
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
+- [x] Support majority of Azure DevOps resources
+- [x] Test validation rules
+- [x] Include output examples in docs
 - [ ] Feature 3
   - [ ] Nested Feature
 
