@@ -64,10 +64,23 @@ these are the pre-commit hooks used for this repo:
   - [Table of Contents](#table-of-contents)
   - [About The Project](#about-the-project)
   - [Built With](#built-with)
+- [Terraform](#terraform)
+    - [Requirements](#requirements)
+    - [Consuming terraform-azuredevops-naming](#consuming-terraform-azuredevops-naming)
+    - [Resources](#resources)
+    - [Inputs](#inputs)
+    - [Outputs](#outputs)
+    - [Modules](#modules)
+      - [Automatically generated Terraform variables](#automatically-generated-terraform-variables)
+        - [Terraform versions](#terraform-versions)
+        - [Installing Tfupdate](#installing-tfupdate)
+        - [Terraform version](#terraform-version)
+        - [Random version](#random-version)
   - [Roadmap](#roadmap)
   - [Contributing](#contributing)
     - [Contributing Prerequisites](#contributing-prerequisites)
   - [License](#license)
+  - [This module is licensed under the MIT locese which can be found here: LICENSE.md](#this-module-is-licensed-under-the-mit-locese-which-can-be-found-here-licensemd)
   - [Contact](#contact)
 
 <!-- ABOUT THE PROJECT -->
@@ -152,9 +165,9 @@ The below documentation was generated via Terraform docs using pre-commit
 	 # Optional variables
     	 prefix  = []
     	 suffix  = []
-    	 unique-include-numbers  = true
-    	 unique-length  = 4
-    	 unique-seed  = ""
+    	 unique_include_numbers  = true
+    	 unique_length  = 4
+    	 unique_seed  = ""
   }
   ```
 
@@ -187,9 +200,9 @@ The below documentation was generated via Terraform docs using pre-commit
 |------|-------------|------|---------|:--------:|
 | <a name="input_prefix"></a> [prefix](#input\_prefix) | It is not recommended that you use prefix by azure you should be using a suffix for your resources. | `list(string)` | `[]` | no |
 | <a name="input_suffix"></a> [suffix](#input\_suffix) | It is recommended that you specify a suffix for consistency. please use only lowercase characters when possible | `list(string)` | `[]` | no |
-| <a name="input_unique-include-numbers"></a> [unique-include-numbers](#input\_unique-include-numbers) | If you want to include numbers in the unique generation | `bool` | `true` | no |
-| <a name="input_unique-length"></a> [unique-length](#input\_unique-length) | Max length of the uniqueness suffix to be added | `number` | `4` | no |
-| <a name="input_unique-seed"></a> [unique-seed](#input\_unique-seed) | Custom value for the random characters to be used | `string` | `""` | no |
+| <a name="input_unique_include_numbers"></a> [unique\_include\_numbers](#input\_unique\_include\_numbers) | If you want to include numbers in the unique generation | `bool` | `true` | no |
+| <a name="input_unique_length"></a> [unique\_length](#input\_unique\_length) | Max length of the uniqueness suffix to be added | `number` | `4` | no |
+| <a name="input_unique_seed"></a> [unique\_seed](#input\_unique\_seed) | Custom value for the random characters to be used | `string` | `""` | no |
 
 ---
 
@@ -201,31 +214,31 @@ The below documentation was generated via Terraform docs using pre-commit
 
 ### Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_area_path"></a> [area\_path](#output\_area\_path) | Azure DevOps Area Path |
-| <a name="output_artifact"></a> [artifact](#output\_artifact) | Azure DevOps Artifact |
-| <a name="output_board_column"></a> [board\_column](#output\_board\_column) | Azure DevOps Board Column |
-| <a name="output_board_swimlane"></a> [board\_swimlane](#output\_board\_swimlane) | Azure DevOps Board Swimlane |
-| <a name="output_field_name"></a> [field\_name](#output\_field\_name) | Azure DevOps Field Name |
-| <a name="output_git_repo"></a> [git\_repo](#output\_git\_repo) | Azure DevOps Git Repository |
-| <a name="output_iteration_path"></a> [iteration\_path](#output\_iteration\_path) | Azure DevOps Iteration Path |
-| <a name="output_organization"></a> [organization](#output\_organization) | Azure DevOps Organization |
-| <a name="output_pipeline_expression"></a> [pipeline\_expression](#output\_pipeline\_expression) | Azure DevOps Pipeline Expression |
-| <a name="output_pipeline_job"></a> [pipeline\_job](#output\_pipeline\_job) | Azure DevOps Pipeline job Name |
-| <a name="output_pipeline_stage"></a> [pipeline\_stage](#output\_pipeline\_stage) | Azure DevOps Pipeline atage Name |
-| <a name="output_process"></a> [process](#output\_process) | Azure DevOps Process |
-| <a name="output_project"></a> [project](#output\_project) | Azure DevOps Project |
-| <a name="output_security_group"></a> [security\_group](#output\_security\_group) | Azure Security Group |
-| <a name="output_team"></a> [team](#output\_team) | Azure DevOps Team |
-| <a name="output_tfvc_file"></a> [tfvc\_file](#output\_tfvc\_file) | Azure DevOps TFVC File |
-| <a name="output_tfvc_label"></a> [tfvc\_label](#output\_tfvc\_label) | Azure DevOps TFVC Label |
-| <a name="output_tfvc_repo"></a> [tfvc\_repo](#output\_tfvc\_repo) | Azure DevOps TFVC repo |
-| <a name="output_tfvc_shelveset"></a> [tfvc\_shelveset](#output\_tfvc\_shelveset) | Azure DevOps TFVC Shelveset |
-| <a name="output_tfvc_workspace"></a> [tfvc\_workspace](#output\_tfvc\_workspace) | Azure DevOps TFVC Workspace |
-| <a name="output_unique-seed"></a> [unique-seed](#output\_unique-seed) | Custom value for the random characters to be used |
-| <a name="output_validation"></a> [validation](#output\_validation) | Validation rules applied |
-| <a name="output_work_item_tag"></a> [work\_item\_tag](#output\_work\_item\_tag) | Azure DevOps Work Item Tag |
+| Name | Description | Value | Sensitive |
+|------|-------------|-------|:---------:|
+| <a name="output_area_path"></a> [area\_path](#output\_area\_path) | Azure DevOps Area Path | <pre>{<br>  "dashes": true,<br>  "max_length": 255,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\/\\:*?\"\u003c\u003e|#$*+\\x00-\\x1F]*$",<br>  "scope": "Organization",<br>  "slug": "arpth"<br>}</pre> | no |
+| <a name="output_artifact"></a> [artifact](#output\_artifact) | Azure DevOps Artifact | <pre>{<br>  "dashes": true,<br>  "max_length": 256,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[a-z0-9_.-]+$",<br>  "scope": "Organization",<br>  "slug": "art"<br>}</pre> | no |
+| <a name="output_board_column"></a> [board\_column](#output\_board\_column) | Azure DevOps Board Column | <pre>{<br>  "dashes": true,<br>  "max_length": 256,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\x00-\\x1F]{1,256}$",<br>  "scope": "Organization",<br>  "slug": "brdcol"<br>}</pre> | no |
+| <a name="output_board_swimlane"></a> [board\_swimlane](#output\_board\_swimlane) | Azure DevOps Board Swimlane | <pre>{<br>  "dashes": true,<br>  "max_length": 256,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\x00-\\x1F]{1,256}$",<br>  "scope": "Organization",<br>  "slug": "brdswm"<br>}</pre> | no |
+| <a name="output_field_name"></a> [field\_name](#output\_field\_name) | Azure DevOps Field Name | <pre>{<br>  "dashes": true,<br>  "max_length": 128,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^ .,;':~\\/\\*|?\"\u0026%$!+=()\\[\\]{}\u003c\u003e-]*$",<br>  "scope": "Organization",<br>  "slug": "fld"<br>}</pre> | no |
+| <a name="output_git_repo"></a> [git\_repo](#output\_git\_repo) | Azure DevOps Git Repository | <pre>{<br>  "dashes": true,<br>  "max_length": 64,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",<br>  "scope": "Organization",<br>  "slug": "gitrepo"<br>}</pre> | no |
+| <a name="output_iteration_path"></a> [iteration\_path](#output\_iteration\_path) | Azure DevOps Iteration Path | <pre>{<br>  "dashes": true,<br>  "max_length": 255,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\/\\:*?\"\u003c\u003e|#$*+\\x00-\\x1F]*$",<br>  "scope": "Organization",<br>  "slug": "itpth"<br>}</pre> | no |
+| <a name="output_organization"></a> [organization](#output\_organization) | Azure DevOps Organization | <pre>{<br>  "dashes": true,<br>  "max_length": 50,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[a-z0-9]([-a-z0-9]*[a-z0-9])?$",<br>  "scope": "AzureDevOps",<br>  "slug": "org"<br>}</pre> | no |
+| <a name="output_pipeline_expression"></a> [pipeline\_expression](#output\_pipeline\_expression) | Azure DevOps Pipeline Expression | <pre>{<br>  "dashes": true,<br>  "max_length": 256,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",<br>  "scope": "Organization",<br>  "slug": "pexp"<br>}</pre> | no |
+| <a name="output_pipeline_job"></a> [pipeline\_job](#output\_pipeline\_job) | Azure DevOps Pipeline job Name | <pre>{<br>  "dashes": true,<br>  "max_length": 256,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",<br>  "scope": "Organization",<br>  "slug": "pljob"<br>}</pre> | no |
+| <a name="output_pipeline_stage"></a> [pipeline\_stage](#output\_pipeline\_stage) | Azure DevOps Pipeline atage Name | <pre>{<br>  "dashes": true,<br>  "max_length": 256,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",<br>  "scope": "Organization",<br>  "slug": "plstg"<br>}</pre> | no |
+| <a name="output_process"></a> [process](#output\_process) | Azure DevOps Process | <pre>{<br>  "dashes": true,<br>  "max_length": 256,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\x00-\\x1F]{1,256}$",<br>  "scope": "AzureDevOps",<br>  "slug": "proc"<br>}</pre> | no |
+| <a name="output_project"></a> [project](#output\_project) | Azure DevOps Project | <pre>{<br>  "dashes": true,<br>  "max_length": 64,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^_\\.\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",<br>  "scope": "Organization",<br>  "slug": "prj"<br>}</pre> | no |
+| <a name="output_security_group"></a> [security\_group](#output\_security\_group) | Azure Security Group | <pre>{<br>  "dashes": true,<br>  "max_length": 256,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\/\\[\\]:|\u003c\u003e+=;?*,\\x01-\\x1F]*$",<br>  "scope": "Organization",<br>  "slug": "secgrp"<br>}</pre> | no |
+| <a name="output_team"></a> [team](#output\_team) | Azure DevOps Team | <pre>{<br>  "dashes": true,<br>  "max_length": 64,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^_\\.\\.\\.\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",<br>  "scope": "Organization",<br>  "slug": "team"<br>}</pre> | no |
+| <a name="output_tfvc_file"></a> [tfvc\_file](#output\_tfvc\_file) | Azure DevOps TFVC File | <pre>{<br>  "dashes": true,<br>  "max_length": 260,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",<br>  "scope": "Organization",<br>  "slug": "tfvcfile"<br>}</pre> | no |
+| <a name="output_tfvc_label"></a> [tfvc\_label](#output\_tfvc\_label) | Azure DevOps TFVC Label | <pre>{<br>  "dashes": true,<br>  "max_length": 64,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",<br>  "scope": "Organization",<br>  "slug": "tfvclbl"<br>}</pre> | no |
+| <a name="output_tfvc_repo"></a> [tfvc\_repo](#output\_tfvc\_repo) | Azure DevOps TFVC repo | <pre>{<br>  "dashes": true,<br>  "max_length": 64,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",<br>  "scope": "Organization",<br>  "slug": "tfvcrepo"<br>}</pre> | no |
+| <a name="output_tfvc_shelveset"></a> [tfvc\_shelveset](#output\_tfvc\_shelveset) | Azure DevOps TFVC Shelveset | <pre>{<br>  "dashes": true,<br>  "max_length": 64,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",<br>  "scope": "Organization",<br>  "slug": "tfvcss"<br>}</pre> | no |
+| <a name="output_tfvc_workspace"></a> [tfvc\_workspace](#output\_tfvc\_workspace) | Azure DevOps TFVC Workspace | <pre>{<br>  "dashes": true,<br>  "max_length": 64,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",<br>  "scope": "Organization",<br>  "slug": "tfvcws"<br>}</pre> | no |
+| <a name="output_unique_seed"></a> [unique\_seed](#output\_unique\_seed) | Custom value for the random characters to be used | `"h6lft43juihfyd9pp0qi3hldl6evepm2su9aztf5mqnyuwzzx48lniw479adc"` | no |
+| <a name="output_validation"></a> [validation](#output\_validation) | Validation rules applied | <pre>{<br>  "area_path": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "artifact": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "board_column": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "board_swimlane": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "filed_name": {<br>    "valid_name": false,<br>    "valid_name_unique": false<br>  },<br>  "git_repo": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "iteration_path": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "organization": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "pipeline_expression": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "pipeline_job": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "pipeline_stage": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "process": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "project": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "security_group": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "team": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "tfvc_file": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "tfvc_label": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "tfvc_repo": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "tfvc_shelveset": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "tfvc_workspace": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  },<br>  "work_item_tag": {<br>    "valid_name": true,<br>    "valid_name_unique": true<br>  }<br>}</pre> | no |
+| <a name="output_work_item_tag"></a> [work\_item\_tag](#output\_work\_item\_tag) | Azure DevOps Work Item Tag | <pre>{<br>  "dashes": true,<br>  "max_length": 64,<br>  "min_length": 1,<br>  "name": "testprefix-testsuffix",<br>  "name_unique": "testprefix-testsuffix-h6lf",<br>  "regex": "^[^\\/\\:*?\"\u003c\u003e|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",<br>  "scope": "Organization",<br>  "slug": "witg"<br>}</pre> | no |
 
 ---
 
@@ -317,8 +330,9 @@ tfupdate provider random . --version "$(tfupdate release latest hashicorp/random
 
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
+- [x] Support majority of Azure DevOps resources
+- [x] Test validation rules
+- [x] Include output examples in docs
 - [ ] Feature 3
   - [ ] Nested Feature
 

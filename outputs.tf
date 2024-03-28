@@ -25,7 +25,7 @@ output "field_name" {
 
 output "git_repo" {
   description = "Azure DevOps Git Repository"
-  value       = local.azdo.git_repository
+  value       = local.azdo.git_repo
 }
 
 output "iteration_path" {
@@ -98,9 +98,9 @@ output "tfvc_workspace" {
   value       = local.azdo.tfvc_workspace
 }
 
-output "unique-seed" {
+output "unique_seed" {
   description = "Custom value for the random characters to be used"
-  value       = coalesce(var.unique-seed, local.random_safe_generation)
+  value       = coalesce(var.unique_seed, local.random_safe_generation)
 }
 
 output "validation" {
