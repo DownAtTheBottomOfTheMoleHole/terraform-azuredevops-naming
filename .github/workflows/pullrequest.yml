@@ -193,7 +193,6 @@ jobs:
           commit_user_name: DBMH-code-cleaner
           commit_user_email: code.cleaner@dbmh.com
 
-  
   ###################################################################
   ###################################################################
   #######              TERRAFORM DOCUMENTATION                #######
