@@ -31,6 +31,30 @@ locals {
   suffix_safe            = lower(join("", var.suffix))
   suffix_unique_safe     = lower(join("", concat(var.suffix, [local.random])))
 
+  unique_environment_tags = distinct(var.environment_tags)
+  unique_work_items       = distinct(var.work_items)
+
+  environment_mapping = {
+    dev = "development"
+    stg = "staging"
+    prd = "production"
+    tst = "testing"
+    uat = "user-acceptance-testing"
+    per = "performance-testing"
+    int = "integration-testing"
+    sys = "system-testing"
+    reg = "regression-testing"
+    acc = "accessibility-testing"
+    com = "compliance-testing"
+    aud = "audit-testing"
+    pen = "penetration-testing"
+    fet = "feature"
+    hot = "hotfix"
+
+  }
+
+  translated_environment_tags = [for tag in local.unique_environment_tags : lookup(local.environment_mapping, tag, tag)]
+
   ## Names based on the recommendations of
   ## https://learn.microsoft.com/en-us/azure/devops/organizations/settings/naming-restrictions?view=azure-devops
 
@@ -92,17 +116,99 @@ locals {
       regex       = "^[^<,>,%,&,,:,\\,?,/,*,|,\",#,,$,+,.,']*$"
     }
 
-    environment = {
-      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 240)
-      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 240)
+    environment = { for item in local.translated_environment_tags : item => {
+      name        = substr(join("-", compact([local.prefix, "", item, "apply", local.suffix])), 0, 240)
+      name_unique = substr(join("-", compact([local.prefix, "", item, "apply", local.suffix_unique])), 0, 240)
       dashes      = true
-      slug        = "env"
+      slug        = "envapp"
       min_length  = 1
       max_length  = 240
       scope       = "Project"
       regex       = "^[^/\\:*?\"<>|]*$"
-    }
+    } }
 
+
+
+    environment_apply = { for item in local.translated_environment_tags : item => {
+      name        = substr(join("-", compact([local.prefix, "", item, "apply", local.suffix])), 0, 240)
+      name_unique = substr(join("-", compact([local.prefix, "", item, "apply", local.suffix_unique])), 0, 240)
+      dashes      = true
+      slug        = "envapp"
+      min_length  = 1
+      max_length  = 240
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|]*$"
+    } }
+
+    environment_apply_basic = { for item in local.translated_environment_tags : item => {
+      name        = substr(join("-", compact([item, "apply"])), 0, 240)
+      name_unique = substr(join("-", compact([item, "apply", local.suffix_unique])), 0, 240)
+      dashes      = true
+      slug        = "envappb"
+      min_length  = 1
+      max_length  = 240
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|]*$"
+    } }
+
+    environment_basic = { for item in local.translated_environment_tags : item => {
+      name        = substr(item, 0, 240)
+      name_unique = substr(join("-", compact([item, local.suffix_unique])), 0, 240)
+      dashes      = true
+      slug        = "envbas"
+      min_length  = 1
+      max_length  = 240
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|]*$"
+    } }
+
+    environment_plan = { for item in local.translated_environment_tags : item => {
+      name        = substr(join("-", compact([local.prefix, "", item, "plan", local.suffix])), 0, 240)
+      name_unique = substr(join("-", compact([local.prefix, "", item, "plan", local.suffix_unique])), 0, 240)
+      dashes      = true
+      slug        = "envpln"
+      min_length  = 1
+      max_length  = 240
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|]*$"
+    } }
+
+    environment_plan_basic = { for item in local.translated_environment_tags : item => {
+      name        = substr(join("-", compact([item, "plan"])), 0, 240)
+      name_unique = substr(join("-", compact([item, "plan", local.suffix_unique])), 0, 240)
+      dashes      = true
+      slug        = "envplnb"
+      min_length  = 1
+      max_length  = 240
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|]*$"
+    } }
+
+    environment_work_item = { for tag in local.translated_environment_tags : tag => {
+      for item in local.unique_work_items : item => {
+        name        = substr(join("-", compact([local.prefix, "", tag, item, local.suffix])), 0, 240)
+        name_unique = substr(join("-", compact([local.prefix, "", tag, item, local.suffix_unique])), 0, 240)
+        dashes      = true
+        slug        = "envwi"
+        min_length  = 1
+        max_length  = 240
+        scope       = "Project"
+        regex       = "^[^/\\:*?\"<>|]*$"
+      }
+    } }
+
+    environment_work_item_basic = { for tag in local.translated_environment_tags : tag => {
+      for item in local.unique_work_items : item => {
+        name        = substr(join("-", compact([tag, item])), 0, 240)
+        name_unique = substr(join("-", compact([tag, item, local.suffix_unique])), 0, 240)
+        dashes      = true
+        slug        = "envwib"
+        min_length  = 1
+        max_length  = 240
+        scope       = "Project"
+        regex       = "^[^/\\:*?\"<>|]*$"
+      }
+    } }
 
     git_repository = {
       name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64))
@@ -125,6 +231,201 @@ locals {
       scope       = "Repository"
       regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     }
+
+    git_repository_bug_branch_dash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["bug-", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["bug-", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = false
+      slug        = "gitbugbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
+
+    git_repository_bug_branch_slash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["bug/", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["bug/", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = true
+      slug        = "gitbugbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
+
+
+    git_repository_dev_branch_dash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["dev-", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["dev-", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = false
+      slug        = "gitdevbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
+
+    git_repository_dev_branch_slash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["dev/", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["dev/", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = true
+      slug        = "gitdevbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
+
+    git_repository_development_branch_dash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["development-", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["development-", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = false
+      slug        = "gitdevbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
+
+    git_repository_development_branch_slash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["development/", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["development/", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = true
+      slug        = "gitdevbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
+
+    git_repository_feature_branch_dash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["feature-", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["feature-", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = false
+      slug        = "gitfetbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
+
+    git_repository_feature_branch_slash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["feature/", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["feature/", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = true
+      slug        = "gitfetbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
+
+
+    git_repository_fix_branch_dash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["fix-", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["fix-", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = false
+      slug        = "gitfixbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
+
+    git_repository_fix_branch_slash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["fix/", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["fix/", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = true
+      slug        = "gitfixbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
+
+
+    git_repository_hotfix_branch_dash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["hotfix-", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["hotfix-", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = false
+      slug        = "githotbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
+
+    git_repository_hotfix_branch_slash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["hotfix/", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["hotfix/", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = true
+      slug        = "githotbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
+
+    git_repository_release_branch_dash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["release-", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["release-", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = false
+      slug        = "gitrelbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
+
+    git_repository_release_branch_slash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["release/", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["release/", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = true
+      slug        = "gitrelbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
+
+    git_repository_support_branch_dash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["support-", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["support-", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = false
+      slug        = "gitsupbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
+
+    git_repository_support_branch_slash = { for item in local.unique_work_items : item => {
+      name        = lower(substr(join("", ["support/", join("-", compact([item, local.prefix, "", local.suffix]))]), 0, 255))
+      name_unique = lower(substr(join("", ["support/", join("-", compact([item, local.prefix, "", local.suffix_unique]))]), 0, 255))
+      dashes      = true
+      slashes     = true
+      slug        = "gitsupbr"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Repository"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+    } }
 
     group = {
       name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))

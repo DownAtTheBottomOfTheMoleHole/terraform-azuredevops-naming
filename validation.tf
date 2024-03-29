@@ -25,9 +25,56 @@ locals {
       valid_name_unique = length(regexall(local.azdo.elastic_pool.regex, local.azdo.elastic_pool.name_unique)) > 0
     }
 
-    environment = {
-      valid_name        = length(regexall(local.azdo.environment.regex, local.azdo.environment.name)) > 0 && length(local.azdo.environment.name) > local.azdo.environment.min_length
-      valid_name_unique = length(regexall(local.azdo.environment.regex, local.azdo.environment.name_unique)) > 0
+    environment = { for tag in local.translated_environment_tags : tag => {
+      valid_name        = length(regexall(local.azdo.environment[tag].regex, local.azdo.environment[tag].name)) > 0 && length(local.azdo.environment[tag].name) > local.azdo.environment[tag].min_length
+      valid_name_unique = length(regexall(local.azdo.environment[tag].regex, local.azdo.environment[tag].name_unique)) > 0
+    } }
+
+    environment_apply = { for tag in local.translated_environment_tags : tag => {
+      valid_name        = length(regexall(local.azdo.environment_apply[tag].regex, local.azdo.environment_apply[tag].name)) > 0 && length(local.azdo.environment_apply[tag].name) > local.azdo.environment_apply[tag].min_length
+      valid_name_unique = length(regexall(local.azdo.environment_apply[tag].regex, local.azdo.environment_apply[tag].name_unique)) > 0
+    } }
+
+    environment_apply_basic = { for tag in local.translated_environment_tags : tag => {
+      valid_name        = length(regexall(local.azdo.environment_apply_basic[tag].regex, local.azdo.environment_apply_basic[tag].name)) > 0 && length(local.azdo.environment_apply_basic[tag].name) > local.azdo.environment_apply_basic[tag].min_length
+      valid_name_unique = length(regexall(local.azdo.environment_apply_basic[tag].regex, local.azdo.environment_apply_basic[tag].name_unique)) > 0
+    } }
+
+    environment_basic = { for tag in local.translated_environment_tags : tag => {
+      valid_name        = length(regexall(local.azdo.environment_basic[tag].regex, local.azdo.environment_basic[tag].name)) > 0 && length(local.azdo.environment_basic[tag].name) > local.azdo.environment_basic[tag].min_length
+      valid_name_unique = length(regexall(local.azdo.environment_basic[tag].regex, local.azdo.environment_basic[tag].name_unique)) > 0
+    } }
+
+    environment_plan = { for tag in local.translated_environment_tags : tag => {
+      valid_name        = length(regexall(local.azdo.environment_plan[tag].regex, local.azdo.environment_plan[tag].name)) > 0 && length(local.azdo.environment_plan[tag].name) > local.azdo.environment_plan[tag].min_length
+      valid_name_unique = length(regexall(local.azdo.environment_plan[tag].regex, local.azdo.environment_plan[tag].name_unique)) > 0
+    } }
+
+    environment_plan_basic = { for tag in local.translated_environment_tags : tag => {
+      valid_name        = length(regexall(local.azdo.environment_plan_basic[tag].regex, local.azdo.environment_plan_basic[tag].name)) > 0 && length(local.azdo.environment_plan_basic[tag].name) > local.azdo.environment_plan_basic[tag].min_length
+      valid_name_unique = length(regexall(local.azdo.environment_plan_basic[tag].regex, local.azdo.environment_plan_basic[tag].name_unique)) > 0
+    } }
+
+    environment_work_item = { for tag in local.translated_environment_tags : tag => {
+      for item in local.unique_work_items : item => {
+        name        = substr(join("-", compact([local.prefix, "", tag, item, local.suffix])), 0, 240)
+        name_unique = substr(join("-", compact([local.prefix, "", tag, item, local.suffix_unique])), 0, 240)
+        dashes      = true
+        slug        = "envwi"
+        min_length  = 1
+        max_length  = 240
+        scope       = "Project"
+        regex       = "^[^/\\:*?\"<>|]*$"
+      }
+    } }
+
+    environment_work_item_basic = {
+      for tag in local.translated_environment_tags : tag => {
+        for item in local.unique_work_items : item => {
+          valid_name        = length(regexall(try(local.azdo.environment_work_item_basic[tag][item].regex, local.azdo.environment_work_item_basic.regex), try(local.azdo.environment_work_item_basic[tag][item].name, local.azdo.environment_work_item_basic.name))) > 0 && length(try(local.azdo.environment_work_item_basic[tag][item].name, local.azdo.environment_work_item_basic.name)) > try(local.azdo.environment_work_item_basic[tag][item].min_length, local.azdo.environment_work_item_basic.min_length)
+          valid_name_unique = length(regexall(try(local.azdo.environment_work_item_basic[tag][item].regex, local.azdo.environment_work_item_basic.regex), try(local.azdo.environment_work_item_basic[tag][item].name_unique, local.azdo.environment_work_item_basic.name_unique))) > 0
+        }
+      }
     }
 
     git_repository = {
@@ -39,6 +86,86 @@ locals {
       valid_name        = length(regexall(local.azdo.git_repository_branch.regex, local.azdo.git_repository_branch.name)) > 0 && length(local.azdo.git_repository_branch.name) > local.azdo.git_repository_branch.min_length
       valid_name_unique = length(regexall(local.azdo.git_repository_branch.regex, local.azdo.git_repository_branch.name_unique)) > 0
     }
+
+    git_repository_bug_branch_dash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_bug_branch_dash[item].regex, local.azdo.git_repository_bug_branch_dash[item].name)) > 0 && length(local.azdo.git_repository_bug_branch_dash[item].name) > local.azdo.git_repository_bug_branch_dash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_bug_branch_dash[item].regex, local.azdo.git_repository_bug_branch_dash[item].name_unique)) > 0
+    } }
+
+    git_repository_bug_branch_slash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_bug_branch_slash[item].regex, local.azdo.git_repository_bug_branch_slash[item].name)) > 0 && length(local.azdo.git_repository_bug_branch_slash[item].name) > local.azdo.git_repository_bug_branch_slash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_bug_branch_slash[item].regex, local.azdo.git_repository_bug_branch_slash[item].name_unique)) > 0
+    } }
+
+    git_repository_dev_branch_dash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_dev_branch_dash[item].regex, local.azdo.git_repository_dev_branch_dash[item].name)) > 0 && length(local.azdo.git_repository_dev_branch_dash[item].name) > local.azdo.git_repository_dev_branch_dash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_dev_branch_dash[item].regex, local.azdo.git_repository_dev_branch_dash[item].name_unique)) > 0
+    } }
+
+    git_repository_dev_branch_slash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_dev_branch_slash[item].regex, local.azdo.git_repository_dev_branch_slash[item].name)) > 0 && length(local.azdo.git_repository_dev_branch_slash[item].name) > local.azdo.git_repository_dev_branch_slash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_dev_branch_slash[item].regex, local.azdo.git_repository_dev_branch_slash[item].name_unique)) > 0
+    } }
+
+    git_repository_development_branch_dash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_development_branch_dash[item].regex, local.azdo.git_repository_development_branch_dash[item].name)) > 0 && length(local.azdo.git_repository_development_branch_dash[item].name) > local.azdo.git_repository_development_branch_dash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_development_branch_dash[item].regex, local.azdo.git_repository_development_branch_dash[item].name_unique)) > 0
+    } }
+
+    git_repository_development_branch_slash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_development_branch_slash[item].regex, local.azdo.git_repository_development_branch_slash[item].name)) > 0 && length(local.azdo.git_repository_development_branch_slash[item].name) > local.azdo.git_repository_development_branch_slash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_development_branch_slash[item].regex, local.azdo.git_repository_development_branch_slash[item].name_unique)) > 0
+    } }
+
+    git_repository_feature_branch_dash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_feature_branch_dash[item].regex, local.azdo.git_repository_feature_branch_dash[item].name)) > 0 && length(local.azdo.git_repository_feature_branch_dash[item].name) > local.azdo.git_repository_feature_branch_dash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_feature_branch_dash[item].regex, local.azdo.git_repository_feature_branch_dash[item].name_unique)) > 0
+    } }
+
+    git_repository_feature_branch_slash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_feature_branch_slash[item].regex, local.azdo.git_repository_feature_branch_slash[item].name)) > 0 && length(local.azdo.git_repository_feature_branch_slash[item].name) > local.azdo.git_repository_feature_branch_slash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_feature_branch_slash[item].regex, local.azdo.git_repository_feature_branch_slash[item].name_unique)) > 0
+    } }
+
+    git_repository_fix_branch_dash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_fix_branch_dash[item].regex, local.azdo.git_repository_fix_branch_dash[item].name)) > 0 && length(local.azdo.git_repository_fix_branch_dash[item].name) > local.azdo.git_repository_fix_branch_dash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_fix_branch_dash[item].regex, local.azdo.git_repository_fix_branch_dash[item].name_unique)) > 0
+    } }
+
+    git_repository_fix_branch_slash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_fix_branch_slash[item].regex, local.azdo.git_repository_fix_branch_slash[item].name)) > 0 && length(local.azdo.git_repository_fix_branch_slash[item].name) > local.azdo.git_repository_fix_branch_slash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_fix_branch_slash[item].regex, local.azdo.git_repository_fix_branch_slash[item].name_unique)) > 0
+    } }
+
+    git_repository_hotfix_branch_dash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_hotfix_branch_dash[item].regex, local.azdo.git_repository_hotfix_branch_dash[item].name)) > 0 && length(local.azdo.git_repository_hotfix_branch_dash[item].name) > local.azdo.git_repository_hotfix_branch_dash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_hotfix_branch_dash[item].regex, local.azdo.git_repository_hotfix_branch_dash[item].name_unique)) > 0
+    } }
+
+    git_repository_hotfix_branch_slash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_hotfix_branch_slash[item].regex, local.azdo.git_repository_hotfix_branch_slash[item].name)) > 0 && length(local.azdo.git_repository_hotfix_branch_slash[item].name) > local.azdo.git_repository_hotfix_branch_slash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_hotfix_branch_slash[item].regex, local.azdo.git_repository_hotfix_branch_slash[item].name_unique)) > 0
+    } }
+
+    git_repository_release_branch_dash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_release_branch_dash[item].regex, local.azdo.git_repository_release_branch_dash[item].name)) > 0 && length(local.azdo.git_repository_release_branch_dash[item].name) > local.azdo.git_repository_release_branch_dash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_release_branch_dash[item].regex, local.azdo.git_repository_release_branch_dash[item].name_unique)) > 0
+    } }
+
+    git_repository_release_branch_slash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_release_branch_slash[item].regex, local.azdo.git_repository_release_branch_slash[item].name)) > 0 && length(local.azdo.git_repository_release_branch_slash[item].name) > local.azdo.git_repository_release_branch_slash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_release_branch_slash[item].regex, local.azdo.git_repository_release_branch_slash[item].name_unique)) > 0
+    } }
+
+    git_repository_support_branch_dash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_support_branch_dash[item].regex, local.azdo.git_repository_support_branch_dash[item].name)) > 0 && length(local.azdo.git_repository_support_branch_dash[item].name) > local.azdo.git_repository_support_branch_dash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_support_branch_dash[item].regex, local.azdo.git_repository_support_branch_dash[item].name_unique)) > 0
+    } }
+
+    git_repository_support_branch_slash = { for item in local.unique_work_items : item => {
+      valid_name        = length(regexall(local.azdo.git_repository_support_branch_slash[item].regex, local.azdo.git_repository_support_branch_slash[item].name)) > 0 && length(local.azdo.git_repository_support_branch_slash[item].name) > local.azdo.git_repository_support_branch_slash[item].min_length
+      valid_name_unique = length(regexall(local.azdo.git_repository_support_branch_slash[item].regex, local.azdo.git_repository_support_branch_slash[item].name_unique)) > 0
+    } }
 
     group = {
       valid_name        = length(regexall(local.azdo.group.regex, local.azdo.group.name)) > 0 && length(local.azdo.group.name) > local.azdo.group.min_length

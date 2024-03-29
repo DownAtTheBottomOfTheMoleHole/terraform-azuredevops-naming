@@ -134,25 +134,811 @@
     "type": [
       "object",
       {
-        "dashes": "bool",
-        "max_length": "number",
-        "min_length": "number",
-        "name": "string",
-        "name_unique": "string",
-        "regex": "string",
-        "scope": "string",
-        "slug": "string"
+        "development": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ],
+        "production": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ],
+        "user-acceptance-testing": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ]
       }
     ],
     "value": {
-      "dashes": true,
-      "max_length": 240,
-      "min_length": 1,
-      "name": "testprefix-testsuffix",
-      "name_unique": "testprefix-testsuffix-h6lf",
-      "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
-      "scope": "Project",
-      "slug": "env"
+      "development": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "testprefix-development-apply-testsuffix",
+        "name_unique": "testprefix-development-apply-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envapp"
+      },
+      "production": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "testprefix-production-apply-testsuffix",
+        "name_unique": "testprefix-production-apply-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envapp"
+      },
+      "user-acceptance-testing": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "testprefix-user-acceptance-testing-apply-testsuffix",
+        "name_unique": "testprefix-user-acceptance-testing-apply-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envapp"
+      }
+    }
+  },
+  "environment_apply": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "development": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ],
+        "production": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ],
+        "user-acceptance-testing": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "development": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "testprefix-development-apply-testsuffix",
+        "name_unique": "testprefix-development-apply-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envapp"
+      },
+      "production": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "testprefix-production-apply-testsuffix",
+        "name_unique": "testprefix-production-apply-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envapp"
+      },
+      "user-acceptance-testing": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "testprefix-user-acceptance-testing-apply-testsuffix",
+        "name_unique": "testprefix-user-acceptance-testing-apply-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envapp"
+      }
+    }
+  },
+  "environment_apply_basic": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "development": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ],
+        "production": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ],
+        "user-acceptance-testing": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "development": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "development-apply",
+        "name_unique": "development-apply-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envappb"
+      },
+      "production": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "production-apply",
+        "name_unique": "production-apply-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envappb"
+      },
+      "user-acceptance-testing": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "user-acceptance-testing-apply",
+        "name_unique": "user-acceptance-testing-apply-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envappb"
+      }
+    }
+  },
+  "environment_basic": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "development": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ],
+        "production": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ],
+        "user-acceptance-testing": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "development": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "development",
+        "name_unique": "development-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envbas"
+      },
+      "production": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "production",
+        "name_unique": "production-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envbas"
+      },
+      "user-acceptance-testing": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "user-acceptance-testing",
+        "name_unique": "user-acceptance-testing-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envbas"
+      }
+    }
+  },
+  "environment_plan": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "development": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ],
+        "production": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ],
+        "user-acceptance-testing": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "development": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "testprefix-development-plan-testsuffix",
+        "name_unique": "testprefix-development-plan-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envpln"
+      },
+      "production": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "testprefix-production-plan-testsuffix",
+        "name_unique": "testprefix-production-plan-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envpln"
+      },
+      "user-acceptance-testing": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "testprefix-user-acceptance-testing-plan-testsuffix",
+        "name_unique": "testprefix-user-acceptance-testing-plan-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envpln"
+      }
+    }
+  },
+  "environment_plan_basic": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "development": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ],
+        "production": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ],
+        "user-acceptance-testing": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "development": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "development-plan",
+        "name_unique": "development-plan-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envplnb"
+      },
+      "production": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "production-plan",
+        "name_unique": "production-plan-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envplnb"
+      },
+      "user-acceptance-testing": {
+        "dashes": true,
+        "max_length": 240,
+        "min_length": 1,
+        "name": "user-acceptance-testing-plan",
+        "name_unique": "user-acceptance-testing-plan-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+        "scope": "Project",
+        "slug": "envplnb"
+      }
+    }
+  },
+  "environment_work_item": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "development": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "dashes": "bool",
+                "max_length": "number",
+                "min_length": "number",
+                "name": "string",
+                "name_unique": "string",
+                "regex": "string",
+                "scope": "string",
+                "slug": "string"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "dashes": "bool",
+                "max_length": "number",
+                "min_length": "number",
+                "name": "string",
+                "name_unique": "string",
+                "regex": "string",
+                "scope": "string",
+                "slug": "string"
+              }
+            ]
+          }
+        ],
+        "production": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "dashes": "bool",
+                "max_length": "number",
+                "min_length": "number",
+                "name": "string",
+                "name_unique": "string",
+                "regex": "string",
+                "scope": "string",
+                "slug": "string"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "dashes": "bool",
+                "max_length": "number",
+                "min_length": "number",
+                "name": "string",
+                "name_unique": "string",
+                "regex": "string",
+                "scope": "string",
+                "slug": "string"
+              }
+            ]
+          }
+        ],
+        "user-acceptance-testing": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "dashes": "bool",
+                "max_length": "number",
+                "min_length": "number",
+                "name": "string",
+                "name_unique": "string",
+                "regex": "string",
+                "scope": "string",
+                "slug": "string"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "dashes": "bool",
+                "max_length": "number",
+                "min_length": "number",
+                "name": "string",
+                "name_unique": "string",
+                "regex": "string",
+                "scope": "string",
+                "slug": "string"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "value": {
+      "development": {
+        "1234": {
+          "dashes": true,
+          "max_length": 240,
+          "min_length": 1,
+          "name": "testprefix-development-1234-testsuffix",
+          "name_unique": "testprefix-development-1234-testsuffix-h6lf",
+          "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+          "scope": "Project",
+          "slug": "envwi"
+        },
+        "1235": {
+          "dashes": true,
+          "max_length": 240,
+          "min_length": 1,
+          "name": "testprefix-development-1235-testsuffix",
+          "name_unique": "testprefix-development-1235-testsuffix-h6lf",
+          "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+          "scope": "Project",
+          "slug": "envwi"
+        }
+      },
+      "production": {
+        "1234": {
+          "dashes": true,
+          "max_length": 240,
+          "min_length": 1,
+          "name": "testprefix-production-1234-testsuffix",
+          "name_unique": "testprefix-production-1234-testsuffix-h6lf",
+          "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+          "scope": "Project",
+          "slug": "envwi"
+        },
+        "1235": {
+          "dashes": true,
+          "max_length": 240,
+          "min_length": 1,
+          "name": "testprefix-production-1235-testsuffix",
+          "name_unique": "testprefix-production-1235-testsuffix-h6lf",
+          "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+          "scope": "Project",
+          "slug": "envwi"
+        }
+      },
+      "user-acceptance-testing": {
+        "1234": {
+          "dashes": true,
+          "max_length": 240,
+          "min_length": 1,
+          "name": "testprefix-user-acceptance-testing-1234-testsuffix",
+          "name_unique": "testprefix-user-acceptance-testing-1234-testsuffix-h6lf",
+          "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+          "scope": "Project",
+          "slug": "envwi"
+        },
+        "1235": {
+          "dashes": true,
+          "max_length": 240,
+          "min_length": 1,
+          "name": "testprefix-user-acceptance-testing-1235-testsuffix",
+          "name_unique": "testprefix-user-acceptance-testing-1235-testsuffix-h6lf",
+          "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+          "scope": "Project",
+          "slug": "envwi"
+        }
+      }
+    }
+  },
+  "environment_work_item_basic": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "development": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "dashes": "bool",
+                "max_length": "number",
+                "min_length": "number",
+                "name": "string",
+                "name_unique": "string",
+                "regex": "string",
+                "scope": "string",
+                "slug": "string"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "dashes": "bool",
+                "max_length": "number",
+                "min_length": "number",
+                "name": "string",
+                "name_unique": "string",
+                "regex": "string",
+                "scope": "string",
+                "slug": "string"
+              }
+            ]
+          }
+        ],
+        "production": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "dashes": "bool",
+                "max_length": "number",
+                "min_length": "number",
+                "name": "string",
+                "name_unique": "string",
+                "regex": "string",
+                "scope": "string",
+                "slug": "string"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "dashes": "bool",
+                "max_length": "number",
+                "min_length": "number",
+                "name": "string",
+                "name_unique": "string",
+                "regex": "string",
+                "scope": "string",
+                "slug": "string"
+              }
+            ]
+          }
+        ],
+        "user-acceptance-testing": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "dashes": "bool",
+                "max_length": "number",
+                "min_length": "number",
+                "name": "string",
+                "name_unique": "string",
+                "regex": "string",
+                "scope": "string",
+                "slug": "string"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "dashes": "bool",
+                "max_length": "number",
+                "min_length": "number",
+                "name": "string",
+                "name_unique": "string",
+                "regex": "string",
+                "scope": "string",
+                "slug": "string"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "value": {
+      "development": {
+        "1234": {
+          "dashes": true,
+          "max_length": 240,
+          "min_length": 1,
+          "name": "development-1234",
+          "name_unique": "development-1234-testsuffix-h6lf",
+          "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+          "scope": "Project",
+          "slug": "envwib"
+        },
+        "1235": {
+          "dashes": true,
+          "max_length": 240,
+          "min_length": 1,
+          "name": "development-1235",
+          "name_unique": "development-1235-testsuffix-h6lf",
+          "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+          "scope": "Project",
+          "slug": "envwib"
+        }
+      },
+      "production": {
+        "1234": {
+          "dashes": true,
+          "max_length": 240,
+          "min_length": 1,
+          "name": "production-1234",
+          "name_unique": "production-1234-testsuffix-h6lf",
+          "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+          "scope": "Project",
+          "slug": "envwib"
+        },
+        "1235": {
+          "dashes": true,
+          "max_length": 240,
+          "min_length": 1,
+          "name": "production-1235",
+          "name_unique": "production-1235-testsuffix-h6lf",
+          "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+          "scope": "Project",
+          "slug": "envwib"
+        }
+      },
+      "user-acceptance-testing": {
+        "1234": {
+          "dashes": true,
+          "max_length": 240,
+          "min_length": 1,
+          "name": "user-acceptance-testing-1234",
+          "name_unique": "user-acceptance-testing-1234-testsuffix-h6lf",
+          "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+          "scope": "Project",
+          "slug": "envwib"
+        },
+        "1235": {
+          "dashes": true,
+          "max_length": 240,
+          "min_length": 1,
+          "name": "user-acceptance-testing-1235",
+          "name_unique": "user-acceptance-testing-1235-testsuffix-h6lf",
+          "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+          "scope": "Project",
+          "slug": "envwib"
+        }
+      }
     }
   },
   "git_repository": {
@@ -205,6 +991,846 @@
       "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
       "scope": "Repository",
       "slug": "gitbranch"
+    }
+  },
+  "git_repository_bug_branch_dash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "bug-1234-testprefix-testsuffix",
+        "name_unique": "bug-1234-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "gitbugbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "bug-1235-testprefix-testsuffix",
+        "name_unique": "bug-1235-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "gitbugbr"
+      }
+    }
+  },
+  "git_repository_bug_branch_slash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "bug/1234-testprefix-testsuffix",
+        "name_unique": "bug/1234-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "gitbugbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "bug/1235-testprefix-testsuffix",
+        "name_unique": "bug/1235-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "gitbugbr"
+      }
+    }
+  },
+  "git_repository_dev_branch_dash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "dev-1234-testprefix-testsuffix",
+        "name_unique": "dev-1234-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "gitdevbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "dev-1235-testprefix-testsuffix",
+        "name_unique": "dev-1235-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "gitdevbr"
+      }
+    }
+  },
+  "git_repository_dev_branch_slash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "dev/1234-testprefix-testsuffix",
+        "name_unique": "dev/1234-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "gitdevbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "dev/1235-testprefix-testsuffix",
+        "name_unique": "dev/1235-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "gitdevbr"
+      }
+    }
+  },
+  "git_repository_development_branch_dash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "development-1234-testprefix-testsuffix",
+        "name_unique": "development-1234-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "gitdevbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "development-1235-testprefix-testsuffix",
+        "name_unique": "development-1235-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "gitdevbr"
+      }
+    }
+  },
+  "git_repository_development_branch_slash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "development/1234-testprefix-testsuffix",
+        "name_unique": "development/1234-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "gitdevbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "development/1235-testprefix-testsuffix",
+        "name_unique": "development/1235-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "gitdevbr"
+      }
+    }
+  },
+  "git_repository_feature_branch_dash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "feature-1234-testprefix-testsuffix",
+        "name_unique": "feature-1234-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "gitfetbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "feature-1235-testprefix-testsuffix",
+        "name_unique": "feature-1235-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "gitfetbr"
+      }
+    }
+  },
+  "git_repository_feature_branch_slash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "feature/1234-testprefix-testsuffix",
+        "name_unique": "feature/1234-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "gitfetbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "feature/1235-testprefix-testsuffix",
+        "name_unique": "feature/1235-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "gitfetbr"
+      }
+    }
+  },
+  "git_repository_fix_branch_dash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "fix-1234-testprefix-testsuffix",
+        "name_unique": "fix-1234-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "gitfixbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "fix-1235-testprefix-testsuffix",
+        "name_unique": "fix-1235-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "gitfixbr"
+      }
+    }
+  },
+  "git_repository_fix_branch_slash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "fix/1234-testprefix-testsuffix",
+        "name_unique": "fix/1234-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "gitfixbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "fix/1235-testprefix-testsuffix",
+        "name_unique": "fix/1235-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "gitfixbr"
+      }
+    }
+  },
+  "git_repository_hotfix_branch_dash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "hotfix-1234-testprefix-testsuffix",
+        "name_unique": "hotfix-1234-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "githotbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "hotfix-1235-testprefix-testsuffix",
+        "name_unique": "hotfix-1235-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "githotbr"
+      }
+    }
+  },
+  "git_repository_hotfix_branch_slash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "hotfix/1234-testprefix-testsuffix",
+        "name_unique": "hotfix/1234-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "githotbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "hotfix/1235-testprefix-testsuffix",
+        "name_unique": "hotfix/1235-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "githotbr"
+      }
+    }
+  },
+  "git_repository_release_branch_dash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "release-1234-testprefix-testsuffix",
+        "name_unique": "release-1234-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "gitrelbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "release-1235-testprefix-testsuffix",
+        "name_unique": "release-1235-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "gitrelbr"
+      }
+    }
+  },
+  "git_repository_release_branch_slash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "release/1234-testprefix-testsuffix",
+        "name_unique": "release/1234-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "gitrelbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "release/1235-testprefix-testsuffix",
+        "name_unique": "release/1235-testprefix-testsuffix-h6lf",
+        "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "gitrelbr"
+      }
     }
   },
   "group": {
@@ -1132,8 +2758,317 @@
         "environment": [
           "object",
           {
-            "valid_name": "bool",
-            "valid_name_unique": "bool"
+            "development": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "production": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "user-acceptance-testing": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "environment_apply": [
+          "object",
+          {
+            "development": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "production": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "user-acceptance-testing": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "environment_apply_basic": [
+          "object",
+          {
+            "development": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "production": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "user-acceptance-testing": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "environment_basic": [
+          "object",
+          {
+            "development": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "production": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "user-acceptance-testing": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "environment_plan": [
+          "object",
+          {
+            "development": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "production": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "user-acceptance-testing": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "environment_plan_basic": [
+          "object",
+          {
+            "development": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "production": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "user-acceptance-testing": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "environment_work_item": [
+          "object",
+          {
+            "development": [
+              "object",
+              {
+                "1234": [
+                  "object",
+                  {
+                    "dashes": "bool",
+                    "max_length": "number",
+                    "min_length": "number",
+                    "name": "string",
+                    "name_unique": "string",
+                    "regex": "string",
+                    "scope": "string",
+                    "slug": "string"
+                  }
+                ],
+                "1235": [
+                  "object",
+                  {
+                    "dashes": "bool",
+                    "max_length": "number",
+                    "min_length": "number",
+                    "name": "string",
+                    "name_unique": "string",
+                    "regex": "string",
+                    "scope": "string",
+                    "slug": "string"
+                  }
+                ]
+              }
+            ],
+            "production": [
+              "object",
+              {
+                "1234": [
+                  "object",
+                  {
+                    "dashes": "bool",
+                    "max_length": "number",
+                    "min_length": "number",
+                    "name": "string",
+                    "name_unique": "string",
+                    "regex": "string",
+                    "scope": "string",
+                    "slug": "string"
+                  }
+                ],
+                "1235": [
+                  "object",
+                  {
+                    "dashes": "bool",
+                    "max_length": "number",
+                    "min_length": "number",
+                    "name": "string",
+                    "name_unique": "string",
+                    "regex": "string",
+                    "scope": "string",
+                    "slug": "string"
+                  }
+                ]
+              }
+            ],
+            "user-acceptance-testing": [
+              "object",
+              {
+                "1234": [
+                  "object",
+                  {
+                    "dashes": "bool",
+                    "max_length": "number",
+                    "min_length": "number",
+                    "name": "string",
+                    "name_unique": "string",
+                    "regex": "string",
+                    "scope": "string",
+                    "slug": "string"
+                  }
+                ],
+                "1235": [
+                  "object",
+                  {
+                    "dashes": "bool",
+                    "max_length": "number",
+                    "min_length": "number",
+                    "name": "string",
+                    "name_unique": "string",
+                    "regex": "string",
+                    "scope": "string",
+                    "slug": "string"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "environment_work_item_basic": [
+          "object",
+          {
+            "development": [
+              "object",
+              {
+                "1234": [
+                  "object",
+                  {
+                    "valid_name": "bool",
+                    "valid_name_unique": "bool"
+                  }
+                ],
+                "1235": [
+                  "object",
+                  {
+                    "valid_name": "bool",
+                    "valid_name_unique": "bool"
+                  }
+                ]
+              }
+            ],
+            "production": [
+              "object",
+              {
+                "1234": [
+                  "object",
+                  {
+                    "valid_name": "bool",
+                    "valid_name_unique": "bool"
+                  }
+                ],
+                "1235": [
+                  "object",
+                  {
+                    "valid_name": "bool",
+                    "valid_name_unique": "bool"
+                  }
+                ]
+              }
+            ],
+            "user-acceptance-testing": [
+              "object",
+              {
+                "1234": [
+                  "object",
+                  {
+                    "valid_name": "bool",
+                    "valid_name_unique": "bool"
+                  }
+                ],
+                "1235": [
+                  "object",
+                  {
+                    "valid_name": "bool",
+                    "valid_name_unique": "bool"
+                  }
+                ]
+              }
+            ]
           }
         ],
         "git_repository": [
@@ -1148,6 +3083,310 @@
           {
             "valid_name": "bool",
             "valid_name_unique": "bool"
+          }
+        ],
+        "git_repository_bug_branch_dash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "git_repository_bug_branch_slash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "git_repository_dev_branch_dash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "git_repository_dev_branch_slash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "git_repository_development_branch_dash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "git_repository_development_branch_slash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "git_repository_feature_branch_dash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "git_repository_feature_branch_slash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "git_repository_fix_branch_dash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "git_repository_fix_branch_slash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "git_repository_hotfix_branch_dash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "git_repository_hotfix_branch_slash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "git_repository_release_branch_dash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "git_repository_release_branch_slash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "git_repository_support_branch_dash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
+          }
+        ],
+        "git_repository_support_branch_slash": [
+          "object",
+          {
+            "1234": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ],
+            "1235": [
+              "object",
+              {
+                "valid_name": "bool",
+                "valid_name_unique": "bool"
+              }
+            ]
           }
         ],
         "group": [
@@ -1415,8 +3654,188 @@
         "valid_name_unique": true
       },
       "environment": {
-        "valid_name": true,
-        "valid_name_unique": true
+        "development": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "production": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "user-acceptance-testing": {
+          "valid_name": true,
+          "valid_name_unique": true
+        }
+      },
+      "environment_apply": {
+        "development": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "production": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "user-acceptance-testing": {
+          "valid_name": true,
+          "valid_name_unique": true
+        }
+      },
+      "environment_apply_basic": {
+        "development": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "production": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "user-acceptance-testing": {
+          "valid_name": true,
+          "valid_name_unique": true
+        }
+      },
+      "environment_basic": {
+        "development": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "production": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "user-acceptance-testing": {
+          "valid_name": true,
+          "valid_name_unique": true
+        }
+      },
+      "environment_plan": {
+        "development": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "production": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "user-acceptance-testing": {
+          "valid_name": true,
+          "valid_name_unique": true
+        }
+      },
+      "environment_plan_basic": {
+        "development": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "production": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "user-acceptance-testing": {
+          "valid_name": true,
+          "valid_name_unique": true
+        }
+      },
+      "environment_work_item": {
+        "development": {
+          "1234": {
+            "dashes": true,
+            "max_length": 240,
+            "min_length": 1,
+            "name": "testprefix-development-1234-testsuffix",
+            "name_unique": "testprefix-development-1234-testsuffix-h6lf",
+            "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+            "scope": "Project",
+            "slug": "envwi"
+          },
+          "1235": {
+            "dashes": true,
+            "max_length": 240,
+            "min_length": 1,
+            "name": "testprefix-development-1235-testsuffix",
+            "name_unique": "testprefix-development-1235-testsuffix-h6lf",
+            "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+            "scope": "Project",
+            "slug": "envwi"
+          }
+        },
+        "production": {
+          "1234": {
+            "dashes": true,
+            "max_length": 240,
+            "min_length": 1,
+            "name": "testprefix-production-1234-testsuffix",
+            "name_unique": "testprefix-production-1234-testsuffix-h6lf",
+            "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+            "scope": "Project",
+            "slug": "envwi"
+          },
+          "1235": {
+            "dashes": true,
+            "max_length": 240,
+            "min_length": 1,
+            "name": "testprefix-production-1235-testsuffix",
+            "name_unique": "testprefix-production-1235-testsuffix-h6lf",
+            "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+            "scope": "Project",
+            "slug": "envwi"
+          }
+        },
+        "user-acceptance-testing": {
+          "1234": {
+            "dashes": true,
+            "max_length": 240,
+            "min_length": 1,
+            "name": "testprefix-user-acceptance-testing-1234-testsuffix",
+            "name_unique": "testprefix-user-acceptance-testing-1234-testsuffix-h6lf",
+            "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+            "scope": "Project",
+            "slug": "envwi"
+          },
+          "1235": {
+            "dashes": true,
+            "max_length": 240,
+            "min_length": 1,
+            "name": "testprefix-user-acceptance-testing-1235-testsuffix",
+            "name_unique": "testprefix-user-acceptance-testing-1235-testsuffix-h6lf",
+            "regex": "^[^/\\:*?\"\u003c\u003e|]*$",
+            "scope": "Project",
+            "slug": "envwi"
+          }
+        }
+      },
+      "environment_work_item_basic": {
+        "development": {
+          "1234": {
+            "valid_name": true,
+            "valid_name_unique": true
+          },
+          "1235": {
+            "valid_name": true,
+            "valid_name_unique": true
+          }
+        },
+        "production": {
+          "1234": {
+            "valid_name": true,
+            "valid_name_unique": true
+          },
+          "1235": {
+            "valid_name": true,
+            "valid_name_unique": true
+          }
+        },
+        "user-acceptance-testing": {
+          "1234": {
+            "valid_name": true,
+            "valid_name_unique": true
+          },
+          "1235": {
+            "valid_name": true,
+            "valid_name_unique": true
+          }
+        }
       },
       "git_repository": {
         "valid_name": true,
@@ -1425,6 +3844,166 @@
       "git_repository_branch": {
         "valid_name": true,
         "valid_name_unique": true
+      },
+      "git_repository_bug_branch_dash": {
+        "1234": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "1235": {
+          "valid_name": true,
+          "valid_name_unique": true
+        }
+      },
+      "git_repository_bug_branch_slash": {
+        "1234": {
+          "valid_name": false,
+          "valid_name_unique": false
+        },
+        "1235": {
+          "valid_name": false,
+          "valid_name_unique": false
+        }
+      },
+      "git_repository_dev_branch_dash": {
+        "1234": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "1235": {
+          "valid_name": true,
+          "valid_name_unique": true
+        }
+      },
+      "git_repository_dev_branch_slash": {
+        "1234": {
+          "valid_name": false,
+          "valid_name_unique": false
+        },
+        "1235": {
+          "valid_name": false,
+          "valid_name_unique": false
+        }
+      },
+      "git_repository_development_branch_dash": {
+        "1234": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "1235": {
+          "valid_name": true,
+          "valid_name_unique": true
+        }
+      },
+      "git_repository_development_branch_slash": {
+        "1234": {
+          "valid_name": false,
+          "valid_name_unique": false
+        },
+        "1235": {
+          "valid_name": false,
+          "valid_name_unique": false
+        }
+      },
+      "git_repository_feature_branch_dash": {
+        "1234": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "1235": {
+          "valid_name": true,
+          "valid_name_unique": true
+        }
+      },
+      "git_repository_feature_branch_slash": {
+        "1234": {
+          "valid_name": false,
+          "valid_name_unique": false
+        },
+        "1235": {
+          "valid_name": false,
+          "valid_name_unique": false
+        }
+      },
+      "git_repository_fix_branch_dash": {
+        "1234": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "1235": {
+          "valid_name": true,
+          "valid_name_unique": true
+        }
+      },
+      "git_repository_fix_branch_slash": {
+        "1234": {
+          "valid_name": false,
+          "valid_name_unique": false
+        },
+        "1235": {
+          "valid_name": false,
+          "valid_name_unique": false
+        }
+      },
+      "git_repository_hotfix_branch_dash": {
+        "1234": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "1235": {
+          "valid_name": true,
+          "valid_name_unique": true
+        }
+      },
+      "git_repository_hotfix_branch_slash": {
+        "1234": {
+          "valid_name": false,
+          "valid_name_unique": false
+        },
+        "1235": {
+          "valid_name": false,
+          "valid_name_unique": false
+        }
+      },
+      "git_repository_release_branch_dash": {
+        "1234": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "1235": {
+          "valid_name": true,
+          "valid_name_unique": true
+        }
+      },
+      "git_repository_release_branch_slash": {
+        "1234": {
+          "valid_name": false,
+          "valid_name_unique": false
+        },
+        "1235": {
+          "valid_name": false,
+          "valid_name_unique": false
+        }
+      },
+      "git_repository_support_branch_dash": {
+        "1234": {
+          "valid_name": true,
+          "valid_name_unique": true
+        },
+        "1235": {
+          "valid_name": true,
+          "valid_name_unique": true
+        }
+      },
+      "git_repository_support_branch_slash": {
+        "1234": {
+          "valid_name": false,
+          "valid_name_unique": false
+        },
+        "1235": {
+          "valid_name": false,
+          "valid_name_unique": false
+        }
       },
       "group": {
         "valid_name": true,
