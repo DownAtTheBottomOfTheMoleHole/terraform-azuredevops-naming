@@ -35,21 +35,22 @@ locals {
   unique_work_items       = distinct(var.work_items)
 
   environment_mapping = {
-    dev = "development"
-    stg = "staging"
-    prd = "production"
-    tst = "testing"
-    uat = "user-acceptance-testing"
-    per = "performance-testing"
-    int = "integration-testing"
-    sys = "system-testing"
-    reg = "regression-testing"
     acc = "accessibility-testing"
-    com = "compliance-testing"
     aud = "audit-testing"
-    pen = "penetration-testing"
+    com = "compliance-testing"
+    dev = "development"
+    eph = "ephemeral"
     fet = "feature"
     hot = "hotfix"
+    int = "integration-testing"
+    pen = "penetration-testing"
+    per = "performance-testing"
+    prd = "production"
+    reg = "regression-testing"
+    stg = "staging"
+    sys = "system-testing"
+    tst = "testing"
+    uat = "user-acceptance-testing"
 
   }
 
