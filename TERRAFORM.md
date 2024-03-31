@@ -187,26 +187,11 @@ No modules.
 
 ---
 
-#### Automatically generated Terraform variables
-
-This project uses terraform-docs to automatically generate tfvar files per environment that will allow you to have per environment values as well as common values.
-
-the common values will reside in:
-
-for the terraform directory (the terraform directory the pipelines  refer to): `.\environment\default.tfvars`
-
-Environment specific variables then reside in an environment specific folder under the terraform directory e.g. `.\environment\dev\variables.tfvars`
-
-to generate these files do the following
-
-   1. Navigate to your terraform directory using command prompt or powershell
-   2. To generate environment specific variables run `terraform-docs tfvars hcl . --output-file .\environment\poc\variables.tfvars --output-mode inject --read-comments --description --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt` replacing the environment foldername as appropriate
-   3. To generate the common variables file run `terraform-docs tfvars hcl . --output-file .\environment\default.tfvars --output-mode inject --read-comments --description --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt`
-
 ##### Terraform versions
 
 Terraform version and terraform provider versions have been set using tfupdate.
-In order to update the installed providers to the latest versions please first install tfupdate using the below instructions and then run the following commands from the root of the repo in a powershell session. Please only run the commands for the providers/modules you are using.
+In order to update the installed providers to the latest versions please first install tfupdate using the below instructions and then run the following commands from the root of the repo in a powershell session.
+Please only run the commands for the providers/modules you are using.
 
 ##### Installing Tfupdate
 
