@@ -38,7 +38,7 @@ content: |-
   ```hcl
     module "terraform-azuredevops-naming" {
       {{"\t"}} source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-      {{"\t"}} version  = "1.0.2"
+      {{"\t"}} version  = "2.1.0"
   {{- if .Module.RequiredInputs }}
       {{"\n\t"}} # Required variables
       {{- range .Module.RequiredInputs }}
