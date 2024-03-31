@@ -205,12 +205,12 @@ The below documentation was generated via Terraform docs using pre-commit
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_environment_tags"></a> [environment\_tags](#input\_environment\_tags) | List of environment names in their shortened form. These will be translated to full names in the module. | `list(string)` | <pre>[<br>  "dev",<br>  "uat",<br>  "prd"<br>]</pre> | no |
-| <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix to be used for naming resources. Azure recommends using a suffix instead for consistency. | `list(string)` | `[]` | no |
+| <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix to be used for naming resources. If used we suggest using a company abreviation e.g dbmh. | `list(string)` | `[]` | no |
 | <a name="input_suffix"></a> [suffix](#input\_suffix) | Suffix to be used for naming resources. It is recommended to use lowercase characters for consistency. | `list(string)` | `[]` | no |
 | <a name="input_unique_include_numbers"></a> [unique\_include\_numbers](#input\_unique\_include\_numbers) | Determines whether numbers should be included in the unique suffix generation. | `bool` | `true` | no |
 | <a name="input_unique_length"></a> [unique\_length](#input\_unique\_length) | Maximum length of the unique suffix to be added to resource names. | `number` | `4` | no |
 | <a name="input_unique_seed"></a> [unique\_seed](#input\_unique\_seed) | Custom seed value for generating unique random characters. | `string` | `""` | no |
-| <a name="input_work_items"></a> [work\_items](#input\_work\_items) | List of Work Items or issue numbers to be used in branch name creation. For example, ['1234', '1235'] will create branch names like 'feature/1234-' and 'feature/1235-'. | `list(string)` | `[]` | no |
+| <a name="input_work_items"></a> [work\_items](#input\_work\_items) | List of Work Items or issue numbers to be used in branch name and environment name creation. For example, ['1234', '1235'] will create branch names like 'feature/1234-' and 'feature/1235-'. | `list(string)` | `[]` | no |
 
 ---
 
