@@ -10,7 +10,7 @@ variable "environment_tags" {
 
 variable "prefix" {
   type        = list(string)
-  description = "Prefix to be used for naming resources. Azure recommends using a suffix instead for consistency."
+  description = "Prefix to be used for naming resources. If used we suggest using a company abreviation e.g dbmh."
   default     = []
 }
 
@@ -44,6 +44,6 @@ variable "unique_include_numbers" {
 
 variable "work_items" {
   type        = list(string)
-  description = "List of Work Items or issue numbers to be used in branch name creation. For example, ['1234', '1235'] will create branch names like 'feature/1234-' and 'feature/1235-'."
+  description = "List of Work Items or issue numbers to be used in branch name and environment name creation. For example, ['1234', '1235'] will create branch names like 'feature/1234-' and 'feature/1235-'."
   default     = []
 }
