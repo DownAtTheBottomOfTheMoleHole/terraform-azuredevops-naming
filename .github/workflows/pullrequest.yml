@@ -267,7 +267,7 @@ jobs:
           recursive: true
           recursive-path: .
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
-          working-dir: ./examples
+          working-dir: examples
 
   auto-assigner:
     runs-on: ubuntu-latest
