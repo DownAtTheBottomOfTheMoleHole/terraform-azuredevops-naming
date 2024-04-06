@@ -265,9 +265,9 @@ jobs:
           indention: 1
           output-file: README.md
           recursive: true
-          recursive-path: examples
+          recursive-path: .
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
-          working-dir: .
+          working-dir: examples
 
   auto-assigner:
     runs-on: ubuntu-latest
