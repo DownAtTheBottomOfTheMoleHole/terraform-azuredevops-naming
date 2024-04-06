@@ -73,7 +73,7 @@ jobs:
           output-file: README.md
           #output-format: "markdown table"
           #output-method: inject
-          ##recursive: true
+          #recursive: false
           ##recursive-path: "modules"
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
           ##working-dir: .
@@ -94,7 +94,7 @@ jobs:
           output-file: TERRAFORM.md
           #output-format: "markdown table"
           #output-method: inject
-          #recursive: true
+          #recursive: false
           #recursive-path: "modules"
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
           #working-dir: .
