@@ -3,8 +3,8 @@ version: "0.17"
 header-from: /terraform-docs/tf_header.txt
 footer-from: /terraform-docs/tf_footer.txt
 #recursive:
-  #enabled: false
-  #path: .terraform\modules
+#enabled: false
+#path: .terraform\modules
 sections:
   #hide: []
   show: []
