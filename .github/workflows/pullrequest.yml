@@ -225,7 +225,7 @@ jobs:
           #output-format: "markdown table"
           #output-method: inject
           #recursive: false
-          ##recursive-path: "modules"
+          recursive-path: "examples"
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
           ##working-dir: .
 
@@ -246,7 +246,7 @@ jobs:
           #output-format: "markdown table"
           #output-method: inject
           #recursive: false
-          #recursive-path: "modules"
+          recursive-path: "examples"
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
           #working-dir: .
 
