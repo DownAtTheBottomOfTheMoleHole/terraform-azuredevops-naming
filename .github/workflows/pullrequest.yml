@@ -214,7 +214,7 @@ jobs:
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
           config-file: ".config/.readme-terraform-docs.yml"
-          find-dir: .
+          #find-dir: .
           git-commit-message: "[Terraform-docs] Updated readme.md"
           git-push: true
           git-push-sign-off: true
@@ -227,7 +227,7 @@ jobs:
           recursive: false
           #recursive-path: "examples"
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
-          ##working-dir: .
+          working-dir: .
 
       - name: Render terraform docs inside the TERRAFORM.md and push changes back to PR branch
         uses: terraform-docs/gh-actions@v1.1.0
@@ -235,7 +235,7 @@ jobs:
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
           config-file: ".config/.terraform-terraform-docs.yml"
-          find-dir: .
+          #find-dir: .
           git-commit-message: "[Terraform-docs] Updated TERRAFORM.md"
           git-push: true
           git-push-sign-off: true
@@ -248,7 +248,26 @@ jobs:
           recursive: false
           #recursive-path: "examples"
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
-          #working-dir: .
+          working-dir: .
+
+      - name: "[examples] Render terraform docs inside the README.md and push changes back to PR branch"
+        uses: terraform-docs/gh-actions@v1.1.0
+        if: success() || failure()
+        with:
+          #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
+          config-file: "./.config/.readme-terraform-docs.yml"
+          find-dir: ./examples
+          git-commit-message: "[Terraform-docs] Updated readme.md"
+          git-push: true
+          git-push-sign-off: true
+          git-push-user-email: DBMH-terraform-docs@dbmh.com
+          git-push-user-name: DBMH-terraform-docs
+          indention: 4
+          output-file: README.md
+          recursive: false
+          #recursive-path: "examples"
+          template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
+          ##working-dir: .
 
   auto-assigner:
     runs-on: ubuntu-latest
