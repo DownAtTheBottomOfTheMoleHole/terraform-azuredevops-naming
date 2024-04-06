@@ -1,20 +1,20 @@
-  module "azdo_naming" {
-         source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-         version  = "2.1.5"
+module "azdo_naming" {
+  source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
+  version = "2.1.5"
 
-     # Optional variables
-         environment_tags  = [
-  "dev",
-  "uat",
-  "prd"
-]
-         prefix  = ["dbmh"]
-         suffix  = ["test"]
-         unique_include_numbers  = true
-         unique_length  = 4
-         unique_seed  = ""
-         work_items  = []
-  }
+  # Optional variables
+  environment_tags = [
+    "dev",
+    "uat",
+    "prd"
+  ]
+  prefix                 = ["dbmh"]
+  suffix                 = ["test"]
+  unique_include_numbers = true
+  unique_length          = 4
+  unique_seed            = ""
+  work_items             = []
+}
 
 resource "azuredevops_project" "example" {
   name               = module.azdo_naming.project.name
