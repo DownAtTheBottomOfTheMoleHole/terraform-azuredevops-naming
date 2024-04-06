@@ -17,12 +17,12 @@ content: |-
 
   ---
 
-## Creating a unique branch name
+  ## Creating a unique branch name
 
-this shows creating:
-  - a project
-  - git repository inside the project
-  - a feature branch based on the default branch with a unique name
+  this shows creating:
+   - a project
+   - git repository inside the project
+   - a feature branch based on the default branch with a unique name
 
     ```hcl
     {{ include "example2.tf" }}
@@ -74,7 +74,7 @@ output:
     <!-- end_of_terraform_docs -->
 output-values:
   enabled: false
-  from: .config/example_values.json
+  #from: .config/example_values.json
 sort:
   enabled: true
   by: required
@@ -86,7 +86,7 @@ settings:
   escape: true
   hide-empty: false
   html: true
-  indent: 3
+  indent: 1
   lockfile: true
   read-comments: true
   required: true
