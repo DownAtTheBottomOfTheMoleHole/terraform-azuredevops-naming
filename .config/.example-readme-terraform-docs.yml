@@ -1,7 +1,7 @@
 formatter: "markdown table" # this is required
 version: "0.17"
-header-from: /terraform-docs/tf_header.txt
-footer-from: /terraform-docs/tf_footer.txt
+header-from: /../../terraform-docs/tf_header.txt
+footer-from: /../../terraform-docs/tf_footer.txt
 #recursive:
 #enabled: false
 #path: .terraform\modules
