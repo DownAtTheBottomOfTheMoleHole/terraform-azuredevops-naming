@@ -112,7 +112,7 @@ jobs:
           git-push-sign-off: true
           git-push-user-email: DBMH-terraform-docs@dbmh.com
           git-push-user-name: DBMH-terraform-docs
-          indention: 4
+          indention: 1
           output-file: README.md
           recursive: false
           #recursive-path: "examples"
