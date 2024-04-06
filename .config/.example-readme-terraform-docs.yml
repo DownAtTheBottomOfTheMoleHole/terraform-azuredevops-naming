@@ -1,0 +1,165 @@
+formatter: "markdown table" # this is required
+version: "0.17"
+header-from: /terraform-docs/tf_header.txt
+footer-from: /terraform-docs/tf_footer.txt
+#recursive:
+  #enabled: false
+  #path: .terraform\modules
+sections:
+  #hide: []
+  show: []
+  #hide-all: false # deprecated in v0.13.0, removed in v0.15.0
+  #show-all: true  # deprecated in v0.13.0, removed in v0.15.0
+content: |-
+  {{ .Header }}
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Table of Contents)](#table-of-contents)
+
+  ---
+
+  {{ .Requirements }}
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Table of Contents)](#table-of-contents)
+
+  ---
+
+  <!-- consuming terraform-azuredevops-naming -->
+  ### Consuming terraform-azuredevops-naming
+
+    To consume this module add the following to your module.tf:
+  ```hcl
+    module "azdo_naming" {
+      {{"\t"}} source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
+      {{"\t"}} version  = "2.1.6"
+  {{- if .Module.RequiredInputs }}
+      {{"\n\t"}} # Required variables
+      {{- range .Module.RequiredInputs }}
+      {{"\t"}} {{ .Name }}  = {{ .GetValue }}
+      {{- end }}
+      {{- end }}
+  {{- if .Module.OptionalInputs }}
+      {{"\n\t"}} # Optional variables
+      {{- range .Module.OptionalInputs }}
+      {{"\t"}} {{ .Name }}  = {{ .GetValue | printf "%s" }}
+      {{- end }}
+      {{- end }}
+    }
+    ```
+
+  ## Creating a project
+
+  ```hcl
+  {{ include "examples/example1/example1.tf" }}
+  ```
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Top)](#Terraform)
+
+  ---
+
+  ## Creating a unique branch name
+
+  this shows creating: 
+   - a project
+   - git repository inside the project
+   - a feature branch based on the default branch with a unique name
+
+  ```hcl
+  {{ include "examples/example2/example2.tf" }}
+  ```
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Table of Contents)](#table-of-contents)
+
+  ---
+
+  {{ .Resources }}
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Table of Contents)](#table-of-contents)
+
+  ---
+
+  {{ .Inputs }}
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Table of Contents)](#table-of-contents)
+
+  ---
+
+  {{ .Outputs }}
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Table of Contents)](#table-of-contents)
+
+  ---
+
+  {{ .Modules }}
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Table of Contents)](#table-of-contents)
+
+  ---
+
+  {{ .Footer }}
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Table of Contents)](#table-of-contents)
+
+  ---
+output:
+  file: README.md
+  mode: inject
+  template: |-
+    <!-- start_of_terraform_docs -->
+    {{ .Content }}
+    <!-- end_of_terraform_docs -->
+output-values:
+  enabled: true
+  from: terraform-docs/default_values.json #environment\default.tfvars
+sort:
+  enabled: true
+  by: required
+settings:
+  anchor: true
+  color: true
+  default: true
+  description: true
+  escape: true
+  hide-empty: false
+  html: true
+  indent: 3
+  lockfile: true
+  read-comments: true
+  required: true
+  sensitive: true
+  type: true
