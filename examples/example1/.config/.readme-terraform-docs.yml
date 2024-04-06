@@ -20,7 +20,7 @@ content: |-
 ## Creating a project
 
   ```hcl
-  {{ include "examples/example1.tf" }}
+  {{ include "example1.tf" }}
   ```
 
   ---
