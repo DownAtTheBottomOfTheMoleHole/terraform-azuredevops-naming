@@ -8,8 +8,8 @@
   "uat",
   "prd"
 ]
-         prefix  = []
-         suffix  = []
+         prefix  = ["dbmh"]
+         suffix  = ["test"]
          unique_include_numbers  = true
          unique_length  = 4
          unique_seed  = ""
