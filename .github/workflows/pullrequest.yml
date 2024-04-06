@@ -255,7 +255,7 @@ jobs:
         if: success() || failure()
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
-          config-file: "./.config/.readme-terraform-docs.yml"
+          config-file: "./.config/.example-readme-terraform-docs.yml"
           #find-dir: .
           git-commit-message: "[Terraform-docs] Updated Examples readme.md"
           git-push: true
