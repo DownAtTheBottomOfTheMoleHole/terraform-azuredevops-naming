@@ -17,7 +17,7 @@ content: |-
 
   ---
 
-## Creating a project
+  ## Creating a project
 
   ```hcl
   {{ include "example1.tf" }}
@@ -69,7 +69,7 @@ output:
     <!-- end_of_terraform_docs -->
 output-values:
   enabled: false
-  from: .config/example_values.json
+  #from: .config/example_values.json
 sort:
   enabled: true
   by: required
