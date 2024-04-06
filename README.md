@@ -102,15 +102,13 @@ A terraform module to enable consistent naming of Azure DevOps resources
 - [cspell](https://github.com/streetsidesoftware/cspell-cli)
 - [GitVersion](https://github.com/GitTools/GitVersion)
 - [Markdown](https://www.markdownguide.org/)
-- [Mermaid](https://mermaid.live/)
+- [Megalinter](https://github.com/oxsecurity/megalinter)
 - [Pre-Commit](https://pre-commit.com/)
 - [pre-commit-terraform](https://github.com/antonbabenko/pre-commit-terraform)
 - [prettier](https://github.com/prettier/prettier)
 - [Terraform](https://www.terraform.io/)
 - [Terraform-docs](https://github.com/terraform-docs/terraform-docs)
-- [Terrascan](https://github.com/tenable/terrascan)
 - [tflint](https://github.com/terraform-linters/tflint)
-- [tfsec](https://github.com/aquasecurity/tfsec)
 - [tfupdate](https://github.com/minamijoyo/tfupdate)
 
 ---
@@ -370,6 +368,7 @@ tfupdate provider random . --version "$(tfupdate release latest hashicorp/random
 - [x] Test validation rules
 - [x] Include output examples in docs
 - [x] Different branch types to satisfy gitversion
+- [x] Additional examples in docs
 - [ ] Feature 3
   - [ ] Nested Feature
 
