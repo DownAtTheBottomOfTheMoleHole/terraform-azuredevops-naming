@@ -36,9 +36,9 @@ content: |-
 
     To consume this module add the following to your module.tf:
   ```hcl
-    module "terraform-azuredevops-naming" {
+    module "azdo_naming" {
       {{"\t"}} source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-      {{"\t"}} version  = "2.1.0"
+      {{"\t"}} version  = "2.1.5"
   {{- if .Module.RequiredInputs }}
       {{"\n\t"}} # Required variables
       {{- range .Module.RequiredInputs }}
@@ -53,6 +53,31 @@ content: |-
       {{- end }}
     }
     ```
+
+## Creating a project
+
+  ```hcl
+  {{ include "examples/example1.tf" }}
+  ```
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Top)](#Terraform)
+
+  ---
+
+## Creating a unique branch name
+
+this shows creating: 
+- a project
+- git repository inside the project
+- a feature branch based on the default branch with a unique name
+
+  ```hcl
+  {{ include "examples/example2.tf" }}
+  ```
 
   ---
 
