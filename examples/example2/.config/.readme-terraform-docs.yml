@@ -17,20 +17,6 @@ content: |-
 
   ---
 
-## Creating a project
-
-  ```hcl
-  {{ include "examples/example1.tf" }}
-  ```
-
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Top)](#Terraform)
-
-  ---
-
 ## Creating a unique branch name
 
 this shows creating: 
