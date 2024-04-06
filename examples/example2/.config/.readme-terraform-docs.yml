@@ -1,0 +1,108 @@
+formatter: "markdown table" # this is required
+version: "0.17"
+header-from: ../../terraform-docs/tf_header.txt
+footer-from: ../../terraform-docs/tf_footer.txt
+recursive:
+  enabled: false
+sections:
+  show: []
+content: |-
+  {{ .Header }}
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Table of Contents)](#table-of-contents)
+
+  ---
+
+## Creating a project
+
+  ```hcl
+  {{ include "examples/example1.tf" }}
+  ```
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Top)](#Terraform)
+
+  ---
+
+## Creating a unique branch name
+
+this shows creating: 
+- a project
+- git repository inside the project
+- a feature branch based on the default branch with a unique name
+
+  ```hcl
+  {{ include "examples/example2.tf" }}
+  ```
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Table of Contents)](#table-of-contents)
+
+  ---
+
+  {{ .Resources }}
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Table of Contents)](#table-of-contents)
+
+  ---
+
+  {{ .Modules }}
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Table of Contents)](#table-of-contents)
+
+  ---
+
+  {{ .Footer }}
+
+  ---
+
+  <!-- Readme Navigation -->
+
+  [(Back to the Table of Contents)](#table-of-contents)
+
+  ---
+output:
+  file: README.md
+  mode: inject
+  template: |-
+    <!-- start_of_terraform_docs -->
+    {{ .Content }}
+    <!-- end_of_terraform_docs -->
+output-values:
+  enabled: false
+  from: example_values.json
+sort:
+  enabled: true
+  by: required
+settings:
+  anchor: true
+  color: true
+  default: true
+  description: true
+  escape: true
+  hide-empty: false
+  html: true
+  indent: 3
+  lockfile: true
+  read-comments: true
+  required: true
+  sensitive: true
+  type: true
