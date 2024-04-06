@@ -255,17 +255,17 @@ jobs:
         if: success() || failure()
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
-          config-file: "./.config/.readme-terraform-docs.yml"
-          find-dir: ./examples
+          config-file: "./.config/.examples-readme-terraform-docs.yml"
+          find-dir: .
           git-commit-message: "[Terraform-docs] Updated readme.md"
           git-push: true
           git-push-sign-off: true
           git-push-user-email: DBMH-terraform-docs@dbmh.com
           git-push-user-name: DBMH-terraform-docs
-          indention: 4
+          indention: 2
           output-file: README.md
-          recursive: false
-          #recursive-path: "examples"
+          recursive: true
+          recursive-path: "examples"
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
           ##working-dir: .
 
