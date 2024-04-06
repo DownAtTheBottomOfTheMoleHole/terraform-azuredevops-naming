@@ -19,52 +19,52 @@ content: |-
 
 ## Creating a unique branch name
 
-this shows creating: 
-- a project
-- git repository inside the project
-- a feature branch based on the default branch with a unique name
+this shows creating:
+  - a project
+  - git repository inside the project
+  - a feature branch based on the default branch with a unique name
 
-  ```hcl
-  {{ include "examples/example2.tf" }}
-  ```
+    ```hcl
+    {{ include "examples/example2.tf" }}
+    ```
 
-  ---
+    ---
 
-  <!-- Readme Navigation -->
+    <!-- Readme Navigation -->
 
-  [(Back to the Table of Contents)](#table-of-contents)
+    [(Back to the Table of Contents)](#table-of-contents)
 
-  ---
+    ---
 
-  {{ .Resources }}
+    {{ .Resources }}
 
-  ---
+    ---
 
-  <!-- Readme Navigation -->
+    <!-- Readme Navigation -->
 
-  [(Back to the Table of Contents)](#table-of-contents)
+    [(Back to the Table of Contents)](#table-of-contents)
 
-  ---
+    ---
 
-  {{ .Modules }}
+    {{ .Modules }}
 
-  ---
+    ---
 
-  <!-- Readme Navigation -->
+    <!-- Readme Navigation -->
 
-  [(Back to the Table of Contents)](#table-of-contents)
+    [(Back to the Table of Contents)](#table-of-contents)
 
-  ---
+    ---
 
-  {{ .Footer }}
+    {{ .Footer }}
 
-  ---
+    ---
 
-  <!-- Readme Navigation -->
+    <!-- Readme Navigation -->
 
-  [(Back to the Table of Contents)](#table-of-contents)
+    [(Back to the Table of Contents)](#table-of-contents)
 
-  ---
+    ---
 output:
   file: README.md
   mode: inject
