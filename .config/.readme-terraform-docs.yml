@@ -36,7 +36,7 @@ content: |-
 
     To consume this module add the following to your module.tf:
   ```hcl
-    module "terraform-azuredevops-naming" {
+    module "azdo_naming" {
       {{"\t"}} source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
       {{"\t"}} version  = "2.1.0"
   {{- if .Module.RequiredInputs }}
