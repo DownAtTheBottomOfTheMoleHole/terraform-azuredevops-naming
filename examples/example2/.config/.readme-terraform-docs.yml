@@ -25,7 +25,7 @@ this shows creating:
   - a feature branch based on the default branch with a unique name
 
     ```hcl
-    {{ include "examples/example2.tf" }}
+    {{ include "example2.tf" }}
     ```
 
     ---
