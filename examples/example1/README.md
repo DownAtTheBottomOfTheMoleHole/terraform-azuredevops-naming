@@ -1,3 +1,6 @@
+<!-- markdownlint-disable -->
+<!-- markdown-table-prettify-ignore-start -->
+<!-- prettier-ignore-start -->
 <!-- start_of_terraform_docs -->
 # Terraform
 
