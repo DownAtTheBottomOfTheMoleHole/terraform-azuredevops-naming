@@ -32,7 +32,7 @@ content: |-
   ---
 
   ```hcl
-  {{< .TerraformAll >}}
+  {{ include "example.tf" }}
   ```
 
 
