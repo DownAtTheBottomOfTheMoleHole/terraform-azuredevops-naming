@@ -76,7 +76,7 @@ content: |-
    - a feature branch based on the default branch with a unique name
 
   ```hcl
-  {{ include "examples/example2/example2.tf" }}
+  {{ include "examples/example2/example.tf" }}
   ```
 
   ---
