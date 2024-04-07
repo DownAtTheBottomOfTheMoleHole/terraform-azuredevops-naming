@@ -31,8 +31,9 @@ content: |-
 
   ---
 
+  {{ range $filename := .Files }}
   ```hcl
-  {{ .TerraformAll }}
+  {{ readFile $filename }}
   ```
 
   ---
