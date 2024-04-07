@@ -31,9 +31,11 @@ content: |-
 
   ---
 
+  {{ range $file := readDir "." }}
   ```hcl
-  {{ include "./example.tf" }}
+  @include("{{ $file.Name }}")
   ```
+  {{ end }}
 
 
   ---
