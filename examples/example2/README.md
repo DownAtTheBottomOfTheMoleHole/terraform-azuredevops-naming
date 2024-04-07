@@ -1,3 +1,6 @@
+<!-- markdownlint-disable -->
+<!-- markdown-table-prettify-ignore-start -->
+<!-- prettier-ignore-start -->
 <!-- start_of_terraform_docs -->
 # Terraform
 
@@ -26,7 +29,7 @@ No requirements.
 ```hcl
 module "azdo_naming" {
   source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-  version = "2.1.5"
+  version = "2.1.7"
 
   # Optional variables
   environment_tags = [
@@ -118,7 +121,7 @@ No outputs.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_azdo_naming"></a> [azdo\_naming](#module\_azdo\_naming) | DownAtTheBottomOfTheMoleHole/naming/azuredevops | 2.1.5 |
+| <a name="module_azdo_naming"></a> [azdo\_naming](#module\_azdo\_naming) | DownAtTheBottomOfTheMoleHole/naming/azuredevops | 2.1.7 |
 
 ---
 
@@ -167,3 +170,6 @@ tfupdate provider random . --version "$(tfupdate release latest hashicorp/random
 
 ---
 <!-- end_of_terraform_docs -->
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- markdown-table-prettify-ignore-end -->
