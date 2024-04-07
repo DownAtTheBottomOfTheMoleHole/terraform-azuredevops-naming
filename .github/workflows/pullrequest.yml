@@ -213,8 +213,8 @@ jobs:
         if: success() || failure()
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
-          config-file: "/.config/.readme-terraform-docs.yml"
-          find-dir: .
+          config-file: ".config/.readme-terraform-docs.yml"
+          #find-dir: .
           git-commit-message: "[Terraform-docs] Updated readme.md"
           git-push: true
           git-push-sign-off: true
@@ -224,18 +224,18 @@ jobs:
           output-file: README.md
           #output-format: "markdown table"
           #output-method: inject
-          ##recursive: true
-          ##recursive-path: "modules"
+          recursive: false
+          #recursive-path: "examples"
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
-          ##working-dir: .
+          working-dir: .
 
       - name: Render terraform docs inside the TERRAFORM.md and push changes back to PR branch
         uses: terraform-docs/gh-actions@v1.1.0
         if: success() || failure()
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
-          config-file: "/.config/.terraform-terraform-docs.yml"
-          find-dir: .
+          config-file: ".config/.terraform-terraform-docs.yml"
+          #find-dir: .
           git-commit-message: "[Terraform-docs] Updated TERRAFORM.md"
           git-push: true
           git-push-sign-off: true
@@ -245,10 +245,48 @@ jobs:
           output-file: TERRAFORM.md
           #output-format: "markdown table"
           #output-method: inject
-          #recursive: true
-          #recursive-path: "modules"
+          recursive: false
+          #recursive-path: "examples"
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
-          #working-dir: .
+          working-dir: .
+
+      - name: "[example1] Render terraform docs inside the README.md and push changes back to PR branch"
+        uses: terraform-docs/gh-actions@v1.1.0
+        if: success() || failure()
+        with:
+          #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
+          config-file: "./.config/.example1-readme-terraform-docs.yml"
+          #find-dir: .
+          git-commit-message: "[Terraform-docs] Updated Examples readme.md"
+          git-push: true
+          git-push-sign-off: true
+          git-push-user-email: DBMH-terraform-docs@dbmh.com
+          git-push-user-name: DBMH-terraform-docs
+          indention: 1
+          output-file: README.md
+          #recursive: true
+          #recursive-path: .
+          template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
+          working-dir: examples/example1
+
+      - name: "[example2] Render terraform docs inside the README.md and push changes back to PR branch"
+        uses: terraform-docs/gh-actions@v1.1.0
+        if: success() || failure()
+        with:
+          #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
+          config-file: "./.config/.example1-readme-terraform-docs.yml"
+          #find-dir: .
+          git-commit-message: "[Terraform-docs] Updated Examples readme.md"
+          git-push: true
+          git-push-sign-off: true
+          git-push-user-email: DBMH-terraform-docs@dbmh.com
+          git-push-user-name: DBMH-terraform-docs
+          indention: 1
+          output-file: README.md
+          #recursive: true
+          #recursive-path: .
+          template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
+          working-dir: examples/example2
 
   auto-assigner:
     runs-on: ubuntu-latest
