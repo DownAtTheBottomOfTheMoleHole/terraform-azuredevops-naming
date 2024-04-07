@@ -76,11 +76,11 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 
 ## Resources
 
-| Name                                                                                                                                                          | Type     |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| [azuredevops_git_repository.example](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/git_repository)                      | resource |
+| Name | Type |
+|------|------|
+| [azuredevops_git_repository.example](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/git_repository) | resource |
 | [azuredevops_git_repository_branch.feature_branch](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/git_repository_branch) | resource |
-| [azuredevops_project.example](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/project)                                    | resource |
+| [azuredevops_project.example](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/project) | resource |
 
 ---
 
@@ -116,9 +116,9 @@ No outputs.
 
 ## Modules
 
-| Name                                                                    | Source                                          | Version |
-|-------------------------------------------------------------------------|-------------------------------------------------|---------|
-| <a name="module_azdo_naming"></a> [azdo\_naming](#module\_azdo\_naming) | DownAtTheBottomOfTheMoleHole/naming/azuredevops | 2.1.5   |
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_azdo_naming"></a> [azdo\_naming](#module\_azdo\_naming) | DownAtTheBottomOfTheMoleHole/naming/azuredevops | 2.1.5 |
 
 ---
 
