@@ -1,7 +1,7 @@
 formatter: "markdown table" # this is required
 version: "0.17"
-header-from: ../terraform-docs/tf_header.txt
-footer-from: ../terraform-docs/tf_footer.txt
+header-from: ../../terraform-docs/tf_header.txt
+footer-from: ../../terraform-docs/tf_footer.txt
 #recursive:
 #enabled: false
 #path: .terraform\modules
@@ -32,7 +32,7 @@ content: |-
   ---
 
   ```hcl
-  {{ include "example2/example.tf" }}
+  {{ include "example.tf" }}
   ```
 
 
@@ -101,8 +101,8 @@ output:
     {{ .Content }}
     <!-- end_of_terraform_docs -->
 output-values:
-  enabled: true
-  from: terraform-docs/default_values.json #environment\default.tfvars
+  enabled: false
+  #from: terraform-docs/default_values.json #environment\default.tfvars
 sort:
   enabled: true
   by: required
@@ -114,7 +114,7 @@ settings:
   escape: true
   hide-empty: false
   html: true
-  indent: 3
+  indent: 2
   lockfile: true
   read-comments: true
   required: true
