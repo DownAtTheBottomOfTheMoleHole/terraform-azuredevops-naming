@@ -36,7 +36,7 @@ The below documentation was generated via Terraform docs using pre-commit
 ```hcl
   module "azdo_naming" {
     	 source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-    	 version  = "2.1.6"
+    	 version  = "2.1.7"
     
 	 # Optional variables
     	 environment_tags  = [
@@ -58,7 +58,7 @@ The below documentation was generated via Terraform docs using pre-commit
 ```hcl
 module "azdo_naming" {
   source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-  version = "2.1.5"
+  version = "2.1.7"
 
   # Optional variables
   environment_tags = [
@@ -105,7 +105,7 @@ this shows creating:
 ```hcl
 module "azdo_naming" {
   source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-  version = "2.1.5"
+  version = "2.1.7"
 
   # Optional variables
   environment_tags = [
