@@ -31,10 +31,8 @@ content: |-
 
   ---
 
-  {{ range $filename := .Files }}
-  ```hcl
-  {{ readFile $filename }}
-  ```
+  {{ .TerraformBlocks }}
+  
 
   ---
 
