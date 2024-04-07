@@ -66,8 +66,8 @@ resource "azuredevops_project" "example1" {
 
 ## Resources
 
-| Name | Type |
-|------|------|
+| Name                                                                                                                        | Type     |
+|-----------------------------------------------------------------------------------------------------------------------------|----------|
 | [azuredevops_project.example1](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/project) | resource |
 
 ---
@@ -104,9 +104,9 @@ No outputs.
 
 ## Modules
 
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_azdo_naming"></a> [azdo\_naming](#module\_azdo\_naming) | DownAtTheBottomOfTheMoleHole/naming/azuredevops | 2.1.5 |
+| Name                                                                    | Source                                          | Version |
+|-------------------------------------------------------------------------|-------------------------------------------------|---------|
+| <a name="module_azdo_naming"></a> [azdo\_naming](#module\_azdo\_naming) | DownAtTheBottomOfTheMoleHole/naming/azuredevops | 2.1.5   |
 
 ---
 
