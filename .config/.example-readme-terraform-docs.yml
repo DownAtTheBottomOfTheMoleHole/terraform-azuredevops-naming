@@ -32,7 +32,7 @@ content: |-
   ---
 
   ```hcl
-  {{ include "example.tf" }}
+  {{ include "./example.tf" }}
   ```
 
 
