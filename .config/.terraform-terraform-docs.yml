@@ -38,7 +38,7 @@ content: |-
   ```hcl
     module "azdo_naming" {
       {{"\t"}} source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-      {{"\t"}} version  = "2.1.6"
+      {{"\t"}} version  = "2.1.7"
   {{- if .Module.RequiredInputs }}
       {{"\n\t"}} # Required variables
       {{- range .Module.RequiredInputs }}
