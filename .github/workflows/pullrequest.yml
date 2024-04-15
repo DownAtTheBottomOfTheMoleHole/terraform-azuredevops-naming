@@ -324,6 +324,28 @@ jobs:
           git merge --no-ff --no-edit ${{ github.event.pull_request.head.sha }}
           git push origin dependabot_merge
 
+  automerge_dependabot:
+    runs-on: ubuntu-latest
+    if: github.actor == 'dependabot[bot]'
+    steps:
+      - id: automerge
+        name: automerge
+        uses: pascalgn/automerge-action@v0.16.3
+        permissions:
+          contents: write
+        env:
+          env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_LABELS: "automerge,!wip"
+          MERGE_METHOD: "squash"
+          MERGE_COMMIT_MESSAGE: "pull-request-title-and-description"
+          MERGE_FORKS: "false"
+          UPDATE_LABELS: ""
+          MERGE_RETRIES: "6"
+          MERGE_RETRY_SLEEP: "10000"
+          MERGE_DELETE_BRANCH: "true"
+          MERGE_FILTER_AUTHOR: "app/dependabot"
+
   merge_renovate:
     runs-on: ubuntu-latest
 
@@ -341,3 +363,25 @@ jobs:
           git checkout renovate_merge
           git merge --no-ff --no-edit ${{ github.event.pull_request.head.sha }}
           git push origin renovate_merge
+
+  automerge_renovate:
+    runs-on: ubuntu-latest
+    if: github.actor == 'renovate[bot]'
+    steps:
+      - id: automerge
+        name: automerge
+        uses: pascalgn/automerge-action@v0.16.3
+        permissions:
+          contents: write
+        env:
+          env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_LABELS: "automerge,!wip"
+          MERGE_METHOD: "squash"
+          MERGE_COMMIT_MESSAGE: "pull-request-title-and-description"
+          MERGE_FORKS: "false"
+          UPDATE_LABELS: ""
+          MERGE_RETRIES: "6"
+          MERGE_RETRY_SLEEP: "10000"
+          MERGE_DELETE_BRANCH: "true"
+          MERGE_FILTER_AUTHOR: "app/renovate"
