@@ -1,7 +1,7 @@
 assembly-versioning-scheme: MajorMinorPatch
 assembly-file-versioning-scheme: MajorMinorPatch
 assembly-informational-format: "{InformationalVersion}"
-#mode: ContinuousDelivery
+mode: ContinuousDelivery
 tag-prefix: "[vV]"
 continuous-delivery-fallback-tag: ""
 next-version: 1.0.0
@@ -103,7 +103,6 @@ branches:
     increment: Patch
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
-    #regex: ^master$|^main$
     source-branches:
       - develop
       - release
@@ -117,7 +116,6 @@ branches:
     increment: Minor
     prevent-increment-of-merged-branch-version: false
     track-merge-target: true
-    #regex: ^dev(elop)?(ment)?$
     source-branches: []
     tracks-release-branches: true
     is-release-branch: false
@@ -129,7 +127,6 @@ branches:
     increment: None
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
-    #regex: ^release?[/-]
     source-branches:
       - develop
       - main
@@ -145,7 +142,6 @@ branches:
     increment: Inherit
     prevent-increment-of-merged-branch-version: false
     track-merge-target: false
-    #regex: ^feature?[/-]
     source-branches:
       - develop
       - main
@@ -164,7 +160,6 @@ branches:
     prevent-increment-of-merged-branch-version: false
     tag-number-pattern: '[/-](?<number>\d+)[-/]'
     track-merge-target: false
-    #regex: ^(pull|pull\-requests|pr)[/-]
     source-branches:
       - develop
       - main
@@ -182,7 +177,6 @@ branches:
     increment: Patch
     prevent-increment-of-merged-branch-version: false
     track-merge-target: false
-    #regex: ^hotfix(es)?[/-]
     source-branches:
       - develop
       - main
@@ -197,27 +191,12 @@ branches:
     increment: Patch
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
-    regex: ^bug[/-]
     source-branches:
       - main
     tracks-release-branches: false
     is-release-branch: false
     is-mainline: true
     pre-release-weight: 55000
-#ignore:
-#  commits-before:
-#    date-time: 2020-01-01T00:00:00.00
-#    utc-date-time: 2020-01-01T00:00:00.0
-#    local-date-time: 2020-01-01T00:00:00.00+00:00
-#    date: 2020-01-01T00:00:00.00
-#    day: 1
-#    day-of-week: Wednesday
-#    day-of-year: 1
-#    month: 1
-#    ticks: 637134336000000000
-#    utc-ticks: 637134336000000000
-#    year: 2020
-#  sha: []
 increment: Inherit
 merge-message-formats: {}
 update-build-number: true
