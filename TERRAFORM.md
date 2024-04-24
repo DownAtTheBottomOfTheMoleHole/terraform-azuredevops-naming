@@ -18,7 +18,7 @@ The below documentation was generated via Terraform docs using pre-commit
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.8.1 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.8.2 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | 3.6.1 |
 
 ---
