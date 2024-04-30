@@ -16,86 +16,29 @@ tag-pre-release-weight: 60000
 commit-message-incrementing: Enabled
 branches:
   custom:
-    "dependabot/terraform*":
+    "dependabot":
+      regex: ^(dependabot)[/-]
       mode: ContinuousDeployment
       tag: useBranchName
-      increment: Minor
+      increment: inherit
       prevent-increment-of-merged-branch-version: false
       track-merge-target: false
       tracks-release-branches: false
       is-release-branch: false
+      source-branches: [ 'develop', 'main', 'release', 'feature', 'support', 'hotfix' ]
+      is-mainline: false
 
-    "renovate/aws*":
+    "renovate":
+      regex: ^(renovate)[/-]
       mode: ContinuousDeployment
       tag: useBranchName
-      increment: Minor
+      increment: inherit
       prevent-increment-of-merged-branch-version: false
       track-merge-target: false
       tracks-release-branches: false
       is-release-branch: false
-
-    "renovate/azuread*":
-      mode: ContinuousDeployment
-      tag: useBranchName
-      increment: Minor
-      prevent-increment-of-merged-branch-version: false
-      track-merge-target: false
-      tracks-release-branches: false
-      is-release-branch: false
-
-    "renovate/azuredevops*":
-      mode: ContinuousDeployment
-      tag: useBranchName
-      increment: Minor
-      prevent-increment-of-merged-branch-version: false
-      track-merge-target: false
-      tracks-release-branches: false
-      is-release-branch: false
-
-    "renovate/azurerm*":
-      mode: ContinuousDeployment
-      tag: useBranchName
-      increment: Minor
-      prevent-increment-of-merged-branch-version: false
-      track-merge-target: false
-      tracks-release-branches: false
-      is-release-branch: false
-
-    "renovate/hashicorp-terraform*":
-      mode: ContinuousDeployment
-      tag: useBranchName
-      increment: Minor
-      prevent-increment-of-merged-branch-version: false
-      track-merge-target: false
-      tracks-release-branches: false
-      is-release-branch: false
-
-    "renovate/mongodbatlas*":
-      mode: ContinuousDeployment
-      tag: useBranchName
-      increment: Minor
-      prevent-increment-of-merged-branch-version: false
-      track-merge-target: false
-      tracks-release-branches: false
-      is-release-branch: false
-
-    "renovate/random*":
-      mode: ContinuousDeployment
-      tag: useBranchName
-      increment: Minor
-      prevent-increment-of-merged-branch-version: false
-      track-merge-target: false
-      tracks-release-branches: false
-      is-release-branch: false
-
-    "renovate/time*":
-      mode: ContinuousDeployment
-      tag: useBranchName
-      increment: Minor
-      prevent-increment-of-merged-branch-version: false
-      track-merge-target: false
-      tracks-release-branches: false
-      is-release-branch: false
+      source-branches: [ 'develop', 'main', 'release', 'feature', 'support', 'hotfix' ]
+      is-mainline: false
 
   main:
     mode: ContinuousDelivery
