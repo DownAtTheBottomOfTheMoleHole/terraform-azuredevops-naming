@@ -24,9 +24,9 @@ branches:
     track-merge-target: false
     tracks-release-branches: false
     is-release-branch: false
-    is-source-branch-for: ['main']
+    is-source-branch-for: ["main"]
     is-mainline: false
-    source-branches: [ 'main']
+    source-branches: ["main"]
 
   renovate:
     regex: ^(renovate)[/-]
@@ -37,9 +37,9 @@ branches:
     track-merge-target: false
     tracks-release-branches: false
     is-release-branch: false
-    is-source-branch-for: ['main']
+    is-source-branch-for: ["main"]
     is-mainline: false
-    source-branches: [ 'main']
+    source-branches: ["main"]
 
   main:
     mode: ContinuousDelivery
