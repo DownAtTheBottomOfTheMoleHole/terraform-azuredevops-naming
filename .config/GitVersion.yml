@@ -26,6 +26,7 @@ branches:
     is-release-branch: false
     is-source-branch-for: ['main']
     is-mainline: false
+    source-branches: [ 'main']
 
   renovate:
     regex: ^(renovate)[/-]
@@ -38,6 +39,7 @@ branches:
     is-release-branch: false
     is-source-branch-for: ['main']
     is-mainline: false
+    source-branches: [ 'main']
 
   main:
     mode: ContinuousDelivery
