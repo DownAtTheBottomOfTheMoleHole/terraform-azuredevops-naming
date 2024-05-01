@@ -135,12 +135,25 @@ branches:
     increment: Patch
     prevent-increment-of-merged-branch-version: true
     track-merge-target: false
+    regex: ^bug?[/-]
     source-branches:
       - main
     tracks-release-branches: false
     is-release-branch: false
-    is-mainline: true
+    is-mainline: false
     pre-release-weight: 55000
+  documentation:
+    mode: ContinuousDeployment
+    tag: ""
+    increment: patch
+    prevent-increment-of-merged-branch-version: true
+    track-merge-target: false
+    regex: ^(docs|documentation)[/-]
+    source-branches:
+      - main
+    tracks-release-branches: false
+    is-release-branch: false
+    is-mainline: false
 increment: Inherit
 merge-message-formats: {}
 update-build-number: true
