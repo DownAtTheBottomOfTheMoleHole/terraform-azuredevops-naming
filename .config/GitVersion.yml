@@ -25,7 +25,8 @@ branches:
       track-merge-target: false
       tracks-release-branches: false
       is-release-branch: false
-      source-branches: [ 'develop', 'main', 'release', 'feature', 'support', 'hotfix' ]
+      source-branches:
+        ["develop", "main", "release", "feature", "support", "hotfix"]
       is-mainline: false
 
     "renovate":
@@ -37,7 +38,8 @@ branches:
       track-merge-target: false
       tracks-release-branches: false
       is-release-branch: false
-      source-branches: [ 'develop', 'main', 'release', 'feature', 'support', 'hotfix' ]
+      source-branches:
+        ["develop", "main", "release", "feature", "support", "hotfix"]
       is-mainline: false
 
   main:
