@@ -1,5 +1,5 @@
 terraform {
-  required_version = "1.8.4"
+  required_version = "~> 1.8.0" # pinned due to breaking changes occurring in minor updates
   required_providers {
 
     random = {
