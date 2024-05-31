@@ -209,7 +209,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Render terraform docs inside the README.md and push changes back to PR branch
-        uses: terraform-docs/gh-actions@v1.1.0
+        uses: terraform-docs/gh-actions@v1.2.0
         if: success() || failure()
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
@@ -230,7 +230,7 @@ jobs:
           working-dir: .
 
       - name: Render terraform docs inside the TERRAFORM.md and push changes back to PR branch
-        uses: terraform-docs/gh-actions@v1.1.0
+        uses: terraform-docs/gh-actions@v1.2.0
         if: success() || failure()
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
@@ -251,7 +251,7 @@ jobs:
           working-dir: .
 
       - name: "[example1] Render terraform docs inside the README.md and push changes back to PR branch"
-        uses: terraform-docs/gh-actions@v1.1.0
+        uses: terraform-docs/gh-actions@v1.2.0
         if: success() || failure()
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
@@ -270,7 +270,7 @@ jobs:
           working-dir: examples/example1
 
       - name: "[example2] Render terraform docs inside the README.md and push changes back to PR branch"
-        uses: terraform-docs/gh-actions@v1.1.0
+        uses: terraform-docs/gh-actions@v1.2.0
         if: success() || failure()
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
