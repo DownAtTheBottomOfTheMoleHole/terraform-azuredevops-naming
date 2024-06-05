@@ -15,19 +15,7 @@ commits-since-version-source-padding: 4
 tag-pre-release-weight: 60000
 commit-message-incrementing: Enabled
 branches:
-  dependabot:
-    regex: ^(dependabot)[/-]
-    mode: ContinuousDeployment
-    tag: useBranchName
-    increment: inherit
-    prevent-increment-of-merged-branch-version: false
-    track-merge-target: false
-    tracks-release-branches: false
-    is-release-branch: false
-    is-source-branch-for: ["main"]
-    is-mainline: false
-    source-branches: ["main"]
-
+  
   renovate:
     regex: ^(renovate)[/-]
     mode: ContinuousDeployment
