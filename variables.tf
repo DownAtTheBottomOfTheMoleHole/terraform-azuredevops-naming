@@ -1,10 +1,10 @@
 variable "environment_tags" {
   type        = list(string)
   description = "List of environment names in their shortened form. These will be translated to full names in the module."
-  default     = ["dev", "uat", "prd"]
+  default     = ["dev", "uat", "prod"]
   validation {
-    condition     = alltrue([for tag in var.environment_tags : can(regex("^(acc|aud|com|dev|eph|fet|hot|int|pen|per|prd|reg|stg|sys|tst|uat)$", tag))])
-    error_message = "The environment_tags must be one of the following: acc, aud, com, dev, eph, fet, hot, int, pen, per, prd, reg, stg, sys, tst, uat."
+    condition     = alltrue([for tag in var.environment_tags : can(regex("^(acc|aud|com|dev|eph|fet|hot|int|pen|per|prod|reg|stg|sys|tst|uat)$", tag))])
+    error_message = "The environment_tags must be one of the following: acc, aud, com, dev, eph, fet, hot, int, pen, per, prod, reg, stg, sys, tst, uat."
   }
 }
 
