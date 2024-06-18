@@ -4,7 +4,7 @@ variable "environment_tags" {
   default     = ["dev", "uat", "prd"]
   validation {
     condition     = alltrue([for tag in var.environment_tags : can(regex("^(acc|aud|com|dev|eph|fet|hot|int|pen|per|prd|prod|reg|stg|sys|tst|uat)$", tag))])
-    error_message = "The environment_tags must be one of the following: acc, aud, com, dev, eph, fet, hot, int, pen, per, prod, reg, stg, sys, tst, uat."
+    error_message = "The environment_tags must be one of the following: acc, aud, com, dev, eph, fet, hot, int, pen, per, prd, prod, reg, stg, sys, tst, uat."
   }
 }
 
