@@ -46,6 +46,7 @@ locals {
     pen = "penetration-testing"
     per = "performance-testing"
     prd = "production"
+    prod = "production"
     reg = "regression-testing"
     stg = "staging"
     sys = "system-testing"
