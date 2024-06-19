@@ -25,6 +25,7 @@
       "matchDatasources": [
         "azure-pipelines-tasks"
       ],
+      "enabled": true,
       "extractVersion": "^(?<version>\\d+)"
     },
     {

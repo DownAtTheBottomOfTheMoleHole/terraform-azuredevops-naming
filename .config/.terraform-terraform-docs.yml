@@ -1,5 +1,5 @@
 formatter: "markdown table" # this is required
-version: "0.17"
+version: "0.18"
 header-from: /terraform-docs/tf_header.txt
 footer-from: /terraform-docs/tf_footer.txt
 recursive:

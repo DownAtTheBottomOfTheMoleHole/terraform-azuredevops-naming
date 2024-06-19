@@ -18,7 +18,7 @@ either download the tarball and add tfupdate.exe to your PATH or do the followin
 ##### Terraform version
 
 ```shell
-tfupdate terraform . --version "$(tfupdate release latest hashicorp/terraform)" --recursive
+tfupdate terraform . --version "~> $(tfupdate release latest hashicorp/terraform)" --recursive
 ```
 
 please also add the terraform version to the `terraform_installer_version` variable in `build/pipelines/iac_templates/variables.yml`
@@ -26,5 +26,5 @@ please also add the terraform version to the `terraform_installer_version` varia
 ##### Random version
 
 ```shell
-tfupdate provider random . --version "$(tfupdate release latest hashicorp/random --source-type tfregistryProvider)" --recursive
+tfupdate provider random . --version "~> $(tfupdate release latest hashicorp/random --source-type tfregistryProvider)" --recursive
 ```
