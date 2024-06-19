@@ -18,8 +18,8 @@ The below documentation was generated via Terraform docs using pre-commit
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.8.4 |
-| <a name="requirement_random"></a> [random](#requirement\_random) | 3.6.2 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.8.0 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.6.0 |
 
 ---
 
@@ -58,7 +58,7 @@ The below documentation was generated via Terraform docs using pre-commit
 ```hcl
 module "azdo_naming" {
   source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-  version = "2.1.7"
+  version = "~> 2.1.34"
 
   # Optional variables
   environment_tags = [
@@ -105,7 +105,7 @@ this shows creating:
 ```hcl
 module "azdo_naming" {
   source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-  version = "2.1.7"
+  version = "~> 2.1.34"
 
   # Optional variables
   environment_tags = [
@@ -156,8 +156,8 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 
 | Name | Type |
 |------|------|
-| [random_string.first_letter](https://registry.terraform.io/providers/hashicorp/random/3.6.2/docs/resources/string) | resource |
-| [random_string.main](https://registry.terraform.io/providers/hashicorp/random/3.6.2/docs/resources/string) | resource |
+| [random_string.first_letter](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
+| [random_string.main](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 
 ---
 
@@ -298,7 +298,7 @@ either download the tarball and add tfupdate.exe to your PATH or do the followin
 ##### Terraform version
 
 ```shell
-tfupdate terraform . --version "$(tfupdate release latest hashicorp/terraform)" --recursive
+tfupdate terraform . --version "~> $(tfupdate release latest hashicorp/terraform)" --recursive
 ```
 
 please also add the terraform version to the `terraform_installer_version` variable in `build/pipelines/iac_templates/variables.yml`
@@ -306,7 +306,7 @@ please also add the terraform version to the `terraform_installer_version` varia
 ##### Random version
 
 ```shell
-tfupdate provider random . --version "$(tfupdate release latest hashicorp/random --source-type tfregistryProvider)" --recursive
+tfupdate provider random . --version "~> $(tfupdate release latest hashicorp/random --source-type tfregistryProvider)" --recursive
 ```
 
 ---
