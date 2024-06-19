@@ -29,7 +29,7 @@ No requirements.
 ```hcl
 module "azdo_naming" {
   source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-  version = "2.1.7"
+  version = "~> 2.1.34"
 
   # Optional variables
   environment_tags = [
