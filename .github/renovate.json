@@ -1,16 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "addLabels": [
-    "renovate",
-    "bot"
-  ],
+  "addLabels": ["renovate", "bot"],
   "azure-pipelines": {
     "enabled": true,
     "fileMatch": ["\\.ya?ml$"]
   },
-  "extends": [
-    "config:recommended"
-  ],
+  "extends": ["config:recommended"],
   "gitAuthor": "DBMH Renovate <renovate@dbmh.com>",
   "hostRules": [
     {
@@ -22,39 +17,25 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": [
-        "azure-pipelines-tasks"
-      ],
+      "matchDatasources": ["azure-pipelines-tasks"],
       "enabled": true,
       "extractVersion": "^(?<version>\\d+)"
     },
     {
-      "description": [
-        "Automatically merge patch versions"
-      ],
-      "matchUpdateTypes": [
-        "patch"
-      ],
+      "description": ["Automatically merge patch versions"],
+      "matchUpdateTypes": ["patch"],
       "automerge": true,
       "automergeType": "pr"
     },
     {
-      "description": [
-        "Automatically merge minor versions"
-      ],
-      "matchUpdateTypes": [
-        "minor"
-      ],
+      "description": ["Automatically merge minor versions"],
+      "matchUpdateTypes": ["minor"],
       "automerge": true,
       "automergeType": "pr"
     },
     {
-      "description": [
-        "Do not automatically merge major versions"
-      ],
-      "matchUpdateTypes": [
-        "major"
-      ],
+      "description": ["Do not automatically merge major versions"],
+      "matchUpdateTypes": ["major"],
       "automerge": false,
       "automergeType": "pr"
     },
