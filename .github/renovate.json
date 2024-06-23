@@ -5,6 +5,7 @@
     "enabled": true,
     "fileMatch": ["\\.ya?ml$"]
   },
+  "dependencyDashboardAutoclose": true,
   "extends": ["config:recommended"],
   "gitAuthor": "DBMH Renovate <renovate@dbmh.com>",
   "hostRules": [
