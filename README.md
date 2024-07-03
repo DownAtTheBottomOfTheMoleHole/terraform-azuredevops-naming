@@ -140,7 +140,7 @@ The below documentation was generated via Terraform docs using pre-commit
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.8.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.9.0 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | ~> 3.6.0 |
 
 ---
@@ -180,7 +180,7 @@ The below documentation was generated via Terraform docs using pre-commit
 ```hcl
 module "azdo_naming" {
   source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-  version = "~> 2.1.34"
+  version = "~> 2.2.0"
 
   # Optional variables
   environment_tags = [
@@ -227,7 +227,7 @@ this shows creating:
 ```hcl
 module "azdo_naming" {
   source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-  version = "~> 2.1.34"
+  version = "~> 2.2.0"
 
   # Optional variables
   environment_tags = [
