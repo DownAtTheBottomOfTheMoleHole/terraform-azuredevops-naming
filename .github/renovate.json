@@ -20,149 +20,86 @@
     {
       "enabled": false,
       "extractVersion": "^(?<version>\\d+)",
-      "matchDatasources": [
-        "azure-pipelines-tasks"
-      ]
+      "matchDatasources": ["azure-pipelines-tasks"]
     },
     {
-      "addLabels": [
-        "Semver Patch",
-        "Documentation Required",
-        "Bug"
-      ],
+      "addLabels": ["Semver Patch", "Documentation Required", "Bug"],
       "automerge": true,
       "automergeType": "pr",
       "commitMessageExtra": "+semver: patch",
       "description": "Automatically merge patch versions",
-      "matchUpdateTypes": [
-        "patch"
-      ]
+      "matchUpdateTypes": ["patch"]
     },
     {
-      "addLabels": [
-        "Semver Minor",
-        "Documentation Required",
-        "Enhancement"
-      ],
+      "addLabels": ["Semver Minor", "Documentation Required", "Enhancement"],
       "automerge": true,
       "automergeType": "pr",
       "commitMessageExtra": "+semver: minor",
       "description": "Automatically merge minor versions",
-      "matchUpdateTypes": [
-        "minor"
-      ]
+      "matchUpdateTypes": ["minor"]
     },
     {
-      "addLabels": [
-        "Semver Major",
-        "Documentation Required"
-      ],
+      "addLabels": ["Semver Major", "Documentation Required"],
       "automerge": false,
       "automergeType": "pr",
       "commitMessageExtra": "+semver: major",
       "description": "Do not automatically merge major versions",
-      "matchUpdateTypes": [
-        "major"
-      ]
+      "matchUpdateTypes": ["major"]
     },
     {
       "automerge": false,
       "description": "Do not automatically merge minor versions for terraform",
-      "matchPackagePatterns": [
-        "^terraform$"
-      ],
-      "matchUpdateTypes": [
-        "minor"
-      ]
+      "matchPackagePatterns": ["^terraform$"],
+      "matchUpdateTypes": ["minor"]
     },
     {
       "description": "Add package names to this array to exclude them from Renovate updates",
       "excludePackageNames": []
     },
     {
-      "addLabels": [
-        "Azure Pipelines"
-      ],
+      "addLabels": ["Azure Pipelines"],
       "description": "Label Azure Pipelines related updates",
-      "matchPackagePatterns": [
-        "azure-pipelines",
-        "Documentation Required"
-      ]
+      "matchPackagePatterns": ["azure-pipelines", "Documentation Required"]
     },
     {
-      "addLabels": [
-        "GitHub Actions"
-      ],
+      "addLabels": ["GitHub Actions"],
       "description": "Label GitHub Actions related updates",
-      "matchPackagePatterns": [
-        "actions"
-      ]
+      "matchPackagePatterns": ["actions"]
     },
     {
-      "addLabels": [
-        "Documentation"
-      ],
+      "addLabels": ["Documentation"],
       "description": "Label documentation related updates",
-      "matchPackagePatterns": [
-        "^docs"
-      ]
+      "matchPackagePatterns": ["^docs"]
     },
     {
-      "addLabels": [
-        "Chore"
-      ],
+      "addLabels": ["Chore"],
       "description": "Label chores like dependency pinning or digest updates",
-      "matchUpdateTypes": [
-        "pin",
-        "digest"
-      ]
+      "matchUpdateTypes": ["pin", "digest"]
     },
     {
-      "addLabels": [
-        "Terraform"
-      ],
+      "addLabels": ["Terraform"],
       "description": "Label Terraform related updates",
-      "matchPackagePatterns": [
-        "terraform"
-      ]
+      "matchPackagePatterns": ["terraform"]
     },
     {
-      "addLabels": [
-        "Bug"
-      ],
+      "addLabels": ["Bug"],
       "description": "Label bug fix updates",
-      "matchPackagePatterns": [
-        "bugfix"
-      ]
+      "matchPackagePatterns": ["bugfix"]
     },
     {
-      "addLabels": [
-        "Hotfix"
-      ],
+      "addLabels": ["Hotfix"],
       "description": "Label hotfix updates",
-      "matchPackagePatterns": [
-        "hotfix"
-      ]
+      "matchPackagePatterns": ["hotfix"]
     },
     {
-      "addLabels": [
-        "Refactor"
-      ],
+      "addLabels": ["Refactor"],
       "description": "Label refactor updates",
-      "matchPackagePatterns": [
-        "refactor"
-      ]
+      "matchPackagePatterns": ["refactor"]
     },
     {
-      "addLabels": [
-        "Style"
-      ],
+      "addLabels": ["Style"],
       "description": "Label style and linting updates",
-      "matchPackagePatterns": [
-        "style",
-        "lint",
-        "mega-linter"
-      ]
+      "matchPackagePatterns": ["style", "lint", "mega-linter"]
     }
   ],
   "prConcurrentLimit": 0,
