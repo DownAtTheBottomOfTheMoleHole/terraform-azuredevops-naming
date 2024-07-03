@@ -1,6 +1,6 @@
 module "azdo_naming" {
   source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-  version = "~> 2.1.34"
+  version = "~> 2.2.0"
 
   # Optional variables
   environment_tags = [
