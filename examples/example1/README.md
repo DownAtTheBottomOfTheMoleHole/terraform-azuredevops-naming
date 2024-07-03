@@ -29,7 +29,7 @@ No requirements.
 ```hcl
 module "azdo_naming" {
   source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-  version = "~> 2.1.34"
+  version = "~> 2.2.0"
 
   # Optional variables
   environment_tags = [
@@ -109,7 +109,7 @@ No outputs.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_azdo_naming"></a> [azdo\_naming](#module\_azdo\_naming) | DownAtTheBottomOfTheMoleHole/naming/azuredevops | 2.1.7 |
+| <a name="module_azdo_naming"></a> [azdo\_naming](#module\_azdo\_naming) | DownAtTheBottomOfTheMoleHole/naming/azuredevops | ~> 2.2.0 |
 
 ---
 
@@ -139,7 +139,7 @@ either download the tarball and add tfupdate.exe to your PATH or do the followin
 ##### Terraform version
 
 ```shell
-tfupdate terraform . --version "$(tfupdate release latest hashicorp/terraform)" --recursive
+tfupdate terraform . --version "~> $(tfupdate release latest hashicorp/terraform)" --recursive
 ```
 
 please also add the terraform version to the `terraform_installer_version` variable in `build/pipelines/iac_templates/variables.yml`
@@ -147,7 +147,7 @@ please also add the terraform version to the `terraform_installer_version` varia
 ##### Random version
 
 ```shell
-tfupdate provider random . --version "$(tfupdate release latest hashicorp/random --source-type tfregistryProvider)" --recursive
+tfupdate provider random . --version "~> $(tfupdate release latest hashicorp/random --source-type tfregistryProvider)" --recursive
 ```
 
 ---
