@@ -1,0 +1,67 @@
+# .github/release.yml
+
+changelog:
+  exclude:
+    labels:
+      - Ignore for Release
+    #authors:
+    #  - octocat
+  categories:
+    - title: Breaking Changes 🛠
+      labels:
+        - Semver Major
+    - title: New Features and Enhancements 🎉
+      labels:
+        - Semver Minor
+        - Enhancement
+        - Feature Testing
+    - title: Bug Fixes and Hotfixes 🐛
+      labels:
+        - Semver Patch
+        - Bug
+        - Hotfix
+    - title: Documentation and Guides 📚
+      labels:
+        - Documentation Required
+        - Documentation
+    - title: Performance Improvements 🚀
+      labels:
+        - Performance
+        - Optimization
+        - Speed
+        - Benchmark
+        - Latency
+    - title: Infrastructure and Tooling 🛠️
+      labels:
+        - Azure Pipelines
+        - GitHub Actions
+        - MegaLinter
+        - Terraform Required
+        - Terraform
+        - Chore
+        - Renovate
+    - title: Code Quality and Refactoring ♻️
+      labels:
+        - Refactor
+        - Style
+        - Missing Tests
+    - title: Project Management and Collaboration 🤝
+      labels:
+        - Blocked
+        - Bot
+        - CAG GitHub
+        - Duplicate
+        - Good First Issue
+        - Help Wanted
+        - In Analysis
+        - In Progress
+        - In Review
+        - Integration Testing
+        - Invalid
+        - Question
+        - Ready
+        - Repository
+        - Wont Fix
+    - title: Other Changes
+      labels:
+        - "*"

@@ -5,7 +5,7 @@
     "enabled": true,
     "fileMatch": ["\\.ya?ml$"]
   },
-  "dependencyDashboardAutoclose": true,
+  "dependencyDashboard": false,
   "extends": ["config:recommended"],
   "gitAuthor": "DBMH Renovate <renovate@dbmh.com>",
   "hostRules": [
@@ -18,33 +18,158 @@
   ],
   "packageRules": [
     {
-      "matchDatasources": ["azure-pipelines-tasks"],
-      "enabled": true,
-      "extractVersion": "^(?<version>\\d+)"
+      "enabled": false,
+      "extractVersion": "^(?<version>\\d+)",
+      "matchDatasources": [
+        "azure-pipelines-tasks"
+      ]
     },
     {
-      "description": ["Automatically merge patch versions"],
-      "matchUpdateTypes": ["patch"],
-      "automerge": true,
-      "automergeType": "pr"
-    },
-    {
-      "description": ["Automatically merge minor versions"],
-      "matchUpdateTypes": ["minor"],
-      "automerge": true,
-      "automergeType": "pr"
-    },
-    {
-      "description": ["Do not automatically merge major versions"],
-      "matchUpdateTypes": ["major"],
-      "automerge": false,
-      "automergeType": "pr"
-    },
-    {
-      "description": [
-        "Add package names to this array to exclude them from Renovate updates"
+      "addLabels": [
+        "Semver Patch",
+        "Documentation Required",
+        "Bug"
       ],
+      "automerge": true,
+      "automergeType": "pr",
+      "commitMessageExtra": "+semver: patch",
+      "description": "Automatically merge patch versions",
+      "matchUpdateTypes": [
+        "patch"
+      ]
+    },
+    {
+      "addLabels": [
+        "Semver Minor",
+        "Documentation Required",
+        "Enhancement"
+      ],
+      "automerge": true,
+      "automergeType": "pr",
+      "commitMessageExtra": "+semver: minor",
+      "description": "Automatically merge minor versions",
+      "matchUpdateTypes": [
+        "minor"
+      ]
+    },
+    {
+      "addLabels": [
+        "Semver Major",
+        "Documentation Required"
+      ],
+      "automerge": false,
+      "automergeType": "pr",
+      "commitMessageExtra": "+semver: major",
+      "description": "Do not automatically merge major versions",
+      "matchUpdateTypes": [
+        "major"
+      ]
+    },
+    {
+      "automerge": false,
+      "description": "Do not automatically merge minor versions for terraform",
+      "matchPackagePatterns": [
+        "^terraform$"
+      ],
+      "matchUpdateTypes": [
+        "minor"
+      ]
+    },
+    {
+      "description": "Add package names to this array to exclude them from Renovate updates",
       "excludePackageNames": []
+    },
+    {
+      "addLabels": [
+        "Azure Pipelines"
+      ],
+      "description": "Label Azure Pipelines related updates",
+      "matchPackagePatterns": [
+        "azure-pipelines",
+        "Documentation Required"
+      ]
+    },
+    {
+      "addLabels": [
+        "GitHub Actions"
+      ],
+      "description": "Label GitHub Actions related updates",
+      "matchPackagePatterns": [
+        "actions"
+      ]
+    },
+    {
+      "addLabels": [
+        "Documentation"
+      ],
+      "description": "Label documentation related updates",
+      "matchPackagePatterns": [
+        "^docs"
+      ]
+    },
+    {
+      "addLabels": [
+        "Chore"
+      ],
+      "description": "Label chores like dependency pinning or digest updates",
+      "matchUpdateTypes": [
+        "pin",
+        "digest"
+      ]
+    },
+    {
+      "addLabels": [
+        "Terraform"
+      ],
+      "description": "Label Terraform related updates",
+      "matchPackagePatterns": [
+        "terraform"
+      ]
+    },
+    {
+      "addLabels": [
+        "Bug"
+      ],
+      "description": "Label bug fix updates",
+      "matchPackagePatterns": [
+        "bugfix"
+      ]
+    },
+    {
+      "addLabels": [
+        "Hotfix"
+      ],
+      "description": "Label hotfix updates",
+      "matchPackagePatterns": [
+        "hotfix"
+      ]
+    },
+    {
+      "addLabels": [
+        "Refactor"
+      ],
+      "description": "Label refactor updates",
+      "matchPackagePatterns": [
+        "refactor"
+      ]
+    },
+    {
+      "addLabels": [
+        "Style"
+      ],
+      "description": "Label style and linting updates",
+      "matchPackagePatterns": [
+        "style",
+        "lint",
+        "mega-linter"
+      ]
     }
-  ]
+  ],
+  "prConcurrentLimit": 0,
+  "prCreation": "immediate",
+  "prHourlyLimit": 0,
+  "separateMajorMinor": true,
+  "separateMultipleMajor": true,
+  "timezone": "GB",
+  "useBaseBranchConfig": "merge"
 }
