@@ -36,7 +36,7 @@ The below documentation was generated via Terraform docs using pre-commit
 ```hcl
   module "azdo_naming" {
     	 source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-    	 version  = "2.1.7"
+    	 version  = "~>2.2.0"
     
 	 # Optional variables
     	 environment_tags  = [
