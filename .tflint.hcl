@@ -2,7 +2,7 @@ config {
 plugin_dir = "~/.tflint.d/plugins"
 disabled_by_default = true
 #Enables module inspection
-module = false
+call_module_type = "all"
 force = false
 }
 
