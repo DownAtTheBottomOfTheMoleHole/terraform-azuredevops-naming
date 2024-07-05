@@ -45,7 +45,7 @@ module "azdo_naming" {
   work_items             = []
 }
 
-resource "azuredevops_project" "example1" {
+resource "azuredevops_project" "example_1" {
   name               = module.azdo_naming.project.name
   visibility         = "private"
   version_control    = "Git"
@@ -71,7 +71,7 @@ resource "azuredevops_project" "example1" {
 
 | Name | Type |
 |------|------|
-| [azuredevops_project.example1](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/project) | resource |
+| [azuredevops_project.example_1](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/project) | resource |
 
 ---
 

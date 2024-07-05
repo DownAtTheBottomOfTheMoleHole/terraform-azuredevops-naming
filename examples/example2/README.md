@@ -45,14 +45,14 @@ module "azdo_naming" {
   work_items             = []
 }
 
-resource "azuredevops_project" "example" {
+resource "azuredevops_project" "example_2" {
   name               = module.azdo_naming.project.name
   visibility         = "private"
   version_control    = "Git"
   work_item_template = "Agile"
 }
 
-resource "azuredevops_git_repository" "example" {
+resource "azuredevops_git_repository" "example_2" {
   project_id = azuredevops_project.example.id
   name       = module.azdo_naming.git_repository.name
   initialization {
@@ -81,9 +81,9 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 
 | Name | Type |
 |------|------|
-| [azuredevops_git_repository.example](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/git_repository) | resource |
+| [azuredevops_git_repository.example_2](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/git_repository) | resource |
 | [azuredevops_git_repository_branch.feature_branch](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/git_repository_branch) | resource |
-| [azuredevops_project.example](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/project) | resource |
+| [azuredevops_project.example_2](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/project) | resource |
 
 ---
 

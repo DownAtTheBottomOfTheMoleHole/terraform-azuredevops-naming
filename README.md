@@ -196,7 +196,7 @@ module "azdo_naming" {
   work_items             = []
 }
 
-resource "azuredevops_project" "example1" {
+resource "azuredevops_project" "example_1" {
   name               = module.azdo_naming.project.name
   visibility         = "private"
   version_control    = "Git"
@@ -243,14 +243,14 @@ module "azdo_naming" {
   work_items             = []
 }
 
-resource "azuredevops_project" "example" {
+resource "azuredevops_project" "example_2" {
   name               = module.azdo_naming.project.name
   visibility         = "private"
   version_control    = "Git"
   work_item_template = "Agile"
 }
 
-resource "azuredevops_git_repository" "example" {
+resource "azuredevops_git_repository" "example_2" {
   project_id = azuredevops_project.example.id
   name       = module.azdo_naming.git_repository.name
   initialization {
