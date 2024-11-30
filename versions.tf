@@ -1,10 +1,10 @@
 terraform {
-  required_version = "~> 1.10.0" # pinned due to breaking changes occurring in minor updates
+  required_version = ">= 1.10.0, <2.0.0"
   required_providers {
 
     random = {
       source  = "hashicorp/random"
-      version = "~> 3.6.0" # pinned due to breaking changes occurring in minor updates
+      version = ">= 3.6.0, <4.0.0"
     }
 
   }
