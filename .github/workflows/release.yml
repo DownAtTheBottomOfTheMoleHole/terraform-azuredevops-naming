@@ -291,14 +291,14 @@ jobs:
 
       - name: Install GitVersion
         if: "!cancelled()"
-        uses: gittools/actions/gitversion/setup@v3.0.3
+        uses: gittools/actions/gitversion/setup@v3.1.1
         with:
           preferLatestVersion: true
           versionSpec: "5.x"
 
       - name: Determine Version
         if: "!cancelled()"
-        uses: gittools/actions/gitversion/execute@v3.0.3
+        uses: gittools/actions/gitversion/execute@v3.1.1
         with:
           useConfigFile: true
           configFilePath: .config/GitVersion.yml
