@@ -294,7 +294,7 @@ jobs:
         uses: gittools/actions/gitversion/setup@v3.1.1
         with:
           preferLatestVersion: true
-          versionSpec: "5.x"
+          versionSpec: "6.x"
 
       - name: Determine Version
         if: "!cancelled()"
