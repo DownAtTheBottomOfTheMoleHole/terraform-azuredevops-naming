@@ -102,6 +102,7 @@
       "matchPackagePatterns": ["style", "lint", "mega-linter"]
     }
   ],
+  "pinDigests": true,
   "prConcurrentLimit": 0,
   "prCreation": "immediate",
   "prHourlyLimit": 0,
