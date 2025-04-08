@@ -63,7 +63,7 @@ jobs:
           ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Render terraform docs inside the README.md and push changes back to PR branch
-        uses: terraform-docs/gh-actions@aeae0038ed47a547e0c0fca5c059d3335f48fb25 # v1.3.0
+        uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1.4.1
         if: "!cancelled()"
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
@@ -82,7 +82,7 @@ jobs:
           working-dir: .
 
       - name: Render terraform docs inside the TERRAFORM.md and push changes back to PR branch
-        uses: terraform-docs/gh-actions@aeae0038ed47a547e0c0fca5c059d3335f48fb25 # v1.3.0
+        uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1.4.1
         if: "!cancelled()"
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
@@ -101,7 +101,7 @@ jobs:
           working-dir: .
 
       - name: "[example1] Render terraform docs inside the README.md and push changes back to PR branch"
-        uses: terraform-docs/gh-actions@aeae0038ed47a547e0c0fca5c059d3335f48fb25 # v1.3.0
+        uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1.4.1
         if: success() || failure()
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
@@ -120,7 +120,7 @@ jobs:
           working-dir: examples/example1
 
       - name: "[example2] Render terraform docs inside the README.md and push changes back to PR branch"
-        uses: terraform-docs/gh-actions@aeae0038ed47a547e0c0fca5c059d3335f48fb25 # v1.3.0
+        uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1.4.1
         if: success() || failure()
         with:
           #args: "-lockfile --read-comments --required --sensitive --show all --header-from ./terraform-docs/tf_header.txt --footer-from ./terraform-docs/tf_footer.txt"
