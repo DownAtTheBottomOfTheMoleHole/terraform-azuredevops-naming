@@ -308,7 +308,7 @@ jobs:
         id: tag_version
         uses: mathieudutour/github-tag-action@a22cf08638b34d5badda920f9daf6e72c477b07b # v6.2
         with:
-          custom_tag: ${{ env.GitVersion_SemVer }}
+          custom_tag: ${{ env.GitVersion_MajorMinorPatch }}
           create_annotated_tag: true
           fetch_all_tags: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
