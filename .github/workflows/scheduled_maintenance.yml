@@ -53,7 +53,7 @@ jobs:
     if: ${{ !cancelled() }} # only run after tfupdate job has finished
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+      - uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
         with:
           ref: ${{ github.event.pull_request.head.ref }}
 
@@ -148,7 +148,7 @@ jobs:
       # Git Checkout
       - name: Checkout Code
         if: success() || failure()
-        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4
         with:
           token: ${{ secrets.PAT || secrets.GITHUB_TOKEN }}
           #fetch-depth: 0 # If you use VALIDATE_ALL_CODEBASE = true, you can remove this line to improve performances
