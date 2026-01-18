@@ -14,34 +14,29 @@
 --->
 
 # What?
+
 <!--- Explain what the pull request is for. it doesn't need to be technical --->
 
-
-
 # Why?
+
 <!--- what goal does this pull request fulfil --->
 
-
-
 # How?
+
 <!--- Meaningful explanation of how you achieved the goal --->
 
-
-
 # Related
+
 <!--- Links to related issues/PBIs please specify if the pr will close them. referenced to any other related PR --->
 
-
-
 # Testing?
+
 <!--- Please include details of any relevant testing and the results --->
 
-
-
 # Screenshots (optional)
+
 <!--- terraform plans, UI changes etc--->
 
-
-
 # Anything Else?
+
 <!--- You may want to delve into possible architecture changes or technical debt here. Call out challenges, optimizations, etc. --->
