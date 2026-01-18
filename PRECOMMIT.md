@@ -39,6 +39,7 @@ Some hooks are set to `manual` stage and won't run automatically:
 - **sign-commit**: Disabled (can corrupt files)
 
 To run manual hooks:
+
 ```bash
 pre-commit run --hook-stage manual megalinter-incremental --all-files
 ```
@@ -77,6 +78,7 @@ The following hooks are intentionally disabled to prevent issues:
 ## Hooks That Modify Files
 
 These hooks will auto-fix issues:
+
 - `trailing-whitespace`
 - `end-of-file-fixer`
 - `mixed-line-ending`
