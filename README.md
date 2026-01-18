@@ -607,5 +607,4 @@ Module Link: [https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredev
 
 <!-- IMAGES AND ICONS -->
 
-[LICENSE.md]: ./LICENSE.md
 [logo-image]: ./.assets/RolfMoleman.png
