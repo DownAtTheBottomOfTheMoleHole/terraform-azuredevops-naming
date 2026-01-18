@@ -45,5 +45,3 @@
 
 # Anything Else?
 <!--- You may want to delve into possible architecture changes or technical debt here. Call out challenges, optimizations, etc. --->
-
-
