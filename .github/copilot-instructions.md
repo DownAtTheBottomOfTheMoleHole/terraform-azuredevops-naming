@@ -77,6 +77,20 @@ To regenerate docs: `pre-commit run terraform-docs -a`
 1. **Validation**: Run `terraform validate` - this checks regex patterns in [validation.tf](validation.tf)
 2. **Examples**: Test using [examples/example1/example.tf](examples/example1/example.tf) or example2
 3. **Version updates**: Use `tfupdate` commands documented in README for provider version bumps
+4. **Version management**: This repo uses `.terraform-version` file for tfenv/asdf compatibility
+
+### Running Pre-commit Hooks
+
+To run specific hooks manually:
+```bash
+# Run all hooks
+pre-commit run --all-files
+
+# Run specific hooks
+pre-commit run terraform-validate --all-files
+pre-commit run terraform-docs --all-files
+pre-commit run cspell --all-files
+```
 
 ## Code Conventions
 
