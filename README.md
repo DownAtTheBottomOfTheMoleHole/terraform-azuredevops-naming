@@ -132,8 +132,8 @@ The below documentation was generated via Terraform docs using pre-commit
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.14.3 |
-| <a name="requirement_random"></a> [random](#requirement\_random) | 3.8.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.14.0, < 2.0.0 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.8.0, < 4.0.0 |
 
 ---
 
@@ -269,8 +269,8 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 
 | Name | Type |
 |------|------|
-| [random_string.first_letter](https://registry.terraform.io/providers/hashicorp/random/3.8.0/docs/resources/string) | resource |
-| [random_string.main](https://registry.terraform.io/providers/hashicorp/random/3.8.0/docs/resources/string) | resource |
+| [random_string.first_letter](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
+| [random_string.main](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 
 ---
 
