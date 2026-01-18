@@ -2,6 +2,7 @@
 <!-- markdown-table-prettify-ignore-start -->
 <!-- prettier-ignore-start -->
 <!-- start_of_terraform_docs -->
+# Terraform
 
 The below documentation was generated via Terraform docs using pre-commit
 
@@ -13,6 +14,7 @@ The below documentation was generated via Terraform docs using pre-commit
 
 ---
 
+## Requirements
 
 | Name | Version |
 |------|---------|
@@ -28,13 +30,14 @@ The below documentation was generated via Terraform docs using pre-commit
 ---
 
 <!-- consuming terraform-azuredevops-naming -->
+## Consuming terraform-azuredevops-naming
 
   To consume this module add the following to your module.tf:
 ```hcl
   module "azdo_naming" {
     	 source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
     	 version  = "~>2.2.0"
-
+    
 	 # Optional variables
     	 environment_tags  = [
   "dev",
@@ -50,6 +53,7 @@ The below documentation was generated via Terraform docs using pre-commit
   }
   ```
 
+## Creating a project
 
 ```hcl
 module "azdo_naming" {
@@ -81,7 +85,6 @@ resource "azuredevops_project" "example_1" {
     "artifacts" = "disabled"
   }
 }
-
 ```
 
 ---
@@ -92,6 +95,7 @@ resource "azuredevops_project" "example_1" {
 
 ---
 
+## Creating a unique branch name
 
 this shows creating:
  - a project
@@ -147,6 +151,7 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 
 ---
 
+## Resources
 
 | Name | Type |
 |------|------|
@@ -161,6 +166,7 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 
 ---
 
+## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
@@ -180,6 +186,7 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 
 ---
 
+## Outputs
 
 | Name | Description | Value | Sensitive |
 |------|-------------|-------|:---------:|
@@ -258,6 +265,7 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 
 ---
 
+## Modules
 
 No modules.
 
@@ -269,11 +277,13 @@ No modules.
 
 ---
 
+##### Terraform versions
 
 Terraform version and terraform provider versions have been set using tfupdate.
 In order to update the installed providers to the latest versions please first install tfupdate using the below instructions and then run the following commands from the root of the repo in a powershell session.
 Please only run the commands for the providers/modules you are using.
 
+##### Installing Tfupdate
 
 the tfupdate repo can be found [here](https://github.com/minamijoyo/tfupdate)
 
@@ -284,6 +294,7 @@ either download the tarball and add tfupdate.exe to your PATH or do the followin
 3. build the source code with `go build`
 4. Add the complied binaries to your PATH
 
+##### Terraform version
 
 ```shell
 tfupdate terraform . --version "~> $(tfupdate release latest hashicorp/terraform)" --recursive
@@ -291,6 +302,7 @@ tfupdate terraform . --version "~> $(tfupdate release latest hashicorp/terraform
 
 please also add the terraform version to the `terraform_installer_version` variable in `build/pipelines/iac_templates/variables.yml`
 
+##### Random version
 
 ```shell
 tfupdate provider random . --version "~> $(tfupdate release latest hashicorp/random --source-type tfregistryProvider)" --recursive
