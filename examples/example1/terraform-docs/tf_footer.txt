@@ -1,10 +1,7 @@
-##### Terraform versions
-
 Terraform version and terraform provider versions have been set using tfupdate.
 In order to update the installed providers to the latest versions please first install tfupdate using the below instructions and then run the following commands from the root of the repo in a powershell session.
 Please only run the commands for the providers/modules you are using.
 
-##### Installing Tfupdate
 
 the tfupdate repo can be found [here](https://github.com/minamijoyo/tfupdate)
 
@@ -15,7 +12,6 @@ either download the tarball and add tfupdate.exe to your PATH or do the followin
 3. build the source code with `go build`
 4. Add the complied binaries to your PATH
 
-##### Terraform version
 
 ```shell
 tfupdate terraform . --version "$(tfupdate release latest hashicorp/terraform)" --recursive
@@ -23,8 +19,9 @@ tfupdate terraform . --version "$(tfupdate release latest hashicorp/terraform)" 
 
 please also add the terraform version to the `terraform_installer_version` variable in `build/pipelines/iac_templates/variables.yml`
 
-##### Random version
 
 ```shell
 tfupdate provider random . --version "~> $(tfupdate release latest hashicorp/random --source-type tfregistryProvider)" --recursive
 ```
+
+Precommit-Verified: 118768f6bb43d7dcf8011a671c81a76edb6b197949835467d1626f3061a57ae3
