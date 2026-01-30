@@ -34,10 +34,15 @@ override.tf.json
 
 # Include tfplan files to ignore the plan output of command: terraform plan -out=tfplan
 # example: *tfplan*
+*.tfplan
+*.tfplan.*
 
 # Ignore CLI configuration files
 .terraformrc
 terraform.rc
+
+# Ignore Terraform binary cache
+.terraform.d/
 
 ## pre-commit output
 !.pre-commit_logs/*
@@ -48,6 +53,24 @@ terraform.rc
 .infracost/
 
 ## megalinter and iac code checker files
+megalinter-reports/
+report/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+.cache/
 megalinter-reports/
 
 # node

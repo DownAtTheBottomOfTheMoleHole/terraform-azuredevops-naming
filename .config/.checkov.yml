@@ -1,4 +1,5 @@
-# You can see all available properties here: https://github.com/bridgecrewio/checkov#configuration-using-a-config-file
 quiet: true
 skip-check:
   - CKV_DOCKER_2
+
+Precommit-Verified: 8342eec98e15a1796afcb64d8989f09c898c522933550cb7ae0cf1369f971c99

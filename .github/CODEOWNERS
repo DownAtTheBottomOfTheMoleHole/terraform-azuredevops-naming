@@ -1,0 +1,23 @@
+# CODEOWNERS
+# These owners will be the default owners for everything in the repo.
+# They will be requested for review when someone opens a pull request.
+
+# Global owners
+* @DownAtTheBottomOfTheMoleHole
+
+# Terraform configuration files
+*.tf @DownAtTheBottomOfTheMoleHole
+*.tfvars @DownAtTheBottomOfTheMoleHole
+
+# Documentation
+*.md @DownAtTheBottomOfTheMoleHole
+/terraform-docs/ @DownAtTheBottomOfTheMoleHole
+
+# CI/CD workflows
+/.github/workflows/ @DownAtTheBottomOfTheMoleHole
+/.github/renovate.json @DownAtTheBottomOfTheMoleHole
+/.pre-commit-config.yaml @DownAtTheBottomOfTheMoleHole
+
+# Configuration files
+/.config/ @DownAtTheBottomOfTheMoleHole
+/versions.tf @DownAtTheBottomOfTheMoleHole

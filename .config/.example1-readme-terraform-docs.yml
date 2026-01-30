@@ -1,10 +1,6 @@
 formatter: "markdown table" # this is required
-#version: "0.17"
 header-from: ../../terraform-docs/tf_header.txt
 footer-from: ../../terraform-docs/tf_footer.txt
-#recursive:
-#enabled: false
-#path: .terraform\modules
 sections:
   #hide: []
   show: []
@@ -120,3 +116,5 @@ settings:
   required: true
   sensitive: true
   type: true
+
+Precommit-Verified: 60390380d1566e2e0a26b7823cd3f5cf6ad48791940bb33236ffc555ef8e6d56

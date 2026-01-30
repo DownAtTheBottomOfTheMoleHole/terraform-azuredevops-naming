@@ -70,7 +70,7 @@ content: |-
 
   ## Creating a unique branch name
 
-  this shows creating: 
+  this shows creating:
    - a project
    - git repository inside the project
    - a feature branch based on the default branch with a unique name

@@ -18,8 +18,8 @@ The below documentation was generated via Terraform docs using pre-commit
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.10.0, <2.0.0 |
-| <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.6.0, <4.0.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.14.0, < 2.0.0 |
+| <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.8.0, < 4.0.0 |
 
 ---
 
@@ -97,7 +97,7 @@ resource "azuredevops_project" "example_1" {
 
 ## Creating a unique branch name
 
-this shows creating: 
+this shows creating:
  - a project
  - git repository inside the project
  - a feature branch based on the default branch with a unique name
@@ -141,7 +141,6 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
   name          = module.azdo_naming.git_repository_feature_branch_slash.name_unique
   ref_branch    = azuredevops_git_repository.example.default_branch
 }
-
 ```
 
 ---

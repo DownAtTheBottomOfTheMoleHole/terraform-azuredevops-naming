@@ -65,7 +65,6 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
   name          = module.azdo_naming.git_repository_feature_branch_slash.name_unique
   ref_branch    = azuredevops_git_repository.example.default_branch
 }
-
 ```
 
 
