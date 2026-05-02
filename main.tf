@@ -793,6 +793,127 @@ locals {
       regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
     }
 
+    serviceendpoint_azure_service_bus = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "seasb"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_black_duck = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sebd"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_checkmarx_one = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "secm1"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_checkmarx_sast = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "secmst"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_checkmarx_sca = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "secmsca"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_dynamics_lifecycle_services = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sedls"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_generic_v2 = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "seg2"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_gitlab = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "segl"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_openshift = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "seos"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_snyk = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sesnyk"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    serviceendpoint_visualstudiomarketplace = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 1024))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 1024))
+      dashes      = true
+      slug        = "sevsm"
+      min_length  = 1
+      max_length  = 1024
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
 
     team = {
       name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 255))
