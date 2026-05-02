@@ -16,10 +16,10 @@ That's it for most users. Read on if you maintain wrapper modules, downstream te
 
 ## Baseline version bumps
 
-| Component | v10 minimum | v11 minimum |
-| --- | --- | --- |
-| Terraform | `>= 1.10.0` | `>= 1.14.0` |
-| `hashicorp/random` | `>= 3.6.0` | `>= 3.8.0` |
+| Component          | v10 minimum | v11 minimum |
+| ------------------ | ----------- | ----------- |
+| Terraform          | `>= 1.10.0` | `>= 1.14.0` |
+| `hashicorp/random` | `>= 3.6.0`  | `>= 3.8.0`  |
 
 Both bumps are widely supported by current toolchains. If you are pinned below these versions you must upgrade your local CLI / CI image before adopting v11.
 
