@@ -1,4 +1,25 @@
 APPLY_FIXES: all # all, none, or list of linter keys
+# Per-linter config file locations (consolidated under .config/)
+CSPELL_CONFIG_FILE: .config/.cspell.json
+# Whitelist the linters we actually want; everything else (jscpd, v8r, devskim, checkov repo-mode, etc.) is off
+ENABLE_LINTERS:
+  - ACTION_ACTIONLINT
+  - BASH_SHELLCHECK
+  - BASH_SHFMT
+  - DOCKERFILE_HADOLINT
+  - JSON_PRETTIER
+  - MARKDOWN_MARKDOWNLINT
+  - REPOSITORY_GITLEAKS
+  - REPOSITORY_SECRETLINT
+  - REPOSITORY_TRIVY
+  - SPELL_CSPELL
+  - TERRAFORM_TERRAFORM_FMT
+  - TERRAFORM_TFLINT
+  - TERRAFORM_CHECKOV
+  - YAML_PRETTIER
+  - YAML_YAMLLINT
+# Exclude megalinter's own config from generic file scans
+FILTER_REGEX_EXCLUDE: "(megalinter-reports/|\\.mega-linter\\.yml)"
 AZURE_COMMENT_REPORTER: true
 CLEAR_REPORT_FOLDER: true
 CONFIG_REPORTER: true
@@ -17,6 +38,8 @@ TAP_REPORTER_SUB_FOLDER: tap #if enabled allows you to define a different folder
 TERRAFORM_CHECKOV_ARGUMENTS:
   #- "--directory /Repo"
   - "--include-all-checkov-policies" # settings to allow integration with bridgecrew using pipeline variables
+  - "--skip-check"
+  - "CKV_DOCKER_2,CKV_TF_1,CKV2_ADO_1"
 TERRAFORM_CHECKOV_CLI_LINT_MODE: file # Options are file (default), list_of_files or project. Project scans from the root of the Repo
 TERRAFORM_KICS_ARGUMENTS:
   - "-m"
@@ -38,4 +61,3 @@ TERRAFORM_TFLINT_ARGUMENTS:
 TEXT_REPORTER: true #this is enabled by default anyway, but i find it is nicer to specifically declare it
 TEXT_REPORTER_SUB_FOLDER: text #if enabled allows you to define a different folder location for the text result files.
 
-Precommit-Verified: 840b0bb38e7d8052862c572f7b9052352b54a92ea06370f438abe56a19ed1e6b

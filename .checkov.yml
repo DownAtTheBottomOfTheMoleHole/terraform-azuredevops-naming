@@ -1,5 +1,9 @@
 quiet: true
 skip-check:
   - CKV_DOCKER_2
+  # Examples reference the public Terraform Registry; pinning to a commit hash is not applicable.
+  - CKV_TF_1
+  # Example repository policies are illustrative only.
+  - CKV2_ADO_1
 
 Precommit-Verified: 8342eec98e15a1796afcb64d8989f09c898c522933550cb7ae0cf1369f971c99

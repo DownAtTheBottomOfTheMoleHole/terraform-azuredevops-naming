@@ -1,113 +1,20 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "addLabels": ["renovate", "bot"],
-  "azure-pipelines": {
-    "enabled": true,
-    "fileMatch": ["\\.ya?ml$"]
-  },
-  "dependencyDashboard": false,
-  "extends": ["config:recommended"],
-  "gitAuthor": "DBMH Renovate <renovate@dbmh.com>",
-  "hostRules": [
-    {
-      "hostType": "github",
-      "matchHost": "github.com",
-      "repository": "https://github.com/*",
-      "token": "${PAT}"
-    }
-  ],
+  "description": "Repo-specific Renovate config — extends DownAtTheBottomOfTheMoleHole org baseline.",
+  "extends": ["local>DownAtTheBottomOfTheMoleHole/.github"],
   "packageRules": [
     {
-      "enabled": false,
-      "extractVersion": "^(?<version>\\d+)",
-      "matchDatasources": ["azure-pipelines-tasks"]
-    },
-    {
-      "addLabels": ["Semver Patch", "Documentation Required", "Bug"],
-      "automerge": true,
-      "automergeType": "pr",
-      "commitMessageExtra": "+semver: patch",
-      "description": "Automatically merge patch versions",
-      "matchUpdateTypes": ["patch"]
-    },
-    {
-      "addLabels": ["Semver Minor", "Documentation Required", "Enhancement"],
-      "automerge": true,
-      "automergeType": "pr",
-      "commitMessageExtra": "+semver: minor",
-      "description": "Automatically merge minor versions",
-      "matchUpdateTypes": ["minor"]
-    },
-    {
-      "addLabels": ["Semver Major", "Documentation Required"],
+      "description": "Do not auto-merge minor or major Terraform core updates",
+      "matchPackageNames": ["hashicorp/terraform"],
+      "matchUpdateTypes": ["minor", "major"],
       "automerge": false,
-      "automergeType": "pr",
-      "commitMessageExtra": "+semver: major",
-      "description": "Do not automatically merge major versions",
-      "matchUpdateTypes": ["major"]
+      "addLabels": ["Terraform"]
     },
     {
-      "automerge": false,
-      "description": "Do not automatically merge minor versions for terraform",
-      "matchPackagePatterns": ["^terraform$"],
-      "matchUpdateTypes": ["minor"]
-    },
-    {
-      "description": "Add package names to this array to exclude them from Renovate updates",
-      "excludePackageNames": []
-    },
-    {
-      "addLabels": ["Azure Pipelines"],
-      "description": "Label Azure Pipelines related updates",
-      "matchPackagePatterns": ["azure-pipelines", "Documentation Required"]
-    },
-    {
-      "addLabels": ["GitHub Actions"],
-      "description": "Label GitHub Actions related updates",
-      "matchPackagePatterns": ["actions"]
-    },
-    {
-      "addLabels": ["Documentation"],
-      "description": "Label documentation related updates",
-      "matchPackagePatterns": ["^docs"]
-    },
-    {
-      "addLabels": ["Chore"],
-      "description": "Label chores like dependency pinning or digest updates",
-      "matchUpdateTypes": ["pin", "digest"]
-    },
-    {
+      "description": "Label and group Terraform provider updates",
+      "matchManagers": ["terraform"],
       "addLabels": ["Terraform"],
-      "description": "Label Terraform related updates",
-      "matchPackagePatterns": ["terraform"]
-    },
-    {
-      "addLabels": ["Bug"],
-      "description": "Label bug fix updates",
-      "matchPackagePatterns": ["bugfix"]
-    },
-    {
-      "addLabels": ["Hotfix"],
-      "description": "Label hotfix updates",
-      "matchPackagePatterns": ["hotfix"]
-    },
-    {
-      "addLabels": ["Refactor"],
-      "description": "Label refactor updates",
-      "matchPackagePatterns": ["refactor"]
-    },
-    {
-      "addLabels": ["Style"],
-      "description": "Label style and linting updates",
-      "matchPackagePatterns": ["style", "lint", "mega-linter"]
+      "groupName": "terraform providers"
     }
-  ],
-  "pinDigests": true,
-  "prConcurrentLimit": 0,
-  "prCreation": "immediate",
-  "prHourlyLimit": 0,
-  "separateMajorMinor": true,
-  "separateMultipleMajor": true,
-  "timezone": "GB",
-  "useBaseBranchConfig": "merge"
+  ]
 }
