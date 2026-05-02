@@ -200,7 +200,7 @@ The below documentation was generated via Terraform docs using pre-commit
   module "azdo_naming" {
     	 source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
     	 version  = "~>2.2.0"
-
+    
 	 # Optional variables
     	 area_paths  = []
     	 dashboards  = []
