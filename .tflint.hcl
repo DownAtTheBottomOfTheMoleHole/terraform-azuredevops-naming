@@ -87,5 +87,3 @@ plugin "azurerm" {
     #version = "0.16.0"
     #source  = "github.com/terraform-linters/tflint-ruleset-azurerm"
 }
-
-Precommit-Verified: 9d885a0010cfd7c79c00990406395b974cf03281c9a1843b219bc603b0f2974a
