@@ -50,7 +50,7 @@ repos:
       - id: cspell
         args:
           - --config
-          - .config/.cspell.json
+          - .cspell.json
         name: code spell check for whole repository
 
   - repo: https://github.com/pre-commit/mirrors-prettier
@@ -128,11 +128,11 @@ repos:
     hooks:
       - id: terraform-docs-go
         name: Put terraform-docs terraform.md in ROOT
-        args: [markdown, ., --config, .config/.terraform-terraform-docs.yml]
+        args: [markdown, ., --config, .terraform-terraform-docs.yml]
 
       - id: terraform-docs-go
         name: Put terraform-docs into main readme.md
-        args: [markdown, ., --config, .config/.readme-terraform-docs.yml]
+        args: [markdown, ., --config, .readme-terraform-docs.yml]
 
   ###############################################################
   #######  Full repo multi-language security and linting  #######
