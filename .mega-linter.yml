@@ -60,4 +60,3 @@ TERRAFORM_TFLINT_ARGUMENTS:
   #- "--format junit"
 TEXT_REPORTER: true #this is enabled by default anyway, but i find it is nicer to specifically declare it
 TEXT_REPORTER_SUB_FOLDER: text #if enabled allows you to define a different folder location for the text result files.
-
