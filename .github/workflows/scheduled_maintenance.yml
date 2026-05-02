@@ -64,11 +64,11 @@ jobs:
             output: TERRAFORM.md
             working-dir: .
           - name: examples/example1
-            config: .config/.readme-terraform-docs.yml
+            config: ../../.config/.example1-readme-terraform-docs.yml
             output: README.md
             working-dir: examples/example1
           - name: examples/example2
-            config: .config/.readme-terraform-docs.yml
+            config: ../../.config/.example2-readme-terraform-docs.yml
             output: README.md
             working-dir: examples/example2
     steps:
