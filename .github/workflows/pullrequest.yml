@@ -73,25 +73,25 @@ jobs:
       matrix:
         target:
           - name: README.md
-            config: .config/.readme-terraform-docs.yml
+            config: .readme-terraform-docs.yml
             output: README.md
             working-dir: .
             indention: 4
             commit-message: '[terraform-docs] update README.md'
           - name: TERRAFORM.md
-            config: .config/.terraform-terraform-docs.yml
+            config: .terraform-terraform-docs.yml
             output: TERRAFORM.md
             working-dir: .
             indention: 4
             commit-message: '[terraform-docs] update TERRAFORM.md'
           - name: examples/example1
-            config: ../../.config/.example1-readme-terraform-docs.yml
+            config: ../../.example1-readme-terraform-docs.yml
             output: README.md
             working-dir: examples/example1
             indention: 1
             commit-message: '[terraform-docs] update examples/example1 README.md'
           - name: examples/example2
-            config: ../../.config/.example2-readme-terraform-docs.yml
+            config: ../../.example2-readme-terraform-docs.yml
             output: README.md
             working-dir: examples/example2
             indention: 1

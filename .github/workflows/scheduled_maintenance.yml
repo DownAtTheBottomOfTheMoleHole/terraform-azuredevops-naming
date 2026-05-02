@@ -56,19 +56,19 @@ jobs:
       matrix:
         target:
           - name: README.md
-            config: .config/.readme-terraform-docs.yml
+            config: .readme-terraform-docs.yml
             output: README.md
             working-dir: .
           - name: TERRAFORM.md
-            config: .config/.terraform-terraform-docs.yml
+            config: .terraform-terraform-docs.yml
             output: TERRAFORM.md
             working-dir: .
           - name: examples/example1
-            config: ../../.config/.example1-readme-terraform-docs.yml
+            config: ../../.example1-readme-terraform-docs.yml
             output: README.md
             working-dir: examples/example1
           - name: examples/example2
-            config: ../../.config/.example2-readme-terraform-docs.yml
+            config: ../../.example2-readme-terraform-docs.yml
             output: README.md
             working-dir: examples/example2
     steps:
