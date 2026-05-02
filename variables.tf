@@ -47,3 +47,51 @@ variable "work_items" {
   description = "List of Work Items or issue numbers to be used in branch name and environment name creation. For example, ['1234', '1235'] will create branch names like 'feature/1234-' and 'feature/1235-'."
   default     = []
 }
+
+variable "area_paths" {
+  type        = list(string)
+  description = "Optional list of area path names to generate naming for. Used by the area_path resource."
+  default     = []
+}
+
+variable "iteration_paths" {
+  type        = list(string)
+  description = "Optional list of iteration path names to generate naming for. Used by the iteration_path resource."
+  default     = []
+}
+
+variable "dashboards" {
+  type        = list(string)
+  description = "Optional list of dashboard names to generate naming for. Used by the dashboard resource."
+  default     = []
+}
+
+variable "feeds" {
+  type        = list(string)
+  description = "Optional list of artifact feed names to generate naming for. Used by the feed resource."
+  default     = []
+}
+
+variable "wiki_pages" {
+  type        = list(string)
+  description = "Optional list of wiki page names to generate naming for. Used by the wiki_page resource."
+  default     = []
+}
+
+variable "pipeline_stages" {
+  type        = list(string)
+  description = "Optional list of pipeline stage names to generate naming for. Used by the pipeline_stage resource."
+  default     = []
+}
+
+variable "pipeline_jobs" {
+  type        = list(string)
+  description = "Optional list of pipeline job names to generate naming for. Used by the pipeline_job resource."
+  default     = []
+}
+
+variable "pipeline_variables" {
+  type        = list(string)
+  description = "Optional list of pipeline variable names to generate naming for. Used by the pipeline_variable resource."
+  default     = []
+}
