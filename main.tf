@@ -55,7 +55,7 @@ locals {
 
   }
 
-  translated_environment_tags = [for tag in local.unique_environment_tags : lookup(local.environment_mapping, tag, tag)]
+  translated_environment_tags = distinct([for tag in local.unique_environment_tags : lookup(local.environment_mapping, tag, tag)])
 
   ## Names based on the recommendations of
   ## https://learn.microsoft.com/en-us/azure/devops/organizations/settings/naming-restrictions?view=azure-devops
