@@ -1,17 +1,23 @@
 APPLY_FIXES: all # all, none, or list of linter keys
 # Per-linter config file locations (consolidated under .config/)
 CSPELL_CONFIG_FILE: .config/.cspell.json
-# Disable noisy/duplicative/uncontrollable linters
-DISABLE_LINTERS:
-  - JSON_JSONLINT
-  - JSON_V8R
-  - YAML_V8R
-  - REPOSITORY_DEVSKIM
-  - COPYPASTE_JSCPD
-# Pass --skip-check to checkov (mega-linter ignores REPOSITORY_CHECKOV_CONFIG_FILE)
-REPOSITORY_CHECKOV_ARGUMENTS:
-  - "--skip-check"
-  - "CKV_DOCKER_2,CKV_TF_1,CKV2_ADO_1"
+# Whitelist the linters we actually want; everything else (jscpd, v8r, devskim, checkov repo-mode, etc.) is off
+ENABLE_LINTERS:
+  - ACTION_ACTIONLINT
+  - BASH_SHELLCHECK
+  - BASH_SHFMT
+  - DOCKERFILE_HADOLINT
+  - JSON_PRETTIER
+  - MARKDOWN_MARKDOWNLINT
+  - REPOSITORY_GITLEAKS
+  - REPOSITORY_SECRETLINT
+  - REPOSITORY_TRIVY
+  - SPELL_CSPELL
+  - TERRAFORM_TERRAFORM_FMT
+  - TERRAFORM_TFLINT
+  - TERRAFORM_CHECKOV
+  - YAML_PRETTIER
+  - YAML_YAMLLINT
 # Exclude megalinter's own config from generic file scans
 FILTER_REGEX_EXCLUDE: "(megalinter-reports/|\\.config/\\.mega-linter\\.yml)"
 AZURE_COMMENT_REPORTER: true
@@ -32,6 +38,8 @@ TAP_REPORTER_SUB_FOLDER: tap #if enabled allows you to define a different folder
 TERRAFORM_CHECKOV_ARGUMENTS:
   #- "--directory /Repo"
   - "--include-all-checkov-policies" # settings to allow integration with bridgecrew using pipeline variables
+  - "--skip-check"
+  - "CKV_DOCKER_2,CKV_TF_1,CKV2_ADO_1"
 TERRAFORM_CHECKOV_CLI_LINT_MODE: file # Options are file (default), list_of_files or project. Project scans from the root of the Repo
 TERRAFORM_KICS_ARGUMENTS:
   - "-m"

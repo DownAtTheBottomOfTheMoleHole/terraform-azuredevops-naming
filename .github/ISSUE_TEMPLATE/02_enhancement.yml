@@ -10,7 +10,7 @@ body:
 
         This form is intended as a way to request additional functionality for existing resources, data sources, or the provider itself. This may include requests such as adding additional arguments or attributes enabled by upstream API changes, additional validation for arguments, etc.
 
-        If the absense of the requested feature is causing unexpected behavior in the provider, the "Report a Bug" form should be used. For entirely new resources, data sources, or services, please use the Request a "New Resource, Data Source, or AWS Service" form.
+        If the absence of the requested feature is causing unexpected behavior in the provider, the "Report a Bug" form should be used. For entirely new resources, data sources, or services, please use the Request a "New Resource, Data Source, or AWS Service" form.
 
   - type: textarea
     id: description
