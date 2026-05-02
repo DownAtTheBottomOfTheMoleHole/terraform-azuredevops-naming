@@ -59,7 +59,7 @@ If detect-secrets flags non-sensitive data:
 
 ### Spelling Errors
 
-Add words to `.config/.cspell.json` in the `words` array.
+Add words to `.cspell.json` in the `words` array.
 
 ### Cross-Platform Paths
 
