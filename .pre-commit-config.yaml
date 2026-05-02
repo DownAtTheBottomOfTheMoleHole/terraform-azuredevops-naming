@@ -69,11 +69,13 @@ repos:
 
       - id: terraform_validate
         name: Run terraform validate against terraform
+        exclude: ^examples/
         args:
           - --hook-config=--retry-once-with-cleanup=true
 
       - id: terraform_tflint
         name: Run tflint against terraform
+        exclude: ^examples/
         args:
           - --args=--config=__GIT_WORKING_DIR__/.tflint.hcl
 
