@@ -14,7 +14,7 @@ permissions:
 jobs:
   megalinter-nightly:
     name: MegaLinter (Full Codebase)
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@9b5d5baa78b012eef681cbc89d4dd8ac6beab90b # main
     secrets: inherit
     permissions:
       contents: write

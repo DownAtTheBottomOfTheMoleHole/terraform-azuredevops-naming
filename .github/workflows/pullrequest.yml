@@ -88,7 +88,7 @@ jobs:
   megalinter:
     name: MegaLinter
     if: github.event_name == 'pull_request'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@9b5d5baa78b012eef681cbc89d4dd8ac6beab90b # main
     secrets: inherit
     permissions:
       contents: write
@@ -103,7 +103,7 @@ jobs:
   auto-merge:
     name: Auto Merge Bots
     if: github.event_name == 'pull_request_target'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/auto-merge.yml@main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/auto-merge.yml@9b5d5baa78b012eef681cbc89d4dd8ac6beab90b # main
     secrets: inherit
     permissions:
       contents: write
