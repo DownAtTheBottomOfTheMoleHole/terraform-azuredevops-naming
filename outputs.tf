@@ -370,6 +370,72 @@ output "serviceendpoint_ssh" {
   value       = local.azdo.serviceendpoint_ssh
 }
 
+output "serviceendpoint_azure_service_bus" {
+  description = "The Azure Service Bus service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_azure_service_bus
+}
+
+output "serviceendpoint_black_duck" {
+  description = "The Black Duck service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_black_duck
+}
+
+output "serviceendpoint_checkmarx_one" {
+  description = "The Checkmarx One service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_checkmarx_one
+}
+
+output "serviceendpoint_checkmarx_sast" {
+  description = "The Checkmarx SAST service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_checkmarx_sast
+}
+
+output "serviceendpoint_checkmarx_sca" {
+  description = "The Checkmarx SCA service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_checkmarx_sca
+}
+
+output "serviceendpoint_dynamics_lifecycle_services" {
+  description = "The Dynamics Lifecycle Services service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_dynamics_lifecycle_services
+}
+
+output "serviceendpoint_generic_v2" {
+  description = "The Generic v2 service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_generic_v2
+}
+
+output "serviceendpoint_gitlab" {
+  description = "The GitLab service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_gitlab
+}
+
+output "serviceendpoint_openshift" {
+  description = "The OpenShift service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_openshift
+}
+
+output "serviceendpoint_snyk" {
+  description = "The Snyk service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_snyk
+}
+
+output "serviceendpoint_visualstudiomarketplace" {
+  description = "The Visual Studio Marketplace service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_visualstudiomarketplace
+}
+
 output "team" {
   description = "The team in Azure DevOps"
   sensitive   = false
@@ -393,3 +459,184 @@ output "validation" {
   sensitive   = false
   value       = local.validation
 }
+
+output "agent_queue" {
+  description = "The Agent queue in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.agent_queue
+}
+
+output "dashboard" {
+  description = "The Dashboard in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.dashboard
+}
+
+output "deployment_group" {
+  description = "The Deployment group in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.deployment_group
+}
+
+output "environment_kubernetes_resource" {
+  description = "The Environment Kubernetes resource in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.environment_kubernetes_resource
+}
+
+output "feed" {
+  description = "The Artifact feed in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.feed
+}
+
+output "variable_group_variable" {
+  description = "The Variable group variable in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.variable_group_variable
+}
+
+output "wiki" {
+  description = "The Wiki in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.wiki
+}
+
+output "wiki_page" {
+  description = "The Wiki page in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.wiki_page
+}
+
+output "workitem" {
+  description = "The Work item in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitem
+}
+
+output "workitemquery" {
+  description = "The Work item query in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemquery
+}
+
+output "workitemquery_folder" {
+  description = "The Work item query folder in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemquery_folder
+}
+
+output "workitemtracking_field" {
+  description = "The Work item tracking field in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemtracking_field
+}
+
+output "workitemtrackingprocess_process" {
+  description = "The Work item tracking process in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemtrackingprocess_process
+}
+
+output "workitemtrackingprocess_field" {
+  description = "The Work item tracking process field in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemtrackingprocess_field
+}
+
+output "workitemtrackingprocess_group" {
+  description = "The Work item tracking process group in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemtrackingprocess_group
+}
+
+output "workitemtrackingprocess_page" {
+  description = "The Work item tracking process page in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemtrackingprocess_page
+}
+
+output "workitemtrackingprocess_state" {
+  description = "The Work item tracking process state in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemtrackingprocess_state
+}
+
+output "workitemtrackingprocess_workitemtype" {
+  description = "The Work item tracking process work item type in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemtrackingprocess_workitemtype
+}
+
+output "pipeline_stage" {
+  description = "The Pipeline stage in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.pipeline_stage
+}
+
+output "pipeline_job" {
+  description = "The Pipeline job in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.pipeline_job
+}
+
+output "pipeline_variable" {
+  description = "The Pipeline variable in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.pipeline_variable
+}
+
+output "pipeline_matrix" {
+  description = "The Pipeline matrix in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.pipeline_matrix
+}
+
+output "artifact_package" {
+  description = "The Artifact package in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.artifact_package
+}
+
+output "organization" {
+  description = "The Organization in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.organization
+}
+
+output "process" {
+  description = "The Process in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.process
+}
+
+output "security_group" {
+  description = "The Security group in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.security_group
+}
+
+output "area_path" {
+  description = "The Area path in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.area_path
+}
+
+output "iteration_path" {
+  description = "The Iteration path in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.iteration_path
+}
+
+output "board_column" {
+  description = "The Board column in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.board_column
+}
+
+output "board_swimlane" {
+  description = "The Board swimlane in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.board_swimlane
+}
+

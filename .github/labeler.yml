@@ -1,0 +1,110 @@
+# PR Labeler configuration — DownAtTheBottomOfTheMoleHole org baseline
+# https://github.com/actions/labeler
+#
+# Copy to .github/labeler.yml in each repo and customise as needed.
+
+breaking-change:
+  - head-branch:
+      - "^breaking/"
+      - "^breaking-change/"
+  - title:
+      - "^.*!:.*$"
+
+feature:
+  - head-branch:
+      - "^feat/"
+      - "^feature/"
+  - title:
+      - "^feat(\\(.+\\))?:"
+      - "^✨"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "src/**"
+          - "lib/**"
+          - "packages/**"
+
+bug:
+  - head-branch:
+      - "^fix/"
+      - "^bugfix/"
+      - "^hotfix/"
+  - title:
+      - "^fix(\\(.+\\))?:"
+      - "^🐛"
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.md"
+          - "**/*.mdx"
+          - "docs/**"
+          - ".github/*.md"
+
+dependencies:
+  - head-branch:
+      - "^deps/"
+      - "^renovate/"
+      - "^dependabot/"
+  - title:
+      - "^build(\\(deps\\))?:"
+      - "^📦"
+  - changed-files:
+      - any-glob-to-any-file:
+          - "package.json"
+          - "package-lock.json"
+          - "yarn.lock"
+          - "pnpm-lock.yaml"
+          - "requirements*.txt"
+          - "go.sum"
+          - "Cargo.lock"
+          - "pyproject.toml"
+
+security:
+  - head-branch:
+      - "^security/"
+  - title:
+      - "^security(\\(.+\\))?:"
+      - "^🔒"
+
+maintenance:
+  - head-branch:
+      - "^chore/"
+      - "^refactor/"
+      - "^perf/"
+  - title:
+      - "^chore(\\(.+\\))?:"
+      - "^refactor(\\(.+\\))?:"
+      - "^perf(\\(.+\\))?:"
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/workflows/**"
+          - ".github/*.yml"
+          - ".github/*.yaml"
+          - "**/.eslintrc*"
+          - "**/.prettierrc*"
+          - "**/.editorconfig"
+          - "**/tsconfig*.json"
+          - "**/.mega-linter.yml"
+          - "**/*.config.js"
+          - "**/*.config.ts"
+          - "test/**"
+          - "tests/**"
+          - "__tests__/**"
+          - "**/*.test.ts"
+          - "**/*.spec.ts"
+          - "**/*.test.js"
+          - "**/*.spec.js"
+
+ci:
+  - head-branch:
+      - "^ci/"
+  - title:
+      - "^ci(\\(.+\\))?:"
+      - "^👷"
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/workflows/**"
+          - ".github/actions/**"
+          - "Dockerfile*"
+          - "docker-compose*.yml"
+          - ".dockerignore"

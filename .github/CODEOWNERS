@@ -19,5 +19,18 @@
 /.pre-commit-config.yaml @DownAtTheBottomOfTheMoleHole
 
 # Configuration files
-/.config/ @DownAtTheBottomOfTheMoleHole
+/.checkov.yml @DownAtTheBottomOfTheMoleHole
+/.cspell.json @DownAtTheBottomOfTheMoleHole
+/.gitleaks.toml @DownAtTheBottomOfTheMoleHole
+/.grype.yaml @DownAtTheBottomOfTheMoleHole
+/.jscpd.json @DownAtTheBottomOfTheMoleHole
+/.markdown-link-check.json @DownAtTheBottomOfTheMoleHole
+/.markdownlint.json @DownAtTheBottomOfTheMoleHole
+/.mega-linter.yml @DownAtTheBottomOfTheMoleHole
+/.readme-terraform-docs.yml @DownAtTheBottomOfTheMoleHole
+/.secretlintrc.json @DownAtTheBottomOfTheMoleHole
+/.terraform-terraform-docs.yml @DownAtTheBottomOfTheMoleHole
+/.yamllint.yml @DownAtTheBottomOfTheMoleHole
+/GitVersion.yml @DownAtTheBottomOfTheMoleHole
+/kics.config @DownAtTheBottomOfTheMoleHole
 /versions.tf @DownAtTheBottomOfTheMoleHole

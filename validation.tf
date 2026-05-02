@@ -332,6 +332,61 @@ locals {
       valid_name_unique = length(regexall(local.azdo.serviceendpoint_ssh.regex, local.azdo.serviceendpoint_ssh.name_unique)) > 0
     }
 
+    serviceendpoint_azure_service_bus = {
+      valid_name        = length(regexall(local.azdo.serviceendpoint_azure_service_bus.regex, local.azdo.serviceendpoint_azure_service_bus.name)) > 0 && length(local.azdo.serviceendpoint_azure_service_bus.name) > local.azdo.serviceendpoint_azure_service_bus.min_length
+      valid_name_unique = length(regexall(local.azdo.serviceendpoint_azure_service_bus.regex, local.azdo.serviceendpoint_azure_service_bus.name_unique)) > 0
+    }
+
+    serviceendpoint_black_duck = {
+      valid_name        = length(regexall(local.azdo.serviceendpoint_black_duck.regex, local.azdo.serviceendpoint_black_duck.name)) > 0 && length(local.azdo.serviceendpoint_black_duck.name) > local.azdo.serviceendpoint_black_duck.min_length
+      valid_name_unique = length(regexall(local.azdo.serviceendpoint_black_duck.regex, local.azdo.serviceendpoint_black_duck.name_unique)) > 0
+    }
+
+    serviceendpoint_checkmarx_one = {
+      valid_name        = length(regexall(local.azdo.serviceendpoint_checkmarx_one.regex, local.azdo.serviceendpoint_checkmarx_one.name)) > 0 && length(local.azdo.serviceendpoint_checkmarx_one.name) > local.azdo.serviceendpoint_checkmarx_one.min_length
+      valid_name_unique = length(regexall(local.azdo.serviceendpoint_checkmarx_one.regex, local.azdo.serviceendpoint_checkmarx_one.name_unique)) > 0
+    }
+
+    serviceendpoint_checkmarx_sast = {
+      valid_name        = length(regexall(local.azdo.serviceendpoint_checkmarx_sast.regex, local.azdo.serviceendpoint_checkmarx_sast.name)) > 0 && length(local.azdo.serviceendpoint_checkmarx_sast.name) > local.azdo.serviceendpoint_checkmarx_sast.min_length
+      valid_name_unique = length(regexall(local.azdo.serviceendpoint_checkmarx_sast.regex, local.azdo.serviceendpoint_checkmarx_sast.name_unique)) > 0
+    }
+
+    serviceendpoint_checkmarx_sca = {
+      valid_name        = length(regexall(local.azdo.serviceendpoint_checkmarx_sca.regex, local.azdo.serviceendpoint_checkmarx_sca.name)) > 0 && length(local.azdo.serviceendpoint_checkmarx_sca.name) > local.azdo.serviceendpoint_checkmarx_sca.min_length
+      valid_name_unique = length(regexall(local.azdo.serviceendpoint_checkmarx_sca.regex, local.azdo.serviceendpoint_checkmarx_sca.name_unique)) > 0
+    }
+
+    serviceendpoint_dynamics_lifecycle_services = {
+      valid_name        = length(regexall(local.azdo.serviceendpoint_dynamics_lifecycle_services.regex, local.azdo.serviceendpoint_dynamics_lifecycle_services.name)) > 0 && length(local.azdo.serviceendpoint_dynamics_lifecycle_services.name) > local.azdo.serviceendpoint_dynamics_lifecycle_services.min_length
+      valid_name_unique = length(regexall(local.azdo.serviceendpoint_dynamics_lifecycle_services.regex, local.azdo.serviceendpoint_dynamics_lifecycle_services.name_unique)) > 0
+    }
+
+    serviceendpoint_generic_v2 = {
+      valid_name        = length(regexall(local.azdo.serviceendpoint_generic_v2.regex, local.azdo.serviceendpoint_generic_v2.name)) > 0 && length(local.azdo.serviceendpoint_generic_v2.name) > local.azdo.serviceendpoint_generic_v2.min_length
+      valid_name_unique = length(regexall(local.azdo.serviceendpoint_generic_v2.regex, local.azdo.serviceendpoint_generic_v2.name_unique)) > 0
+    }
+
+    serviceendpoint_gitlab = {
+      valid_name        = length(regexall(local.azdo.serviceendpoint_gitlab.regex, local.azdo.serviceendpoint_gitlab.name)) > 0 && length(local.azdo.serviceendpoint_gitlab.name) > local.azdo.serviceendpoint_gitlab.min_length
+      valid_name_unique = length(regexall(local.azdo.serviceendpoint_gitlab.regex, local.azdo.serviceendpoint_gitlab.name_unique)) > 0
+    }
+
+    serviceendpoint_openshift = {
+      valid_name        = length(regexall(local.azdo.serviceendpoint_openshift.regex, local.azdo.serviceendpoint_openshift.name)) > 0 && length(local.azdo.serviceendpoint_openshift.name) > local.azdo.serviceendpoint_openshift.min_length
+      valid_name_unique = length(regexall(local.azdo.serviceendpoint_openshift.regex, local.azdo.serviceendpoint_openshift.name_unique)) > 0
+    }
+
+    serviceendpoint_snyk = {
+      valid_name        = length(regexall(local.azdo.serviceendpoint_snyk.regex, local.azdo.serviceendpoint_snyk.name)) > 0 && length(local.azdo.serviceendpoint_snyk.name) > local.azdo.serviceendpoint_snyk.min_length
+      valid_name_unique = length(regexall(local.azdo.serviceendpoint_snyk.regex, local.azdo.serviceendpoint_snyk.name_unique)) > 0
+    }
+
+    serviceendpoint_visualstudiomarketplace = {
+      valid_name        = length(regexall(local.azdo.serviceendpoint_visualstudiomarketplace.regex, local.azdo.serviceendpoint_visualstudiomarketplace.name)) > 0 && length(local.azdo.serviceendpoint_visualstudiomarketplace.name) > local.azdo.serviceendpoint_visualstudiomarketplace.min_length
+      valid_name_unique = length(regexall(local.azdo.serviceendpoint_visualstudiomarketplace.regex, local.azdo.serviceendpoint_visualstudiomarketplace.name_unique)) > 0
+    }
+
 
     team = {
       valid_name        = length(regexall(local.azdo.team.regex, local.azdo.team.name)) > 0 && length(local.azdo.team.name) > local.azdo.team.min_length
@@ -341,6 +396,156 @@ locals {
     variable_group = {
       valid_name        = length(regexall(local.azdo.variable_group.regex, local.azdo.variable_group.name)) > 0 && length(local.azdo.variable_group.name) > local.azdo.variable_group.min_length
       valid_name_unique = length(regexall(local.azdo.variable_group.regex, local.azdo.variable_group.name_unique)) > 0
+    }
+
+    agent_queue = {
+      valid_name        = length(regexall(local.azdo.agent_queue.regex, local.azdo.agent_queue.name)) > 0 && length(local.azdo.agent_queue.name) > local.azdo.agent_queue.min_length
+      valid_name_unique = length(regexall(local.azdo.agent_queue.regex, local.azdo.agent_queue.name_unique)) > 0
+    }
+
+    dashboard = {
+      valid_name        = length(regexall(local.azdo.dashboard.regex, local.azdo.dashboard.name)) > 0 && length(local.azdo.dashboard.name) > local.azdo.dashboard.min_length
+      valid_name_unique = length(regexall(local.azdo.dashboard.regex, local.azdo.dashboard.name_unique)) > 0
+    }
+
+    deployment_group = {
+      valid_name        = length(regexall(local.azdo.deployment_group.regex, local.azdo.deployment_group.name)) > 0 && length(local.azdo.deployment_group.name) > local.azdo.deployment_group.min_length
+      valid_name_unique = length(regexall(local.azdo.deployment_group.regex, local.azdo.deployment_group.name_unique)) > 0
+    }
+
+    environment_kubernetes_resource = {
+      valid_name        = length(regexall(local.azdo.environment_kubernetes_resource.regex, local.azdo.environment_kubernetes_resource.name)) > 0 && length(local.azdo.environment_kubernetes_resource.name) > local.azdo.environment_kubernetes_resource.min_length
+      valid_name_unique = length(regexall(local.azdo.environment_kubernetes_resource.regex, local.azdo.environment_kubernetes_resource.name_unique)) > 0
+    }
+
+    feed = {
+      valid_name        = length(regexall(local.azdo.feed.regex, local.azdo.feed.name)) > 0 && length(local.azdo.feed.name) > local.azdo.feed.min_length
+      valid_name_unique = length(regexall(local.azdo.feed.regex, local.azdo.feed.name_unique)) > 0
+    }
+
+    variable_group_variable = {
+      valid_name        = length(regexall(local.azdo.variable_group_variable.regex, local.azdo.variable_group_variable.name)) > 0 && length(local.azdo.variable_group_variable.name) > local.azdo.variable_group_variable.min_length
+      valid_name_unique = length(regexall(local.azdo.variable_group_variable.regex, local.azdo.variable_group_variable.name_unique)) > 0
+    }
+
+    wiki = {
+      valid_name        = length(regexall(local.azdo.wiki.regex, local.azdo.wiki.name)) > 0 && length(local.azdo.wiki.name) > local.azdo.wiki.min_length
+      valid_name_unique = length(regexall(local.azdo.wiki.regex, local.azdo.wiki.name_unique)) > 0
+    }
+
+    wiki_page = {
+      valid_name        = length(regexall(local.azdo.wiki_page.regex, local.azdo.wiki_page.name)) > 0 && length(local.azdo.wiki_page.name) > local.azdo.wiki_page.min_length
+      valid_name_unique = length(regexall(local.azdo.wiki_page.regex, local.azdo.wiki_page.name_unique)) > 0
+    }
+
+    workitem = {
+      valid_name        = length(regexall(local.azdo.workitem.regex, local.azdo.workitem.name)) > 0 && length(local.azdo.workitem.name) > local.azdo.workitem.min_length
+      valid_name_unique = length(regexall(local.azdo.workitem.regex, local.azdo.workitem.name_unique)) > 0
+    }
+
+    workitemquery = {
+      valid_name        = length(regexall(local.azdo.workitemquery.regex, local.azdo.workitemquery.name)) > 0 && length(local.azdo.workitemquery.name) > local.azdo.workitemquery.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemquery.regex, local.azdo.workitemquery.name_unique)) > 0
+    }
+
+    workitemquery_folder = {
+      valid_name        = length(regexall(local.azdo.workitemquery_folder.regex, local.azdo.workitemquery_folder.name)) > 0 && length(local.azdo.workitemquery_folder.name) > local.azdo.workitemquery_folder.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemquery_folder.regex, local.azdo.workitemquery_folder.name_unique)) > 0
+    }
+
+    workitemtracking_field = {
+      valid_name        = length(regexall(local.azdo.workitemtracking_field.regex, local.azdo.workitemtracking_field.name)) > 0 && length(local.azdo.workitemtracking_field.name) > local.azdo.workitemtracking_field.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemtracking_field.regex, local.azdo.workitemtracking_field.name_unique)) > 0
+    }
+
+    workitemtrackingprocess_process = {
+      valid_name        = length(regexall(local.azdo.workitemtrackingprocess_process.regex, local.azdo.workitemtrackingprocess_process.name)) > 0 && length(local.azdo.workitemtrackingprocess_process.name) > local.azdo.workitemtrackingprocess_process.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemtrackingprocess_process.regex, local.azdo.workitemtrackingprocess_process.name_unique)) > 0
+    }
+
+    workitemtrackingprocess_field = {
+      valid_name        = length(regexall(local.azdo.workitemtrackingprocess_field.regex, local.azdo.workitemtrackingprocess_field.name)) > 0 && length(local.azdo.workitemtrackingprocess_field.name) > local.azdo.workitemtrackingprocess_field.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemtrackingprocess_field.regex, local.azdo.workitemtrackingprocess_field.name_unique)) > 0
+    }
+
+    workitemtrackingprocess_group = {
+      valid_name        = length(regexall(local.azdo.workitemtrackingprocess_group.regex, local.azdo.workitemtrackingprocess_group.name)) > 0 && length(local.azdo.workitemtrackingprocess_group.name) > local.azdo.workitemtrackingprocess_group.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemtrackingprocess_group.regex, local.azdo.workitemtrackingprocess_group.name_unique)) > 0
+    }
+
+    workitemtrackingprocess_page = {
+      valid_name        = length(regexall(local.azdo.workitemtrackingprocess_page.regex, local.azdo.workitemtrackingprocess_page.name)) > 0 && length(local.azdo.workitemtrackingprocess_page.name) > local.azdo.workitemtrackingprocess_page.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemtrackingprocess_page.regex, local.azdo.workitemtrackingprocess_page.name_unique)) > 0
+    }
+
+    workitemtrackingprocess_state = {
+      valid_name        = length(regexall(local.azdo.workitemtrackingprocess_state.regex, local.azdo.workitemtrackingprocess_state.name)) > 0 && length(local.azdo.workitemtrackingprocess_state.name) > local.azdo.workitemtrackingprocess_state.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemtrackingprocess_state.regex, local.azdo.workitemtrackingprocess_state.name_unique)) > 0
+    }
+
+    workitemtrackingprocess_workitemtype = {
+      valid_name        = length(regexall(local.azdo.workitemtrackingprocess_workitemtype.regex, local.azdo.workitemtrackingprocess_workitemtype.name)) > 0 && length(local.azdo.workitemtrackingprocess_workitemtype.name) > local.azdo.workitemtrackingprocess_workitemtype.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemtrackingprocess_workitemtype.regex, local.azdo.workitemtrackingprocess_workitemtype.name_unique)) > 0
+    }
+
+    pipeline_stage = {
+      valid_name        = length(regexall(local.azdo.pipeline_stage.regex, local.azdo.pipeline_stage.name)) > 0 && length(local.azdo.pipeline_stage.name) > local.azdo.pipeline_stage.min_length
+      valid_name_unique = length(regexall(local.azdo.pipeline_stage.regex, local.azdo.pipeline_stage.name_unique)) > 0
+    }
+
+    pipeline_job = {
+      valid_name        = length(regexall(local.azdo.pipeline_job.regex, local.azdo.pipeline_job.name)) > 0 && length(local.azdo.pipeline_job.name) > local.azdo.pipeline_job.min_length
+      valid_name_unique = length(regexall(local.azdo.pipeline_job.regex, local.azdo.pipeline_job.name_unique)) > 0
+    }
+
+    pipeline_variable = {
+      valid_name        = length(regexall(local.azdo.pipeline_variable.regex, local.azdo.pipeline_variable.name)) > 0 && length(local.azdo.pipeline_variable.name) > local.azdo.pipeline_variable.min_length
+      valid_name_unique = length(regexall(local.azdo.pipeline_variable.regex, local.azdo.pipeline_variable.name_unique)) > 0
+    }
+
+    pipeline_matrix = {
+      valid_name        = length(regexall(local.azdo.pipeline_matrix.regex, local.azdo.pipeline_matrix.name)) > 0 && length(local.azdo.pipeline_matrix.name) > local.azdo.pipeline_matrix.min_length
+      valid_name_unique = length(regexall(local.azdo.pipeline_matrix.regex, local.azdo.pipeline_matrix.name_unique)) > 0
+    }
+
+    artifact_package = {
+      valid_name        = length(regexall(local.azdo.artifact_package.regex, local.azdo.artifact_package.name)) > 0 && length(local.azdo.artifact_package.name) > local.azdo.artifact_package.min_length
+      valid_name_unique = length(regexall(local.azdo.artifact_package.regex, local.azdo.artifact_package.name_unique)) > 0
+    }
+
+    organization = {
+      valid_name        = length(regexall(local.azdo.organization.regex, local.azdo.organization.name)) > 0 && length(local.azdo.organization.name) > local.azdo.organization.min_length
+      valid_name_unique = length(regexall(local.azdo.organization.regex, local.azdo.organization.name_unique)) > 0
+    }
+
+    process = {
+      valid_name        = length(regexall(local.azdo.process.regex, local.azdo.process.name)) > 0 && length(local.azdo.process.name) > local.azdo.process.min_length
+      valid_name_unique = length(regexall(local.azdo.process.regex, local.azdo.process.name_unique)) > 0
+    }
+
+    security_group = {
+      valid_name        = length(regexall(local.azdo.security_group.regex, local.azdo.security_group.name)) > 0 && length(local.azdo.security_group.name) > local.azdo.security_group.min_length
+      valid_name_unique = length(regexall(local.azdo.security_group.regex, local.azdo.security_group.name_unique)) > 0
+    }
+
+    area_path = {
+      valid_name        = length(regexall(local.azdo.area_path.regex, local.azdo.area_path.name)) > 0 && length(local.azdo.area_path.name) > local.azdo.area_path.min_length
+      valid_name_unique = length(regexall(local.azdo.area_path.regex, local.azdo.area_path.name_unique)) > 0
+    }
+
+    iteration_path = {
+      valid_name        = length(regexall(local.azdo.iteration_path.regex, local.azdo.iteration_path.name)) > 0 && length(local.azdo.iteration_path.name) > local.azdo.iteration_path.min_length
+      valid_name_unique = length(regexall(local.azdo.iteration_path.regex, local.azdo.iteration_path.name_unique)) > 0
+    }
+
+    board_column = {
+      valid_name        = length(regexall(local.azdo.board_column.regex, local.azdo.board_column.name)) > 0 && length(local.azdo.board_column.name) > local.azdo.board_column.min_length
+      valid_name_unique = length(regexall(local.azdo.board_column.regex, local.azdo.board_column.name_unique)) > 0
+    }
+
+    board_swimlane = {
+      valid_name        = length(regexall(local.azdo.board_swimlane.regex, local.azdo.board_swimlane.name)) > 0 && length(local.azdo.board_swimlane.name) > local.azdo.board_swimlane.min_length
+      valid_name_unique = length(regexall(local.azdo.board_swimlane.regex, local.azdo.board_swimlane.name_unique)) > 0
     }
 
   }
