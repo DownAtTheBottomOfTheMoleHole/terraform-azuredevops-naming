@@ -815,6 +815,138 @@ locals {
       scope       = "Project"
       regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
     }
+
+    pipeline_stage = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "ps"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    pipeline_job = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "pj"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    pipeline_variable = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "pv"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    pipeline_matrix = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "pm"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    artifact_package = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256))
+      dashes      = true
+      slug        = "pkg"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Project"
+      regex       = "^[A-Za-z0-9_.\\-]+$"
+    }
+
+    organization = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 50)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 50)
+      dashes      = true
+      slug        = "org"
+      min_length  = 1
+      max_length  = 50
+      scope       = "Organization"
+      regex       = "^[A-Za-z0-9][A-Za-z0-9-]{0,48}[A-Za-z0-9]$"
+    }
+
+    process = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "proc"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Organization"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    security_group = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "sg"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Organization"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    area_path = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 255)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 255)
+      dashes      = true
+      slug        = "ap"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    iteration_path = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 255)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 255)
+      dashes      = true
+      slug        = "ip"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    board_column = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "bc"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    board_swimlane = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "bs"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
   }
 
 }
