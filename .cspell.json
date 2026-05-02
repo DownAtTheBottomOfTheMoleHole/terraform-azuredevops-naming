@@ -30,7 +30,8 @@
     "megalinter",
     "megalinter-reports/**",
     "package-lock.JSON",
-    "report"
+    "report",
+    "terraform-docs/default_values.json"
   ],
   "language": "en-GB,en_US",
   "noConfigSearch": true,
