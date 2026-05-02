@@ -349,7 +349,7 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 | <a name="input_pipeline_jobs"></a> [pipeline\_jobs](#input\_pipeline\_jobs) | Optional list of pipeline job names to generate naming for. Used by the pipeline\_job resource. | `list(string)` | `[]` | no |
 | <a name="input_pipeline_stages"></a> [pipeline\_stages](#input\_pipeline\_stages) | Optional list of pipeline stage names to generate naming for. Used by the pipeline\_stage resource. | `list(string)` | `[]` | no |
 | <a name="input_pipeline_variables"></a> [pipeline\_variables](#input\_pipeline\_variables) | Optional list of pipeline variable names to generate naming for. Used by the pipeline\_variable resource. | `list(string)` | `[]` | no |
-| <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix to be used for naming resources. If used we suggest using a company abreviation e.g dbmh. | `list(string)` | `[]` | no |
+| <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix to be used for naming resources. If used we suggest using a company abbreviation e.g dbmh. | `list(string)` | `[]` | no |
 | <a name="input_suffix"></a> [suffix](#input\_suffix) | Suffix to be used for naming resources. It is recommended to use lowercase characters for consistency. | `list(string)` | `[]` | no |
 | <a name="input_unique_include_numbers"></a> [unique\_include\_numbers](#input\_unique\_include\_numbers) | Determines whether numbers should be included in the unique suffix generation. | `bool` | `true` | no |
 | <a name="input_unique_length"></a> [unique\_length](#input\_unique\_length) | Maximum length of the unique suffix to be added to resource names. | `number` | `4` | no |
