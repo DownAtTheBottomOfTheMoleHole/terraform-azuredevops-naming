@@ -10,7 +10,7 @@ variable "environment_tags" {
 
 variable "prefix" {
   type        = list(string)
-  description = "Prefix to be used for naming resources. If used we suggest using a company abreviation e.g dbmh."
+  description = "Prefix to be used for naming resources. If used we suggest using a company abbreviation e.g dbmh."
   default     = []
 }
 
