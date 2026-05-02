@@ -45,7 +45,7 @@ repos:
         args: ["--baseline", ".secrets.baseline"]
 
   - repo: https://github.com/streetsidesoftware/cspell-cli
-    rev: v9.4.0
+    rev: v10.0.0
     hooks:
       - id: cspell
         args:
@@ -131,7 +131,7 @@ repos:
   ##############################################################
 
   - repo: https://github.com/terraform-docs/terraform-docs
-    rev: v0.21.0 # Git tag specifying the hook
+    rev: v0.22.0 # Git tag specifying the hook
     hooks:
       - id: terraform-docs-go
         name: Put terraform-docs terraform.md in ROOT
@@ -145,7 +145,7 @@ repos:
   #######  Full repo multi-language security and linting  #######
   ###############################################################
   - repo: https://github.com/oxsecurity/megalinter
-    rev: v9.3.0 # Git tag specifying the hook, not mega-linter-runner, version
+    rev: v9.4.0 # Git tag specifying the hook, not mega-linter-runner, version
     hooks:
       - id: megalinter-incremental # Faster, less thorough
         name: Run megalinter incremental scan
