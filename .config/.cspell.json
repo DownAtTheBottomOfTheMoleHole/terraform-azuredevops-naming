@@ -1,59 +1,39 @@
 {
   "dictionaries": [
-    // Bash/shell script keywords
     "bash",
-    // List of well known companies
     "companies",
-    // C++ related keywords
     "cpp",
-    // C# related keywords
     "csharp",
-    // css, less, and scss related keywords
     "css",
-    // list of file typescript
     "filetypes",
-    // long list of fonts - to assist with css
     "fonts",
-    // go keywords and library methods
     "go",
-    // html related keywords
     "html",
-    // LaTex related words
     "latex",
-    // Terms that do not belong in the other dictionaries.
     "misc",
-    // terms related to using nodejs.
     "node",
-    // list of top 500+ package names on npm
     "npm",
-    // php keywords and library methods
     "php",
-    // powershell keywords
     "powershell",
-    // python keywords
     "python",
-    // Software Terms and concepts like “coroutine”, “debounce”, “tree”, etc.
     "softwareTerms",
-    // keywords for TypeScript and JavaScript
     "typescript"
   ],
-  // flagWords - list of words to be always considered incorrect
-  // This is useful for offensive words and common spelling errors.
-  // For example "hte" should be "the"
-  "flagWords": ["hte"],
+  "flagWords": [],
   "ignorePaths": [
+    "**/.git/**",
+    "**/megalinter-reports/**",
     "**/node_modules/**",
     "**/vscode-extension/**",
-    "**/.git/**",
+    ".config/.cspell.json",
     ".vscode",
     "megalinter",
+    "megalinter-reports/**",
     "package-lock.JSON",
     "report"
   ],
-  // language - current active spelling language
   "language": "en-GB,en_US",
   "noConfigSearch": true,
-  // words - list of words to be always considered correct
   "words": [
     "accesstoken",
     "Accurics",
@@ -91,8 +71,8 @@
     "bpbv",
     "Bridgecrew",
     "bridgecrewkey",
-    "cag",
     "CAG",
+    "cag",
     "CDK",
     "Checkmarx",
     "Checkov",
@@ -104,8 +84,8 @@
     "cyclonedx",
     "Dawson",
     "dawsonc",
-    "DBMH",
     "dbmh",
+    "DBMH",
     "Dockerhub",
     "dockerregistry",
     "Donnelly",
@@ -123,8 +103,8 @@
     "fet",
     "FMT",
     "Forcepoint",
-    "gcp",
     "GCP",
+    "gcp",
     "GDM",
     "GH",
     "Gildenhuys",
@@ -143,17 +123,18 @@
     "GRYPE",
     "hashicorp",
     "Hashicorp's",
-    "hcl",
     "HCL",
+    "hcl",
     "HENNGE",
-    "iac",
     "IAC",
+    "iac",
     "iex",
     "incomingwebhook",
-    "infracost",
     "Infracost",
     "INFRACOST",
+    "infracost",
     "jfrog",
+    "jpoehnelt",
     "JSONLINT",
     "junitxml",
     "keyscan",
@@ -180,6 +161,7 @@
     "opensource",
     "organisation",
     "orgurl",
+    "OSSF",
     "OWASP",
     "owaspzap",
     "oxsecurity",
@@ -188,8 +170,8 @@
     "planfile",
     "poc",
     "powershell",
-    "precommit",
     "Precommit",
+    "precommit",
     "Prerequisutes",
     "Prismacloud",
     "prj",
@@ -223,11 +205,12 @@
     "shelveset",
     "sonarcloud",
     "Sonarlint",
-    "sonarqube",
     "Sonarqube",
+    "sonarqube",
     "standardised",
     "stefanzweifel",
     "Superlinter",
+    "syncer",
     "systest",
     "templateupdater",
     "terraformrc",
@@ -246,8 +229,8 @@
     "tfstate",
     "tfupdate",
     "Tfupdate",
-    "tfvalidate",
     "TfValidate",
+    "tfvalidate",
     "tfvar",
     "tfvars",
     "tfvc",
@@ -263,6 +246,5 @@
     "workitems",
     "your"
   ],
-  // Version of the setting file.  Always 0.2
   "version": "0.2"
 }

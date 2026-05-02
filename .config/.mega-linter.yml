@@ -1,4 +1,14 @@
 APPLY_FIXES: all # all, none, or list of linter keys
+# Point per-linter configs at the consolidated .config/ directory
+SPELL_CSPELL_CONFIG_FILE: .config/.cspell.json
+COPYPASTE_JSCPD_CONFIG_FILE: .config/.jscpd.json
+REPOSITORY_CHECKOV_CONFIG_FILE: .config/.checkov.yml
+# Disable noisy/duplicative linters (jsonlint can't parse JSONC, v8r schema mismatch on workflow comments, devskim flags pinned-SHA actions)
+DISABLE_LINTERS:
+  - JSON_JSONLINT
+  - JSON_V8R
+  - YAML_V8R
+  - REPOSITORY_DEVSKIM
 AZURE_COMMENT_REPORTER: true
 CLEAR_REPORT_FOLDER: true
 CONFIG_REPORTER: true
