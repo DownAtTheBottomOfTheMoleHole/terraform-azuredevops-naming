@@ -488,5 +488,65 @@ locals {
       valid_name_unique = length(regexall(local.azdo.workitemtrackingprocess_workitemtype.regex, local.azdo.workitemtrackingprocess_workitemtype.name_unique)) > 0
     }
 
+    pipeline_stage = {
+      valid_name        = length(regexall(local.azdo.pipeline_stage.regex, local.azdo.pipeline_stage.name)) > 0 && length(local.azdo.pipeline_stage.name) > local.azdo.pipeline_stage.min_length
+      valid_name_unique = length(regexall(local.azdo.pipeline_stage.regex, local.azdo.pipeline_stage.name_unique)) > 0
+    }
+
+    pipeline_job = {
+      valid_name        = length(regexall(local.azdo.pipeline_job.regex, local.azdo.pipeline_job.name)) > 0 && length(local.azdo.pipeline_job.name) > local.azdo.pipeline_job.min_length
+      valid_name_unique = length(regexall(local.azdo.pipeline_job.regex, local.azdo.pipeline_job.name_unique)) > 0
+    }
+
+    pipeline_variable = {
+      valid_name        = length(regexall(local.azdo.pipeline_variable.regex, local.azdo.pipeline_variable.name)) > 0 && length(local.azdo.pipeline_variable.name) > local.azdo.pipeline_variable.min_length
+      valid_name_unique = length(regexall(local.azdo.pipeline_variable.regex, local.azdo.pipeline_variable.name_unique)) > 0
+    }
+
+    pipeline_matrix = {
+      valid_name        = length(regexall(local.azdo.pipeline_matrix.regex, local.azdo.pipeline_matrix.name)) > 0 && length(local.azdo.pipeline_matrix.name) > local.azdo.pipeline_matrix.min_length
+      valid_name_unique = length(regexall(local.azdo.pipeline_matrix.regex, local.azdo.pipeline_matrix.name_unique)) > 0
+    }
+
+    artifact_package = {
+      valid_name        = length(regexall(local.azdo.artifact_package.regex, local.azdo.artifact_package.name)) > 0 && length(local.azdo.artifact_package.name) > local.azdo.artifact_package.min_length
+      valid_name_unique = length(regexall(local.azdo.artifact_package.regex, local.azdo.artifact_package.name_unique)) > 0
+    }
+
+    organization = {
+      valid_name        = length(regexall(local.azdo.organization.regex, local.azdo.organization.name)) > 0 && length(local.azdo.organization.name) > local.azdo.organization.min_length
+      valid_name_unique = length(regexall(local.azdo.organization.regex, local.azdo.organization.name_unique)) > 0
+    }
+
+    process = {
+      valid_name        = length(regexall(local.azdo.process.regex, local.azdo.process.name)) > 0 && length(local.azdo.process.name) > local.azdo.process.min_length
+      valid_name_unique = length(regexall(local.azdo.process.regex, local.azdo.process.name_unique)) > 0
+    }
+
+    security_group = {
+      valid_name        = length(regexall(local.azdo.security_group.regex, local.azdo.security_group.name)) > 0 && length(local.azdo.security_group.name) > local.azdo.security_group.min_length
+      valid_name_unique = length(regexall(local.azdo.security_group.regex, local.azdo.security_group.name_unique)) > 0
+    }
+
+    area_path = {
+      valid_name        = length(regexall(local.azdo.area_path.regex, local.azdo.area_path.name)) > 0 && length(local.azdo.area_path.name) > local.azdo.area_path.min_length
+      valid_name_unique = length(regexall(local.azdo.area_path.regex, local.azdo.area_path.name_unique)) > 0
+    }
+
+    iteration_path = {
+      valid_name        = length(regexall(local.azdo.iteration_path.regex, local.azdo.iteration_path.name)) > 0 && length(local.azdo.iteration_path.name) > local.azdo.iteration_path.min_length
+      valid_name_unique = length(regexall(local.azdo.iteration_path.regex, local.azdo.iteration_path.name_unique)) > 0
+    }
+
+    board_column = {
+      valid_name        = length(regexall(local.azdo.board_column.regex, local.azdo.board_column.name)) > 0 && length(local.azdo.board_column.name) > local.azdo.board_column.min_length
+      valid_name_unique = length(regexall(local.azdo.board_column.regex, local.azdo.board_column.name_unique)) > 0
+    }
+
+    board_swimlane = {
+      valid_name        = length(regexall(local.azdo.board_swimlane.regex, local.azdo.board_swimlane.name)) > 0 && length(local.azdo.board_swimlane.name) > local.azdo.board_swimlane.min_length
+      valid_name_unique = length(regexall(local.azdo.board_swimlane.regex, local.azdo.board_swimlane.name_unique)) > 0
+    }
+
   }
 }

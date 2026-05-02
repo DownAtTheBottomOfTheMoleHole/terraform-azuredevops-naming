@@ -568,3 +568,75 @@ output "workitemtrackingprocess_workitemtype" {
   value       = local.azdo.workitemtrackingprocess_workitemtype
 }
 
+output "pipeline_stage" {
+  description = "The Pipeline stage in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.pipeline_stage
+}
+
+output "pipeline_job" {
+  description = "The Pipeline job in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.pipeline_job
+}
+
+output "pipeline_variable" {
+  description = "The Pipeline variable in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.pipeline_variable
+}
+
+output "pipeline_matrix" {
+  description = "The Pipeline matrix in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.pipeline_matrix
+}
+
+output "artifact_package" {
+  description = "The Artifact package in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.artifact_package
+}
+
+output "organization" {
+  description = "The Organization in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.organization
+}
+
+output "process" {
+  description = "The Process in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.process
+}
+
+output "security_group" {
+  description = "The Security group in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.security_group
+}
+
+output "area_path" {
+  description = "The Area path in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.area_path
+}
+
+output "iteration_path" {
+  description = "The Iteration path in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.iteration_path
+}
+
+output "board_column" {
+  description = "The Board column in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.board_column
+}
+
+output "board_swimlane" {
+  description = "The Board swimlane in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.board_swimlane
+}
+
