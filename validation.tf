@@ -398,5 +398,95 @@ locals {
       valid_name_unique = length(regexall(local.azdo.variable_group.regex, local.azdo.variable_group.name_unique)) > 0
     }
 
+    agent_queue = {
+      valid_name        = length(regexall(local.azdo.agent_queue.regex, local.azdo.agent_queue.name)) > 0 && length(local.azdo.agent_queue.name) > local.azdo.agent_queue.min_length
+      valid_name_unique = length(regexall(local.azdo.agent_queue.regex, local.azdo.agent_queue.name_unique)) > 0
+    }
+
+    dashboard = {
+      valid_name        = length(regexall(local.azdo.dashboard.regex, local.azdo.dashboard.name)) > 0 && length(local.azdo.dashboard.name) > local.azdo.dashboard.min_length
+      valid_name_unique = length(regexall(local.azdo.dashboard.regex, local.azdo.dashboard.name_unique)) > 0
+    }
+
+    deployment_group = {
+      valid_name        = length(regexall(local.azdo.deployment_group.regex, local.azdo.deployment_group.name)) > 0 && length(local.azdo.deployment_group.name) > local.azdo.deployment_group.min_length
+      valid_name_unique = length(regexall(local.azdo.deployment_group.regex, local.azdo.deployment_group.name_unique)) > 0
+    }
+
+    environment_kubernetes_resource = {
+      valid_name        = length(regexall(local.azdo.environment_kubernetes_resource.regex, local.azdo.environment_kubernetes_resource.name)) > 0 && length(local.azdo.environment_kubernetes_resource.name) > local.azdo.environment_kubernetes_resource.min_length
+      valid_name_unique = length(regexall(local.azdo.environment_kubernetes_resource.regex, local.azdo.environment_kubernetes_resource.name_unique)) > 0
+    }
+
+    feed = {
+      valid_name        = length(regexall(local.azdo.feed.regex, local.azdo.feed.name)) > 0 && length(local.azdo.feed.name) > local.azdo.feed.min_length
+      valid_name_unique = length(regexall(local.azdo.feed.regex, local.azdo.feed.name_unique)) > 0
+    }
+
+    variable_group_variable = {
+      valid_name        = length(regexall(local.azdo.variable_group_variable.regex, local.azdo.variable_group_variable.name)) > 0 && length(local.azdo.variable_group_variable.name) > local.azdo.variable_group_variable.min_length
+      valid_name_unique = length(regexall(local.azdo.variable_group_variable.regex, local.azdo.variable_group_variable.name_unique)) > 0
+    }
+
+    wiki = {
+      valid_name        = length(regexall(local.azdo.wiki.regex, local.azdo.wiki.name)) > 0 && length(local.azdo.wiki.name) > local.azdo.wiki.min_length
+      valid_name_unique = length(regexall(local.azdo.wiki.regex, local.azdo.wiki.name_unique)) > 0
+    }
+
+    wiki_page = {
+      valid_name        = length(regexall(local.azdo.wiki_page.regex, local.azdo.wiki_page.name)) > 0 && length(local.azdo.wiki_page.name) > local.azdo.wiki_page.min_length
+      valid_name_unique = length(regexall(local.azdo.wiki_page.regex, local.azdo.wiki_page.name_unique)) > 0
+    }
+
+    workitem = {
+      valid_name        = length(regexall(local.azdo.workitem.regex, local.azdo.workitem.name)) > 0 && length(local.azdo.workitem.name) > local.azdo.workitem.min_length
+      valid_name_unique = length(regexall(local.azdo.workitem.regex, local.azdo.workitem.name_unique)) > 0
+    }
+
+    workitemquery = {
+      valid_name        = length(regexall(local.azdo.workitemquery.regex, local.azdo.workitemquery.name)) > 0 && length(local.azdo.workitemquery.name) > local.azdo.workitemquery.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemquery.regex, local.azdo.workitemquery.name_unique)) > 0
+    }
+
+    workitemquery_folder = {
+      valid_name        = length(regexall(local.azdo.workitemquery_folder.regex, local.azdo.workitemquery_folder.name)) > 0 && length(local.azdo.workitemquery_folder.name) > local.azdo.workitemquery_folder.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemquery_folder.regex, local.azdo.workitemquery_folder.name_unique)) > 0
+    }
+
+    workitemtracking_field = {
+      valid_name        = length(regexall(local.azdo.workitemtracking_field.regex, local.azdo.workitemtracking_field.name)) > 0 && length(local.azdo.workitemtracking_field.name) > local.azdo.workitemtracking_field.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemtracking_field.regex, local.azdo.workitemtracking_field.name_unique)) > 0
+    }
+
+    workitemtrackingprocess_process = {
+      valid_name        = length(regexall(local.azdo.workitemtrackingprocess_process.regex, local.azdo.workitemtrackingprocess_process.name)) > 0 && length(local.azdo.workitemtrackingprocess_process.name) > local.azdo.workitemtrackingprocess_process.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemtrackingprocess_process.regex, local.azdo.workitemtrackingprocess_process.name_unique)) > 0
+    }
+
+    workitemtrackingprocess_field = {
+      valid_name        = length(regexall(local.azdo.workitemtrackingprocess_field.regex, local.azdo.workitemtrackingprocess_field.name)) > 0 && length(local.azdo.workitemtrackingprocess_field.name) > local.azdo.workitemtrackingprocess_field.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemtrackingprocess_field.regex, local.azdo.workitemtrackingprocess_field.name_unique)) > 0
+    }
+
+    workitemtrackingprocess_group = {
+      valid_name        = length(regexall(local.azdo.workitemtrackingprocess_group.regex, local.azdo.workitemtrackingprocess_group.name)) > 0 && length(local.azdo.workitemtrackingprocess_group.name) > local.azdo.workitemtrackingprocess_group.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemtrackingprocess_group.regex, local.azdo.workitemtrackingprocess_group.name_unique)) > 0
+    }
+
+    workitemtrackingprocess_page = {
+      valid_name        = length(regexall(local.azdo.workitemtrackingprocess_page.regex, local.azdo.workitemtrackingprocess_page.name)) > 0 && length(local.azdo.workitemtrackingprocess_page.name) > local.azdo.workitemtrackingprocess_page.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemtrackingprocess_page.regex, local.azdo.workitemtrackingprocess_page.name_unique)) > 0
+    }
+
+    workitemtrackingprocess_state = {
+      valid_name        = length(regexall(local.azdo.workitemtrackingprocess_state.regex, local.azdo.workitemtrackingprocess_state.name)) > 0 && length(local.azdo.workitemtrackingprocess_state.name) > local.azdo.workitemtrackingprocess_state.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemtrackingprocess_state.regex, local.azdo.workitemtrackingprocess_state.name_unique)) > 0
+    }
+
+    workitemtrackingprocess_workitemtype = {
+      valid_name        = length(regexall(local.azdo.workitemtrackingprocess_workitemtype.regex, local.azdo.workitemtrackingprocess_workitemtype.name)) > 0 && length(local.azdo.workitemtrackingprocess_workitemtype.name) > local.azdo.workitemtrackingprocess_workitemtype.min_length
+      valid_name_unique = length(regexall(local.azdo.workitemtrackingprocess_workitemtype.regex, local.azdo.workitemtrackingprocess_workitemtype.name_unique)) > 0
+    }
+
   }
 }
