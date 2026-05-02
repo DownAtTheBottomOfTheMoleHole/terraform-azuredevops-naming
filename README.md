@@ -1,6 +1,53 @@
-# Azure DevOps Naming Module
+<div align="center">
 
-![Down At The Bottom Of The Mole Hole banner](./.assets/org-banner.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./.assets/org-banner.png">
+  <source media="(prefers-color-scheme: light)" srcset="./.assets/org-banner.png">
+  <img alt="Down At The Bottom Of The Mole Hole banner" src="./.assets/org-banner.png">
+</picture>
+
+# 🏷️ Azure DevOps Naming Module
+
+**Standardised, validated, opinionated naming for every Azure DevOps resource.**
+
+[![Terraform Registry](https://img.shields.io/badge/Terraform-Registry-7B42BC?logo=terraform)](https://registry.terraform.io/modules/DownAtTheBottomOfTheMoleHole/naming/azuredevops/latest)
+[![License: MIT](https://img.shields.io/github/license/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming?color=blue)](./LICENSE.md)
+[![GitHub release](https://img.shields.io/github/v/release/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming?label=release&color=orange)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/releases)
+[![Last commit](https://img.shields.io/github/last-commit/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/commits/main)
+[![Contributors](https://img.shields.io/github/contributors/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/graphs/contributors)
+
+</div>
+
+> ## ✨ What's new in v11
+>
+> - **40+ new resource definitions** spanning the full `microsoft/azuredevops` provider surface (service endpoints, environments, agent pools, branch policies, variable groups, and more).
+> - **Conceptual resources** for area paths, iteration paths, board columns/swimlanes, pipeline stages/jobs/variables, and artifact packages.
+> - **8 new optional input lists** (`area_paths`, `iteration_paths`, `dashboards`, `feeds`, `wiki_pages`, `pipeline_stages`, `pipeline_jobs`, `pipeline_variables`) — all default to `[]` for full backward compatibility.
+> - **Bumped baselines**: Terraform `>= 1.14.0`, Random `>= 3.8.0`.
+> - **Strictly additive** — every existing v10 output keeps the same key, type, and shape.
+>
+> See [`MIGRATION.md`](./MIGRATION.md) and [`CHANGELOG.md`](./CHANGELOG.md) for full details.
+
+---
+
+## 🚀 Quick start
+
+```hcl
+module "azdo_naming" {
+  source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
+  version = ">= 11.0.0, < 12.0.0"
+
+  prefix = ["dbmh"]
+  suffix = ["my-project"]
+}
+
+# e.g. dbmh-my-project
+output "project_name" {
+  value = module.azdo_naming.project.name
+}
+```
+
+---
 
 <!-- Github Badges -->
 <!--
