@@ -370,6 +370,72 @@ output "serviceendpoint_ssh" {
   value       = local.azdo.serviceendpoint_ssh
 }
 
+output "serviceendpoint_azure_service_bus" {
+  description = "The Azure Service Bus service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_azure_service_bus
+}
+
+output "serviceendpoint_black_duck" {
+  description = "The Black Duck service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_black_duck
+}
+
+output "serviceendpoint_checkmarx_one" {
+  description = "The Checkmarx One service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_checkmarx_one
+}
+
+output "serviceendpoint_checkmarx_sast" {
+  description = "The Checkmarx SAST service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_checkmarx_sast
+}
+
+output "serviceendpoint_checkmarx_sca" {
+  description = "The Checkmarx SCA service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_checkmarx_sca
+}
+
+output "serviceendpoint_dynamics_lifecycle_services" {
+  description = "The Dynamics Lifecycle Services service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_dynamics_lifecycle_services
+}
+
+output "serviceendpoint_generic_v2" {
+  description = "The Generic v2 service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_generic_v2
+}
+
+output "serviceendpoint_gitlab" {
+  description = "The GitLab service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_gitlab
+}
+
+output "serviceendpoint_openshift" {
+  description = "The OpenShift service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_openshift
+}
+
+output "serviceendpoint_snyk" {
+  description = "The Snyk service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_snyk
+}
+
+output "serviceendpoint_visualstudiomarketplace" {
+  description = "The Visual Studio Marketplace service endpoint in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.serviceendpoint_visualstudiomarketplace
+}
+
 output "team" {
   description = "The team in Azure DevOps"
   sensitive   = false
