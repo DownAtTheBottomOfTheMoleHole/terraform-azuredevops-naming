@@ -39,7 +39,7 @@ jobs:
       - name: Render terraform docs in README.md
         uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1.4.1
         with:
-          config-file: .config/.readme-terraform-docs.yml
+          config-file: .readme-terraform-docs.yml
           output-file: README.md
           recursive: false
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
@@ -48,7 +48,7 @@ jobs:
       - name: Render terraform docs in TERRAFORM.md
         uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1.4.1
         with:
-          config-file: .config/.terraform-terraform-docs.yml
+          config-file: .terraform-terraform-docs.yml
           output-file: TERRAFORM.md
           recursive: false
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
@@ -57,7 +57,7 @@ jobs:
       - name: Render terraform docs in examples/example1/README.md
         uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1.4.1
         with:
-          config-file: ./.config/.example1-readme-terraform-docs.yml
+          config-file: ./.example1-readme-terraform-docs.yml
           output-file: README.md
           recursive: false
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"
@@ -66,7 +66,7 @@ jobs:
       - name: Render terraform docs in examples/example2/README.md
         uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1.4.1
         with:
-          config-file: ./.config/.example1-readme-terraform-docs.yml
+          config-file: ./.example2-readme-terraform-docs.yml
           output-file: README.md
           recursive: false
           template: "<!-- start_of_terraform_docs -->\n{{ .Content }}\n<!-- end_of_terraform_docs -->"

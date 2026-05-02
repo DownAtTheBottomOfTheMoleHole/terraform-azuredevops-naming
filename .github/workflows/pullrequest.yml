@@ -28,7 +28,7 @@ jobs:
       - name: Render terraform docs in README.md
         uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1.4.1
         with:
-          config-file: .config/.readme-terraform-docs.yml
+          config-file: .readme-terraform-docs.yml
           git-commit-message: "[terraform-docs] update README.md"
           git-push: true
           git-push-sign-off: true
@@ -43,7 +43,7 @@ jobs:
       - name: Render terraform docs in TERRAFORM.md
         uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1.4.1
         with:
-          config-file: .config/.terraform-terraform-docs.yml
+          config-file: .terraform-terraform-docs.yml
           git-commit-message: "[terraform-docs] update TERRAFORM.md"
           git-push: true
           git-push-sign-off: true
@@ -58,7 +58,7 @@ jobs:
       - name: Render terraform docs in examples/example1/README.md
         uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1.4.1
         with:
-          config-file: ./.config/.example1-readme-terraform-docs.yml
+          config-file: ./.example1-readme-terraform-docs.yml
           git-commit-message: "[terraform-docs] update examples README.md"
           git-push: true
           git-push-sign-off: true
@@ -73,7 +73,7 @@ jobs:
       - name: Render terraform docs in examples/example2/README.md
         uses: terraform-docs/gh-actions@6de6da0cefcc6b4b7a5cbea4d79d97060733093c # v1.4.1
         with:
-          config-file: ./.config/.example1-readme-terraform-docs.yml
+          config-file: ./.example2-readme-terraform-docs.yml
           git-commit-message: "[terraform-docs] update examples README.md"
           git-push: true
           git-push-sign-off: true
