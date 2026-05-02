@@ -1,9 +1,5 @@
 # Azure DevOps Naming Module
 
-![Down At The Bottom Of The Mole Hole banner](./.assets/org-banner.png)
-
-[![terraform-azuredevops-naming][logo-image]](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming)
-
 <!-- Github Badges -->
 <!--
 *** replace with badges relevant to your repo
@@ -13,7 +9,7 @@
 
 [![Create New Release](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/release.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/release.yml)
 
-[![Nightly Maintenance Scan of Full Codebase](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/scheduled_maintenance.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/nightly_mega-linter.yml)
+[![Nightly Maintenance Scan of Full Codebase](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/scheduled_maintenance.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/scheduled_maintenance.yml)
 
 <!-- Made With Badges -->
 <!--
@@ -609,6 +605,3 @@ Module Link: [https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredev
 [tflint-ruleset-aws]: https://github.com/terraform-linters/tflint-ruleset-aws/releases
 [tflint-ruleset-azurerm]: https://github.com/terraform-linters/tflint-ruleset-azurerm/releases
 
-<!-- IMAGES AND ICONS -->
-
-[logo-image]: ./.assets/RolfMoleman.png
