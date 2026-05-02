@@ -1,0 +1,40 @@
+---
+# Prettier configuration — DownAtTheBottomOfTheMoleHole org baseline
+# https://prettier.io/docs/en/options.html
+#
+# Copy this file to the root of any repo that uses Prettier or MegaLinter with
+# TYPESCRIPT_DEFAULT_STYLE: prettier (or equivalent).
+
+# Line width before wrapping
+printWidth: 120
+
+# Indentation
+tabWidth: 2
+useTabs: false
+
+# Semicolons
+semi: true
+
+# Quotes
+singleQuote: false
+quoteProps: "as-needed"
+jsxSingleQuote: false
+
+# Trailing commas (ES5-compatible: objects, arrays — not function params)
+trailingComma: "es5"
+
+# Brackets
+bracketSpacing: true
+bracketSameLine: false
+
+# Arrow functions — always include parens for consistency
+arrowParens: "always"
+
+# Line endings — LF for cross-platform consistency
+endOfLine: "lf"
+
+# Embedded language formatting
+embeddedLanguageFormatting: "auto"
+
+# Prose (markdown) — preserve wrapping to avoid large diffs
+proseWrap: "preserve"

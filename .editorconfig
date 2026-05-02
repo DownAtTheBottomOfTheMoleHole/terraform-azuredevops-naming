@@ -1,0 +1,44 @@
+root = true
+
+# DownAtTheBottomOfTheMoleHole org baseline .editorconfig
+# Copy this file to the root of any repo for consistent cross-editor formatting.
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_size = 2
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# Markdown — preserve trailing spaces (used for line breaks)
+[*.{md,mdx}]
+trim_trailing_whitespace = false
+
+# Makefiles require tab indentation
+[Makefile]
+indent_style = tab
+
+# Go source requires tab indentation
+[*.go]
+indent_style = tab
+
+# YAML
+[*.{yml,yaml}]
+indent_size = 2
+
+# JSON / JSONC
+[*.{json,jsonc,json5}]
+indent_size = 2
+
+# Terraform
+[*.{tf,tfvars}]
+indent_size = 2
+
+# Shell scripts
+[*.{sh,bash,zsh}]
+indent_size = 2
+
+# TypeScript / JavaScript
+[*.{ts,tsx,js,jsx,mjs,cjs}]
+indent_size = 2
