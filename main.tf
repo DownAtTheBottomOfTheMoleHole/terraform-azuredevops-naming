@@ -815,6 +815,204 @@ locals {
       scope       = "Project"
       regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
     }
+
+    agent_queue = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64)
+      dashes      = true
+      slug        = "aq"
+      min_length  = 1
+      max_length  = 64
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    dashboard = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "dash"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    deployment_group = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "dg"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    environment_kubernetes_resource = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "ekr"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    feed = {
+      name        = lower(substr(join("-", compact([local.prefix, "", local.suffix])), 0, 64))
+      name_unique = lower(substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 64))
+      dashes      = true
+      slug        = "feed"
+      min_length  = 1
+      max_length  = 64
+      scope       = "Project"
+      regex       = "^[A-Za-z0-9_.\\-]+$"
+    }
+
+    variable_group_variable = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "vgv"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    wiki = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 235)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 235)
+      dashes      = true
+      slug        = "wiki"
+      min_length  = 1
+      max_length  = 235
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    wiki_page = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 235)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 235)
+      dashes      = true
+      slug        = "wp"
+      min_length  = 1
+      max_length  = 235
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    workitem = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 255)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 255)
+      dashes      = true
+      slug        = "wi"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    workitemquery = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 255)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 255)
+      dashes      = true
+      slug        = "wiq"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    workitemquery_folder = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 255)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 255)
+      dashes      = true
+      slug        = "wiqf"
+      min_length  = 1
+      max_length  = 255
+      scope       = "Project"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    workitemtracking_field = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 128)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 128)
+      dashes      = true
+      slug        = "wtfld"
+      min_length  = 1
+      max_length  = 128
+      scope       = "Organization"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    workitemtrackingprocess_process = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "wtpp"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Organization"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    workitemtrackingprocess_field = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "wtpfld"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Organization"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    workitemtrackingprocess_group = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "wtpg"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Organization"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    workitemtrackingprocess_page = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "wtppg"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Organization"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    workitemtrackingprocess_state = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "wtps"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Organization"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
+
+    workitemtrackingprocess_workitemtype = {
+      name        = substr(join("-", compact([local.prefix, "", local.suffix])), 0, 256)
+      name_unique = substr(join("-", compact([local.prefix, "", local.suffix_unique])), 0, 256)
+      dashes      = true
+      slug        = "wtpwit"
+      min_length  = 1
+      max_length  = 256
+      scope       = "Organization"
+      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$"
+    }
   }
 
 }

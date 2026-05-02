@@ -393,3 +393,112 @@ output "validation" {
   sensitive   = false
   value       = local.validation
 }
+
+output "agent_queue" {
+  description = "The Agent queue in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.agent_queue
+}
+
+output "dashboard" {
+  description = "The Dashboard in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.dashboard
+}
+
+output "deployment_group" {
+  description = "The Deployment group in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.deployment_group
+}
+
+output "environment_kubernetes_resource" {
+  description = "The Environment Kubernetes resource in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.environment_kubernetes_resource
+}
+
+output "feed" {
+  description = "The Artifact feed in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.feed
+}
+
+output "variable_group_variable" {
+  description = "The Variable group variable in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.variable_group_variable
+}
+
+output "wiki" {
+  description = "The Wiki in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.wiki
+}
+
+output "wiki_page" {
+  description = "The Wiki page in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.wiki_page
+}
+
+output "workitem" {
+  description = "The Work item in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitem
+}
+
+output "workitemquery" {
+  description = "The Work item query in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemquery
+}
+
+output "workitemquery_folder" {
+  description = "The Work item query folder in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemquery_folder
+}
+
+output "workitemtracking_field" {
+  description = "The Work item tracking field in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemtracking_field
+}
+
+output "workitemtrackingprocess_process" {
+  description = "The Work item tracking process in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemtrackingprocess_process
+}
+
+output "workitemtrackingprocess_field" {
+  description = "The Work item tracking process field in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemtrackingprocess_field
+}
+
+output "workitemtrackingprocess_group" {
+  description = "The Work item tracking process group in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemtrackingprocess_group
+}
+
+output "workitemtrackingprocess_page" {
+  description = "The Work item tracking process page in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemtrackingprocess_page
+}
+
+output "workitemtrackingprocess_state" {
+  description = "The Work item tracking process state in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemtrackingprocess_state
+}
+
+output "workitemtrackingprocess_workitemtype" {
+  description = "The Work item tracking process work item type in Azure DevOps"
+  sensitive   = false
+  value       = local.azdo.workitemtrackingprocess_workitemtype
+}
+
