@@ -1,7 +1,7 @@
 config {
 plugin_dir = "~/.tflint.d/plugins"
 disabled_by_default = true
-call_module_type = "all"
+call_module_type = "none"
 force = false
 }
 
@@ -80,10 +80,4 @@ enabled = true
 
 rule "terraform_workspace_remote" {
 enabled = true
-}
-
-plugin "azurerm" {
-    enabled = true
-    #version = "0.32.0"
-    #source  = "github.com/terraform-linters/tflint-ruleset-azurerm"
 }

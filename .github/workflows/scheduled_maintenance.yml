@@ -35,6 +35,14 @@ jobs:
           dry_run: false
           github_token: ${{ secrets.SYNCER }}
           concurrency: 10
+        env:
+          # Required: secrets-sync-action reads values from the environment
+          # before pushing them to target repos.
+          ADO_PAT: ${{ secrets.ADO_PAT }} # zizmor: ignore[secrets-inherit]
+          GIT_SSH_KEY: ${{ secrets.GIT_SSH_KEY }} # zizmor: ignore[secrets-inherit]
+          INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }} # zizmor: ignore[secrets-inherit]
+          PAT: ${{ secrets.PAT }} # zizmor: ignore[secrets-inherit]
+          SYNCER: ${{ secrets.SYNCER }} # zizmor: ignore[secrets-inherit]
 
   # ─── MegaLinter (full codebase) ────────────────────────────────────────────
   megalinter-nightly:
@@ -51,6 +59,41 @@ jobs:
       apply-fixes: all
       create-fix-pr: true
       validate-all: true
+
+  # ─── terraform test (push to main + nightly) ───────────────────────────────
+  terraform-test:
+    name: "terraform test (${{ matrix.terraform_version }})"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        terraform_version:
+          - "1.14.0" # required_version floor
+          - "latest"
+    steps:
+      - name: ⬇️ Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Setup Terraform ${{ matrix.terraform_version }}
+        uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
+        with:
+          terraform_version: ${{ matrix.terraform_version }}
+          terraform_wrapper: false
+
+      - name: Terraform fmt (check)
+        run: terraform fmt -check -recursive
+
+      - name: Terraform init
+        run: terraform init -backend=false -input=false
+
+      - name: Terraform validate
+        run: terraform validate
+
+      - name: Terraform test
+        run: terraform test -verbose
 
   # ─── Stale issues / PRs ────────────────────────────────────────────────────
   stale:
