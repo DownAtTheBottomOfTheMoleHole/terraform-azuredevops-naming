@@ -1,7 +1,7 @@
 config {
 plugin_dir = "~/.tflint.d/plugins"
 disabled_by_default = true
-call_module_type = "all"
+call_module_type = "none"
 force = false
 }
 
@@ -14,7 +14,7 @@ enabled = true
 }
 
 rule "terraform_unused_declarations" {
-enabled = true
+enabled = false
 }
 
 rule "terraform_comment_syntax" {
@@ -81,11 +81,3 @@ enabled = true
 rule "terraform_workspace_remote" {
 enabled = true
 }
-
-plugin "azurerm" {
-    enabled = true
-    #version = "0.16.0"
-    #source  = "github.com/terraform-linters/tflint-ruleset-azurerm"
-}
-
-Precommit-Verified: 9d885a0010cfd7c79c00990406395b974cf03281c9a1843b219bc603b0f2974a

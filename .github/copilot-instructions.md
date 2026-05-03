@@ -1,7 +1,6 @@
 This Terraform module generates standardized, validated naming conventions for Azure DevOps resources based on Microsoft's official [naming restrictions](https://learn.microsoft.com/en-us/azure/devops/organizations/settings/naming-restrictions?view=azure-devops). It provides both regular (`name`) and unique (`name_unique`) variants for each resource type.
 
 1. **Main Resource Definitions** ([main.tf](main.tf)): `local.azdo` map contains all resource types with:
-
    - `name` / `name_unique`: Generated names using prefix/suffix patterns
    - `regex`: Microsoft's validation pattern for each resource type
    - `min_length` / `max_length`: Character constraints

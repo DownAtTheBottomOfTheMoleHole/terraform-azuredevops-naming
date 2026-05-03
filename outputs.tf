@@ -639,4 +639,3 @@ output "board_swimlane" {
   sensitive   = false
   value       = local.azdo.board_swimlane
 }
-

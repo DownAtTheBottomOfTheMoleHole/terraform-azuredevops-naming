@@ -21,12 +21,12 @@ All notable changes to this module are documented here. The format follows [Keep
   - `area_path`, `iteration_path`
   - `board_column`, `board_swimlane`
   - `organization`, `process`, `security_group`
-  (#246)
+    (#246)
 - 8 new optional input list variables, all `default = []`:
   - `area_paths`, `iteration_paths`
   - `dashboards`, `feeds`, `wiki_pages`
   - `pipeline_stages`, `pipeline_jobs`, `pipeline_variables`
-  (#247)
+    (#247)
 - `MIGRATION.md` and `CHANGELOG.md`.
 - README hero block, modern badges, "What's new in v11" callout, and quick-start example. (#248)
 

@@ -180,7 +180,7 @@ The below documentation was generated via Terraform docs using pre-commit
 ### Requirements
 
 | Name | Version |
-|------|---------|
+| ---- | ------- |
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.14.0, < 2.0.0 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.8.0, < 4.0.0 |
 
@@ -202,16 +202,24 @@ The below documentation was generated via Terraform docs using pre-commit
     	 version  = "~>2.2.0"
     
 	 # Optional variables
+    	 area_paths  = []
+    	 dashboards  = []
     	 environment_tags  = [
   "dev",
   "uat",
   "prd"
 ]
+    	 feeds  = []
+    	 iteration_paths  = []
+    	 pipeline_jobs  = []
+    	 pipeline_stages  = []
+    	 pipeline_variables  = []
     	 prefix  = []
     	 suffix  = []
     	 unique_include_numbers  = true
     	 unique_length  = 4
     	 unique_seed  = ""
+    	 wiki_pages  = []
     	 work_items  = []
   }
   ```
@@ -221,7 +229,7 @@ The below documentation was generated via Terraform docs using pre-commit
 ```hcl
 module "azdo_naming" {
   source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-  version = ">= 6.0.0, <7.0.0"
+  version = ">= 11.0.0, < 12.0.0"
 
   # Optional variables
   environment_tags = [
@@ -268,7 +276,7 @@ this shows creating:
 ```hcl
 module "azdo_naming" {
   source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-  version = ">=6.0.0, <7.0.0"
+  version = ">= 11.0.0, < 12.0.0"
 
   # Optional variables
   environment_tags = [
@@ -317,7 +325,7 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 ### Resources
 
 | Name | Type |
-|------|------|
+| ---- | ---- |
 | [random_string.first_letter](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [random_string.main](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 
@@ -332,13 +340,21 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 ### Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
+| ---- | ----------- | ---- | ------- | :------: |
+| <a name="input_area_paths"></a> [area\_paths](#input\_area\_paths) | Optional list of area path names to generate naming for. Used by the area\_path resource. | `list(string)` | `[]` | no |
+| <a name="input_dashboards"></a> [dashboards](#input\_dashboards) | Optional list of dashboard names to generate naming for. Used by the dashboard resource. | `list(string)` | `[]` | no |
 | <a name="input_environment_tags"></a> [environment\_tags](#input\_environment\_tags) | List of environment names in their shortened form. These will be translated to full names in the module. | `list(string)` | <pre>[<br/>  "dev",<br/>  "uat",<br/>  "prd"<br/>]</pre> | no |
-| <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix to be used for naming resources. If used we suggest using a company abreviation e.g dbmh. | `list(string)` | `[]` | no |
+| <a name="input_feeds"></a> [feeds](#input\_feeds) | Optional list of artifact feed names to generate naming for. Used by the feed resource. | `list(string)` | `[]` | no |
+| <a name="input_iteration_paths"></a> [iteration\_paths](#input\_iteration\_paths) | Optional list of iteration path names to generate naming for. Used by the iteration\_path resource. | `list(string)` | `[]` | no |
+| <a name="input_pipeline_jobs"></a> [pipeline\_jobs](#input\_pipeline\_jobs) | Optional list of pipeline job names to generate naming for. Used by the pipeline\_job resource. | `list(string)` | `[]` | no |
+| <a name="input_pipeline_stages"></a> [pipeline\_stages](#input\_pipeline\_stages) | Optional list of pipeline stage names to generate naming for. Used by the pipeline\_stage resource. | `list(string)` | `[]` | no |
+| <a name="input_pipeline_variables"></a> [pipeline\_variables](#input\_pipeline\_variables) | Optional list of pipeline variable names to generate naming for. Used by the pipeline\_variable resource. | `list(string)` | `[]` | no |
+| <a name="input_prefix"></a> [prefix](#input\_prefix) | Prefix to be used for naming resources. If used we suggest using a company abbreviation e.g dbmh. | `list(string)` | `[]` | no |
 | <a name="input_suffix"></a> [suffix](#input\_suffix) | Suffix to be used for naming resources. It is recommended to use lowercase characters for consistency. | `list(string)` | `[]` | no |
 | <a name="input_unique_include_numbers"></a> [unique\_include\_numbers](#input\_unique\_include\_numbers) | Determines whether numbers should be included in the unique suffix generation. | `bool` | `true` | no |
 | <a name="input_unique_length"></a> [unique\_length](#input\_unique\_length) | Maximum length of the unique suffix to be added to resource names. | `number` | `4` | no |
 | <a name="input_unique_seed"></a> [unique\_seed](#input\_unique\_seed) | Custom seed value for generating unique random characters. | `string` | `""` | no |
+| <a name="input_wiki_pages"></a> [wiki\_pages](#input\_wiki\_pages) | Optional list of wiki page names to generate naming for. Used by the wiki\_page resource. | `list(string)` | `[]` | no |
 | <a name="input_work_items"></a> [work\_items](#input\_work\_items) | List of Work Items or issue numbers to be used in branch name and environment name creation. For example, ['1234', '1235'] will create branch names like 'feature/1234-' and 'feature/1235-'. | `list(string)` | `[]` | no |
 
 ---
@@ -352,7 +368,7 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 ### Outputs
 
 | Name | Description | Value | Sensitive |
-|------|-------------|-------|:---------:|
+| ---- | ----------- | ----- | :-------: |
 | <a name="output_agent_pool"></a> [agent\_pool](#output\_agent\_pool) | The agent pool used in Azure DevOps | <pre>{<br/>  "dashes": true,<br/>  "max_length": 64,<br/>  "min_length": 1,<br/>  "name": "dbmh-adonaming",<br/>  "name_unique": "dbmh-adonaming-h6lf",<br/>  "regex": "^[^\u003c,\u003e,%,\u0026,,:,\\,?,/,*,|,\",#,$,+,.,']*$",<br/>  "scope": "Organization",<br/>  "slug": "agtpol"<br/>}</pre> | no |
 | <a name="output_agent_queue"></a> [agent\_queue](#output\_agent\_queue) | The Agent queue in Azure DevOps | `"null"` | no |
 | <a name="output_area_path"></a> [area\_path](#output\_area\_path) | The Area path in Azure DevOps | `"null"` | no |
@@ -694,4 +710,3 @@ Module Link: [https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredev
 [tfupdate_releases]: https://github.com/minamijoyo/tfupdate/releases
 [tflint-ruleset-aws]: https://github.com/terraform-linters/tflint-ruleset-aws/releases
 [tflint-ruleset-azurerm]: https://github.com/terraform-linters/tflint-ruleset-azurerm/releases
-

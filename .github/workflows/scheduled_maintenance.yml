@@ -4,15 +4,50 @@ name: 🌙 Scheduled Maintenance
 on:
   schedule:
     - cron: "0 0 * * *"
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
+  # ─── Sync shared secrets to sister modules (only on push to main) ──────────
+  secret-syncer:
+    name: Sync secrets to other modules
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: jpoehnelt/secrets-sync-action@7840777f242539d96b60477b66aa1c179e7644ea # v1.10.0 # DevSkim: ignore DS117838
+        with:
+          secrets: |
+            ^ADO_PAT$
+            ^GIT_SSH_KEY$
+            ^INFRACOST_API_KEY$
+            ^PAT$
+            ^SYNCER$
+          repositories: |
+            ^DownAtTheBottomOfTheMoleHole/terraform_*
+            ^DownAtTheBottomOfTheMoleHole/terraform-*
+          dry_run: false
+          github_token: ${{ secrets.SYNCER }}
+          concurrency: 10
+        env:
+          # Required: secrets-sync-action reads values from the environment
+          # before pushing them to target repos.
+          ADO_PAT: ${{ secrets.ADO_PAT }} # zizmor: ignore[secrets-inherit]
+          GIT_SSH_KEY: ${{ secrets.GIT_SSH_KEY }} # zizmor: ignore[secrets-inherit]
+          INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }} # zizmor: ignore[secrets-inherit]
+          PAT: ${{ secrets.PAT }} # zizmor: ignore[secrets-inherit]
+          SYNCER: ${{ secrets.SYNCER }} # zizmor: ignore[secrets-inherit]
+
   # ─── MegaLinter (full codebase) ────────────────────────────────────────────
   megalinter-nightly:
     name: MegaLinter (Full Codebase)
+    if: github.event_name != 'push'
     uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@main
     secrets: inherit
     permissions:
@@ -25,9 +60,45 @@ jobs:
       create-fix-pr: true
       validate-all: true
 
+  # ─── terraform test (push to main + nightly) ───────────────────────────────
+  terraform-test:
+    name: "terraform test (${{ matrix.terraform_version }})"
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    strategy:
+      fail-fast: false
+      matrix:
+        terraform_version:
+          - "1.14.0" # required_version floor
+          - "latest"
+    steps:
+      - name: ⬇️ Checkout
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
+
+      - name: Setup Terraform ${{ matrix.terraform_version }}
+        uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3
+        with:
+          terraform_version: ${{ matrix.terraform_version }}
+          terraform_wrapper: false
+
+      - name: Terraform fmt (check)
+        run: terraform fmt -check -recursive
+
+      - name: Terraform init
+        run: terraform init -backend=false -input=false
+
+      - name: Terraform validate
+        run: terraform validate
+
+      - name: Terraform test
+        run: terraform test -verbose
+
   # ─── Stale issues / PRs ────────────────────────────────────────────────────
   stale:
     name: Mark and Close Stale
+    if: github.event_name != 'push'
     uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/stale.yml@main
     secrets: inherit
     permissions:
@@ -37,6 +108,7 @@ jobs:
   # ─── OSSF Scorecard ────────────────────────────────────────────────────────
   scorecard:
     name: OSSF Scorecard
+    if: github.event_name != 'push'
     uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/scorecard.yml@main
     secrets: inherit
     permissions:
@@ -48,6 +120,7 @@ jobs:
   # ─── terraform-docs nightly refresh (matrix) ───────────────────────────────
   terraform-docs-nightly:
     name: "terraform-docs nightly (${{ matrix.target.name }})"
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -87,6 +160,7 @@ jobs:
   # ─── Open a PR with any docs drift ─────────────────────────────────────────
   terraform-docs-pr:
     name: terraform-docs nightly PR
+    if: github.event_name != 'push'
     needs: terraform-docs-nightly
     runs-on: ubuntu-latest
     permissions:

@@ -1,6 +1,4 @@
 APPLY_FIXES: all # all, none, or list of linter keys
-# Per-linter config file locations (consolidated under .config/)
-CSPELL_CONFIG_FILE: .config/.cspell.json
 # Whitelist the linters we actually want; everything else (jscpd, v8r, devskim, checkov repo-mode, etc.) is off
 ENABLE_LINTERS:
   - ACTION_ACTIONLINT
@@ -41,23 +39,9 @@ TERRAFORM_CHECKOV_ARGUMENTS:
   - "--skip-check"
   - "CKV_DOCKER_2,CKV_TF_1,CKV2_ADO_1"
 TERRAFORM_CHECKOV_CLI_LINT_MODE: file # Options are file (default), list_of_files or project. Project scans from the root of the Repo
-TERRAFORM_KICS_ARGUMENTS:
-  - "-m"
-  - "--config ../kics.config"
-  - "--output-path KICSReports"
-  - "--output-name kics-report-$(environment_tag)" # settings to match KICS pipeline
-TERRAFORM_KICS_CLI_LINT_MODE: file # Options are file (default), list_of_files or project. Project scans from the root of the Repo
-TERRAFORM_TERRASCAN_ARGUMENTS:
-  - "--verbose"
-  - "--show-passed"
-  #- "--log-output-dir /reports"
-  #- "--output human"
-  #- "--output junit-xml"
-  #- "--output sarif" # settings to match terrascan pipeline
 TERRAFORM_TFLINT_ARGUMENTS:
   - "--color"
   #- "--format sarif"
   #- "--format junit"
 TEXT_REPORTER: true #this is enabled by default anyway, but i find it is nicer to specifically declare it
 TEXT_REPORTER_SUB_FOLDER: text #if enabled allows you to define a different folder location for the text result files.
-

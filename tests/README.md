@@ -19,15 +19,15 @@ terraform test -filter=tests/defaults.tftest.hcl
 
 ## Test catalogue
 
-| File | What it asserts |
-|---|---|
-| `defaults.tftest.hcl` | The module accepts zero arguments and produces non-empty outputs. |
-| `prefix_suffix.tftest.hcl` | `prefix` / `suffix` inputs flow into generated names with correct ordering. |
-| `environments.tftest.hcl` | Short environment tags are translated through `local.environment_mapping`. |
-| `branches.tftest.hcl` | Branch outputs honour the dash vs slash separator and lowercase enforcement. |
-| `validation.tftest.hcl` | Every `valid_name` and `valid_name_unique` flag in the validation map is `true` for representative inputs. |
-| `length_boundaries.tftest.hcl` | Names are correctly truncated to per-resource `max_length`. |
-| `regex_compliance.tftest.hcl` | All generated names match the per-resource regex captured from Microsoft naming-restrictions docs. |
+| File                           | What it asserts                                                                                            |
+| ------------------------------ | ---------------------------------------------------------------------------------------------------------- |
+| `defaults.tftest.hcl`          | The module accepts zero arguments and produces non-empty outputs.                                          |
+| `prefix_suffix.tftest.hcl`     | `prefix` / `suffix` inputs flow into generated names with correct ordering.                                |
+| `environments.tftest.hcl`      | Short environment tags are translated through `local.environment_mapping`.                                 |
+| `branches.tftest.hcl`          | Branch outputs honour the dash vs slash separator and lowercase enforcement.                               |
+| `validation.tftest.hcl`        | Every `valid_name` and `valid_name_unique` flag in the validation map is `true` for representative inputs. |
+| `length_boundaries.tftest.hcl` | Names are correctly truncated to per-resource `max_length`.                                                |
+| `regex_compliance.tftest.hcl`  | All generated names match the per-resource regex captured from Microsoft naming-restrictions docs.         |
 
 ## Adding new tests
 
