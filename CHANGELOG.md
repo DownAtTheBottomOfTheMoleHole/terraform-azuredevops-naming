@@ -2,7 +2,26 @@
 
 All notable changes to this module are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [11.0.0] — Unreleased
+## [11.0.3] — 2026-05-03
+
+### Fixed
+
+- Add `id` to `<h1>` for TOC anchor compatibility and wrap tagline in `<p>` element for correct Terraform Registry rendering. (#255)
+- Convert Markdown inside `<div>` header to HTML so the Terraform Registry renders it correctly. (#255)
+
+## [11.0.2] — 2025-05-03
+
+### Fixed
+
+- Trim badge wall and fix URL-encoded alt text for cleaner Terraform Registry render. (#254)
+
+## [11.0.1] — 2025-05-02
+
+### Fixed
+
+- Use absolute URLs so the Terraform Registry renders the banner and links correctly. (#253)
+
+## [11.0.0] — 2025-05-01
 
 ### Highlights
 
