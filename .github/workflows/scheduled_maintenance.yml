@@ -4,15 +4,42 @@ name: 🌙 Scheduled Maintenance
 on:
   schedule:
     - cron: "0 0 * * *"
+  push:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
   contents: read
 
 jobs:
+  # ─── Sync shared secrets to sister modules (only on push to main) ──────────
+  secret-syncer:
+    name: Sync secrets to other modules
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: jpoehnelt/secrets-sync-action@7840777f242539d96b60477b66aa1c179e7644ea # v1.10.0 # DevSkim: ignore DS117838
+        with:
+          secrets: |
+            ^ADO_PAT$
+            ^GIT_SSH_KEY$
+            ^INFRACOST_API_KEY$
+            ^PAT$
+            ^SYNCER$
+          repositories: |
+            ^DownAtTheBottomOfTheMoleHole/terraform_*
+            ^DownAtTheBottomOfTheMoleHole/terraform-*
+          dry_run: false
+          github_token: ${{ secrets.SYNCER }}
+          concurrency: 10
+
   # ─── MegaLinter (full codebase) ────────────────────────────────────────────
   megalinter-nightly:
     name: MegaLinter (Full Codebase)
+    if: github.event_name != 'push'
     uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@main
     secrets: inherit
     permissions:
@@ -28,6 +55,7 @@ jobs:
   # ─── Stale issues / PRs ────────────────────────────────────────────────────
   stale:
     name: Mark and Close Stale
+    if: github.event_name != 'push'
     uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/stale.yml@main
     secrets: inherit
     permissions:
@@ -37,6 +65,7 @@ jobs:
   # ─── OSSF Scorecard ────────────────────────────────────────────────────────
   scorecard:
     name: OSSF Scorecard
+    if: github.event_name != 'push'
     uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/scorecard.yml@main
     secrets: inherit
     permissions:
@@ -48,6 +77,7 @@ jobs:
   # ─── terraform-docs nightly refresh (matrix) ───────────────────────────────
   terraform-docs-nightly:
     name: "terraform-docs nightly (${{ matrix.target.name }})"
+    if: github.event_name != 'push'
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -87,6 +117,7 @@ jobs:
   # ─── Open a PR with any docs drift ─────────────────────────────────────────
   terraform-docs-pr:
     name: terraform-docs nightly PR
+    if: github.event_name != 'push'
     needs: terraform-docs-nightly
     runs-on: ubuntu-latest
     permissions:

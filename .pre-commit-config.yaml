@@ -13,7 +13,6 @@ repos:
 
       - id: check-json
         name: check JSON validity
-        exclude: (config/.cspell.json|build/arm_templates/blank_arm_template.json)
 
       - id: check-yaml
         name: check YAML and YML validity
