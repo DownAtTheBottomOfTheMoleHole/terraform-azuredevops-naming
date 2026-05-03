@@ -45,59 +45,19 @@ output "project_name" {
 
 ---
 
-<!-- Github Badges -->
-<!--
-*** replace with badges relevant to your repo
--->
+<!-- Workflow status badges -->
 
-[![rm Standard Terraform Module Pull Request](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/pullrequest.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/pullrequest.yml)
+[![PR Checks](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/pullrequest.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/pullrequest.yml)
+[![Release](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/release.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/release.yml)
+[![Scheduled Maintenance](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/scheduled_maintenance.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/scheduled_maintenance.yml)
 
-[![Create New Release](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/release.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/release.yml)
+<!-- Built with -->
 
-[![Nightly Maintenance Scan of Full Codebase](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/scheduled_maintenance.yml/badge.svg)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/actions/workflows/scheduled_maintenance.yml)
-
-<!-- Made With Badges -->
-<!--
-*** replace with badges relevant to your repo
--->
-
-<!-- Made Badge for latest version of terraform_module_template not currently working -->
-<!--
-[![GitHub release (latest SemVer)](https://img.shields.io/azure-devops/tag/DownAtTheBottomOfTheMoleHole/terraform_module_template?label=terraform_module_template)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform_module_template/tags)
--->
-
-[![made%20with-Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg)](http://commonmark.org)
-[![made%20with-MegaLinter](https://img.shields.io/badge/Made%20with-MegaLinter-1f425f.svg)](https://megalinter.io/latest/)
-[![made%20with-PowerShell](https://img.shields.io/badge/Made%20with-PowerShell-1f425f.svg)](https://github.com/PowerShell/PowerShell)
-[![made%20with-pre-commit](https://img.shields.io/badge/Made%20with-pre--commit-1f425f.svg)](https://github.com/pre-commit/pre-commit)
-[![made%20with-terraform](https://img.shields.io/badge/Made%20with-Terraform-1f425f.svg)](https://www.gnu.org/software/bash/)
-
-<!-- Precommit Badges -->
-<!--
-*** replace with badges relevant to your repo
--->
-
-these are the pre-commit hooks used for this repo:
-
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pre-commit/pre-commit-hooks?label=check-added-large-files)](https://github.com/pre-commit/pre-commit-hooks/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pre-commit/pre-commit-hooks?label=check-case-conflict)](https://github.com/pre-commit/pre-commit-hooks/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pre-commit/pre-commit-hooks?label=check-merge-conflict)](https://github.com/pre-commit/pre-commit-hooks/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pre-commit/pre-commit-hooks?label=check-json)](https://github.com/pre-commit/pre-commit-hooks/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pre-commit/pre-commit-hooks?label=check-yaml)](https://github.com/pre-commit/pre-commit-hooks/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pre-commit/pre-commit-hooks?label=detect-private-key)](https://github.com/pre-commit/pre-commit-hooks/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pre-commit/pre-commit-hooks?label=end-of-file-fixer)](https://github.com/pre-commit/pre-commit-hooks/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/pre-commit/pre-commit-hooks?label=trailing-whitespace)](https://github.com/pre-commit/pre-commit-hooks/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/streetsidesoftware/cspell?label=CSpell)](https://github.com/streetsidesoftware/cspell/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/tag/pre-commit/mirrors-prettier?label=Prettier)](https://github.com/pre-commit/mirrors-prettier/tags)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/antonbabenko/pre-commit-terraform?label=terraform_fmt)](https://github.com/antonbabenko/pre-commit-terraform/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/antonbabenko/pre-commit-terraform?label=terraform_tflint)](https://github.com/antonbabenko/pre-commit-terraform/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/antonbabenko/pre-commit-terraform?label=terraform_validate)](https://github.com/antonbabenko/pre-commit-terraform/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/antonbabenko/pre-commit-terraform?label=terrascan)](https://github.com/antonbabenko/pre-commit-terraform/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/antonbabenko/pre-commit-terraform?label=tfupdate)](https://github.com/antonbabenko/pre-commit-terraform/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/antonbabenko/pre-commit-terraform?label=infracost_breakdown)](https://github.com/antonbabenko/pre-commit-terraform/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/terraform-docs/terraform-docs?label=terraform-docs-go)](https://github.com/terraform-docs/terraform-docs/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/oxsecurity/megalinter?label=megalinter-incremental)](https://github.com/oxsecurity/megalinter/releases)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/mattlqx/pre-commit-sign?label=pre-commit-sign)](https://github.com/mattlqx/pre-commit-sign/releases)
+[![Made with Terraform](https://img.shields.io/badge/Made%20with-Terraform-7B42BC?logo=terraform)](https://www.terraform.io/)
+[![Made with pre-commit](https://img.shields.io/badge/Made%20with-pre--commit-1f425f?logo=pre-commit)](https://pre-commit.com/)
+[![Made with MegaLinter](https://img.shields.io/badge/Made%20with-MegaLinter-1f425f)](https://megalinter.io/latest/)
+[![Made with Markdown](https://img.shields.io/badge/Made%20with-Markdown-1f425f?logo=markdown)](https://commonmark.org/)
+[![Made with PowerShell](https://img.shields.io/badge/Made%20with-PowerShell-1f425f?logo=powershell)](https://github.com/PowerShell/PowerShell)
 
 <!-- TABLE OF CONTENTS -->
 
