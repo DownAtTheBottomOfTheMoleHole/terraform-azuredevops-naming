@@ -1,16 +1,16 @@
 <div align="center">
 
-![Down At The Bottom Of The Mole Hole banner](https://raw.githubusercontent.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/main/.assets/org-banner.png)
+<img src="https://raw.githubusercontent.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/main/.assets/org-banner.png" alt="Down At The Bottom Of The Mole Hole banner" />
 
-# 🏷️ Azure DevOps Naming Module
+<h1>🏷️ Azure DevOps Naming Module</h1>
 
-**Standardised, validated, opinionated naming for every Azure DevOps resource.**
+<strong>Standardised, validated, opinionated naming for every Azure DevOps resource.</strong>
 
-[![Terraform Registry](https://img.shields.io/badge/Terraform-Registry-7B42BC?logo=terraform)](https://registry.terraform.io/modules/DownAtTheBottomOfTheMoleHole/naming/azuredevops/latest)
-[![License: MIT](https://img.shields.io/github/license/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming?color=blue)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/blob/main/LICENSE.md)
-[![GitHub release](https://img.shields.io/github/v/release/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming?label=release&color=orange)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/releases)
-[![Last commit](https://img.shields.io/github/last-commit/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/commits/main)
-[![Contributors](https://img.shields.io/github/contributors/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/graphs/contributors)
+<a href="https://registry.terraform.io/modules/DownAtTheBottomOfTheMoleHole/naming/azuredevops/latest"><img src="https://img.shields.io/badge/Terraform-Registry-7B42BC?logo=terraform" alt="Terraform Registry" /></a>
+<a href="https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming?color=blue" alt="License: MIT" /></a>
+<a href="https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/releases"><img src="https://img.shields.io/github/v/release/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming?label=release&amp;color=orange" alt="GitHub release" /></a>
+<a href="https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/commits/main"><img src="https://img.shields.io/github/last-commit/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming" alt="Last commit" /></a>
+<a href="https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/graphs/contributors"><img src="https://img.shields.io/github/contributors/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming" alt="Contributors" /></a>
 
 </div>
 
