@@ -9,19 +9,19 @@ All notable changes to this module are documented here. The format follows [Keep
 - Add `id` to `<h1>` for TOC anchor compatibility and wrap tagline in `<p>` element for correct Terraform Registry rendering. (#255)
 - Convert Markdown inside `<div>` header to HTML so the Terraform Registry renders it correctly. (#255)
 
-## [11.0.2] — 2025-05-03
+## [11.0.2] — 2026-05-03
 
 ### Fixed
 
 - Trim badge wall and fix URL-encoded alt text for cleaner Terraform Registry render. (#254)
 
-## [11.0.1] — 2025-05-02
+## [11.0.1] — 2026-05-02
 
 ### Fixed
 
 - Use absolute URLs so the Terraform Registry renders the banner and links correctly. (#253)
 
-## [11.0.0] — 2025-05-01
+## [11.0.0] — 2026-05-01
 
 ### Highlights
 
