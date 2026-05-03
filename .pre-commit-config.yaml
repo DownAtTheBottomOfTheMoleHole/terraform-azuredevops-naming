@@ -6,7 +6,6 @@ repos:
         language: python
         entry: python scripts/update_module_version.py
         pass_filenames: false
-        always_run: true
         files: ^CHANGELOG\.md$
 
   - repo: https://github.com/pre-commit/pre-commit-hooks

@@ -40,7 +40,9 @@ def main() -> int:
 
     VERSION_FILE.write_text(constraint, encoding="utf-8")
     print(f"Updated {VERSION_FILE}: {constraint}")
-    # Signal pre-commit that the file was modified so it is re-staged.
+    # Return 1 to fail the commit so the user can stage the updated file
+    # and re-run the commit.  This is standard pre-commit hook behaviour
+    # when a hook modifies a file on disk.
     return 1
 
 
