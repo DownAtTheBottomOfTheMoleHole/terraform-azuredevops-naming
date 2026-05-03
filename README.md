@@ -1,17 +1,13 @@
 <div align="center">
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="./.assets/org-banner.png">
-  <source media="(prefers-color-scheme: light)" srcset="./.assets/org-banner.png">
-  <img alt="Down At The Bottom Of The Mole Hole banner" src="./.assets/org-banner.png">
-</picture>
+![Down At The Bottom Of The Mole Hole banner](https://raw.githubusercontent.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/main/.assets/org-banner.png)
 
 # 🏷️ Azure DevOps Naming Module
 
 **Standardised, validated, opinionated naming for every Azure DevOps resource.**
 
 [![Terraform Registry](https://img.shields.io/badge/Terraform-Registry-7B42BC?logo=terraform)](https://registry.terraform.io/modules/DownAtTheBottomOfTheMoleHole/naming/azuredevops/latest)
-[![License: MIT](https://img.shields.io/github/license/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming?color=blue)](./LICENSE.md)
+[![License: MIT](https://img.shields.io/github/license/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming?color=blue)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/blob/main/LICENSE.md)
 [![GitHub release](https://img.shields.io/github/v/release/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming?label=release&color=orange)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/releases)
 [![Last commit](https://img.shields.io/github/last-commit/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/commits/main)
 [![Contributors](https://img.shields.io/github/contributors/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/graphs/contributors)
@@ -26,7 +22,7 @@
 > - **Bumped baselines**: Terraform `>= 1.14.0`, Random `>= 3.8.0`.
 > - **Strictly additive** — every existing v10 output keeps the same key, type, and shape.
 >
-> See [`MIGRATION.md`](./MIGRATION.md) and [`CHANGELOG.md`](./CHANGELOG.md) for full details.
+> See [`MIGRATION.md`](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/blob/main/MIGRATION.md) and [`CHANGELOG.md`](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/blob/main/CHANGELOG.md) for full details.
 
 ---
 
