@@ -2,9 +2,9 @@
 
 <img src="https://raw.githubusercontent.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/main/.assets/org-banner.png" alt="Down At The Bottom Of The Mole Hole banner" />
 
-<h1>🏷️ Azure DevOps Naming Module</h1>
+<h1 id="azure-devops-naming-module">🏷️ Azure DevOps Naming Module</h1>
 
-<strong>Standardised, validated, opinionated naming for every Azure DevOps resource.</strong>
+<p><strong>Standardised, validated, opinionated naming for every Azure DevOps resource.</strong></p>
 
 <a href="https://registry.terraform.io/modules/DownAtTheBottomOfTheMoleHole/naming/azuredevops/latest"><img src="https://img.shields.io/badge/Terraform-Registry-7B42BC?logo=terraform" alt="Terraform Registry" /></a>
 <a href="https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming?color=blue" alt="License: MIT" /></a>
