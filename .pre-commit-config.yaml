@@ -1,4 +1,13 @@
 repos:
+  - repo: local
+    hooks:
+      - id: update-module-version
+        name: Sync module_version.txt from CHANGELOG.md
+        language: python
+        entry: python scripts/update_module_version.py
+        pass_filenames: false
+        files: ^CHANGELOG\.md$
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0
     hooks:

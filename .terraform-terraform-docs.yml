@@ -38,7 +38,7 @@ content: |-
   ```hcl
     module "azdo_naming" {
       {{"\t"}} source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-      {{"\t"}} version  = "~>2.2.0"
+      {{"\t"}} version  = "{{ include "terraform-docs/module_version.txt" }}"
   {{- if .Module.RequiredInputs }}
       {{"\n\t"}} # Required variables
       {{- range .Module.RequiredInputs }}
