@@ -1,16 +1,16 @@
 <div align="center">
 
-![Down At The Bottom Of The Mole Hole banner](https://raw.githubusercontent.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/main/.assets/org-banner.png)
+<img src="https://raw.githubusercontent.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/main/.assets/org-banner.png" alt="Down At The Bottom Of The Mole Hole banner" />
 
-# 🏷️ Azure DevOps Naming Module
+<h1 id="azure-devops-naming-module">🏷️ Azure DevOps Naming Module</h1>
 
-**Standardised, validated, opinionated naming for every Azure DevOps resource.**
+<p><strong>Standardised, validated, opinionated naming for every Azure DevOps resource.</strong></p>
 
-[![Terraform Registry](https://img.shields.io/badge/Terraform-Registry-7B42BC?logo=terraform)](https://registry.terraform.io/modules/DownAtTheBottomOfTheMoleHole/naming/azuredevops/latest)
-[![License: MIT](https://img.shields.io/github/license/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming?color=blue)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/blob/main/LICENSE.md)
-[![GitHub release](https://img.shields.io/github/v/release/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming?label=release&color=orange)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/releases)
-[![Last commit](https://img.shields.io/github/last-commit/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/commits/main)
-[![Contributors](https://img.shields.io/github/contributors/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming)](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/graphs/contributors)
+<a href="https://registry.terraform.io/modules/DownAtTheBottomOfTheMoleHole/naming/azuredevops/latest"><img src="https://img.shields.io/badge/Terraform-Registry-7B42BC?logo=terraform" alt="Terraform Registry" /></a>
+<a href="https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming?color=blue" alt="License: MIT" /></a>
+<a href="https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/releases"><img src="https://img.shields.io/github/v/release/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming?label=release&amp;color=orange" alt="GitHub release" /></a>
+<a href="https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/commits/main"><img src="https://img.shields.io/github/last-commit/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming" alt="Last commit" /></a>
+<a href="https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/graphs/contributors"><img src="https://img.shields.io/github/contributors/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming" alt="Contributors" /></a>
 
 </div>
 
@@ -136,7 +136,7 @@ The below documentation was generated via Terraform docs using pre-commit
 ### Requirements
 
 | Name | Version |
-| ---- | ------- |
+|------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.14.0, < 2.0.0 |
 | <a name="requirement_random"></a> [random](#requirement\_random) | >= 3.8.0, < 4.0.0 |
 
@@ -281,7 +281,7 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 ### Resources
 
 | Name | Type |
-| ---- | ---- |
+|------|------|
 | [random_string.first_letter](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 | [random_string.main](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/string) | resource |
 
@@ -296,7 +296,7 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 ### Inputs
 
 | Name | Description | Type | Default | Required |
-| ---- | ----------- | ---- | ------- | :------: |
+|------|-------------|------|---------|:--------:|
 | <a name="input_area_paths"></a> [area\_paths](#input\_area\_paths) | Optional list of area path names to generate naming for. Used by the area\_path resource. | `list(string)` | `[]` | no |
 | <a name="input_dashboards"></a> [dashboards](#input\_dashboards) | Optional list of dashboard names to generate naming for. Used by the dashboard resource. | `list(string)` | `[]` | no |
 | <a name="input_environment_tags"></a> [environment\_tags](#input\_environment\_tags) | List of environment names in their shortened form. These will be translated to full names in the module. | `list(string)` | <pre>[<br/>  "dev",<br/>  "uat",<br/>  "prd"<br/>]</pre> | no |
@@ -324,7 +324,7 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 ### Outputs
 
 | Name | Description | Value | Sensitive |
-| ---- | ----------- | ----- | :-------: |
+|------|-------------|-------|:---------:|
 | <a name="output_agent_pool"></a> [agent\_pool](#output\_agent\_pool) | The agent pool used in Azure DevOps | <pre>{<br/>  "dashes": true,<br/>  "max_length": 64,<br/>  "min_length": 1,<br/>  "name": "dbmh-adonaming",<br/>  "name_unique": "dbmh-adonaming-h6lf",<br/>  "regex": "^[^\u003c,\u003e,%,\u0026,,:,\\,?,/,*,|,\",#,$,+,.,']*$",<br/>  "scope": "Organization",<br/>  "slug": "agtpol"<br/>}</pre> | no |
 | <a name="output_agent_queue"></a> [agent\_queue](#output\_agent\_queue) | The Agent queue in Azure DevOps | `"null"` | no |
 | <a name="output_area_path"></a> [area\_path](#output\_area\_path) | The Area path in Azure DevOps | `"null"` | no |
