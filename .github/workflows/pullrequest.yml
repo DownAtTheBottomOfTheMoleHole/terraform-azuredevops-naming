@@ -17,7 +17,7 @@ jobs:
   commitlint:
     name: Lint PR Title
     if: github.event_name == 'pull_request'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/commitlint.yml@main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/commitlint.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
     secrets: inherit
     permissions:
       pull-requests: read
@@ -26,7 +26,7 @@ jobs:
   dependency-review:
     name: Dependency Review
     if: github.event_name == 'pull_request'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/dependency-review.yml@main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/dependency-review.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
     secrets: inherit
     permissions:
       contents: read
@@ -36,7 +36,7 @@ jobs:
   label-pr:
     name: Label PR
     if: github.event_name == 'pull_request'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/label-pr.yml@main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/label-pr.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
     secrets: inherit
     permissions:
       contents: read
@@ -46,7 +46,7 @@ jobs:
   greet:
     name: Greet First-Time Contributors
     if: github.event_name == 'pull_request_target' && github.event.action == 'opened'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/greet.yml@main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/greet.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
     secrets: inherit
     permissions:
       issues: write
@@ -112,7 +112,7 @@ jobs:
   megalinter:
     name: MegaLinter
     if: github.event_name == 'pull_request'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
     secrets: inherit
     permissions:
       contents: write
@@ -128,7 +128,7 @@ jobs:
   auto-merge:
     name: Auto Merge Bots
     if: github.event_name == 'pull_request_target'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/auto-merge.yml@main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/auto-merge.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
     secrets: inherit
     permissions:
       contents: write

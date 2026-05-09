@@ -48,7 +48,7 @@ jobs:
   megalinter-nightly:
     name: MegaLinter (Full Codebase)
     if: github.event_name != 'push'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
     secrets: inherit
     permissions:
       contents: write
@@ -99,7 +99,7 @@ jobs:
   stale:
     name: Mark and Close Stale
     if: github.event_name != 'push'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/stale.yml@main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/stale.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
     secrets: inherit
     permissions:
       issues: write
@@ -109,7 +109,7 @@ jobs:
   scorecard:
     name: OSSF Scorecard
     if: github.event_name != 'push'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/scorecard.yml@main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/scorecard.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
     secrets: inherit
     permissions:
       security-events: write
