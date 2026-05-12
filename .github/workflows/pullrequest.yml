@@ -17,7 +17,7 @@ jobs:
   commitlint:
     name: Lint PR Title
     if: github.event_name == 'pull_request'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/commitlint.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/commitlint.yml@b0fc23679567bf6024c32154c8364aab32f6e98e # main
     secrets: inherit
     permissions:
       pull-requests: read
@@ -26,7 +26,7 @@ jobs:
   dependency-review:
     name: Dependency Review
     if: github.event_name == 'pull_request'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/dependency-review.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/dependency-review.yml@b0fc23679567bf6024c32154c8364aab32f6e98e # main
     secrets: inherit
     permissions:
       contents: read
@@ -36,7 +36,7 @@ jobs:
   label-pr:
     name: Label PR
     if: github.event_name == 'pull_request'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/label-pr.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/label-pr.yml@b0fc23679567bf6024c32154c8364aab32f6e98e # main
     secrets: inherit
     permissions:
       contents: read
@@ -46,7 +46,7 @@ jobs:
   greet:
     name: Greet First-Time Contributors
     if: github.event_name == 'pull_request_target' && github.event.action == 'opened'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/greet.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/greet.yml@b0fc23679567bf6024c32154c8364aab32f6e98e # main
     secrets: inherit
     permissions:
       issues: write
@@ -112,7 +112,7 @@ jobs:
   megalinter:
     name: MegaLinter
     if: github.event_name == 'pull_request'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@b0fc23679567bf6024c32154c8364aab32f6e98e # main
     secrets: inherit
     permissions:
       contents: write
@@ -128,7 +128,7 @@ jobs:
   auto-merge:
     name: Auto Merge Bots
     if: github.event_name == 'pull_request_target'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/auto-merge.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/auto-merge.yml@b0fc23679567bf6024c32154c8364aab32f6e98e # main
     secrets: inherit
     permissions:
       contents: write
@@ -153,7 +153,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Setup Terraform ${{ matrix.terraform_version }}
-        uses: hashicorp/setup-terraform@5e8dbf3c6d9deaf4193ca7a8fb23f2ac83bb6c85 # v4
+        uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4
         with:
           terraform_version: ${{ matrix.terraform_version }}
           terraform_wrapper: false
