@@ -48,7 +48,7 @@ jobs:
   megalinter-nightly:
     name: MegaLinter (Full Codebase)
     if: github.event_name != 'push'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@b0fc23679567bf6024c32154c8364aab32f6e98e # main
     secrets: inherit
     permissions:
       contents: write
@@ -78,7 +78,7 @@ jobs:
         uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
 
       - name: Setup Terraform ${{ matrix.terraform_version }}
-        uses: hashicorp/setup-terraform@5e8dbf3c6d9deaf4193ca7a8fb23f2ac83bb6c85 # v4
+        uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4
         with:
           terraform_version: ${{ matrix.terraform_version }}
           terraform_wrapper: false
@@ -99,7 +99,7 @@ jobs:
   stale:
     name: Mark and Close Stale
     if: github.event_name != 'push'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/stale.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/stale.yml@b0fc23679567bf6024c32154c8364aab32f6e98e # main
     secrets: inherit
     permissions:
       issues: write
@@ -109,7 +109,7 @@ jobs:
   scorecard:
     name: OSSF Scorecard
     if: github.event_name != 'push'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/scorecard.yml@c1f060f4a8b4c60e551baf0e8162fd8598f7a82a # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/scorecard.yml@b0fc23679567bf6024c32154c8364aab32f6e98e # main
     secrets: inherit
     permissions:
       security-events: write
