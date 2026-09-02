@@ -17,7 +17,7 @@ jobs:
   commitlint:
     name: Lint PR Title
     if: github.event_name == 'pull_request'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/commitlint.yml@e6fbeea8427490b370061b8f20113224cd38f5c2 # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/commitlint.yml@523d7bc143449ee81c27e4f47515723bb083753c # main
     secrets: inherit
     permissions:
       pull-requests: read
@@ -26,7 +26,7 @@ jobs:
   dependency-review:
     name: Dependency Review
     if: github.event_name == 'pull_request'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/dependency-review.yml@e6fbeea8427490b370061b8f20113224cd38f5c2 # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/dependency-review.yml@523d7bc143449ee81c27e4f47515723bb083753c # main
     secrets: inherit
     permissions:
       contents: read
@@ -36,7 +36,7 @@ jobs:
   label-pr:
     name: Label PR
     if: github.event_name == 'pull_request'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/label-pr.yml@e6fbeea8427490b370061b8f20113224cd38f5c2 # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/label-pr.yml@523d7bc143449ee81c27e4f47515723bb083753c # main
     secrets: inherit
     permissions:
       contents: read
@@ -46,7 +46,7 @@ jobs:
   greet:
     name: Greet First-Time Contributors
     if: github.event_name == 'pull_request_target' && github.event.action == 'opened'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/greet.yml@e6fbeea8427490b370061b8f20113224cd38f5c2 # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/greet.yml@523d7bc143449ee81c27e4f47515723bb083753c # main
     secrets: inherit
     permissions:
       issues: write
@@ -112,7 +112,7 @@ jobs:
   megalinter:
     name: MegaLinter
     if: github.event_name == 'pull_request'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@e6fbeea8427490b370061b8f20113224cd38f5c2 # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@523d7bc143449ee81c27e4f47515723bb083753c # main
     secrets: inherit
     permissions:
       contents: write
@@ -128,7 +128,7 @@ jobs:
   auto-merge:
     name: Auto Merge Bots
     if: github.event_name == 'pull_request_target'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/auto-merge.yml@e6fbeea8427490b370061b8f20113224cd38f5c2 # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/auto-merge.yml@523d7bc143449ee81c27e4f47515723bb083753c # main
     secrets: inherit
     permissions:
       contents: write
