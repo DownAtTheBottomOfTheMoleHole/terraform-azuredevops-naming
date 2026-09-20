@@ -45,7 +45,6 @@ jobs:
 
       - name: Download MegaLinter report
         uses: actions/download-artifact@37930b1c2abaa49bbe596cd826c3c89aef350131 # v7.0.0
-        continue-on-error: true
         with:
           name: megalinter-reports
           path: megalinter-artifacts
@@ -66,6 +65,10 @@ jobs:
           tflint_report="$sarif_dir/TERRAFORM_TFLINT.sarif"
           if [ -f "$tflint_report" ]; then
             tflint_runs="$(jq '.runs | length' "$tflint_report")"
+            if [ "$tflint_runs" -gt 2 ]; then
+              echo "Unexpected number of TFLint SARIF runs: $tflint_runs" >&2
+              exit 1
+            fi
             if [ "$tflint_runs" -ge 1 ]; then
               jq '.runs = [.runs[0]]' "$tflint_report" > "$sarif_dir/TERRAFORM_TFLINT_LINT.sarif"
               echo "tflint=true" >> "$GITHUB_OUTPUT"
