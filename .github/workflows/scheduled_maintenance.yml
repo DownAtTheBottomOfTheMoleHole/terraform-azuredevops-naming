@@ -14,6 +14,35 @@ permissions:
   contents: read
 
 jobs:
+  # ─── Sync shared secrets to sister modules (only on push to main) ──────────
+  secret-syncer:
+    name: Sync secrets to other modules
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: jpoehnelt/secrets-sync-action@7840777f242539d96b60477b66aa1c179e7644ea # v1.10.0 # DevSkim: ignore DS117838
+        with:
+          secrets: |
+            ^GIT_SSH_KEY$
+            ^INFRACOST_API_KEY$
+            ^PAT$
+          repositories: |
+            ^DownAtTheBottomOfTheMoleHole/terraform-best-practices-mcp$
+            ^DownAtTheBottomOfTheMoleHole/terraform_module_template$
+          dry_run: false
+          github_token: ${{ secrets.SYNCER }}
+          concurrency: 10
+        env:
+          # Required: secrets-sync-action reads values from the environment
+          # before pushing them to target repos.
+          GIT_SSH_KEY: ${{ secrets.GIT_SSH_KEY }} # zizmor: ignore[secrets-inherit]
+          INFRACOST_API_KEY: ${{ secrets.INFRACOST_API_KEY }} # zizmor: ignore[secrets-inherit]
+          PAT: ${{ secrets.PAT }} # zizmor: ignore[secrets-inherit]
+          # Authentication only: excluded from the secrets selector above.
+          SYNCER: ${{ secrets.SYNCER }} # zizmor: ignore[secrets-inherit]
+
   # ─── MegaLinter (full codebase) ────────────────────────────────────────────
   megalinter-nightly:
     name: MegaLinter (Full Codebase)
@@ -54,12 +83,15 @@ jobs:
         shell: bash
         run: |
           sarif_dir="megalinter-artifacts/megalinter-reports/sarif"
+          recognized=false
 
           if [ -f "$sarif_dir/REPOSITORY_SECRETLINT.sarif" ]; then
             echo "secretlint=true" >> "$GITHUB_OUTPUT"
+            recognized=true
           fi
           if [ -f "$sarif_dir/REPOSITORY_TRIVY.sarif" ]; then
             echo "trivy=true" >> "$GITHUB_OUTPUT"
+            recognized=true
           fi
 
           tflint_report="$sarif_dir/TERRAFORM_TFLINT.sarif"
@@ -72,11 +104,18 @@ jobs:
             if [ "$tflint_runs" -ge 1 ]; then
               jq '.runs = [.runs[0]]' "$tflint_report" > "$sarif_dir/TERRAFORM_TFLINT_LINT.sarif"
               echo "tflint=true" >> "$GITHUB_OUTPUT"
+              recognized=true
             fi
             if [ "$tflint_runs" -ge 2 ]; then
               jq '.runs = [.runs[1]]' "$tflint_report" > "$sarif_dir/TERRAFORM_TFLINT_ERRORS.sarif"
               echo "tflint_errors=true" >> "$GITHUB_OUTPUT"
+              recognized=true
             fi
+          fi
+
+          if [ "$recognized" != "true" ]; then
+            echo "No recognized SARIF reports were found in $sarif_dir" >&2
+            exit 1
           fi
 
       - name: Upload SecretLint SARIF
@@ -200,6 +239,7 @@ jobs:
     concurrency:
       group: terraform-docs-nightly-${{ github.repository }}
       cancel-in-progress: false
+    # create-pull-request uses GITHUB_TOKEN for both the branch and pull request.
     permissions:
       contents: write
       pull-requests: write

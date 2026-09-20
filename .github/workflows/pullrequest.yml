@@ -167,12 +167,15 @@ jobs:
         shell: bash
         run: |
           sarif_dir="megalinter-artifacts/megalinter-reports/sarif"
+          recognized=false
 
           if [ -f "$sarif_dir/REPOSITORY_SECRETLINT.sarif" ]; then
             echo "secretlint=true" >> "$GITHUB_OUTPUT"
+            recognized=true
           fi
           if [ -f "$sarif_dir/REPOSITORY_TRIVY.sarif" ]; then
             echo "trivy=true" >> "$GITHUB_OUTPUT"
+            recognized=true
           fi
 
           tflint_report="$sarif_dir/TERRAFORM_TFLINT.sarif"
@@ -185,11 +188,18 @@ jobs:
             if [ "$tflint_runs" -ge 1 ]; then
               jq '.runs = [.runs[0]]' "$tflint_report" > "$sarif_dir/TERRAFORM_TFLINT_LINT.sarif"
               echo "tflint=true" >> "$GITHUB_OUTPUT"
+              recognized=true
             fi
             if [ "$tflint_runs" -ge 2 ]; then
               jq '.runs = [.runs[1]]' "$tflint_report" > "$sarif_dir/TERRAFORM_TFLINT_ERRORS.sarif"
               echo "tflint_errors=true" >> "$GITHUB_OUTPUT"
+              recognized=true
             fi
+          fi
+
+          if [ "$recognized" != "true" ]; then
+            echo "No recognized SARIF reports were found in $sarif_dir" >&2
+            exit 1
           fi
 
       - name: Upload SecretLint SARIF
@@ -219,6 +229,33 @@ jobs:
         with:
           sarif_file: megalinter-artifacts/megalinter-reports/sarif/TERRAFORM_TFLINT_ERRORS.sarif
           category: megalinter-tflint-errors
+
+  # ─── Renovate auto-merge (eligible bot PRs, only after validation) ─────────
+  auto-merge:
+    name: Auto Merge Bots
+    needs:
+      - commitlint
+      - dependency-review
+      - label-pr
+      - terraform-docs
+      - megalinter
+      - megalinter-sarif
+      - terraform-test
+      - example-validate
+    if: >-
+      always() && github.event_name == 'pull_request' &&
+      needs.commitlint.result == 'success' &&
+      needs.dependency-review.result == 'success' &&
+      needs.label-pr.result == 'success' &&
+      needs.terraform-docs.result == 'success' &&
+      needs.megalinter.result == 'success' &&
+      needs.megalinter-sarif.result == 'success' &&
+      needs.terraform-test.result == 'success' &&
+      needs.example-validate.result == 'success'
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/auto-merge.yml@283bf13cac587920f45291bd51a21040bf7aaa83 # main
+    permissions:
+      contents: write
+      pull-requests: write
 
   # ─── terraform test (native HCL tests) ─────────────────────────────────────
   terraform-test:
