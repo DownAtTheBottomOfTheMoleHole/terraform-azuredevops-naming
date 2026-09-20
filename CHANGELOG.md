@@ -4,7 +4,26 @@ All notable changes to this module are documented here. The format follows [Keep
 
 <!-- markdownlint-disable MD024 -->
 
-## [Unreleased]
+## [12.0.0] — 2026-09-21
+
+### Added
+
+- Add deterministic regression coverage that exercises every one of the 107 public naming outputs at its maximum-length boundary and validates every generated Git branch with Git itself. (#273)
+- Validate registry-facing v12 examples against the local checkout so the major-release pull request is tested before v12 exists in the Terraform Registry. (#273)
+
+### Changed
+
+- Reserve the complete unique token before truncating each `name_unique` output, compact empty prefix/suffix elements before joining, and constrain `unique_length` to `0` through `47`. (#273)
+- Align branch, project, repository, team, organization, group, pipeline, feed, package, work-item, wiki, path, and board naming metadata with documented Azure DevOps and Git contracts. (#273)
+- Compose pipeline identifiers with underscores so generated stage, job, variable, variable-group-variable, and matrix names satisfy Azure Pipelines rules. (#273)
+
+### Fixed
+
+- Keep `name_unique` distinct from `name` at maximum lengths, including when the original value already ends with the deterministic token. (#273)
+- Return `{ valid_name, valid_name_unique }` booleans from `validation.environment_work_item`; consumers of the legacy metadata shape can use the direct `environment_work_item` output. (#273)
+- Validate minimum and maximum lengths consistently for ordinary and unique names, and model dash-only and slash-capable Git branch variants separately. (#273)
+
+## [11.0.6] — 2026-09-20
 
 ### Added
 

@@ -107,3 +107,102 @@ run "every_branch_variant_passes_its_declared_validation" {
     error_message = "Every generated branch name must satisfy its declared validation metadata"
   }
 }
+
+run "dotted_hierarchical_refs_are_valid" {
+  command = apply
+
+  variables {
+    prefix      = []
+    suffix      = []
+    work_items  = ["1.2.3"]
+    unique_seed = "u9x7"
+  }
+
+  assert {
+    condition     = output.validation.git_repository_release_branch_slash["1.2.3"].valid_name
+    error_message = "A dotted hierarchical ref such as release/1.2.3 must be valid"
+  }
+
+  assert {
+    condition     = output.git_repository_release_branch_slash["1.2.3"].name == "release/1.2.3"
+    error_message = "The slash variant must preserve the dotted work-item component"
+  }
+}
+
+run "dash_variants_reject_slashes_in_work_items" {
+  command = apply
+
+  variables {
+    prefix      = []
+    suffix      = []
+    work_items  = ["nested/item"]
+    unique_seed = "u9x7"
+  }
+
+  assert {
+    condition     = !output.validation.git_repository_feature_branch_dash["nested/item"].valid_name
+    error_message = "Dash-only branch variants must reject slash-bearing work items"
+  }
+
+  assert {
+    condition     = output.validation.git_repository_feature_branch_slash["nested/item"].valid_name
+    error_message = "Slash variants must permit structurally valid nested refs"
+  }
+}
+
+run "invalid_git_ref_structures_are_rejected" {
+  command = apply
+
+  variables {
+    prefix      = ["bad..name"]
+    suffix      = []
+    unique_seed = "u9x7"
+  }
+
+  assert {
+    condition     = !output.validation.git_repository_branch.valid_name
+    error_message = "Branches containing two consecutive periods must be rejected"
+  }
+}
+
+run "repeated_and_trailing_slashes_are_rejected" {
+  command = apply
+
+  variables {
+    prefix      = []
+    suffix      = []
+    work_items  = ["bad//name", "bad/"]
+    unique_seed = "u9x7"
+  }
+
+  assert {
+    condition     = !output.validation.git_repository_release_branch_slash["bad//name"].valid_name
+    error_message = "Repeated slashes must be rejected"
+  }
+
+  assert {
+    condition     = !output.validation.git_repository_release_branch_slash["bad/"].valid_name
+    error_message = "An empty branch path component must be rejected"
+  }
+}
+
+run "dot_prefixed_and_lock_components_are_rejected" {
+  command = apply
+
+  variables {
+    prefix      = []
+    suffix      = []
+    work_items  = [".hidden", "name.lock", "bad@{name", "bad name"]
+    unique_seed = "u9x7"
+  }
+
+  assert {
+    condition = alltrue([
+      !output.validation.git_repository_release_branch_slash[".hidden"].valid_name,
+      !output.validation.git_repository_release_branch_slash["name.lock"].valid_name,
+      !output.validation.git_repository_release_branch_slash["bad@{name"].valid_name,
+      !output.validation.git_repository_release_branch_slash["bad name"].valid_name,
+    ])
+    error_message = "Git-invalid path components, reflog syntax, and spaces must be rejected"
+  }
+}

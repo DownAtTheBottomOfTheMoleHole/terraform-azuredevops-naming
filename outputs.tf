@@ -467,7 +467,7 @@ output "unique_seed" {
 }
 
 output "validation" {
-  description = "Validation data keyed by naming definition. Most entries report valid_name and valid_name_unique booleans; environment_work_item retains its generated naming metadata shape for backward compatibility."
+  description = "Validation data keyed by naming definition. Every leaf reports valid_name and valid_name_unique booleans. Naming metadata for environment work items is available from the direct environment_work_item output."
   sensitive   = false
   value       = local.validation
 }

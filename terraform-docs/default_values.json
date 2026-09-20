@@ -72,7 +72,7 @@
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
+      "regex": "^[^\\\\/:*?\"<>|#$&+\\x00-\\x1F\\x7F]+$",
       "scope": "Project",
       "slug": "ap"
     }
@@ -98,7 +98,7 @@
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[A-Za-z0-9_.\\-]+$",
+      "regex": "^[a-z0-9_.-]+$",
       "scope": "Project",
       "slug": "pkg"
     }
@@ -124,7 +124,7 @@
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
+      "regex": "^[^\\x00-\\x1F\\x7F]+$",
       "scope": "Project",
       "slug": "bc"
     }
@@ -150,7 +150,7 @@
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
+      "regex": "^[^\\x00-\\x1F\\x7F]+$",
       "scope": "Project",
       "slug": "bs"
     }
@@ -177,7 +177,7 @@
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/:\\~&%;@'\"?<>|#$*}{,+=\\[\\]]*$",
-      "scope": "repository",
+      "scope": "Repository",
       "slug": "bpbv"
     }
   },
@@ -229,7 +229,7 @@
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|]*$",
-      "scope": "Organization",
+      "scope": "Project",
       "slug": "arpth"
     }
   },
@@ -1170,8 +1170,8 @@
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[A-Za-z0-9_.\\-]+$",
-      "scope": "Project",
+      "regex": "^[^\\s@~;{}'+=,<>|/\\\\?:&$*\"#\\[\\]%]+$",
+      "scope": "Project or Organization",
       "slug": "feed"
     }
   },
@@ -1196,7 +1196,7 @@
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
+      "regex": "^[^/\\\\:*?\"<>;#$*{},+=\\[\\]|\\x00-\\x1F\\x7F]+$",
       "scope": "Project",
       "slug": "gitrepo"
     }
@@ -1218,11 +1218,11 @@
     ],
     "value": {
       "dashes": true,
-      "max_length": 255,
+      "max_length": 250,
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+      "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
       "scope": "Repository",
       "slug": "gitbranch"
     }
@@ -1265,22 +1265,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "bug-1234-dbmh-adonaming",
         "name_unique": "bug-1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitbugbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "bug-1235-dbmh-adonaming",
         "name_unique": "bug-1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitbugbr"
@@ -1325,22 +1325,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "bug/1234-dbmh-adonaming",
         "name_unique": "bug/1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitbugbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "bug/1235-dbmh-adonaming",
         "name_unique": "bug/1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitbugbr"
@@ -1385,22 +1385,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "dev-1234-dbmh-adonaming",
         "name_unique": "dev-1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitdevbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "dev-1235-dbmh-adonaming",
         "name_unique": "dev-1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitdevbr"
@@ -1445,22 +1445,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "dev/1234-dbmh-adonaming",
         "name_unique": "dev/1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitdevbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "dev/1235-dbmh-adonaming",
         "name_unique": "dev/1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitdevbr"
@@ -1505,22 +1505,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "development-1234-dbmh-adonaming",
         "name_unique": "development-1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitdevbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "development-1235-dbmh-adonaming",
         "name_unique": "development-1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitdevbr"
@@ -1565,22 +1565,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "development/1234-dbmh-adonaming",
         "name_unique": "development/1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitdevbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "development/1235-dbmh-adonaming",
         "name_unique": "development/1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitdevbr"
@@ -1625,22 +1625,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "feature-1234-dbmh-adonaming",
         "name_unique": "feature-1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitfetbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "feature-1235-dbmh-adonaming",
         "name_unique": "feature-1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitfetbr"
@@ -1685,22 +1685,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "feature/1234-dbmh-adonaming",
         "name_unique": "feature/1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitfetbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "feature/1235-dbmh-adonaming",
         "name_unique": "feature/1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitfetbr"
@@ -1745,22 +1745,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "fix-1234-dbmh-adonaming",
         "name_unique": "fix-1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitfixbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "fix-1235-dbmh-adonaming",
         "name_unique": "fix-1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitfixbr"
@@ -1805,22 +1805,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "fix/1234-dbmh-adonaming",
         "name_unique": "fix/1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitfixbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "fix/1235-dbmh-adonaming",
         "name_unique": "fix/1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitfixbr"
@@ -1865,22 +1865,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "hotfix-1234-dbmh-adonaming",
         "name_unique": "hotfix-1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "githotbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "hotfix-1235-dbmh-adonaming",
         "name_unique": "hotfix-1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "githotbr"
@@ -1925,22 +1925,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "hotfix/1234-dbmh-adonaming",
         "name_unique": "hotfix/1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "githotbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "hotfix/1235-dbmh-adonaming",
         "name_unique": "hotfix/1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "githotbr"
@@ -1985,22 +1985,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "release-1234-dbmh-adonaming",
         "name_unique": "release-1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitrelbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "release-1235-dbmh-adonaming",
         "name_unique": "release-1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitrelbr"
@@ -2045,22 +2045,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "release/1234-dbmh-adonaming",
         "name_unique": "release/1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitrelbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "release/1235-dbmh-adonaming",
         "name_unique": "release/1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitrelbr"
@@ -2105,22 +2105,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "support-1234-dbmh-adonaming",
         "name_unique": "support-1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitsupbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "support-1235-dbmh-adonaming",
         "name_unique": "support-1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^/\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitsupbr"
@@ -2165,22 +2165,22 @@
     "value": {
       "1234": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "support/1234-dbmh-adonaming",
         "name_unique": "support/1234-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitsupbr"
       },
       "1235": {
         "dashes": true,
-        "max_length": 255,
+        "max_length": 250,
         "min_length": 1,
         "name": "support/1235-dbmh-adonaming",
         "name_unique": "support/1235-dbmh-adonaming-docs",
-        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "regex": "^[^\\x00-\\x20\\x7F~^:?*\\[\\\\]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitsupbr"
@@ -2204,12 +2204,12 @@
     ],
     "value": {
       "dashes": true,
-      "max_length": 1024,
+      "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
-      "scope": "Organization",
+      "regex": "^[^,/\\\\[\\]:<>+=;?*|\\x00-\\x1F\\x7F]+$",
+      "scope": "Project or Organization",
       "slug": "grp"
     }
   },
@@ -2234,7 +2234,7 @@
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
+      "regex": "^[^\\\\/:*?\"<>|#$&+\\x00-\\x1F\\x7F]+$",
       "scope": "Project",
       "slug": "ip"
     }
@@ -2256,12 +2256,12 @@
     ],
     "value": {
       "dashes": true,
-      "max_length": 50,
+      "max_length": 49,
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[A-Za-z0-9][A-Za-z0-9-]{0,48}[A-Za-z0-9]$",
-      "scope": "Organization",
+      "regex": "^[A-Za-z0-9]([A-Za-z0-9-]{0,47}[A-Za-z0-9])?$",
+      "scope": "Global",
       "slug": "org"
     }
   },
@@ -2281,12 +2281,12 @@
       }
     ],
     "value": {
-      "dashes": true,
+      "dashes": false,
       "max_length": 256,
       "min_length": 1,
-      "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
+      "name": "dbmh_adonaming",
+      "name_unique": "dbmh_adonaming_docs",
+      "regex": "^[A-Za-z_][A-Za-z0-9_]*$",
       "scope": "Project",
       "slug": "pj"
     }
@@ -2307,12 +2307,12 @@
       }
     ],
     "value": {
-      "dashes": true,
-      "max_length": 256,
+      "dashes": false,
+      "max_length": 100,
       "min_length": 1,
-      "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
+      "name": "dbmh_adonaming",
+      "name_unique": "dbmh_adonaming_docs",
+      "regex": "^[A-Za-z][A-Za-z0-9_]{0,99}$",
       "scope": "Project",
       "slug": "pm"
     }
@@ -2333,12 +2333,12 @@
       }
     ],
     "value": {
-      "dashes": true,
+      "dashes": false,
       "max_length": 256,
       "min_length": 1,
-      "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
+      "name": "dbmh_adonaming",
+      "name_unique": "dbmh_adonaming_docs",
+      "regex": "^[A-Za-z_][A-Za-z0-9_]*$",
       "scope": "Project",
       "slug": "ps"
     }
@@ -2359,12 +2359,12 @@
       }
     ],
     "value": {
-      "dashes": true,
+      "dashes": false,
       "max_length": 256,
       "min_length": 1,
-      "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
+      "name": "dbmh_adonaming",
+      "name_unique": "dbmh_adonaming_docs",
+      "regex": "^[A-Za-z0-9._]+$",
       "scope": "Project",
       "slug": "pv"
     }
@@ -2416,7 +2416,7 @@
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^_\\.\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
+      "regex": "^[^/\\\\:*?\"'<>;#$*{},+=\\[\\]|\\x00-\\x1F\\x7F]+$",
       "scope": "Organization",
       "slug": "prj"
     }
@@ -2442,8 +2442,8 @@
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
-      "scope": "Organization",
+      "regex": "^[^,/\\\\[\\]:<>+=;?*|\\x00-\\x1F\\x7F]+$",
+      "scope": "Project or Organization",
       "slug": "sg"
     }
   },
@@ -3556,11 +3556,11 @@
     ],
     "value": {
       "dashes": true,
-      "max_length": 255,
+      "max_length": 64,
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
+      "regex": "^[^/\\\\:*?\"<>;#$*{},+=\\[\\]|\\x00-\\x1F\\x7F]+$",
       "scope": "Project",
       "slug": "adt"
     }
@@ -3831,27 +3831,15 @@
                 "1234": [
                   "object",
                   {
-                    "dashes": "bool",
-                    "max_length": "number",
-                    "min_length": "number",
-                    "name": "string",
-                    "name_unique": "string",
-                    "regex": "string",
-                    "scope": "string",
-                    "slug": "string"
+                    "valid_name": "bool",
+                    "valid_name_unique": "bool"
                   }
                 ],
                 "1235": [
                   "object",
                   {
-                    "dashes": "bool",
-                    "max_length": "number",
-                    "min_length": "number",
-                    "name": "string",
-                    "name_unique": "string",
-                    "regex": "string",
-                    "scope": "string",
-                    "slug": "string"
+                    "valid_name": "bool",
+                    "valid_name_unique": "bool"
                   }
                 ]
               }
@@ -3862,27 +3850,15 @@
                 "1234": [
                   "object",
                   {
-                    "dashes": "bool",
-                    "max_length": "number",
-                    "min_length": "number",
-                    "name": "string",
-                    "name_unique": "string",
-                    "regex": "string",
-                    "scope": "string",
-                    "slug": "string"
+                    "valid_name": "bool",
+                    "valid_name_unique": "bool"
                   }
                 ],
                 "1235": [
                   "object",
                   {
-                    "dashes": "bool",
-                    "max_length": "number",
-                    "min_length": "number",
-                    "name": "string",
-                    "name_unique": "string",
-                    "regex": "string",
-                    "scope": "string",
-                    "slug": "string"
+                    "valid_name": "bool",
+                    "valid_name_unique": "bool"
                   }
                 ]
               }
@@ -3893,27 +3869,15 @@
                 "1234": [
                   "object",
                   {
-                    "dashes": "bool",
-                    "max_length": "number",
-                    "min_length": "number",
-                    "name": "string",
-                    "name_unique": "string",
-                    "regex": "string",
-                    "scope": "string",
-                    "slug": "string"
+                    "valid_name": "bool",
+                    "valid_name_unique": "bool"
                   }
                 ],
                 "1235": [
                   "object",
                   {
-                    "dashes": "bool",
-                    "max_length": "number",
-                    "min_length": "number",
-                    "name": "string",
-                    "name_unique": "string",
-                    "regex": "string",
-                    "scope": "string",
-                    "slug": "string"
+                    "valid_name": "bool",
+                    "valid_name_unique": "bool"
                   }
                 ]
               }
@@ -4918,68 +4882,32 @@
       "environment_work_item": {
         "development": {
           "1234": {
-            "dashes": true,
-            "max_length": 240,
-            "min_length": 1,
-            "name": "dbmh-development-1234-adonaming",
-            "name_unique": "dbmh-development-1234-adonaming-docs",
-            "regex": "^[^/\\:*?\"<>|]*$",
-            "scope": "Project",
-            "slug": "envwi"
+            "valid_name": true,
+            "valid_name_unique": true
           },
           "1235": {
-            "dashes": true,
-            "max_length": 240,
-            "min_length": 1,
-            "name": "dbmh-development-1235-adonaming",
-            "name_unique": "dbmh-development-1235-adonaming-docs",
-            "regex": "^[^/\\:*?\"<>|]*$",
-            "scope": "Project",
-            "slug": "envwi"
+            "valid_name": true,
+            "valid_name_unique": true
           }
         },
         "production": {
           "1234": {
-            "dashes": true,
-            "max_length": 240,
-            "min_length": 1,
-            "name": "dbmh-production-1234-adonaming",
-            "name_unique": "dbmh-production-1234-adonaming-docs",
-            "regex": "^[^/\\:*?\"<>|]*$",
-            "scope": "Project",
-            "slug": "envwi"
+            "valid_name": true,
+            "valid_name_unique": true
           },
           "1235": {
-            "dashes": true,
-            "max_length": 240,
-            "min_length": 1,
-            "name": "dbmh-production-1235-adonaming",
-            "name_unique": "dbmh-production-1235-adonaming-docs",
-            "regex": "^[^/\\:*?\"<>|]*$",
-            "scope": "Project",
-            "slug": "envwi"
+            "valid_name": true,
+            "valid_name_unique": true
           }
         },
         "user-acceptance-testing": {
           "1234": {
-            "dashes": true,
-            "max_length": 240,
-            "min_length": 1,
-            "name": "dbmh-user-acceptance-testing-1234-adonaming",
-            "name_unique": "dbmh-user-acceptance-testing-1234-adonaming-docs",
-            "regex": "^[^/\\:*?\"<>|]*$",
-            "scope": "Project",
-            "slug": "envwi"
+            "valid_name": true,
+            "valid_name_unique": true
           },
           "1235": {
-            "dashes": true,
-            "max_length": 240,
-            "min_length": 1,
-            "name": "dbmh-user-acceptance-testing-1235-adonaming",
-            "name_unique": "dbmh-user-acceptance-testing-1235-adonaming-docs",
-            "regex": "^[^/\\:*?\"<>|]*$",
-            "scope": "Project",
-            "slug": "envwi"
+            "valid_name": true,
+            "valid_name_unique": true
           }
         }
       },
@@ -5499,12 +5427,12 @@
       }
     ],
     "value": {
-      "dashes": true,
+      "dashes": false,
       "max_length": 256,
       "min_length": 1,
-      "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
+      "name": "dbmh_adonaming",
+      "name_unique": "dbmh_adonaming_docs",
+      "regex": "^[A-Za-z0-9._]+$",
       "scope": "Project",
       "slug": "vgv"
     }
@@ -5556,7 +5484,7 @@
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
+      "regex": "^[^\\\\#\\x00-\\x1F\\x7F]+$",
       "scope": "Project",
       "slug": "wp"
     }
@@ -5608,7 +5536,7 @@
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
+      "regex": "^[^/\\\\<>*?\"+|:\\x00-\\x1F\\x7F]+$",
       "scope": "Project",
       "slug": "wiq"
     }
@@ -5634,7 +5562,7 @@
       "min_length": 1,
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
+      "regex": "^[^\\\\<>*?\"+|:\\x00-\\x1F\\x7F]+$",
       "scope": "Project",
       "slug": "wiqf"
     }
@@ -5655,12 +5583,12 @@
       }
     ],
     "value": {
-      "dashes": true,
+      "dashes": false,
       "max_length": 128,
       "min_length": 1,
-      "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-docs",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
+      "name": "dbmh adonaming",
+      "name_unique": "dbmh adonaming docs",
+      "regex": "^[^.,;'`:~\\\\/*|?\"&%$!+=()\\[\\]{}<>-]+$",
       "scope": "Organization",
       "slug": "wtfld"
     }
@@ -5687,7 +5615,7 @@
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
-      "scope": "Project",
+      "scope": "Organization",
       "slug": "wtpfld"
     }
   },
@@ -5765,7 +5693,7 @@
       "name": "dbmh-adonaming",
       "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
-      "scope": "Project",
+      "scope": "Organization",
       "slug": "wtpp"
     }
   },

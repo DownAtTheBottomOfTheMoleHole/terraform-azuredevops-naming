@@ -48,3 +48,48 @@ run "empty_prefix_does_not_introduce_leading_separator" {
     error_message = "project.name must not start with a separator when prefix is empty; got: ${output.project.name}"
   }
 }
+
+run "empty_elements_are_removed_before_joining" {
+  command = apply
+
+  variables {
+    prefix      = ["", "dbmh", "", "platform", ""]
+    suffix      = ["", "uksouth", "", "001", ""]
+    unique_seed = "u9x7"
+  }
+
+  assert {
+    condition     = output.project.name == "dbmh-platform-uksouth-001"
+    error_message = "Empty prefix/suffix elements must be compacted before joining; got: ${output.project.name}"
+  }
+
+  assert {
+    condition     = !strcontains(output.project.name, "--") && !startswith(output.project.name, "-") && !endswith(output.project.name, "-")
+    error_message = "Compacted names must not contain leading, doubled, or trailing separators"
+  }
+
+  assert {
+    condition     = output.pipeline_stage.name == "dbmh_platform_uksouth_001"
+    error_message = "Pipeline identifiers must compact empty elements and use underscores"
+  }
+}
+
+run "all_empty_elements_produce_no_separator_only_name" {
+  command = apply
+
+  variables {
+    prefix      = ["", ""]
+    suffix      = ["", ""]
+    unique_seed = "u9x7"
+  }
+
+  assert {
+    condition     = output.project.name == ""
+    error_message = "All-empty prefix/suffix lists must not produce a separator-only ordinary name"
+  }
+
+  assert {
+    condition     = output.project.name_unique == "u9x7"
+    error_message = "An all-empty base must still retain the complete deterministic unique token"
+  }
+}

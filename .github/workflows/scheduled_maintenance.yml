@@ -187,6 +187,9 @@ jobs:
       - name: Terraform test
         run: terraform test -verbose
 
+      - name: Verify every naming-output boundary
+        run: python3 -m unittest -v tests/test_naming_contract.py
+
   # ─── Validate the published-module examples ───────────────────────────────
   example-validate:
     name: "Validate ${{ matrix.example }}"
@@ -212,11 +215,8 @@ jobs:
           terraform_version: "1.14.0" # required_version floor
           terraform_wrapper: false
 
-      - name: Terraform init
-        run: terraform -chdir=${{ matrix.example }} init -backend=false -input=false
-
-      - name: Terraform validate
-        run: terraform -chdir=${{ matrix.example }} validate
+      - name: Validate example against this checkout
+        run: python3 scripts/validate_example.py "${{ matrix.example }}"
 
   # ─── Stale issues / PRs ────────────────────────────────────────────────────
   stale:

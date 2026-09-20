@@ -135,11 +135,11 @@ jobs:
             terraform init -backend=false -input=false
             terraform validate
             terraform test
+            python3 -m unittest -v tests/test_naming_contract.py
             python3 scripts/generate_docs_values.py --check
 
             for example_dir in examples/example1 examples/example2; do
-              terraform -chdir="$example_dir" init -backend=false -input=false
-              terraform -chdir="$example_dir" validate
+              python3 scripts/validate_example.py "$example_dir"
             done
           done < "$release_shas_file"
 
