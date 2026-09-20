@@ -10,7 +10,7 @@ The below documentation was generated via Terraform docs using pre-commit
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Top)](#terraform)
 
 ---
 
@@ -25,7 +25,7 @@ The below documentation was generated via Terraform docs using pre-commit
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Top)](#terraform)
 
 ---
 
@@ -99,7 +99,7 @@ resource "azuredevops_project" "example_1" {
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Top)](#terraform)
 
 ---
 
@@ -126,7 +126,7 @@ module "azdo_naming" {
   unique_include_numbers = true
   unique_length          = 4
   unique_seed            = ""
-  work_items             = []
+  work_items             = ["1234"]
 }
 
 resource "azuredevops_project" "example_2" {
@@ -137,7 +137,7 @@ resource "azuredevops_project" "example_2" {
 }
 
 resource "azuredevops_git_repository" "example_2" {
-  project_id = azuredevops_project.example.id
+  project_id = azuredevops_project.example_2.id
   name       = module.azdo_naming.git_repository.name
   initialization {
     init_type = "Clean"
@@ -145,9 +145,9 @@ resource "azuredevops_git_repository" "example_2" {
 }
 
 resource "azuredevops_git_repository_branch" "feature_branch" {
-  repository_id = azuredevops_git_repository.example.id
-  name          = module.azdo_naming.git_repository_feature_branch_slash.name_unique
-  ref_branch    = azuredevops_git_repository.example.default_branch
+  repository_id = azuredevops_git_repository.example_2.id
+  name          = module.azdo_naming.git_repository_feature_branch_slash["1234"].name_unique
+  ref_branch    = azuredevops_git_repository.example_2.default_branch
 }
 ```
 
@@ -155,7 +155,7 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Top)](#terraform)
 
 ---
 
@@ -170,7 +170,7 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Top)](#terraform)
 
 ---
 
@@ -198,7 +198,7 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Top)](#terraform)
 
 ---
 
@@ -244,6 +244,8 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 | <a name="output_git_repository_hotfix_branch_slash"></a> [git\_repository\_hotfix\_branch\_slash](#output\_git\_repository\_hotfix\_branch\_slash) | The hotfix branch of the Git repository in Azure DevOps, formatted with slashes | <pre>{<br/>  "1234": {<br/>    "dashes": true,<br/>    "max_length": 255,<br/>    "min_length": 1,<br/>    "name": "hotfix/1234-dbmh-adonaming",<br/>    "name_unique": "hotfix/1234-dbmh-adonaming-h6lf",<br/>    "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",<br/>    "scope": "Repository",<br/>    "slashes": true,<br/>    "slug": "githotbr"<br/>  },<br/>  "1235": {<br/>    "dashes": true,<br/>    "max_length": 255,<br/>    "min_length": 1,<br/>    "name": "hotfix/1235-dbmh-adonaming",<br/>    "name_unique": "hotfix/1235-dbmh-adonaming-h6lf",<br/>    "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",<br/>    "scope": "Repository",<br/>    "slashes": true,<br/>    "slug": "githotbr"<br/>  }<br/>}</pre> | no |
 | <a name="output_git_repository_release_branch_dash"></a> [git\_repository\_release\_branch\_dash](#output\_git\_repository\_release\_branch\_dash) | The release branch of the Git repository in Azure DevOps, formatted with dashes | <pre>{<br/>  "1234": {<br/>    "dashes": true,<br/>    "max_length": 255,<br/>    "min_length": 1,<br/>    "name": "release-1234-dbmh-adonaming",<br/>    "name_unique": "release-1234-dbmh-adonaming-h6lf",<br/>    "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",<br/>    "scope": "Repository",<br/>    "slashes": false,<br/>    "slug": "gitrelbr"<br/>  },<br/>  "1235": {<br/>    "dashes": true,<br/>    "max_length": 255,<br/>    "min_length": 1,<br/>    "name": "release-1235-dbmh-adonaming",<br/>    "name_unique": "release-1235-dbmh-adonaming-h6lf",<br/>    "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",<br/>    "scope": "Repository",<br/>    "slashes": false,<br/>    "slug": "gitrelbr"<br/>  }<br/>}</pre> | no |
 | <a name="output_git_repository_release_branch_slash"></a> [git\_repository\_release\_branch\_slash](#output\_git\_repository\_release\_branch\_slash) | The release branch of the Git repository in Azure DevOps, formatted with slashes | <pre>{<br/>  "1234": {<br/>    "dashes": true,<br/>    "max_length": 255,<br/>    "min_length": 1,<br/>    "name": "release/1234-dbmh-adonaming",<br/>    "name_unique": "release/1234-dbmh-adonaming-h6lf",<br/>    "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",<br/>    "scope": "Repository",<br/>    "slashes": true,<br/>    "slug": "gitrelbr"<br/>  },<br/>  "1235": {<br/>    "dashes": true,<br/>    "max_length": 255,<br/>    "min_length": 1,<br/>    "name": "release/1235-dbmh-adonaming",<br/>    "name_unique": "release/1235-dbmh-adonaming-h6lf",<br/>    "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",<br/>    "scope": "Repository",<br/>    "slashes": true,<br/>    "slug": "gitrelbr"<br/>  }<br/>}</pre> | no |
+| <a name="output_git_repository_support_branch_dash"></a> [git\_repository\_support\_branch\_dash](#output\_git\_repository\_support\_branch\_dash) | The support branch of the Git repository in Azure DevOps, formatted with dashes | `"null"` | no |
+| <a name="output_git_repository_support_branch_slash"></a> [git\_repository\_support\_branch\_slash](#output\_git\_repository\_support\_branch\_slash) | The support branch of the Git repository in Azure DevOps, formatted with slashes | `"null"` | no |
 | <a name="output_group"></a> [group](#output\_group) | The group in Azure DevOps | <pre>{<br/>  "dashes": true,<br/>  "max_length": 1024,<br/>  "min_length": 1,<br/>  "name": "dbmh-adonaming",<br/>  "name_unique": "dbmh-adonaming-h6lf",<br/>  "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",<br/>  "scope": "Organization",<br/>  "slug": "grp"<br/>}</pre> | no |
 | <a name="output_iteration_path"></a> [iteration\_path](#output\_iteration\_path) | The Iteration path in Azure DevOps | <pre>{<br/>  "dashes": true,<br/>  "max_length": 255,<br/>  "min_length": 1,<br/>  "name": "dbmh-adonaming",<br/>  "name_unique": "dbmh-adonaming-h6lf",<br/>  "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",<br/>  "scope": "Project",<br/>  "slug": "ip"<br/>}</pre> | no |
 | <a name="output_organization"></a> [organization](#output\_organization) | The Organization in Azure DevOps | <pre>{<br/>  "dashes": true,<br/>  "max_length": 50,<br/>  "min_length": 1,<br/>  "name": "dbmh-adonaming",<br/>  "name_unique": "dbmh-adonaming-h6lf",<br/>  "regex": "^[A-Za-z0-9][A-Za-z0-9-]{0,48}[A-Za-z0-9]$",<br/>  "scope": "Organization",<br/>  "slug": "org"<br/>}</pre> | no |
@@ -318,7 +320,7 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Top)](#terraform)
 
 ---
 
@@ -330,46 +332,19 @@ No modules.
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Top)](#terraform)
 
 ---
 
-##### Terraform versions
+## Documentation maintenance
 
-Terraform version and terraform provider versions have been set using tfupdate.
-In order to update the installed providers to the latest versions please first install tfupdate using the below instructions and then run the following commands from the root of the repo in a powershell session.
-Please only run the commands for the providers/modules you are using.
-
-##### Installing Tfupdate
-
-the tfupdate repo can be found [here](https://github.com/minamijoyo/tfupdate)
-
-either download the tarball and add tfupdate.exe to your PATH or do the following:
-
-1. Ensure you have [Go](https://go.dev/doc/install) installed
-2. Clone the repository locally `git clone https://github.com/minamijoyo/tfupdate.git`
-3. build the source code with `go build`
-4. Add the complied binaries to your PATH
-
-##### Terraform version
-
-```shell
-tfupdate terraform . --version "~> $(tfupdate release latest hashicorp/terraform)" --recursive
-```
-
-please also add the terraform version to the `terraform_installer_version` variable in `build/pipelines/iac_templates/variables.yml`
-
-##### Random version
-
-```shell
-tfupdate provider random . --version "~> $(tfupdate release latest hashicorp/random --source-type tfregistryProvider)" --recursive
-```
+The Terraform reference is generated from the module source with [terraform-docs](https://github.com/terraform-docs/terraform-docs). After changing inputs, outputs, or metadata, run the terraform-docs pre-commit hooks and commit the resulting documentation.
 
 ---
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Top)](#terraform)
 
 ---
 <!-- end_of_terraform_docs -->

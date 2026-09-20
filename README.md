@@ -1,10 +1,11 @@
 <div align="center">
 
-<a href="https://github.com/DownAtTheBottomOfTheMoleHole"><img src="https://raw.githubusercontent.com/DownAtTheBottomOfTheMoleHole/.github/main/assets/banners/repositories/terraform-azuredevops-naming.png" alt="Down At The Bottom Of The Mole Hole banner" /></a>
+<a href="https://github.com/DownAtTheBottomOfTheMoleHole"><img src="https://raw.githubusercontent.com/DownAtTheBottomOfTheMoleHole/.github/main/assets/banners/repositories/terraform-azuredevops-naming.png" alt="Illustrated underground Mole Hole workshop banner for the Terraform Azure DevOps naming module" /></a>
 
 <h1 id="azure-devops-naming-module">🏷️ Azure DevOps Naming Module</h1>
 
 <p><strong>Standardised, validated, opinionated naming for every Azure DevOps resource.</strong></p>
+<p>Platform engineering, infrastructure and automation from down at the bottom of the mole hole.</p>
 
 <a href="https://registry.terraform.io/modules/DownAtTheBottomOfTheMoleHole/naming/azuredevops/latest"><img src="https://img.shields.io/badge/Terraform-Registry-7B42BC?logo=terraform" alt="Terraform Registry" /></a>
 <a href="https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/blob/main/LICENSE.md"><img src="https://img.shields.io/github/license/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming?color=blue" alt="License: MIT" /></a>
@@ -61,43 +62,37 @@ output "project_name" {
 
 <!-- TABLE OF CONTENTS -->
 
-- [Azure DevOps Naming Module](#azure-devops-naming-module)
-  - [Table of Contents](#table-of-contents)
-  - [About The Project](#about-the-project)
-  - [Built With](#built-with)
+## Table of contents
+
+- [Quick start](#quick-start)
+- [About the project](#about-the-project)
+- [Built with](#built-with)
 - [Terraform](#terraform)
   - [Requirements](#requirements)
   - [Consuming terraform-azuredevops-naming](#consuming-terraform-azuredevops-naming)
+  - [Creating a project](#creating-a-project)
+  - [Creating a unique branch name](#creating-a-unique-branch-name)
   - [Resources](#resources)
   - [Inputs](#inputs)
   - [Outputs](#outputs)
   - [Modules](#modules)
-    - [Automatically generated Terraform variables](#automatically-generated-terraform-variables)
-      - [Terraform versions](#terraform-versions)
-      - [Installing Tfupdate](#installing-tfupdate)
-      - [Terraform version](#terraform-version)
-      - [Random version](#random-version)
-  - [Roadmap](#roadmap)
-  - [Contributing](#contributing)
-    - [Contributing Prerequisites](#contributing-prerequisites)
-  - [License](#license)
-  - [This module is licensed under the MIT license which can be found here: LICENSE.md](#this-module-is-licensed-under-the-mit-license-which-can-be-found-here-licensemd)
-  - [Contact](#contact)
+  - [Documentation maintenance](#documentation-maintenance)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+  - [Contributing prerequisites](#contributing-prerequisites)
+- [Releases](#releases)
+- [License](#license)
+- [Contact](#contact)
 
 <!-- ABOUT THE PROJECT -->
 
-A terraform module to enable consistent naming of Azure DevOps resources
+## About the project
 
----
+This module generates consistent, validated, opinionated names for Azure DevOps resources. It is provider-free: use its outputs in the resources and provider configuration that suit your platform.
 
-<!-- Readme Navigation -->
-
-[(Back to the Table of Contents)](#table-of-contents)
-
----
+## Built with
 
 - [cspell](https://github.com/streetsidesoftware/cspell-cli)
-- [GitVersion](https://github.com/GitTools/GitVersion)
 - [Markdown](https://www.markdownguide.org/)
 - [Megalinter](https://github.com/oxsecurity/megalinter)
 - [Pre-Commit](https://pre-commit.com/)
@@ -107,12 +102,6 @@ A terraform module to enable consistent naming of Azure DevOps resources
 - [Terraform-docs](https://github.com/terraform-docs/terraform-docs)
 - [tflint](https://github.com/terraform-linters/tflint)
 - [tfupdate](https://github.com/minamijoyo/tfupdate)
-
----
-
-<!-- Readme Navigation -->
-
-[(Back to the Table of Contents)](#table-of-contents)
 
 ---
 
@@ -218,7 +207,7 @@ resource "azuredevops_project" "example_1" {
 
 <!-- Readme Navigation -->
 
-[(Back to the Top)](#Terraform)
+[(Back to the Top)](#terraform)
 
 ---
 
@@ -245,7 +234,7 @@ module "azdo_naming" {
   unique_include_numbers = true
   unique_length          = 4
   unique_seed            = ""
-  work_items             = []
+  work_items             = ["1234"]
 }
 
 resource "azuredevops_project" "example_2" {
@@ -256,7 +245,7 @@ resource "azuredevops_project" "example_2" {
 }
 
 resource "azuredevops_git_repository" "example_2" {
-  project_id = azuredevops_project.example.id
+  project_id = azuredevops_project.example_2.id
   name       = module.azdo_naming.git_repository.name
   initialization {
     init_type = "Clean"
@@ -264,9 +253,9 @@ resource "azuredevops_git_repository" "example_2" {
 }
 
 resource "azuredevops_git_repository_branch" "feature_branch" {
-  repository_id = azuredevops_git_repository.example.id
-  name          = module.azdo_naming.git_repository_feature_branch_slash.name_unique
-  ref_branch    = azuredevops_git_repository.example.default_branch
+  repository_id = azuredevops_git_repository.example_2.id
+  name          = module.azdo_naming.git_repository_feature_branch_slash["1234"].name_unique
+  ref_branch    = azuredevops_git_repository.example_2.default_branch
 }
 ```
 
@@ -363,6 +352,8 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 | <a name="output_git_repository_hotfix_branch_slash"></a> [git\_repository\_hotfix\_branch\_slash](#output\_git\_repository\_hotfix\_branch\_slash) | The hotfix branch of the Git repository in Azure DevOps, formatted with slashes | <pre>{<br/>  "1234": {<br/>    "dashes": true,<br/>    "max_length": 255,<br/>    "min_length": 1,<br/>    "name": "hotfix/1234-dbmh-adonaming",<br/>    "name_unique": "hotfix/1234-dbmh-adonaming-h6lf",<br/>    "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",<br/>    "scope": "Repository",<br/>    "slashes": true,<br/>    "slug": "githotbr"<br/>  },<br/>  "1235": {<br/>    "dashes": true,<br/>    "max_length": 255,<br/>    "min_length": 1,<br/>    "name": "hotfix/1235-dbmh-adonaming",<br/>    "name_unique": "hotfix/1235-dbmh-adonaming-h6lf",<br/>    "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",<br/>    "scope": "Repository",<br/>    "slashes": true,<br/>    "slug": "githotbr"<br/>  }<br/>}</pre> | no |
 | <a name="output_git_repository_release_branch_dash"></a> [git\_repository\_release\_branch\_dash](#output\_git\_repository\_release\_branch\_dash) | The release branch of the Git repository in Azure DevOps, formatted with dashes | <pre>{<br/>  "1234": {<br/>    "dashes": true,<br/>    "max_length": 255,<br/>    "min_length": 1,<br/>    "name": "release-1234-dbmh-adonaming",<br/>    "name_unique": "release-1234-dbmh-adonaming-h6lf",<br/>    "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",<br/>    "scope": "Repository",<br/>    "slashes": false,<br/>    "slug": "gitrelbr"<br/>  },<br/>  "1235": {<br/>    "dashes": true,<br/>    "max_length": 255,<br/>    "min_length": 1,<br/>    "name": "release-1235-dbmh-adonaming",<br/>    "name_unique": "release-1235-dbmh-adonaming-h6lf",<br/>    "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",<br/>    "scope": "Repository",<br/>    "slashes": false,<br/>    "slug": "gitrelbr"<br/>  }<br/>}</pre> | no |
 | <a name="output_git_repository_release_branch_slash"></a> [git\_repository\_release\_branch\_slash](#output\_git\_repository\_release\_branch\_slash) | The release branch of the Git repository in Azure DevOps, formatted with slashes | <pre>{<br/>  "1234": {<br/>    "dashes": true,<br/>    "max_length": 255,<br/>    "min_length": 1,<br/>    "name": "release/1234-dbmh-adonaming",<br/>    "name_unique": "release/1234-dbmh-adonaming-h6lf",<br/>    "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",<br/>    "scope": "Repository",<br/>    "slashes": true,<br/>    "slug": "gitrelbr"<br/>  },<br/>  "1235": {<br/>    "dashes": true,<br/>    "max_length": 255,<br/>    "min_length": 1,<br/>    "name": "release/1235-dbmh-adonaming",<br/>    "name_unique": "release/1235-dbmh-adonaming-h6lf",<br/>    "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=\\x00-\\x1F\\x7F]+$",<br/>    "scope": "Repository",<br/>    "slashes": true,<br/>    "slug": "gitrelbr"<br/>  }<br/>}</pre> | no |
+| <a name="output_git_repository_support_branch_dash"></a> [git\_repository\_support\_branch\_dash](#output\_git\_repository\_support\_branch\_dash) | The support branch of the Git repository in Azure DevOps, formatted with dashes | `"null"` | no |
+| <a name="output_git_repository_support_branch_slash"></a> [git\_repository\_support\_branch\_slash](#output\_git\_repository\_support\_branch\_slash) | The support branch of the Git repository in Azure DevOps, formatted with slashes | `"null"` | no |
 | <a name="output_group"></a> [group](#output\_group) | The group in Azure DevOps | <pre>{<br/>  "dashes": true,<br/>  "max_length": 1024,<br/>  "min_length": 1,<br/>  "name": "dbmh-adonaming",<br/>  "name_unique": "dbmh-adonaming-h6lf",<br/>  "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",<br/>  "scope": "Organization",<br/>  "slug": "grp"<br/>}</pre> | no |
 | <a name="output_iteration_path"></a> [iteration\_path](#output\_iteration\_path) | The Iteration path in Azure DevOps | <pre>{<br/>  "dashes": true,<br/>  "max_length": 255,<br/>  "min_length": 1,<br/>  "name": "dbmh-adonaming",<br/>  "name_unique": "dbmh-adonaming-h6lf",<br/>  "regex": "^[^/\\:*?\"\u003c\u003e|~';.,\\[\\]{}()@#$%^\u0026!+=]*$",<br/>  "scope": "Project",<br/>  "slug": "ip"<br/>}</pre> | no |
 | <a name="output_organization"></a> [organization](#output\_organization) | The Organization in Azure DevOps | <pre>{<br/>  "dashes": true,<br/>  "max_length": 50,<br/>  "min_length": 1,<br/>  "name": "dbmh-adonaming",<br/>  "name_unique": "dbmh-adonaming-h6lf",<br/>  "regex": "^[A-Za-z0-9][A-Za-z0-9-]{0,48}[A-Za-z0-9]$",<br/>  "scope": "Organization",<br/>  "slug": "org"<br/>}</pre> | no |
@@ -453,36 +444,9 @@ No modules.
 
 ---
 
-##### Terraform versions
+## Documentation maintenance
 
-Terraform version and terraform provider versions have been set using tfupdate.
-In order to update the installed providers to the latest versions please first install tfupdate using the below instructions and then run the following commands from the root of the repo in a powershell session.
-Please only run the commands for the providers/modules you are using.
-
-##### Installing Tfupdate
-
-the tfupdate repo can be found [here](https://github.com/minamijoyo/tfupdate)
-
-either download the tarball and add tfupdate.exe to your PATH or do the following:
-
-1. Ensure you have [Go](https://go.dev/doc/install) installed
-2. Clone the repository locally `git clone https://github.com/minamijoyo/tfupdate.git`
-3. build the source code with `go build`
-4. Add the complied binaries to your PATH
-
-##### Terraform version
-
-```shell
-tfupdate terraform . --version "~> $(tfupdate release latest hashicorp/terraform)" --recursive
-```
-
-please also add the terraform version to the `terraform_installer_version` variable in `build/pipelines/iac_templates/variables.yml`
-
-##### Random version
-
-```shell
-tfupdate provider random . --version "~> $(tfupdate release latest hashicorp/random --source-type tfregistryProvider)" --recursive
-```
+The Terraform reference is generated from the module source with [terraform-docs](https://github.com/terraform-docs/terraform-docs). After changing inputs, outputs, or metadata, run the terraform-docs pre-commit hooks and commit the resulting documentation.
 
 ---
 
@@ -506,13 +470,14 @@ tfupdate provider random . --version "~> $(tfupdate release latest hashicorp/ran
 
 <!-- ROADMAP -->
 
+## Roadmap
+
 - [x] Support majority of Azure DevOps resources
 - [x] Test validation rules
 - [x] Include output examples in docs
-- [x] Different branch types to satisfy gitversion
+- [x] Provide dash and slash branch variants
 - [x] Additional examples in docs
-- [ ] Feature 3
-  - [ ] Nested Feature
+- [ ] Add authenticated Azure DevOps integration-test coverage
 
 See the [issues][issues] for a full list of proposed features (and known issues).
 
@@ -526,143 +491,37 @@ See the [issues][issues] for a full list of proposed features (and known issues)
 
 <!-- CONTRIBUTING -->
 
-**All are encouraged to contribute**
-Contributions are what make the open source community such a great way to learn,
-inspire, and create.
-Any contributions you make are **greatly appreciated**.
+## Contributing
 
-If you have a suggestion that would make this better, please create a branch and
-create a pull request. You can also simply open an issue with the tag "enhancement".
+Contributions and issue reports are welcome. Please keep each change focused, add or update native Terraform tests when behaviour changes, and let the pull-request checks complete before requesting review.
 
-Don't forget to give the project a star! Thanks again!
+1. Fork and clone the repository.
+2. Create a branch using the repository convention, for example `feature/descriptive-name`.
+3. Run the checks below and commit any generated documentation.
+4. Open a pull request with a clear description of the change.
 
-1. Clone the Repo (`git clone https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming`)
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+### Contributing prerequisites
 
----
+Install the tools described in [PRECOMMIT.md](PRECOMMIT.md), then run:
 
-**NOTE:** This repo has tagged releases where the version is generated by gitversion.
-You can increment the release version by adding to your commit message as follows:
+~~~
+pre-commit run --all-files
+terraform init -backend=false -input=false
+terraform test -verbose
+~~~
 
-Adding +semver: breaking or +semver: major will cause the major version to be increased,
-+semver: feature or +semver: minor will bump minor and +semver: patch
-or +semver: fix will bump the patch.
-[source][gitversion_website]
+## Releases
 
----
+The module follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html). Each release is recorded in [CHANGELOG.md](CHANGELOG.md); GitHub generates the release notes when a matching `v*` tag is published. Treat release tags as permanent.
 
----
+## License
 
-<!-- Readme Navigation -->
+[MIT](LICENSE.md)
 
-[(Back to the Table of Contents)](#table-of-contents)
+## Contact
 
----
+Rolf Moleman — [@RolfMoleman](https://github.com/RolfMoleman)
 
-To work with this repo we recommend you install the tools
-that are included in the prerequisites.
-However, you may work on the repo in the browser if you prefer.
+Module: [DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming)
 
-To replicate the setup used to initially create this repository you will need
-
-1. Clone the Repo
-
-   ```sh
-   git clone https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming.git
-   ```
-
-2. Install pip
-
-   ```cmd
-   curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
-   python get-pip.py
-   ```
-
-3. Install Chocolatey
-
-   ```powershell
-   Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
-   ```
-
-4. Install Terraform
-
-   ```cmd
-   choco install terraform
-   ```
-
-5. Install TFlint
-
-   ```cmd
-   choco install tflint
-   ```
-
-   Also download the tflint plugins from github such as
-   [tflint-ruleset-azurerm][tflint-ruleset-azurerm] and [tflint-ruleset-aws][tflint-ruleset-aws]
-   put these in your `.tflint.d/plugins` directory at the root of your user directory
-
-6. Install terraform-docs
-
-   ```cmd
-   choco install terraform-docs
-   ```
-
-7. Install pre-commit
-
-   ```cmd
-   pip install pre-commit
-   ```
-
-8. Install vscode
-
-   ```cmd
-   choco install vscode
-   ```
-
-9. Install tfupdate
-
-Download the latest compiled binaries from [here][tfupdate_releases]
-then put it in your executable path.
-
----
-
-<!-- Readme Navigation -->
-
-[(Back to the Table of Contents)](#table-of-contents)
-
----
-
-<!-- LICENSE -->
-
-<!-- Readme Navigation -->
-
-[(Back to the Table of Contents)](#table-of-contents)
-
----
-
-<!-- CONTACT -->
-
-Rolf Moleman - @RolfMoleman
-
-Module Link: [https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming)
-
----
-
-<!-- Readme Navigation -->
-
-[(Back to the Table of Contents)](#table-of-contents)
-
----
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
-<!-- URLs -->
-
-[gitversion_website]: https://gitversion.net/docs/reference/version-increments
 [issues]: https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/issues
-[tfupdate_releases]: https://github.com/minamijoyo/tfupdate/releases
-[tflint-ruleset-aws]: https://github.com/terraform-linters/tflint-ruleset-aws/releases
-[tflint-ruleset-azurerm]: https://github.com/terraform-linters/tflint-ruleset-azurerm/releases

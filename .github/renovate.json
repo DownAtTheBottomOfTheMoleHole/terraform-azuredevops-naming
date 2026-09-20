@@ -1,6 +1,7 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "description": "Repo-specific Renovate config — extends DownAtTheBottomOfTheMoleHole org baseline.",
+  "automerge": false,
   "extends": ["local>DownAtTheBottomOfTheMoleHole/.github"],
   "packageRules": [
     {

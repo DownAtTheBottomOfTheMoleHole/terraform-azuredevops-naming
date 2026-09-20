@@ -9,86 +9,30 @@ sections:
 content: |-
   {{ .Header }}
 
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
 
   {{ .Requirements }}
 
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
 
   ```hcl
-  {{ include "example.tf" }}
+  {{ include "main.tf" }}
   ```
 
 
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
 
   {{ .Resources }}
 
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
 
   {{ .Inputs }}
 
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
 
   {{ .Outputs }}
 
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
 
   {{ .Modules }}
 
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
 
   {{ .Footer }}
 
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
 output:
   file: README.md
   mode: inject

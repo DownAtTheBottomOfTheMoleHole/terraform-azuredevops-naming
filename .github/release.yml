@@ -10,58 +10,34 @@ changelog:
     - title: Breaking Changes 🛠
       labels:
         - Semver Major
+        - breaking-change
     - title: New Features and Enhancements 🎉
       labels:
         - Semver Minor
         - Enhancement
-        - Feature Testing
+        - feature
     - title: Bug Fixes and Hotfixes 🐛
       labels:
         - Semver Patch
-        - Bug
-        - Hotfix
+        - bug
+        - hotfix
+    - title: Security 🔒
+      labels:
+        - security
     - title: Documentation and Guides 📚
       labels:
         - Documentation Required
-        - Documentation
-    - title: Performance Improvements 🚀
+        - documentation
+    - title: Dependencies 📦
       labels:
-        - Performance
-        - Optimization
-        - Speed
-        - Benchmark
-        - Latency
+        - dependencies
+        - renovate
     - title: Infrastructure and Tooling 🛠️
       labels:
-        - Azure Pipelines
         - GitHub Actions
-        - MegaLinter
-        - Terraform Required
-        - Terraform
+        - ci
+        - maintenance
         - Chore
-        - Renovate
-    - title: Code Quality and Refactoring ♻️
-      labels:
-        - Refactor
-        - Style
-        - Missing Tests
-    - title: Project Management and Collaboration 🤝
-      labels:
-        - Blocked
-        - Bot
-        - CAG GitHub
-        - Duplicate
-        - Good First Issue
-        - Help Wanted
-        - In Analysis
-        - In Progress
-        - In Review
-        - Integration Testing
-        - Invalid
-        - Question
-        - Ready
-        - Repository
-        - Wont Fix
     - title: Other Changes
       labels:
         - "*"
