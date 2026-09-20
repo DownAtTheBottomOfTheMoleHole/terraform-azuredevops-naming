@@ -74,6 +74,13 @@ class ReleaseWorkflowContractTests(unittest.TestCase):
         self.assertGreater(checkout_count, 0)
         self.assertEqual(checkout_count, hardened_count)
 
+    def test_pull_request_checks_do_not_use_privileged_target_event(self) -> None:
+        pull_request_workflow = (
+            ROOT / ".github" / "workflows" / "pullrequest.yml"
+        ).read_text(encoding="utf-8")
+
+        self.assertNotIn("pull_request_target:", pull_request_workflow)
+
 
 if __name__ == "__main__":
     unittest.main()

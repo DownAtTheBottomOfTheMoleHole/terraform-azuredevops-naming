@@ -5,9 +5,6 @@ on:
   pull_request:
     branches: [main, "release/**"]
     types: [opened, edited, reopened, synchronize, ready_for_review]
-  pull_request_target:
-    branches: [main, "release/**"]
-    types: [opened]
 
 concurrency:
   group: pr-checks-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
@@ -41,15 +38,6 @@ jobs:
     uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/label-pr.yml@283bf13cac587920f45291bd51a21040bf7aaa83 # main
     permissions:
       contents: read
-      pull-requests: write
-
-  # ─── First-time contributor greeting ───────────────────────────────────────
-  greet:
-    name: Greet First-Time Contributors
-    if: github.event_name == 'pull_request_target' && github.event.action == 'opened'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/greet.yml@283bf13cac587920f45291bd51a21040bf7aaa83 # main
-    permissions:
-      issues: write
       pull-requests: write
 
   # ─── terraform-docs (check drift without mutating contributor branches) ────
