@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://raw.githubusercontent.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/main/.assets/org-banner.png" alt="Down At The Bottom Of The Mole Hole banner" />
+<a href="https://github.com/DownAtTheBottomOfTheMoleHole"><img src="https://raw.githubusercontent.com/DownAtTheBottomOfTheMoleHole/.github/main/assets/banners/repositories/terraform-azuredevops-naming.png" alt="Down At The Bottom Of The Mole Hole banner" /></a>
 
 <h1 id="azure-devops-naming-module">🏷️ Azure DevOps Naming Module</h1>
 
