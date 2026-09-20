@@ -28,6 +28,9 @@ override.tf.json
 **/*.terraform.lock.hcl
 *.terraform.lock.hcl
 .terraform.lock.hcl
+# The root lock file is committed so CI and documentation fixtures resolve the
+# same provider package; nested example/application lock files remain local.
+!/.terraform.lock.hcl
 
 # Include override files you do wish to add to version control using negated pattern
 # !example_override.tf
@@ -75,3 +78,7 @@ megalinter-reports/
 
 # node
 node_modules/
+
+# Python cache files created by repository helper tests
+__pycache__/
+*.py[cod]

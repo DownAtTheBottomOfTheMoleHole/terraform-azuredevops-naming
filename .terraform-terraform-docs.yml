@@ -34,25 +34,17 @@ content: |-
   <!-- consuming terraform-azuredevops-naming -->
   ## Consuming terraform-azuredevops-naming
 
-    To consume this module add the following to your module.tf:
+  Add the module to your Terraform configuration and pin an appropriate version range:
+
   ```hcl
-    module "azdo_naming" {
-      {{"\t"}} source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-      {{"\t"}} version  = "{{ include "terraform-docs/module_version.txt" }}"
-  {{- if .Module.RequiredInputs }}
-      {{"\n\t"}} # Required variables
-      {{- range .Module.RequiredInputs }}
-      {{"\t"}} {{ .Name }}  = {{ .GetValue }}
-      {{- end }}
-      {{- end }}
-  {{- if .Module.OptionalInputs }}
-      {{"\n\t"}} # Optional variables
-      {{- range .Module.OptionalInputs }}
-      {{"\t"}} {{ .Name }}  = {{ .GetValue | printf "%s" }}
-      {{- end }}
-      {{- end }}
-    }
-    ```
+  module "azdo_naming" {
+    source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
+    version = "{{ include "terraform-docs/module_version.txt" }}"
+
+    prefix = ["dbmh"]
+    suffix = ["my-project"]
+  }
+  ```
 
   ## Creating a project
 
@@ -70,10 +62,7 @@ content: |-
 
   ## Creating a unique branch name
 
-  this shows creating:
-   - a project
-   - git repository inside the project
-   - a feature branch based on the default branch with a unique name
+  This example creates a project, a Git repository inside it, and a uniquely named feature branch based on the default branch.
 
   ```hcl
   {{ include "examples/example2/main.tf" }}

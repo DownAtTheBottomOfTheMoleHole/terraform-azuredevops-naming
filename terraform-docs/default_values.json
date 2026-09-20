@@ -19,7 +19,7 @@
       "max_length": 64,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^<,>,%,&,,:,\\,?,/,*,|,\",#,$,+,.,']*$",
       "scope": "Organization",
       "slug": "agtpol"
@@ -45,7 +45,7 @@
       "max_length": 64,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "aq"
@@ -71,7 +71,7 @@
       "max_length": 255,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "ap"
@@ -97,7 +97,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[A-Za-z0-9_.\\-]+$",
       "scope": "Project",
       "slug": "pkg"
@@ -123,7 +123,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "bc"
@@ -149,7 +149,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "bs"
@@ -175,7 +175,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/:\\~&%;@'\"?<>|#$*}{,+=\\[\\]]*$",
       "scope": "repository",
       "slug": "bpbv"
@@ -201,7 +201,7 @@
       "max_length": 260,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|]*$",
       "scope": "Project",
       "slug": "blddef"
@@ -227,7 +227,7 @@
       "max_length": 260,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|]*$",
       "scope": "Organization",
       "slug": "arpth"
@@ -253,7 +253,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "dash"
@@ -279,7 +279,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "dg"
@@ -305,7 +305,7 @@
       "max_length": 64,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^<,>,%,&,,:,\\,?,/,*,|,\",#,,$,+,.,']*$",
       "scope": "Organization",
       "slug": "eapool"
@@ -363,7 +363,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "dbmh-development-apply-adonaming",
-        "name_unique": "dbmh-development-apply-adonaming-h6lf",
+        "name_unique": "dbmh-development-apply-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envapp"
@@ -373,7 +373,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "dbmh-production-apply-adonaming",
-        "name_unique": "dbmh-production-apply-adonaming-h6lf",
+        "name_unique": "dbmh-production-apply-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envapp"
@@ -383,7 +383,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "dbmh-user-acceptance-testing-apply-adonaming",
-        "name_unique": "dbmh-user-acceptance-testing-apply-adonaming-h6lf",
+        "name_unique": "dbmh-user-acceptance-testing-apply-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envapp"
@@ -442,7 +442,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "dbmh-development-apply-adonaming",
-        "name_unique": "dbmh-development-apply-adonaming-h6lf",
+        "name_unique": "dbmh-development-apply-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envapp"
@@ -452,7 +452,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "dbmh-production-apply-adonaming",
-        "name_unique": "dbmh-production-apply-adonaming-h6lf",
+        "name_unique": "dbmh-production-apply-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envapp"
@@ -462,7 +462,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "dbmh-user-acceptance-testing-apply-adonaming",
-        "name_unique": "dbmh-user-acceptance-testing-apply-adonaming-h6lf",
+        "name_unique": "dbmh-user-acceptance-testing-apply-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envapp"
@@ -521,7 +521,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "development-apply",
-        "name_unique": "development-apply-adonaming-h6lf",
+        "name_unique": "development-apply-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envappb"
@@ -531,7 +531,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "production-apply",
-        "name_unique": "production-apply-adonaming-h6lf",
+        "name_unique": "production-apply-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envappb"
@@ -541,7 +541,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "user-acceptance-testing-apply",
-        "name_unique": "user-acceptance-testing-apply-adonaming-h6lf",
+        "name_unique": "user-acceptance-testing-apply-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envappb"
@@ -600,7 +600,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "development",
-        "name_unique": "development-adonaming-h6lf",
+        "name_unique": "development-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envbas"
@@ -610,7 +610,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "production",
-        "name_unique": "production-adonaming-h6lf",
+        "name_unique": "production-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envbas"
@@ -620,7 +620,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "user-acceptance-testing",
-        "name_unique": "user-acceptance-testing-adonaming-h6lf",
+        "name_unique": "user-acceptance-testing-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envbas"
@@ -647,7 +647,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "ekr"
@@ -705,7 +705,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "dbmh-development-plan-adonaming",
-        "name_unique": "dbmh-development-plan-adonaming-h6lf",
+        "name_unique": "dbmh-development-plan-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envpln"
@@ -715,7 +715,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "dbmh-production-plan-adonaming",
-        "name_unique": "dbmh-production-plan-adonaming-h6lf",
+        "name_unique": "dbmh-production-plan-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envpln"
@@ -725,7 +725,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "dbmh-user-acceptance-testing-plan-adonaming",
-        "name_unique": "dbmh-user-acceptance-testing-plan-adonaming-h6lf",
+        "name_unique": "dbmh-user-acceptance-testing-plan-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envpln"
@@ -784,7 +784,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "development-plan",
-        "name_unique": "development-plan-adonaming-h6lf",
+        "name_unique": "development-plan-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envplnb"
@@ -794,7 +794,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "production-plan",
-        "name_unique": "production-plan-adonaming-h6lf",
+        "name_unique": "production-plan-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envplnb"
@@ -804,7 +804,7 @@
         "max_length": 240,
         "min_length": 1,
         "name": "user-acceptance-testing-plan",
-        "name_unique": "user-acceptance-testing-plan-adonaming-h6lf",
+        "name_unique": "user-acceptance-testing-plan-adonaming-docs",
         "regex": "^[^/\\:*?\"<>|]*$",
         "scope": "Project",
         "slug": "envplnb"
@@ -918,7 +918,7 @@
           "max_length": 240,
           "min_length": 1,
           "name": "dbmh-development-1234-adonaming",
-          "name_unique": "dbmh-development-1234-adonaming-h6lf",
+          "name_unique": "dbmh-development-1234-adonaming-docs",
           "regex": "^[^/\\:*?\"<>|]*$",
           "scope": "Project",
           "slug": "envwi"
@@ -928,7 +928,7 @@
           "max_length": 240,
           "min_length": 1,
           "name": "dbmh-development-1235-adonaming",
-          "name_unique": "dbmh-development-1235-adonaming-h6lf",
+          "name_unique": "dbmh-development-1235-adonaming-docs",
           "regex": "^[^/\\:*?\"<>|]*$",
           "scope": "Project",
           "slug": "envwi"
@@ -940,7 +940,7 @@
           "max_length": 240,
           "min_length": 1,
           "name": "dbmh-production-1234-adonaming",
-          "name_unique": "dbmh-production-1234-adonaming-h6lf",
+          "name_unique": "dbmh-production-1234-adonaming-docs",
           "regex": "^[^/\\:*?\"<>|]*$",
           "scope": "Project",
           "slug": "envwi"
@@ -950,7 +950,7 @@
           "max_length": 240,
           "min_length": 1,
           "name": "dbmh-production-1235-adonaming",
-          "name_unique": "dbmh-production-1235-adonaming-h6lf",
+          "name_unique": "dbmh-production-1235-adonaming-docs",
           "regex": "^[^/\\:*?\"<>|]*$",
           "scope": "Project",
           "slug": "envwi"
@@ -962,7 +962,7 @@
           "max_length": 240,
           "min_length": 1,
           "name": "dbmh-user-acceptance-testing-1234-adonaming",
-          "name_unique": "dbmh-user-acceptance-testing-1234-adonaming-h6lf",
+          "name_unique": "dbmh-user-acceptance-testing-1234-adonaming-docs",
           "regex": "^[^/\\:*?\"<>|]*$",
           "scope": "Project",
           "slug": "envwi"
@@ -972,7 +972,7 @@
           "max_length": 240,
           "min_length": 1,
           "name": "dbmh-user-acceptance-testing-1235-adonaming",
-          "name_unique": "dbmh-user-acceptance-testing-1235-adonaming-h6lf",
+          "name_unique": "dbmh-user-acceptance-testing-1235-adonaming-docs",
           "regex": "^[^/\\:*?\"<>|]*$",
           "scope": "Project",
           "slug": "envwi"
@@ -1087,7 +1087,7 @@
           "max_length": 240,
           "min_length": 1,
           "name": "development-1234",
-          "name_unique": "development-1234-adonaming-h6lf",
+          "name_unique": "development-1234-adonaming-docs",
           "regex": "^[^/\\:*?\"<>|]*$",
           "scope": "Project",
           "slug": "envwib"
@@ -1097,7 +1097,7 @@
           "max_length": 240,
           "min_length": 1,
           "name": "development-1235",
-          "name_unique": "development-1235-adonaming-h6lf",
+          "name_unique": "development-1235-adonaming-docs",
           "regex": "^[^/\\:*?\"<>|]*$",
           "scope": "Project",
           "slug": "envwib"
@@ -1109,7 +1109,7 @@
           "max_length": 240,
           "min_length": 1,
           "name": "production-1234",
-          "name_unique": "production-1234-adonaming-h6lf",
+          "name_unique": "production-1234-adonaming-docs",
           "regex": "^[^/\\:*?\"<>|]*$",
           "scope": "Project",
           "slug": "envwib"
@@ -1119,7 +1119,7 @@
           "max_length": 240,
           "min_length": 1,
           "name": "production-1235",
-          "name_unique": "production-1235-adonaming-h6lf",
+          "name_unique": "production-1235-adonaming-docs",
           "regex": "^[^/\\:*?\"<>|]*$",
           "scope": "Project",
           "slug": "envwib"
@@ -1131,7 +1131,7 @@
           "max_length": 240,
           "min_length": 1,
           "name": "user-acceptance-testing-1234",
-          "name_unique": "user-acceptance-testing-1234-adonaming-h6lf",
+          "name_unique": "user-acceptance-testing-1234-adonaming-docs",
           "regex": "^[^/\\:*?\"<>|]*$",
           "scope": "Project",
           "slug": "envwib"
@@ -1141,7 +1141,7 @@
           "max_length": 240,
           "min_length": 1,
           "name": "user-acceptance-testing-1235",
-          "name_unique": "user-acceptance-testing-1235-adonaming-h6lf",
+          "name_unique": "user-acceptance-testing-1235-adonaming-docs",
           "regex": "^[^/\\:*?\"<>|]*$",
           "scope": "Project",
           "slug": "envwib"
@@ -1169,7 +1169,7 @@
       "max_length": 64,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[A-Za-z0-9_.\\-]+$",
       "scope": "Project",
       "slug": "feed"
@@ -1195,7 +1195,7 @@
       "max_length": 64,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "gitrepo"
@@ -1221,8 +1221,8 @@
       "max_length": 255,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
-      "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+      "name_unique": "dbmh-adonaming-docs",
+      "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
       "scope": "Repository",
       "slug": "gitbranch"
     }
@@ -1268,8 +1268,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "bug-1234-dbmh-adonaming",
-        "name_unique": "bug-1234-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "bug-1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitbugbr"
@@ -1279,8 +1279,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "bug-1235-dbmh-adonaming",
-        "name_unique": "bug-1235-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "bug-1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitbugbr"
@@ -1328,8 +1328,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "bug/1234-dbmh-adonaming",
-        "name_unique": "bug/1234-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "bug/1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitbugbr"
@@ -1339,8 +1339,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "bug/1235-dbmh-adonaming",
-        "name_unique": "bug/1235-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "bug/1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitbugbr"
@@ -1388,8 +1388,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "dev-1234-dbmh-adonaming",
-        "name_unique": "dev-1234-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "dev-1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitdevbr"
@@ -1399,8 +1399,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "dev-1235-dbmh-adonaming",
-        "name_unique": "dev-1235-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "dev-1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitdevbr"
@@ -1448,8 +1448,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "dev/1234-dbmh-adonaming",
-        "name_unique": "dev/1234-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "dev/1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitdevbr"
@@ -1459,8 +1459,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "dev/1235-dbmh-adonaming",
-        "name_unique": "dev/1235-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "dev/1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitdevbr"
@@ -1508,8 +1508,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "development-1234-dbmh-adonaming",
-        "name_unique": "development-1234-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "development-1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitdevbr"
@@ -1519,8 +1519,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "development-1235-dbmh-adonaming",
-        "name_unique": "development-1235-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "development-1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitdevbr"
@@ -1568,8 +1568,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "development/1234-dbmh-adonaming",
-        "name_unique": "development/1234-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "development/1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitdevbr"
@@ -1579,8 +1579,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "development/1235-dbmh-adonaming",
-        "name_unique": "development/1235-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "development/1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitdevbr"
@@ -1628,8 +1628,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "feature-1234-dbmh-adonaming",
-        "name_unique": "feature-1234-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "feature-1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitfetbr"
@@ -1639,8 +1639,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "feature-1235-dbmh-adonaming",
-        "name_unique": "feature-1235-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "feature-1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitfetbr"
@@ -1688,8 +1688,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "feature/1234-dbmh-adonaming",
-        "name_unique": "feature/1234-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "feature/1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitfetbr"
@@ -1699,8 +1699,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "feature/1235-dbmh-adonaming",
-        "name_unique": "feature/1235-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "feature/1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitfetbr"
@@ -1748,8 +1748,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "fix-1234-dbmh-adonaming",
-        "name_unique": "fix-1234-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "fix-1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitfixbr"
@@ -1759,8 +1759,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "fix-1235-dbmh-adonaming",
-        "name_unique": "fix-1235-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "fix-1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitfixbr"
@@ -1808,8 +1808,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "fix/1234-dbmh-adonaming",
-        "name_unique": "fix/1234-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "fix/1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitfixbr"
@@ -1819,8 +1819,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "fix/1235-dbmh-adonaming",
-        "name_unique": "fix/1235-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "fix/1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitfixbr"
@@ -1868,8 +1868,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "hotfix-1234-dbmh-adonaming",
-        "name_unique": "hotfix-1234-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "hotfix-1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "githotbr"
@@ -1879,8 +1879,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "hotfix-1235-dbmh-adonaming",
-        "name_unique": "hotfix-1235-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "hotfix-1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "githotbr"
@@ -1928,8 +1928,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "hotfix/1234-dbmh-adonaming",
-        "name_unique": "hotfix/1234-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "hotfix/1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "githotbr"
@@ -1939,8 +1939,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "hotfix/1235-dbmh-adonaming",
-        "name_unique": "hotfix/1235-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "hotfix/1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "githotbr"
@@ -1988,8 +1988,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "release-1234-dbmh-adonaming",
-        "name_unique": "release-1234-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "release-1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitrelbr"
@@ -1999,8 +1999,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "release-1235-dbmh-adonaming",
-        "name_unique": "release-1235-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "release-1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": false,
         "slug": "gitrelbr"
@@ -2048,8 +2048,8 @@
         "max_length": 255,
         "min_length": 1,
         "name": "release/1234-dbmh-adonaming",
-        "name_unique": "release/1234-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "release/1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitrelbr"
@@ -2059,11 +2059,131 @@
         "max_length": 255,
         "min_length": 1,
         "name": "release/1235-dbmh-adonaming",
-        "name_unique": "release/1235-dbmh-adonaming-h6lf",
-        "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "name_unique": "release/1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
         "scope": "Repository",
         "slashes": true,
         "slug": "gitrelbr"
+      }
+    }
+  },
+  "git_repository_support_branch_dash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "support-1234-dbmh-adonaming",
+        "name_unique": "support-1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "gitsupbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "support-1235-dbmh-adonaming",
+        "name_unique": "support-1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": false,
+        "slug": "gitsupbr"
+      }
+    }
+  },
+  "git_repository_support_branch_slash": {
+    "sensitive": false,
+    "type": [
+      "object",
+      {
+        "1234": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ],
+        "1235": [
+          "object",
+          {
+            "dashes": "bool",
+            "max_length": "number",
+            "min_length": "number",
+            "name": "string",
+            "name_unique": "string",
+            "regex": "string",
+            "scope": "string",
+            "slashes": "bool",
+            "slug": "string"
+          }
+        ]
+      }
+    ],
+    "value": {
+      "1234": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "support/1234-dbmh-adonaming",
+        "name_unique": "support/1234-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "gitsupbr"
+      },
+      "1235": {
+        "dashes": true,
+        "max_length": 255,
+        "min_length": 1,
+        "name": "support/1235-dbmh-adonaming",
+        "name_unique": "support/1235-dbmh-adonaming-docs",
+        "regex": "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$",
+        "scope": "Repository",
+        "slashes": true,
+        "slug": "gitsupbr"
       }
     }
   },
@@ -2087,7 +2207,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Organization",
       "slug": "grp"
@@ -2113,7 +2233,7 @@
       "max_length": 255,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "ip"
@@ -2139,7 +2259,7 @@
       "max_length": 50,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[A-Za-z0-9][A-Za-z0-9-]{0,48}[A-Za-z0-9]$",
       "scope": "Organization",
       "slug": "org"
@@ -2165,7 +2285,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "pj"
@@ -2191,7 +2311,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "pm"
@@ -2217,7 +2337,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "ps"
@@ -2243,7 +2363,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "pv"
@@ -2269,7 +2389,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Organization",
       "slug": "proc"
@@ -2295,7 +2415,7 @@
       "max_length": 64,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^_\\.\\/\\:*?\"<>|;#$*{}+,=\\[\\]\\x00-\\x1F]*$",
       "scope": "Organization",
       "slug": "prj"
@@ -2321,7 +2441,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Organization",
       "slug": "sg"
@@ -2347,7 +2467,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "seargocd"
@@ -2373,7 +2493,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "seart"
@@ -2399,7 +2519,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "seaws"
@@ -2425,7 +2545,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "seasb"
@@ -2451,7 +2571,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "seazcr"
@@ -2477,7 +2597,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "seazdo"
@@ -2503,7 +2623,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "seazrm"
@@ -2529,7 +2649,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sebitb"
@@ -2555,7 +2675,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sebd"
@@ -2581,7 +2701,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "secm1"
@@ -2607,7 +2727,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "secmst"
@@ -2633,7 +2753,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "secmsca"
@@ -2659,7 +2779,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sedr"
@@ -2685,7 +2805,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sedls"
@@ -2711,7 +2831,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "setfs"
@@ -2737,7 +2857,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "segcptf"
@@ -2763,7 +2883,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "seg"
@@ -2789,7 +2909,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "seggit"
@@ -2815,7 +2935,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "seg2"
@@ -2841,7 +2961,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "segh"
@@ -2867,7 +2987,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "segh"
@@ -2893,7 +3013,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "segl"
@@ -2919,7 +3039,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "seiw"
@@ -2945,7 +3065,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sej"
@@ -2971,7 +3091,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sejfa"
@@ -2997,7 +3117,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sejfd"
@@ -3023,7 +3143,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sejfp"
@@ -3049,7 +3169,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sejx"
@@ -3075,7 +3195,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sek"
@@ -3101,7 +3221,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "semvn"
@@ -3127,7 +3247,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sen"
@@ -3153,7 +3273,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "senpm"
@@ -3179,7 +3299,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "senug"
@@ -3205,7 +3325,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "seod"
@@ -3231,7 +3351,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "seos"
@@ -3257,7 +3377,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "serp"
@@ -3283,7 +3403,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sesf"
@@ -3309,7 +3429,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sesnyk"
@@ -3335,7 +3455,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sesc"
@@ -3361,7 +3481,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sesq"
@@ -3387,7 +3507,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sessh"
@@ -3413,7 +3533,7 @@
       "max_length": 1024,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "sevsm"
@@ -3439,7 +3559,7 @@
       "max_length": 255,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "adt"
@@ -3448,7 +3568,7 @@
   "unique_seed": {
     "sensitive": false,
     "type": "string",
-    "value": "h6lft43juihfyd9pp0qi3hldl6evepm2su9aztf5mqnyuwzzx48lniw479adc"
+    "value": "docs"
   },
   "validation": {
     "sensitive": false,
@@ -3456,6 +3576,41 @@
       "object",
       {
         "agent_pool": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "agent_queue": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "area_path": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "artifact_package": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "board_column": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "board_swimlane": [
           "object",
           {
             "valid_name": "bool",
@@ -3470,6 +3625,27 @@
           }
         ],
         "build_definition": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "build_folder": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "dashboard": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "deployment_group": [
           "object",
           {
             "valid_name": "bool",
@@ -3585,6 +3761,13 @@
                 "valid_name_unique": "bool"
               }
             ]
+          }
+        ],
+        "environment_kubernetes_resource": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
           }
         ],
         "environment_plan": [
@@ -3797,6 +3980,13 @@
                 ]
               }
             ]
+          }
+        ],
+        "feed": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
           }
         ],
         "git_repository": [
@@ -4124,7 +4314,63 @@
             "valid_name_unique": "bool"
           }
         ],
+        "iteration_path": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "organization": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "pipeline_job": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "pipeline_matrix": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "pipeline_stage": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "pipeline_variable": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "process": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
         "project": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "security_group": [
           "object",
           {
             "valid_name": "bool",
@@ -4146,6 +4392,13 @@
           }
         ],
         "serviceendpoint_aws": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_azure_service_bus": [
           "object",
           {
             "valid_name": "bool",
@@ -4180,7 +4433,42 @@
             "valid_name_unique": "bool"
           }
         ],
+        "serviceendpoint_black_duck": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_checkmarx_one": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_checkmarx_sast": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_checkmarx_sca": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
         "serviceendpoint_dockerregistry": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_dynamics_lifecycle_services": [
           "object",
           {
             "valid_name": "bool",
@@ -4215,6 +4503,13 @@
             "valid_name_unique": "bool"
           }
         ],
+        "serviceendpoint_generic_v2": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
         "serviceendpoint_github": [
           "object",
           {
@@ -4223,6 +4518,13 @@
           }
         ],
         "serviceendpoint_github_enterprise": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_gitlab": [
           "object",
           {
             "valid_name": "bool",
@@ -4313,6 +4615,13 @@
             "valid_name_unique": "bool"
           }
         ],
+        "serviceendpoint_openshift": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
         "serviceendpoint_runpipeline": [
           "object",
           {
@@ -4321,6 +4630,13 @@
           }
         ],
         "serviceendpoint_servicefabric": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "serviceendpoint_snyk": [
           "object",
           {
             "valid_name": "bool",
@@ -4348,6 +4664,13 @@
             "valid_name_unique": "bool"
           }
         ],
+        "serviceendpoint_visualstudiomarketplace": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
         "team": [
           "object",
           {
@@ -4361,6 +4684,97 @@
             "valid_name": "bool",
             "valid_name_unique": "bool"
           }
+        ],
+        "variable_group_variable": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "wiki": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "wiki_page": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "workitem": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "workitemquery": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "workitemquery_folder": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "workitemtracking_field": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "workitemtrackingprocess_field": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "workitemtrackingprocess_group": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "workitemtrackingprocess_page": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "workitemtrackingprocess_process": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "workitemtrackingprocess_state": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
+        ],
+        "workitemtrackingprocess_workitemtype": [
+          "object",
+          {
+            "valid_name": "bool",
+            "valid_name_unique": "bool"
+          }
         ]
       }
     ],
@@ -4369,11 +4783,43 @@
         "valid_name": true,
         "valid_name_unique": true
       },
+      "agent_queue": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "area_path": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "artifact_package": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "board_column": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "board_swimlane": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
       "branch_policy_build_validation": {
         "valid_name": true,
         "valid_name_unique": true
       },
       "build_definition": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "build_folder": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "dashboard": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "deployment_group": {
         "valid_name": true,
         "valid_name_unique": true
       },
@@ -4437,6 +4883,10 @@
           "valid_name_unique": true
         }
       },
+      "environment_kubernetes_resource": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
       "environment_plan": {
         "development": {
           "valid_name": true,
@@ -4472,7 +4922,7 @@
             "max_length": 240,
             "min_length": 1,
             "name": "dbmh-development-1234-adonaming",
-            "name_unique": "dbmh-development-1234-adonaming-h6lf",
+            "name_unique": "dbmh-development-1234-adonaming-docs",
             "regex": "^[^/\\:*?\"<>|]*$",
             "scope": "Project",
             "slug": "envwi"
@@ -4482,7 +4932,7 @@
             "max_length": 240,
             "min_length": 1,
             "name": "dbmh-development-1235-adonaming",
-            "name_unique": "dbmh-development-1235-adonaming-h6lf",
+            "name_unique": "dbmh-development-1235-adonaming-docs",
             "regex": "^[^/\\:*?\"<>|]*$",
             "scope": "Project",
             "slug": "envwi"
@@ -4494,7 +4944,7 @@
             "max_length": 240,
             "min_length": 1,
             "name": "dbmh-production-1234-adonaming",
-            "name_unique": "dbmh-production-1234-adonaming-h6lf",
+            "name_unique": "dbmh-production-1234-adonaming-docs",
             "regex": "^[^/\\:*?\"<>|]*$",
             "scope": "Project",
             "slug": "envwi"
@@ -4504,7 +4954,7 @@
             "max_length": 240,
             "min_length": 1,
             "name": "dbmh-production-1235-adonaming",
-            "name_unique": "dbmh-production-1235-adonaming-h6lf",
+            "name_unique": "dbmh-production-1235-adonaming-docs",
             "regex": "^[^/\\:*?\"<>|]*$",
             "scope": "Project",
             "slug": "envwi"
@@ -4516,7 +4966,7 @@
             "max_length": 240,
             "min_length": 1,
             "name": "dbmh-user-acceptance-testing-1234-adonaming",
-            "name_unique": "dbmh-user-acceptance-testing-1234-adonaming-h6lf",
+            "name_unique": "dbmh-user-acceptance-testing-1234-adonaming-docs",
             "regex": "^[^/\\:*?\"<>|]*$",
             "scope": "Project",
             "slug": "envwi"
@@ -4526,7 +4976,7 @@
             "max_length": 240,
             "min_length": 1,
             "name": "dbmh-user-acceptance-testing-1235-adonaming",
-            "name_unique": "dbmh-user-acceptance-testing-1235-adonaming-h6lf",
+            "name_unique": "dbmh-user-acceptance-testing-1235-adonaming-docs",
             "regex": "^[^/\\:*?\"<>|]*$",
             "scope": "Project",
             "slug": "envwi"
@@ -4565,6 +5015,10 @@
           }
         }
       },
+      "feed": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
       "git_repository": {
         "valid_name": true,
         "valid_name_unique": true
@@ -4585,12 +5039,12 @@
       },
       "git_repository_bug_branch_slash": {
         "1234": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         },
         "1235": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         }
       },
       "git_repository_dev_branch_dash": {
@@ -4605,12 +5059,12 @@
       },
       "git_repository_dev_branch_slash": {
         "1234": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         },
         "1235": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         }
       },
       "git_repository_development_branch_dash": {
@@ -4625,12 +5079,12 @@
       },
       "git_repository_development_branch_slash": {
         "1234": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         },
         "1235": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         }
       },
       "git_repository_feature_branch_dash": {
@@ -4645,12 +5099,12 @@
       },
       "git_repository_feature_branch_slash": {
         "1234": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         },
         "1235": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         }
       },
       "git_repository_fix_branch_dash": {
@@ -4665,12 +5119,12 @@
       },
       "git_repository_fix_branch_slash": {
         "1234": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         },
         "1235": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         }
       },
       "git_repository_hotfix_branch_dash": {
@@ -4685,12 +5139,12 @@
       },
       "git_repository_hotfix_branch_slash": {
         "1234": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         },
         "1235": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         }
       },
       "git_repository_release_branch_dash": {
@@ -4705,12 +5159,12 @@
       },
       "git_repository_release_branch_slash": {
         "1234": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         },
         "1235": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         }
       },
       "git_repository_support_branch_dash": {
@@ -4725,19 +5179,51 @@
       },
       "git_repository_support_branch_slash": {
         "1234": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         },
         "1235": {
-          "valid_name": false,
-          "valid_name_unique": false
+          "valid_name": true,
+          "valid_name_unique": true
         }
       },
       "group": {
         "valid_name": true,
         "valid_name_unique": true
       },
+      "iteration_path": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "organization": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "pipeline_job": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "pipeline_matrix": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "pipeline_stage": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "pipeline_variable": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "process": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
       "project": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "security_group": {
         "valid_name": true,
         "valid_name_unique": true
       },
@@ -4750,6 +5236,10 @@
         "valid_name_unique": true
       },
       "serviceendpoint_aws": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_azure_service_bus": {
         "valid_name": true,
         "valid_name_unique": true
       },
@@ -4769,7 +5259,27 @@
         "valid_name": true,
         "valid_name_unique": true
       },
+      "serviceendpoint_black_duck": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_checkmarx_one": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_checkmarx_sast": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_checkmarx_sca": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
       "serviceendpoint_dockerregistry": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_dynamics_lifecycle_services": {
         "valid_name": true,
         "valid_name_unique": true
       },
@@ -4789,11 +5299,19 @@
         "valid_name": true,
         "valid_name_unique": true
       },
+      "serviceendpoint_generic_v2": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
       "serviceendpoint_github": {
         "valid_name": true,
         "valid_name_unique": true
       },
       "serviceendpoint_github_enterprise": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_gitlab": {
         "valid_name": true,
         "valid_name_unique": true
       },
@@ -4845,11 +5363,19 @@
         "valid_name": true,
         "valid_name_unique": true
       },
+      "serviceendpoint_openshift": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
       "serviceendpoint_runpipeline": {
         "valid_name": true,
         "valid_name_unique": true
       },
       "serviceendpoint_servicefabric": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "serviceendpoint_snyk": {
         "valid_name": true,
         "valid_name_unique": true
       },
@@ -4865,11 +5391,67 @@
         "valid_name": true,
         "valid_name_unique": true
       },
+      "serviceendpoint_visualstudiomarketplace": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
       "team": {
         "valid_name": true,
         "valid_name_unique": true
       },
       "variable_group": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "variable_group_variable": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "wiki": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "wiki_page": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "workitem": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "workitemquery": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "workitemquery_folder": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "workitemtracking_field": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "workitemtrackingprocess_field": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "workitemtrackingprocess_group": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "workitemtrackingprocess_page": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "workitemtrackingprocess_process": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "workitemtrackingprocess_state": {
+        "valid_name": true,
+        "valid_name_unique": true
+      },
+      "workitemtrackingprocess_workitemtype": {
         "valid_name": true,
         "valid_name_unique": true
       }
@@ -4895,7 +5477,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "advg"
@@ -4921,7 +5503,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "vgv"
@@ -4947,7 +5529,7 @@
       "max_length": 235,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "wiki"
@@ -4973,7 +5555,7 @@
       "max_length": 235,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "wp"
@@ -4999,7 +5581,7 @@
       "max_length": 255,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "wi"
@@ -5025,7 +5607,7 @@
       "max_length": 255,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "wiq"
@@ -5051,7 +5633,7 @@
       "max_length": 255,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "wiqf"
@@ -5077,7 +5659,7 @@
       "max_length": 128,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Organization",
       "slug": "wtfld"
@@ -5103,7 +5685,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "wtpfld"
@@ -5129,7 +5711,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Organization",
       "slug": "wtpg"
@@ -5155,7 +5737,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Organization",
       "slug": "wtppg"
@@ -5181,7 +5763,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Project",
       "slug": "wtpp"
@@ -5207,7 +5789,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Organization",
       "slug": "wtps"
@@ -5233,7 +5815,7 @@
       "max_length": 256,
       "min_length": 1,
       "name": "dbmh-adonaming",
-      "name_unique": "dbmh-adonaming-h6lf",
+      "name_unique": "dbmh-adonaming-docs",
       "regex": "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=]*$",
       "scope": "Organization",
       "slug": "wtpwit"

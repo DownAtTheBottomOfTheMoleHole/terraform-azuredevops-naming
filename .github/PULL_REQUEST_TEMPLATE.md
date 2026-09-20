@@ -1,42 +1,50 @@
-<!---
-5 Tips to creating a (good) pull request
+## Summary
 
-1. Keep it short - add/change/fix/remove what you came for!
+<!-- Explain what changed and why. Keep the pull request focused. -->
 
-2. Add more information - explain what you've done, what, why, provide supportive material and link to related pull requests/issues
+## Related issue
 
-3. Comment your code, please.
+<!-- Use "Closes #123" where appropriate, or write "None". -->
 
-4. Assign people or groups as reviewers - encourage peer review
+## Public interface and compatibility
 
-5. Let your colleagues know your PR is ready for review
+<!-- List affected inputs, outputs, naming metadata, examples, or workflow behaviour. State explicitly when none are affected. -->
 
---->
+- Affected inputs:
+- Affected outputs:
+- Compatibility or migration notes:
 
-# What?
+## Validation
 
-<!--- Explain what the pull request is for. it doesn't need to be technical --->
+<!-- Check the commands you ran. Explain any item that is not applicable. -->
 
-# Why?
+- [ ] `terraform fmt -check -recursive`
+- [ ] `terraform init -backend=false -input=false`
+- [ ] `terraform validate`
+- [ ] `terraform test -verbose`
+- [ ] `pre-commit run --all-files`
+- [ ] Generated Terraform documentation was committed, or source changes do not affect it
 
-<!--- what goal does this pull request fulfil --->
+Additional test evidence or exceptions:
 
-# How?
+## Release impact
 
-<!--- Meaningful explanation of how you achieved the goal --->
+Every merge to `main` creates a release. Select one increment and apply the indicated label before merge:
 
-# Related
+- [ ] Patch (default; no module-release label)
+- [ ] Minor (`module-release:minor`)
+- [ ] Major (`module-release:major`)
 
-<!--- Links to related issues/PBIs please specify if the pr will close them. referenced to any other related PR --->
+<!-- Explain the release choice, especially for a major-version change. -->
 
-# Testing?
+## Security and automation review
 
-<!--- Please include details of any relevant testing and the results --->
+- [ ] This change does not add or broaden token permissions, secrets, privileged triggers, or mutable action references
+- [ ] Any security-sensitive workflow change is explained below and uses least privilege
+- [ ] Third-party actions and reusable workflows are pinned to a full commit SHA
 
-# Screenshots (optional)
+Security or automation notes:
 
-<!--- terraform plans, UI changes etc--->
+## Documentation
 
-# Anything Else?
-
-<!--- You may want to delve into possible architecture changes or technical debt here. Call out challenges, optimizations, etc. --->
+<!-- Link updated guidance, changelog entries, screenshots, plans, or generated output when useful. -->

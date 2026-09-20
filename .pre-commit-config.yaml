@@ -1,3 +1,9 @@
+minimum_pre_commit_version: 3.0.0
+default_language_version:
+  # terraform-docs v0.20.0 does not compile with Go 1.25+ because of its
+  # pinned x/tools dependency. Pre-commit bootstraps this isolated version.
+  golang: 1.24.2
+
 repos:
   - repo: local
     hooks:
@@ -7,6 +13,14 @@ repos:
         entry: python scripts/update_module_version.py
         pass_filenames: false
         files: ^CHANGELOG\.md$
+
+      - id: generate-terraform-docs-values
+        name: Apply the root module to regenerate terraform-docs output values
+        language: python
+        entry: python scripts/generate_docs_values.py --write
+        pass_filenames: false
+        files: ^(main|outputs|validation|variables|versions)\.tf$
+        stages: [manual]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v6.0.0

@@ -15,15 +15,20 @@
 
 # CI/CD workflows
 /.github/workflows/ @RolfMoleman
+/.github/workflows/release.yml @RolfMoleman
+/.github/labeler.yml @RolfMoleman
 /.github/renovate.json @RolfMoleman
 /.pre-commit-config.yaml @RolfMoleman
+/.terraform.lock.hcl @RolfMoleman
+
+# Release planning and its regression tests
+/scripts/release_plan.py @RolfMoleman
+/tests/test_release_plan.py @RolfMoleman
 
 # Configuration files
 /.checkov.yml @RolfMoleman
 /.cspell.json @RolfMoleman
 /.gitleaks.toml @RolfMoleman
-/.grype.yaml @RolfMoleman
-/.jscpd.json @RolfMoleman
 /.markdown-link-check.json @RolfMoleman
 /.markdownlint.json @RolfMoleman
 /.mega-linter.yml @RolfMoleman
@@ -31,6 +36,4 @@
 /.secretlintrc.json @RolfMoleman
 /.terraform-terraform-docs.yml @RolfMoleman
 /.yamllint.yml @RolfMoleman
-/GitVersion.yml @RolfMoleman
-/kics.config @RolfMoleman
 /versions.tf @RolfMoleman

@@ -1,48 +1,56 @@
-name: "Other"
-description: "Choose this option if your issue does not fit the description of the others."
+name: Other
+description: Raise a module question or issue that does not fit the other forms.
+title: "[Other]: "
 body:
   - type: markdown
     attributes:
       value: |
-        # Thank you for raising an issue!
+        Choose the bug, documentation, enhancement, or repository form when one applies; their prompts help maintainers respond faster.
 
-        This form is meant as a catch-all for issues that do not fit into one of the other existing forms:
+        **Do not disclose credentials or vulnerabilities here.** Report security issues privately through [GitHub Security Advisories](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/security/advisories/new).
 
-        * Report a Bug
-        * Report a Documentation Error
-        * Request an Enhancement
-        * Request a New Resource, Data Source, or AWS Service
-        * Repository/Meta
-
-        By nature this form is less rigid, so providing a bit of additional information, context, or reference material is very much appreciated.
-
-  - type: textarea
-    id: description
+  - type: dropdown
+    id: issue_category
     attributes:
-      label: Description
-      description: Please leave a detailed description of the issue.
+      label: Category
+      options:
+        - Usage question
+        - Compatibility question
+        - Community or project process
+        - Other
     validations:
       required: true
 
   - type: textarea
-    id: references
+    id: issue_description
     attributes:
-      label: References
-      description: |
-        Where possible, please supply links to vendor documentation, other GitHub issues (open or closed) or pull requests that give additional context.
+      label: Description
+      description: Explain the question or issue and the outcome you need.
+    validations:
+      required: true
 
-        [Information about referencing Github Issues](https://help.github.com/articles/basic-writing-and-formatting-syntax/#referencing-issues-and-pull-requests)
+  - type: textarea
+    id: relevant_context
+    attributes:
+      label: Relevant context
+      description: Include affected module inputs or outputs, configuration, or environment details where applicable. Remove secrets and state data.
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_references
+    attributes:
+      label: Supporting references
+      description: Link to related documentation, issues, or pull requests.
     validations:
       required: false
 
   - type: dropdown
-    id: will_contribute
+    id: contribution_intent
     attributes:
-      label: Would you like to implement a fix?
-      description: |
-        If you plan to implement a fix for this, check this box to let the maintainers and community know (you can update this later if you change your mind). If this would be your first contribution, refer to the [contribution guide](https://hashicorp.github.io/terraform-provider-aws/) for tips on getting started.
+      label: Would you like to contribute a change?
       options:
         - "No"
         - "Yes"
     validations:
-      required: false
+      required: true

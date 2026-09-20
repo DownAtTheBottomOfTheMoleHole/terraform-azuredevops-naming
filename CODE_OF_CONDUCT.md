@@ -39,12 +39,9 @@ This Code of Conduct applies both within project spaces and in public spaces whe
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported
-by contacting the project team at @RolfMoleman. All complaints will be reviewed and
-investigated and will result in a response that is deemed necessary and appropriate
-to the circumstances. The project team is obligated to maintain confidentiality with
-regard to the reporter of an incident. Further details of specific enforcement
-policies may be posted separately.
+Instances of abusive, harassing, or otherwise unacceptable behaviour should be reported privately through the repository's [private reporting form](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/security/advisories/new). State clearly that the report concerns conduct rather than a software vulnerability. Do not include sensitive details in a public issue.
+
+All complaints will be reviewed and investigated, and the maintainers will respond in a manner appropriate to the circumstances. The project team will respect the privacy and security of the reporter. Further enforcement policies may be published separately.
 
 ## Attribution
 

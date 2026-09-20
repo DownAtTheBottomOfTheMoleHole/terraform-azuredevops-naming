@@ -38,7 +38,7 @@ def main() -> int:
     if current == constraint:
         return 0
 
-    VERSION_FILE.write_text(constraint, encoding="utf-8")
+    VERSION_FILE.write_text(f"{constraint}\n", encoding="utf-8")
     print(f"Updated {VERSION_FILE}: {constraint}")
     # Return 1 to fail the commit so the user can stage the updated file
     # and re-run the commit.  This is standard pre-commit hook behaviour

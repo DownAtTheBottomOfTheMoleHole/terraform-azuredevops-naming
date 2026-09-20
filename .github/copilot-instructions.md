@@ -1,6 +1,6 @@
 # Copilot instructions
 
-This provider-free Terraform module generates validated names for Azure DevOps resources. Keep changes additive unless a documented major-version migration is intended.
+This Terraform module generates validated names for Azure DevOps resources and concepts. It does not depend on the Azure DevOps provider; its only required provider is `hashicorp/random`. Keep public-interface changes backward compatible unless a documented major-version migration is intended.
 
 ## Module structure
 
@@ -18,7 +18,8 @@ This provider-free Terraform module generates validated names for Azure DevOps r
 
 ## Contribution and release conventions
 
-- Follow the branch naming convention: feature/, fix/, bug/, hotfix/, release/, documentation/, renovate/, or dependabot/.
-- Use conventional commit messages and update CHANGELOG.md for a release-worthy user-facing change.
-- Releases are tag-triggered. Do not move or reuse version tags.
+- Use a branch prefix recognised by the repository labeler, such as `feature/`, `feat/`, `fix/`, `bugfix/`, `hotfix/`, `docs/`, `documentation/`, `security/`, `ci/`, `chore/`, `deps/`, `renovate/`, or `dependabot/`.
+- Use a conventional pull-request title and update CHANGELOG.md for a release-worthy user-facing change.
+- Every merge to `main` produces a release after validation. Patch is the default increment; use the `module-release:minor` or `module-release:major` pull-request label when required.
+- Published version tags are Terraform Registry inputs. Do not move, replace, delete, or reuse them.
 - Keep GitHub Actions pinned to full commit SHAs and grant each job only the permissions it needs. Do not add secrets: inherit unless the called workflow explicitly requires a named secret.

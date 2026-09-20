@@ -1,6 +1,6 @@
 # Migration Guide: v10 → v11
 
-This release of `terraform-azuredevops-naming` is **strictly additive**. Existing v10 consumers should be able to upgrade with no code changes.
+Version 11 does not remove or reshape existing v10 naming outputs. It does, however, raise the minimum Terraform and `hashicorp/random` versions and add optional inputs and outputs, so wrapper modules and build images should be checked before upgrading.
 
 ## TL;DR
 
@@ -12,7 +12,7 @@ This release of `terraform-azuredevops-naming` is **strictly additive**. Existin
  }
 ```
 
-That's it for most users. Read on if you maintain wrapper modules, downstream tests, or pinned provider versions.
+That is the only module-block change for most users once their toolchain meets the new baselines. Read on if you maintain wrapper modules, downstream tests, or pinned provider versions.
 
 ## Baseline version bumps
 
@@ -25,16 +25,18 @@ Both bumps are widely supported by current toolchains. If you are pinned below t
 
 ## What was added
 
-v11 adds new outputs only. Nothing was renamed, removed, retyped, or had its `slug`/`regex`/`max_length` changed.
+v11 adds naming outputs and eight reserved optional inputs. Existing v10 outputs were not renamed, removed, or retyped, and their `slug`, `regex`, and length metadata remain compatible.
 
-### New provider-backed resource definitions (PR #245)
+### New Azure DevOps resource naming definitions (PR #245)
 
-Standardised naming for 18 resources from the `microsoft/azuredevops` provider, including (non-exhaustive):
+Standardised naming metadata for additional Azure DevOps resources, including:
 
 - Service endpoints (Azure RM, AWS, GitHub, Docker Registry, Kubernetes, generic, etc.)
 - Environment, agent pool, agent queue
-- Branch policy variants (build validation, comment resolution, min reviewers, work item linking, etc.)
+- Build-validation branch policy (the module does not currently expose other branch-policy variants)
 - Variable group, dashboard, feed, wiki page
+
+The module does not require the `microsoft/azuredevops` provider. These outputs are naming metadata for consumers to pass to their own Azure DevOps resources; the module itself requires only `hashicorp/random`.
 
 ### New conceptual resource definitions (PR #246)
 
@@ -54,7 +56,7 @@ Eight new optional list inputs, all defaulting to `[]`:
 - `dashboards`, `feeds`, `wiki_pages`
 - `pipeline_stages`, `pipeline_jobs`, `pipeline_variables`
 
-These are no-ops on their own and exist to enable upcoming `for_each`-style outputs in a future minor release.
+These inputs are currently no-ops: setting them does not change any output. They are reserved for potential future per-item outputs.
 
 ## What did NOT change
 
@@ -77,7 +79,7 @@ If you do see a diff, please open an issue with the exact resource and the befor
 
 ## New outputs reference
 
-A complete list of every new output is in [`CHANGELOG.md`](./CHANGELOG.md) under the `v11.0.0` section.
+The v11.0.0 release summary is in [`CHANGELOG.md`](./CHANGELOG.md). The generated [Terraform reference](./TERRAFORM.md) is the authoritative list of current inputs and outputs.
 
 ## Reporting issues
 

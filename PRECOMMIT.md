@@ -1,89 +1,95 @@
-# Pre-commit Configuration Guide
+# Pre-commit guide
 
-## Cross-Platform Setup
+This repository uses [pre-commit](https://pre-commit.com/) for fast local checks and generated documentation. The configuration in [`.pre-commit-config.yaml`](.pre-commit-config.yaml) is the source of truth.
 
-This repository uses pre-commit hooks for code quality. Here's how to set up cross-platform:
+## Prerequisites
 
-### Prerequisites
+Install these tools before running the default hooks:
+
+- Git
+- Python 3 and `pre-commit` 3.0 or newer
+- Terraform `>= 1.14.0, < 2.0.0`
+- TFLint
+
+For example, install pre-commit with `pipx install pre-commit` or the package manager recommended for your operating system. Pre-commit creates isolated environments for hooks such as Prettier, cspell, detect-secrets, and terraform-docs; those CLIs do not need separate global installations for the configured hooks. The configuration bootstraps a compatible Go toolchain for the pinned terraform-docs release.
+
+Some manual hooks have additional prerequisites:
+
+- **MegaLinter:** Docker Engine or Docker Desktop must be running.
+- **Infracost:** the Infracost CLI and a valid `INFRACOST_API_KEY`.
+- **tfupdate:** the tfupdate CLI if it is not already available in your environment.
+
+## Install and run
+
+From the repository root:
 
 ```bash
-# macOS
-brew install pre-commit terraform terraform-docs
-
-# Linux (Debian/Ubuntu)
-sudo apt-get install pre-commit terraform
-
-# Windows (using Chocolatey)
-choco install pre-commit terraform terraform-docs
-
-# Or use pip (all platforms)
-pip install pre-commit detect-secrets
-```
-
-### Installation
-
-```bash
-# Install the pre-commit hooks
 pre-commit install
-
-# Run all hooks against all files
 pre-commit run --all-files
 ```
 
-## Optional Tools
+The default run performs repository hygiene and syntax checks; AWS credential and private-key detection; spelling and Prettier checks; Terraform formatting, validation, and TFLint; and terraform-docs generation for the root module and both examples. When `CHANGELOG.md` changes, it synchronises `terraform-docs/module_version.txt` with the latest versioned changelog heading.
 
-Some hooks are set to `manual` stage and won't run automatically:
+Review the working tree after a run. Formatting and documentation hooks can update files, and the module-version hook intentionally fails its first run when it changes the version file so that the generated change can be staged and checked.
 
-- **megalinter**: Requires Docker Desktop
-- **infracost**: Requires API key (`INFRACOST_API_KEY`)
-- **sign-commit**: Disabled (can corrupt files)
+## Manual hooks
 
-To run manual hooks:
+Manual hooks do not run during `pre-commit run --all-files`. Invoke them explicitly:
 
 ```bash
+# Regenerate output examples after reviewing and trusting root Terraform changes.
+# This performs a backend-disabled Terraform apply in a temporary directory.
+pre-commit run --hook-stage manual generate-terraform-docs-values --all-files
+
+# Scan the repository for likely secrets.
+pre-commit run --hook-stage manual detect-secrets --all-files
+
+# Run all configured tfupdate entries (Terraform, Azure DevOps, and random).
+pre-commit run --hook-stage manual tfupdate --all-files
+
+# Run the configured Terraform cost check.
+pre-commit run --hook-stage manual infracost_breakdown --all-files
+
+# Run MegaLinter in Docker with automatic fixes enabled.
 pre-commit run --hook-stage manual megalinter-incremental --all-files
 ```
 
-## Common Issues
+The module does not declare the Azure DevOps provider, so the retained Azure DevOps tfupdate entry normally has no constraint to change. It exists for compatibility with the shared repository template.
 
-### False Positive Secrets
+The root `.terraform.lock.hcl` is committed so documentation generation and CI use the same `hashicorp/random` package. Do not run the output-value generator on an unreviewed checkout: Terraform provider and provisioner code is executable even when the backend is disabled.
 
-If detect-secrets flags non-sensitive data:
+## Common issues
 
-1. Add inline comment: `# pragma: allowlist secret`
-2. Or create `.secrets.baseline`:
-   ```bash
-   pip install detect-secrets
-   detect-secrets scan --baseline .secrets.baseline
-   ```
+### A suspected secret is safe test data
 
-### Spelling Errors
+First confirm that the value is not a real credential. For an intentional false positive, add the narrow inline annotation supported by the scanner, such as `# pragma: allowlist secret`, beside that value. Never allowlist an actual secret or commit debug output that may contain credentials.
 
-Add words to `.cspell.json` in the `words` array.
+### Spelling failures
 
-### Cross-Platform Paths
+Correct the text where possible. Add a project-specific term to the `words` array in `.cspell.json` only when the spelling is intentional.
 
-- Always use forward slashes (`/`) in configuration
-- Avoid spaces in filenames (use `-` or `_`)
-- Use relative paths from repository root
+### Terraform validation cannot initialise
 
-## Disabled Hooks
+Confirm that Terraform can reach the provider registry and that the required Terraform and TFLint executables are on `PATH`. You can reproduce the module checks directly with:
 
-The following hooks are intentionally disabled to prevent issues:
+```bash
+terraform init -backend=false -input=false
+terraform validate
+terraform test -verbose
+```
 
-- **log_file**: Removed from all hooks (cross-platform path issues)
-- **verbose**: Removed to reduce noise
-- **sign-commit**: Set to manual (corrupts files with signatures)
+### MegaLinter cannot start
 
-## Hooks That Modify Files
+Confirm Docker Engine or Docker Desktop is running and that the current user can start containers. The manual hook removes its container after the run.
 
-These hooks will auto-fix issues:
+## Hooks that can modify files
 
-- `trailing-whitespace`
-- `end-of-file-fixer`
-- `mixed-line-ending`
-- `terraform_fmt`
-- `terraform-docs`
-- `prettier`
+Review changes produced by these hooks before committing:
 
-After running, review and commit the changes.
+- module-version synchronisation
+- deterministic output-value fixture generation (manual hook)
+- end-of-file, line-ending, and trailing-whitespace fixes
+- Prettier
+- `terraform fmt`
+- terraform-docs for `README.md`, `TERRAFORM.md`, and both example READMEs
+- the manual MegaLinter hook when run with its configured fix mode
