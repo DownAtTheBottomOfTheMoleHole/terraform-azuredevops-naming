@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   release:
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/auto-release.yml@b3189cd9f29bed2093dcf7dd5616ed1b5ba1be98 # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/auto-release.yml@283bf13cac587920f45291bd51a21040bf7aaa83 # main
     secrets: inherit
     permissions:
       contents: write
