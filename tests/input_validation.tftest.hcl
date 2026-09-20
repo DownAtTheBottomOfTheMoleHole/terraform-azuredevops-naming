@@ -12,6 +12,16 @@ run "fractional_unique_length_is_rejected" {
   expect_failures = [var.unique_length]
 }
 
+run "unique_length_above_the_supported_boundary_is_rejected" {
+  command = plan
+
+  variables {
+    unique_length = 48
+  }
+
+  expect_failures = [var.unique_length]
+}
+
 run "explicit_nulls_use_defaults" {
   command = apply
 

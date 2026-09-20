@@ -50,6 +50,16 @@ class ReleaseWorkflowContractTests(unittest.TestCase):
         self.assertLess(validate, consume)
         self.assertNotIn("done < <(", body)
 
+    def test_release_examples_validate_the_selected_local_module(self) -> None:
+        body = step(
+            self.workflow,
+            "Validate every planned commit",
+            "⬇️ Checkout release target",
+        )
+
+        self.assertIn('python3 scripts/validate_example.py "$example_dir"', body)
+        self.assertNotIn('terraform -chdir="$example_dir"', body)
+
     def test_publish_materialises_release_items_before_writes(self) -> None:
         body = step(self.workflow, "Create tags and GitHub releases")
 

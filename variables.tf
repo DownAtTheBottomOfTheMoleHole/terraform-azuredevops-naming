@@ -11,14 +11,14 @@ variable "environment_tags" {
 
 variable "prefix" {
   type        = list(string)
-  description = "Prefix to be used for naming resources. If used we suggest using a company abbreviation e.g dbmh."
+  description = "Prefix components used for naming resources. Empty elements are discarded before the remaining values are joined."
   default     = []
   nullable    = false
 }
 
 variable "suffix" {
   type        = list(string)
-  description = "Suffix to be used for naming resources. It is recommended to use lowercase characters for consistency."
+  description = "Suffix components used for naming resources. Empty elements are discarded before the remaining values are joined. Lowercase values are recommended for consistency."
   default     = []
   nullable    = false
 }
@@ -32,12 +32,12 @@ variable "unique_seed" {
 
 variable "unique_length" {
   type        = number
-  description = "Maximum length of the unique suffix to be added to resource names."
+  description = "Length of the unique suffix added to resource names. The maximum of 47 lets the complete token fit within the shortest supported name limit."
   default     = 4
   nullable    = false
   validation {
-    condition     = var.unique_length >= 0 && var.unique_length == floor(var.unique_length)
-    error_message = "The unique_length must be a whole number greater than or equal to 0."
+    condition     = var.unique_length >= 0 && var.unique_length <= 47 && var.unique_length == floor(var.unique_length)
+    error_message = "The unique_length must be a whole number from 0 through 47."
   }
 }
 

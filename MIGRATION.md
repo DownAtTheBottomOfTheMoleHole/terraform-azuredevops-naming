@@ -1,87 +1,138 @@
-# Migration Guide: v10 → v11
+# Migration Guide: v11 → v12
 
-Version 11 does not remove or reshape existing v10 naming outputs. It does, however, raise the minimum Terraform and `hashicorp/random` versions and add optional inputs and outputs, so wrapper modules and build images should be checked before upgrading.
+Version 12 deliberately corrects naming and validation behaviour that could not be changed safely in v11. The output keys remain available, but some generated values, metadata, and one validation result shape change. Treat this as a stateful infrastructure migration: review a real plan before applying it.
 
 ## TL;DR
+
+Pin the new major version explicitly:
 
 ```diff
  module "azdo_naming" {
    source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
--  version = ">= 10.0.0, < 11.0.0"
-+  version = ">= 11.0.0, < 12.0.0"
+-  version = ">= 11.0.0, < 12.0.0"
++  version = ">= 12.0.0, < 13.0.0"
  }
 ```
 
-That is the only module-block change for most users once their toolchain meets the new baselines. Read on if you maintain wrapper modules, downstream tests, or pinned provider versions.
+Then run `terraform init -upgrade` and inspect `terraform plan`. Do not assume a no-op upgrade: name changes can update or replace resources that consume module outputs.
 
-## Baseline version bumps
+## Why this is a major release
 
-| Component          | v10 minimum | v11 minimum |
-| ------------------ | ----------- | ----------- |
-| Terraform          | `>= 1.10.0` | `>= 1.14.0` |
-| `hashicorp/random` | `>= 3.6.0`  | `>= 3.8.0`  |
+In v11, each `name_unique` value was truncated after the unique token was appended. At a resource's maximum length, truncation could remove some or all of that token and could make `name_unique` equal `name`. Version 12 reserves room for the separator and complete unique token before truncating the non-unique portion.
 
-Both bumps are widely supported by current toolchains. If you are pinned below these versions you must upgrade your local CLI / CI image before adopting v11.
+For example, with a four-character token of `a1b2`:
 
-## What was added
+```text
+v11: <base truncated at the resource limit, possibly without a1b2>
+v12: <shortened base>-a1b2
+```
 
-v11 adds naming outputs and eight reserved optional inputs. Existing v10 outputs were not renamed, removed, or retyped, and their `slug`, `regex`, and length metadata remain compatible.
+This correction applies consistently to every naming output. Short names generally remain unchanged; names at or near a maximum length can change.
 
-### New Azure DevOps resource naming definitions (PR #245)
+## Behaviour changes
 
-Standardised naming metadata for additional Azure DevOps resources, including:
+### Complete unique tokens are reserved
 
-- Service endpoints (Azure RM, AWS, GitHub, Docker Registry, Kubernetes, generic, etc.)
-- Environment, agent pool, agent queue
-- Build-validation branch policy (the module does not currently expose other branch-policy variants)
-- Variable group, dashboard, feed, wiki page
+- Every non-empty unique token is retained at the end of `name_unique`.
+- The base is shortened first when the complete value would exceed `max_length`.
+- A collision guard keeps `name_unique` distinct from `name`, including adversarial boundary values.
+- `unique_length = 0` remains supported and disables the generated unique token.
+- `unique_length` must now be a whole number from `0` through `47`. The upper bound lets the complete token fit within the shortest supported Azure DevOps name limit while normally retaining a base character and separator; the collision guard may shorten the base further.
 
-The module does not require the `microsoft/azuredevops` provider. These outputs are naming metadata for consumers to pass to their own Azure DevOps resources; the module itself requires only `hashicorp/random`.
+If a wrapper module exposes `unique_length`, apply the same range there so callers receive an early, consistent error.
 
-### New conceptual resource definitions (PR #246)
+### Empty prefix and suffix elements are discarded
 
-Standardised naming for 12 concepts that the provider does not model directly but that are useful for downstream pipeline / board / artifact code:
+Empty strings in `prefix` and `suffix` are removed before components are joined. This avoids leading, trailing, or repeated separators.
 
-- `pipeline_stage`, `pipeline_job`, `pipeline_variable`, `pipeline_matrix`
-- `artifact_package` (lower-cased)
-- `area_path`, `iteration_path`
-- `board_column`, `board_swimlane`
-- `organization`, `process`, `security_group`
+```hcl
+prefix = ["", "platform", ""]
+suffix = ["", "production", ""]
+```
 
-### New optional input variables (PR #247)
+The effective components are now `platform` and `production`. Configurations that intentionally relied on empty elements producing extra dashes will generate different names.
 
-Eight new optional list inputs, all defaulting to `[]`:
+### Git branch rules match Git and Azure DevOps
 
-- `area_paths`, `iteration_paths`
-- `dashboards`, `feeds`, `wiki_pages`
-- `pipeline_stages`, `pipeline_jobs`, `pipeline_variables`
+Branch metadata and validation now:
 
-These inputs are currently no-ops: setting them does not change any output. They are reserved for potential future per-item outputs.
+- allow periods in otherwise valid branch names;
+- reject spaces, control characters, malformed path components, `..`, `@{`, trailing separators, and other invalid ref patterns;
+- use the Azure DevOps maximum of 250 characters; and
+- validate dash variants as single-component names while allowing path separators only in slash variants.
 
-## What did NOT change
+The dash and slash families are therefore intentionally distinct. If a work-item value contains `/`, use a slash output only when the resulting full ref is valid; a dash output will reject it rather than silently treating it as a path.
 
-- All existing v10 outputs keep their **key**, **type**, and **shape**.
-- The `local.environment_mapping` table is unchanged.
-- Slug values for existing resources are unchanged.
-- Validation regex / `max_length` / `min_length` for existing resources are unchanged.
-- The `<!-- start_of_terraform_docs -->` … `<!-- end_of_terraform_docs -->` regeneration flow is unchanged.
+### `validation.environment_work_item` is now validation data
 
-## Compatibility checklist
+In v11, this entry accidentally returned the generated naming metadata instead of validation booleans. In v12 it has the same shape as the other validation entries:
 
-Before merging the version bump in your downstream code:
+```hcl
+module.azdo_naming.validation.environment_work_item[environment][work_item] = {
+  valid_name        = bool
+  valid_name_unique = bool
+}
+```
 
-- [ ] Confirm Terraform CLI is `>= 1.14.0` in every CI image / dev environment.
-- [ ] Confirm `hashicorp/random` constraint resolves to `>= 3.8.0`.
-- [ ] Run `terraform init -upgrade` followed by `terraform plan` against a representative workspace; expect **no diff** in resources whose names come from this module.
-- [ ] If you read `module.azdo_naming.<resource>` in tests, no assertion should change.
+Code that used the old entry as a naming output should switch to the direct output, which retains the naming metadata:
 
-If you do see a diff, please open an issue with the exact resource and the before/after values — that would indicate a bug in v11, not an intended change.
+```diff
+-module.azdo_naming.validation.environment_work_item[environment][work_item].name
++module.azdo_naming.environment_work_item[environment][work_item].name
+```
 
-## New outputs reference
+The same migration applies to `.name_unique`, `.slug`, `.regex`, length fields, and scope metadata. Code that actually wants validation should use `.valid_name` or `.valid_name_unique` from the corrected `validation` entry.
 
-The v11.0.0 release summary is in [`CHANGELOG.md`](./CHANGELOG.md). The generated [Terraform reference](./TERRAFORM.md) is the authoritative list of current inputs and outputs.
+### Metadata reflects Azure DevOps contracts
 
-## Reporting issues
+Incorrect `regex`, `scope`, `max_length`, `min_length`, and separator metadata has been corrected. Notable changes include:
+
+| Output family                                                     | v12 contract                                                 |
+| ----------------------------------------------------------------- | ------------------------------------------------------------ |
+| Git branches                                                      | Maximum 250; full Git ref validation; periods allowed        |
+| Teams                                                             | Maximum 64                                                   |
+| Organisations                                                     | Maximum 49; global scope; one-character names allowed        |
+| Groups and security groups                                        | Maximum 256; project or organisation scope                   |
+| Pipeline matrix keys                                              | Maximum 100; identifier-safe characters                      |
+| Pipeline stages, jobs, and variables                              | Identifier-safe underscore-separated names                   |
+| Work-item tracking fields                                         | Space-separated field names and corrected organisation scope |
+| Build folders, feeds, packages, paths, queries, wikis, and boards | Service-specific regex and scope metadata                    |
+
+Consumers that enforce policy from these metadata fields may produce different results even when the generated name itself does not change.
+
+## Replacement and operational risks
+
+The module only calculates strings; the downstream provider decides whether a changed string is updated in place or forces replacement. Pay particular attention to:
+
+- resources using `name_unique` whose existing names are near their maximum length;
+- pipeline stage, job, variable, matrix, and variable-group-variable names, which now use identifier-safe separators;
+- branch resources, where a renamed ref may create a new branch and remove the old one;
+- configurations containing empty `prefix` or `suffix` elements; and
+- policies or tests that compare metadata or the old `validation.environment_work_item` shape.
+
+Terraform `moved` blocks do not prevent replacement caused by a changed resource argument. For stateful or protected resources, follow the provider's rename/import procedure and coordinate any branch or pipeline rename with its users before applying.
+
+## Recommended upgrade procedure
+
+1. Pin the latest v11 release temporarily and record the current outputs for a representative workspace.
+2. Search for consumers of `name_unique`, pipeline identifier outputs, and `validation.environment_work_item`.
+3. Move any naming-metadata reads from `validation.environment_work_item` to the direct `environment_work_item` output.
+4. Confirm every configured `unique_length` is an integer between `0` and `47`.
+5. Remove empty elements from `prefix` and `suffix` explicitly; this makes the intended result clear even though v12 compacts them automatically.
+6. Change the version constraint to `>= 12.0.0, < 13.0.0` and run `terraform init -upgrade`.
+7. Run `terraform plan` for every affected workspace. Review each rename, update, deletion, and replacement rather than applying a saved plan from v11.
+8. Coordinate changes to protected branches, pipelines, service connections, or other shared names before applying.
+9. Apply in a non-production workspace first and confirm Azure DevOps accepts every resulting name.
+
+## Upgrading from v10 or earlier
+
+Upgrade through the v11 requirements as well. Version 11 raised the minimum Terraform version from `>= 1.10.0` to `>= 1.14.0` and `hashicorp/random` from `>= 3.6.0` to `>= 3.8.0`, and added the output families documented in the [v11.0.0 changelog](./CHANGELOG.md#1100--2026-05-01). Complete those toolchain updates before evaluating the v12 plan.
+
+## Reference and support
+
+The generated [Terraform reference](./TERRAFORM.md) is the authoritative list of current inputs and outputs.
+
+The corrected contracts are based on Microsoft's [Azure DevOps naming restrictions](https://learn.microsoft.com/en-us/azure/devops/organizations/settings/naming-restrictions?view=azure-devops), the Azure Repos [250-character branch limit](https://learn.microsoft.com/en-us/azure/devops/repos/git/create-branch?view=azure-devops), and Git's [`check-ref-format` rules](https://git-scm.com/docs/git-check-ref-format).
 
 - Bugs: <https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/issues>
 - Discussions: <https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/discussions>
