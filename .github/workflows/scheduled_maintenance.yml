@@ -50,23 +50,59 @@ jobs:
           name: megalinter-reports
           path: megalinter-artifacts
 
-      - name: Locate SARIF report
+      - name: Prepare SARIF reports
         id: sarif
         shell: bash
         run: |
-          sarif_file="$(find megalinter-artifacts -type f -name '*.sarif' -print -quit 2>/dev/null || true)"
-          if [ -n "$sarif_file" ]; then
-            echo "found=true" >> "$GITHUB_OUTPUT"
-          else
-            echo "found=false" >> "$GITHUB_OUTPUT"
+          sarif_dir="megalinter-artifacts/megalinter-reports/sarif"
+
+          if [ -f "$sarif_dir/REPOSITORY_SECRETLINT.sarif" ]; then
+            echo "secretlint=true" >> "$GITHUB_OUTPUT"
+          fi
+          if [ -f "$sarif_dir/REPOSITORY_TRIVY.sarif" ]; then
+            echo "trivy=true" >> "$GITHUB_OUTPUT"
           fi
 
-      - name: Upload SARIF
-        if: steps.sarif.outputs.found == 'true'
+          tflint_report="$sarif_dir/TERRAFORM_TFLINT.sarif"
+          if [ -f "$tflint_report" ]; then
+            tflint_runs="$(jq '.runs | length' "$tflint_report")"
+            if [ "$tflint_runs" -ge 1 ]; then
+              jq '.runs = [.runs[0]]' "$tflint_report" > "$sarif_dir/TERRAFORM_TFLINT_LINT.sarif"
+              echo "tflint=true" >> "$GITHUB_OUTPUT"
+            fi
+            if [ "$tflint_runs" -ge 2 ]; then
+              jq '.runs = [.runs[1]]' "$tflint_report" > "$sarif_dir/TERRAFORM_TFLINT_ERRORS.sarif"
+              echo "tflint_errors=true" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+
+      - name: Upload SecretLint SARIF
+        if: steps.sarif.outputs.secretlint == 'true'
         uses: github/codeql-action/upload-sarif@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
         with:
-          sarif_file: megalinter-artifacts
-          category: megalinter
+          sarif_file: megalinter-artifacts/megalinter-reports/sarif/REPOSITORY_SECRETLINT.sarif
+          category: megalinter-secretlint
+
+      - name: Upload Trivy SARIF
+        if: steps.sarif.outputs.trivy == 'true'
+        uses: github/codeql-action/upload-sarif@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
+        with:
+          sarif_file: megalinter-artifacts/megalinter-reports/sarif/REPOSITORY_TRIVY.sarif
+          category: megalinter-trivy
+
+      - name: Upload TFLint SARIF
+        if: steps.sarif.outputs.tflint == 'true'
+        uses: github/codeql-action/upload-sarif@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
+        with:
+          sarif_file: megalinter-artifacts/megalinter-reports/sarif/TERRAFORM_TFLINT_LINT.sarif
+          category: megalinter-tflint
+
+      - name: Upload TFLint error SARIF
+        if: steps.sarif.outputs.tflint_errors == 'true'
+        uses: github/codeql-action/upload-sarif@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
+        with:
+          sarif_file: megalinter-artifacts/megalinter-reports/sarif/TERRAFORM_TFLINT_ERRORS.sarif
+          category: megalinter-tflint-errors
 
   # ─── terraform test (push to main + nightly) ───────────────────────────────
   terraform-test:
