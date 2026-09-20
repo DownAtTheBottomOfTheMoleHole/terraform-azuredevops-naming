@@ -231,7 +231,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     }
 
     git_repository_bug_branch_dash = { for item in local.unique_work_items : item => {
@@ -243,7 +243,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
     git_repository_bug_branch_slash = { for item in local.unique_work_items : item => {
@@ -255,7 +255,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
 
@@ -268,7 +268,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
     git_repository_dev_branch_slash = { for item in local.unique_work_items : item => {
@@ -280,7 +280,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
     git_repository_development_branch_dash = { for item in local.unique_work_items : item => {
@@ -292,7 +292,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
     git_repository_development_branch_slash = { for item in local.unique_work_items : item => {
@@ -304,7 +304,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
     git_repository_feature_branch_dash = { for item in local.unique_work_items : item => {
@@ -316,7 +316,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
     git_repository_feature_branch_slash = { for item in local.unique_work_items : item => {
@@ -328,7 +328,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
 
@@ -341,7 +341,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
     git_repository_fix_branch_slash = { for item in local.unique_work_items : item => {
@@ -353,7 +353,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
 
@@ -366,7 +366,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
     git_repository_hotfix_branch_slash = { for item in local.unique_work_items : item => {
@@ -378,7 +378,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
     git_repository_release_branch_dash = { for item in local.unique_work_items : item => {
@@ -390,7 +390,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
     git_repository_release_branch_slash = { for item in local.unique_work_items : item => {
@@ -402,7 +402,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
     git_repository_support_branch_dash = { for item in local.unique_work_items : item => {
@@ -414,7 +414,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
     git_repository_support_branch_slash = { for item in local.unique_work_items : item => {
@@ -426,7 +426,7 @@ locals {
       min_length  = 1
       max_length  = 255
       scope       = "Repository"
-      regex       = "^[^/\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
+      regex       = "^[^\\:*?\"<>|~';.,\\[\\]{}()@#$%^&!+=\\x00-\\x1F\\x7F]+$"
     } }
 
     group = {

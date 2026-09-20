@@ -2,6 +2,14 @@
 
 All notable changes to this module are documented here. The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/) and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+<!-- markdownlint-disable MD024 -->
+
+## [11.0.4] — 2026-05-03
+
+### Fixed
+
+- Correct null-output examples and refresh generated module-version metadata. (#258)
+
 ## [11.0.3] — 2026-05-03
 
 ### Fixed
@@ -75,3 +83,5 @@ All notable changes to this module are documented here. The format follows [Keep
 ## [10.x] and earlier
 
 See the [GitHub releases page](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/releases) for the history prior to v11.
+
+<!-- markdownlint-enable MD024 -->

@@ -1,9 +1,8 @@
 # Validation flags
 # Verifies that, for representative inputs, every name produced by the module
-# satisfies its declared regex and length constraints. The module exposes a
-# parallel `validation` map but does not expose it as an output today; we rely
-# on the per-resource scope by checking representative outputs against their
-# own regex/min_length/max_length.
+# satisfies its declared regex and length constraints. The module exposes its
+# parallel validation map as an output, and these focused checks exercise
+# representative resource outputs directly.
 
 variables {
   prefix     = ["dbmh"]
@@ -47,6 +46,25 @@ run "core_outputs_match_their_regex" {
   assert {
     condition     = length(regexall(output.build_definition.regex, output.build_definition.name)) > 0
     error_message = "build_definition.name '${output.build_definition.name}' must match its declared regex"
+  }
+
+  assert {
+    condition     = length(regexall(output.build_folder.regex, output.build_folder.name)) > 0
+    error_message = "build_folder.name '${output.build_folder.name}' must match its declared regex"
+  }
+}
+
+run "minimum_length_name_is_valid" {
+  command = apply
+
+  variables {
+    prefix = ["a"]
+    suffix = []
+  }
+
+  assert {
+    condition     = output.validation.project.valid_name
+    error_message = "A project name at its declared minimum length must be valid"
   }
 }
 

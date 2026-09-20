@@ -6,25 +6,12 @@
 
 The below documentation was generated via Terraform docs using pre-commit
 
----
-
-<!-- Readme Navigation -->
-
-[(Back to the Table of Contents)](#table-of-contents)
-
----
-
 ## Requirements
 
-No requirements.
-
----
-
-<!-- Readme Navigation -->
-
-[(Back to the Table of Contents)](#table-of-contents)
-
----
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.14.0, < 2.0.0 |
+| <a name="requirement_azuredevops"></a> [azuredevops](#requirement\_azuredevops) | >= 1.16.0, < 2.0.0 |
 
 ```hcl
 module "azdo_naming" {
@@ -42,7 +29,7 @@ module "azdo_naming" {
   unique_include_numbers = true
   unique_length          = 4
   unique_seed            = ""
-  work_items             = []
+  work_items             = ["1234"]
 }
 
 resource "azuredevops_project" "example_2" {
@@ -53,7 +40,7 @@ resource "azuredevops_project" "example_2" {
 }
 
 resource "azuredevops_git_repository" "example_2" {
-  project_id = azuredevops_project.example.id
+  project_id = azuredevops_project.example_2.id
   name       = module.azdo_naming.git_repository.name
   initialization {
     init_type = "Clean"
@@ -61,60 +48,27 @@ resource "azuredevops_git_repository" "example_2" {
 }
 
 resource "azuredevops_git_repository_branch" "feature_branch" {
-  repository_id = azuredevops_git_repository.example.id
-  name          = module.azdo_naming.git_repository_feature_branch_slash.name_unique
-  ref_branch    = azuredevops_git_repository.example.default_branch
+  repository_id = azuredevops_git_repository.example_2.id
+  name          = module.azdo_naming.git_repository_feature_branch_slash["1234"].name_unique
+  ref_branch    = azuredevops_git_repository.example_2.default_branch
 }
 ```
-
-
----
-
-<!-- Readme Navigation -->
-
-[(Back to the Table of Contents)](#table-of-contents)
-
----
 
 ## Resources
 
 | Name | Type |
 |------|------|
-| [azuredevops_git_repository.example_2](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/git_repository) | resource |
-| [azuredevops_git_repository_branch.feature_branch](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/git_repository_branch) | resource |
-| [azuredevops_project.example_2](https://registry.terraform.io/providers/hashicorp/azuredevops/latest/docs/resources/project) | resource |
-
----
-
-<!-- Readme Navigation -->
-
-[(Back to the Table of Contents)](#table-of-contents)
-
----
+| [azuredevops_git_repository.example_2](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/git_repository) | resource |
+| [azuredevops_git_repository_branch.feature_branch](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/git_repository_branch) | resource |
+| [azuredevops_project.example_2](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/project) | resource |
 
 ## Inputs
 
 No inputs.
 
----
-
-<!-- Readme Navigation -->
-
-[(Back to the Table of Contents)](#table-of-contents)
-
----
-
 ## Outputs
 
 No outputs.
-
----
-
-<!-- Readme Navigation -->
-
-[(Back to the Table of Contents)](#table-of-contents)
-
----
 
 ## Modules
 
@@ -122,52 +76,9 @@ No outputs.
 |------|--------|---------|
 | <a name="module_azdo_naming"></a> [azdo\_naming](#module\_azdo\_naming) | DownAtTheBottomOfTheMoleHole/naming/azuredevops | >= 11.0.0, < 12.0.0 |
 
----
+## Documentation maintenance
 
-<!-- Readme Navigation -->
-
-[(Back to the Table of Contents)](#table-of-contents)
-
----
-
-##### Terraform versions
-
-Terraform version and terraform provider versions have been set using tfupdate.
-In order to update the installed providers to the latest versions please first install tfupdate using the below instructions and then run the following commands from the root of the repo in a powershell session.
-Please only run the commands for the providers/modules you are using.
-
-##### Installing Tfupdate
-
-the tfupdate repo can be found [here](https://github.com/minamijoyo/tfupdate)
-
-either download the tarball and add tfupdate.exe to your PATH or do the following:
-
-1. Ensure you have [Go](https://go.dev/doc/install) installed
-2. Clone the repository locally `git clone https://github.com/minamijoyo/tfupdate.git`
-3. build the source code with `go build`
-4. Add the complied binaries to your PATH
-
-##### Terraform version
-
-```shell
-tfupdate terraform . --version "~> $(tfupdate release latest hashicorp/terraform)" --recursive
-```
-
-please also add the terraform version to the `terraform_installer_version` variable in `build/pipelines/iac_templates/variables.yml`
-
-##### Random version
-
-```shell
-tfupdate provider random . --version "~> $(tfupdate release latest hashicorp/random --source-type tfregistryProvider)" --recursive
-```
-
----
-
-<!-- Readme Navigation -->
-
-[(Back to the Table of Contents)](#table-of-contents)
-
----
+The Terraform reference is generated from the module source with [terraform-docs](https://github.com/terraform-docs/terraform-docs). After changing inputs, outputs, or metadata, run the terraform-docs pre-commit hooks and commit the resulting documentation.
 <!-- end_of_terraform_docs -->
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->

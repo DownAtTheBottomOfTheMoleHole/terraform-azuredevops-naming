@@ -172,6 +172,18 @@ output "git_repository_release_branch_slash" {
   value       = local.azdo.git_repository_release_branch_slash
 }
 
+output "git_repository_support_branch_dash" {
+  description = "The support branch of the Git repository in Azure DevOps, formatted with dashes"
+  sensitive   = false
+  value       = local.azdo.git_repository_support_branch_dash
+}
+
+output "git_repository_support_branch_slash" {
+  description = "The support branch of the Git repository in Azure DevOps, formatted with slashes"
+  sensitive   = false
+  value       = local.azdo.git_repository_support_branch_slash
+}
+
 output "group" {
   description = "The group in Azure DevOps"
   sensitive   = false

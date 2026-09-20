@@ -17,7 +17,7 @@ content: |-
 
   <!-- Readme Navigation -->
 
-  [(Back to the Top)](#Terraform)
+  [(Back to the Top)](#terraform)
 
   ---
 
@@ -27,7 +27,7 @@ content: |-
 
   <!-- Readme Navigation -->
 
-  [(Back to the Top)](#Terraform)
+  [(Back to the Top)](#terraform)
 
   ---
 
@@ -57,14 +57,14 @@ content: |-
   ## Creating a project
 
   ```hcl
-  {{ include "examples/example1/example.tf" }}
+  {{ include "examples/example1/main.tf" }}
   ```
 
   ---
 
   <!-- Readme Navigation -->
 
-  [(Back to the Top)](#Terraform)
+  [(Back to the Top)](#terraform)
 
   ---
 
@@ -76,14 +76,14 @@ content: |-
    - a feature branch based on the default branch with a unique name
 
   ```hcl
-  {{ include "examples/example2/example.tf" }}
+  {{ include "examples/example2/main.tf" }}
   ```
 
   ---
 
   <!-- Readme Navigation -->
 
-  [(Back to the Top)](#Terraform)
+  [(Back to the Top)](#terraform)
 
   ---
 
@@ -93,7 +93,7 @@ content: |-
 
   <!-- Readme Navigation -->
 
-  [(Back to the Top)](#Terraform)
+  [(Back to the Top)](#terraform)
 
   ---
 
@@ -103,7 +103,7 @@ content: |-
 
   <!-- Readme Navigation -->
 
-  [(Back to the Top)](#Terraform)
+  [(Back to the Top)](#terraform)
 
   ---
 
@@ -113,7 +113,7 @@ content: |-
 
   <!-- Readme Navigation -->
 
-  [(Back to the Top)](#Terraform)
+  [(Back to the Top)](#terraform)
 
   ---
 
@@ -123,7 +123,7 @@ content: |-
 
   <!-- Readme Navigation -->
 
-  [(Back to the Top)](#Terraform)
+  [(Back to the Top)](#terraform)
 
   ---
 
@@ -133,7 +133,7 @@ content: |-
 
   <!-- Readme Navigation -->
 
-  [(Back to the Top)](#Terraform)
+  [(Back to the Top)](#terraform)
 
   ---
 output:

@@ -1,94 +1,31 @@
-formatter: "markdown table" # this is required
+---
+formatter: "markdown table" # This is required.
 header-from: ../../terraform-docs/tf_header.txt
 footer-from: ../../terraform-docs/tf_footer.txt
 sections:
-  #hide: []
+  # hide: []
   show: []
-  #hide-all: false # deprecated in v0.13.0, removed in v0.15.0
-  #show-all: true  # deprecated in v0.13.0, removed in v0.15.0
+  # hide-all: false # Deprecated in v0.13.0, removed in v0.15.0.
+  # show-all: true # Deprecated in v0.13.0, removed in v0.15.0.
 content: |-
   {{ .Header }}
 
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
-
   {{ .Requirements }}
 
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
-
   ```hcl
-  {{ include "example.tf" }}
+  {{ include "main.tf" }}
   ```
-
-
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
 
   {{ .Resources }}
 
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
-
   {{ .Inputs }}
-
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
 
   {{ .Outputs }}
 
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
-
   {{ .Modules }}
-
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
 
   {{ .Footer }}
 
-  ---
-
-  <!-- Readme Navigation -->
-
-  [(Back to the Table of Contents)](#table-of-contents)
-
-  ---
 output:
   file: README.md
   mode: inject
@@ -98,7 +35,7 @@ output:
     <!-- end_of_terraform_docs -->
 output-values:
   enabled: false
-  #from: terraform-docs/default_values.json #environment\default.tfvars
+  # from: terraform-docs/default_values.json # environment/default.tfvars
 sort:
   enabled: true
   by: required

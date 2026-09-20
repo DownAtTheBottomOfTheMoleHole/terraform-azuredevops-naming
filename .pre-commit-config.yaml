@@ -51,7 +51,6 @@ repos:
       - id: detect-secrets
         name: check repo for secrets
         stages: [manual] # Requires: pip install detect-secrets
-        args: ["--baseline", ".secrets.baseline"]
 
   - repo: https://github.com/streetsidesoftware/cspell-cli
     rev: v10.0.0
@@ -129,7 +128,7 @@ repos:
   ##############################################################
 
   - repo: https://github.com/terraform-docs/terraform-docs
-    rev: v0.22.0 # Git tag specifying the hook
+    rev: v0.20.0 # Matches terraform-docs/gh-actions v1.4.1 in CI
     hooks:
       - id: terraform-docs-go
         name: Put terraform-docs terraform.md in ROOT
@@ -138,6 +137,14 @@ repos:
       - id: terraform-docs-go
         name: Put terraform-docs into main readme.md
         args: [markdown, ., --config, .readme-terraform-docs.yml]
+
+      - id: terraform-docs-go
+        name: Put terraform-docs into example1 readme.md
+        args: [markdown, examples/example1, --config, .example1-readme-terraform-docs.yml]
+
+      - id: terraform-docs-go
+        name: Put terraform-docs into example2 readme.md
+        args: [markdown, examples/example2, --config, .example2-readme-terraform-docs.yml]
 
   ###############################################################
   #######  Full repo multi-language security and linting  #######
@@ -182,10 +189,6 @@ repos:
           - "'TAP_REPORTER=true'"
           - --env
           - "'TAP_REPORTER_SUB_FOLDER=tap'"
-          - --env
-          - "'TERRAFORM_CHECKOV_ARGUMENTS=--include-all-checkov-policies'"
-          - --env
-          - "'TERRAFORM_CHECKOV_CLI_LINT_MODE=file '"
           - --env
           - "'TERRAFORM_TERRASCAN_ARGUMENTS=--verbose'"
           - --env

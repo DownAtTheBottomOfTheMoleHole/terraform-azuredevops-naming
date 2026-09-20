@@ -1,4 +1,4 @@
-APPLY_FIXES: all # all, none, or list of linter keys
+APPLY_FIXES: none # Scheduled maintenance explicitly enables fixes.
 # Whitelist the linters we actually want; everything else (jscpd, v8r, devskim, checkov repo-mode, etc.) is off
 ENABLE_LINTERS:
   - ACTION_ACTIONLINT
@@ -7,18 +7,17 @@ ENABLE_LINTERS:
   - DOCKERFILE_HADOLINT
   - JSON_PRETTIER
   - MARKDOWN_MARKDOWNLINT
-  - REPOSITORY_GITLEAKS
   - REPOSITORY_SECRETLINT
   - REPOSITORY_TRIVY
   - SPELL_CSPELL
   - TERRAFORM_TERRAFORM_FMT
   - TERRAFORM_TFLINT
-  - TERRAFORM_CHECKOV
   - YAML_PRETTIER
   - YAML_YAMLLINT
 # Exclude megalinter's own config from generic file scans
 FILTER_REGEX_EXCLUDE: "(megalinter-reports/|\\.mega-linter\\.yml)"
 AZURE_COMMENT_REPORTER: true
+GITHUB_COMMENT_REPORTER: false
 CLEAR_REPORT_FOLDER: true
 CONFIG_REPORTER: true
 CONFIG_REPORTER_SUB_FOLDER: IDE-config
@@ -33,12 +32,6 @@ SHOW_ELAPSED_TIME: true
 SHOW_SKIPPED_LINTERS: true
 TAP_REPORTER: true #if set to true reports all results as tap files, do this to convert to JUnit to keep a standardised test result format
 TAP_REPORTER_SUB_FOLDER: tap #if enabled allows you to define a different folder location for the tap result files. tap is the default directory
-TERRAFORM_CHECKOV_ARGUMENTS:
-  #- "--directory /Repo"
-  - "--include-all-checkov-policies" # settings to allow integration with bridgecrew using pipeline variables
-  - "--skip-check"
-  - "CKV_DOCKER_2,CKV_TF_1,CKV2_ADO_1"
-TERRAFORM_CHECKOV_CLI_LINT_MODE: file # Options are file (default), list_of_files or project. Project scans from the root of the Repo
 TERRAFORM_TFLINT_ARGUMENTS:
   - "--color"
   #- "--format sarif"

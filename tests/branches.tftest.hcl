@@ -58,6 +58,7 @@ run "every_branch_variant_is_produced_per_work_item" {
       length(output.git_repository_fix_branch_dash) == 2,
       length(output.git_repository_hotfix_branch_dash) == 2,
       length(output.git_repository_release_branch_dash) == 2,
+      length(output.git_repository_support_branch_dash) == 2,
     ])
     error_message = "Every dash branch variant must produce one entry per work_item (expected 2 each)"
   }
@@ -71,7 +72,38 @@ run "every_branch_variant_is_produced_per_work_item" {
       length(output.git_repository_fix_branch_slash) == 2,
       length(output.git_repository_hotfix_branch_slash) == 2,
       length(output.git_repository_release_branch_slash) == 2,
+      length(output.git_repository_support_branch_slash) == 2,
     ])
     error_message = "Every slash branch variant must produce one entry per work_item (expected 2 each)"
+  }
+}
+
+run "every_branch_variant_passes_its_declared_validation" {
+  command = apply
+
+  assert {
+    condition = alltrue(flatten([
+      for variants in [
+        output.validation.git_repository_bug_branch_dash,
+        output.validation.git_repository_bug_branch_slash,
+        output.validation.git_repository_dev_branch_dash,
+        output.validation.git_repository_dev_branch_slash,
+        output.validation.git_repository_development_branch_dash,
+        output.validation.git_repository_development_branch_slash,
+        output.validation.git_repository_feature_branch_dash,
+        output.validation.git_repository_feature_branch_slash,
+        output.validation.git_repository_fix_branch_dash,
+        output.validation.git_repository_fix_branch_slash,
+        output.validation.git_repository_hotfix_branch_dash,
+        output.validation.git_repository_hotfix_branch_slash,
+        output.validation.git_repository_release_branch_dash,
+        output.validation.git_repository_release_branch_slash,
+        output.validation.git_repository_support_branch_dash,
+        output.validation.git_repository_support_branch_slash,
+        ] : [
+        for result in values(variants) : result.valid_name && result.valid_name_unique
+      ]
+    ]))
+    error_message = "Every generated branch name must satisfy its declared validation metadata"
   }
 }

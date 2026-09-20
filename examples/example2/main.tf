@@ -13,7 +13,7 @@ module "azdo_naming" {
   unique_include_numbers = true
   unique_length          = 4
   unique_seed            = ""
-  work_items             = []
+  work_items             = ["1234"]
 }
 
 resource "azuredevops_project" "example_2" {
@@ -24,7 +24,7 @@ resource "azuredevops_project" "example_2" {
 }
 
 resource "azuredevops_git_repository" "example_2" {
-  project_id = azuredevops_project.example.id
+  project_id = azuredevops_project.example_2.id
   name       = module.azdo_naming.git_repository.name
   initialization {
     init_type = "Clean"
@@ -32,7 +32,7 @@ resource "azuredevops_git_repository" "example_2" {
 }
 
 resource "azuredevops_git_repository_branch" "feature_branch" {
-  repository_id = azuredevops_git_repository.example.id
-  name          = module.azdo_naming.git_repository_feature_branch_slash.name_unique
-  ref_branch    = azuredevops_git_repository.example.default_branch
+  repository_id = azuredevops_git_repository.example_2.id
+  name          = module.azdo_naming.git_repository_feature_branch_slash["1234"].name_unique
+  ref_branch    = azuredevops_git_repository.example_2.default_branch
 }

@@ -39,4 +39,4 @@ When you add a new key to `local.azdo`:
 
 ## CI
 
-Tests run on every pull request via [`.github/workflows/test.yml`](../.github/workflows/test.yml). They are also triggered weekly by `scheduled_maintenance.yml`.
+Tests run on every pull request via [`.github/workflows/pullrequest.yml`](../.github/workflows/pullrequest.yml). They also run on pushes to `main` and daily at 02:17 UTC via [`scheduled_maintenance.yml`](../.github/workflows/scheduled_maintenance.yml).
