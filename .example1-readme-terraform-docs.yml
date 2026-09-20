@@ -1,35 +1,28 @@
-formatter: "markdown table" # this is required
+---
+formatter: "markdown table" # This is required.
 header-from: ../../terraform-docs/tf_header.txt
 footer-from: ../../terraform-docs/tf_footer.txt
 sections:
-  #hide: []
+  # hide: []
   show: []
-  #hide-all: false # deprecated in v0.13.0, removed in v0.15.0
-  #show-all: true  # deprecated in v0.13.0, removed in v0.15.0
+  # hide-all: false # Deprecated in v0.13.0, removed in v0.15.0.
+  # show-all: true # Deprecated in v0.13.0, removed in v0.15.0.
 content: |-
   {{ .Header }}
 
-
   {{ .Requirements }}
-
 
   ```hcl
   {{ include "main.tf" }}
   ```
 
-
-
   {{ .Resources }}
-
 
   {{ .Inputs }}
 
-
   {{ .Outputs }}
 
-
   {{ .Modules }}
-
 
   {{ .Footer }}
 
@@ -42,7 +35,7 @@ output:
     <!-- end_of_terraform_docs -->
 output-values:
   enabled: false
-  #from: terraform-docs/default_values.json #environment\default.tfvars
+  # from: terraform-docs/default_values.json # environment/default.tfvars
 sort:
   enabled: true
   by: required

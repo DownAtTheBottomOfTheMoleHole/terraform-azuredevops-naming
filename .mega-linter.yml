@@ -17,6 +17,7 @@ ENABLE_LINTERS:
 # Exclude megalinter's own config from generic file scans
 FILTER_REGEX_EXCLUDE: "(megalinter-reports/|\\.mega-linter\\.yml)"
 AZURE_COMMENT_REPORTER: true
+GITHUB_COMMENT_REPORTER: false
 CLEAR_REPORT_FOLDER: true
 CONFIG_REPORTER: true
 CONFIG_REPORTER_SUB_FOLDER: IDE-config

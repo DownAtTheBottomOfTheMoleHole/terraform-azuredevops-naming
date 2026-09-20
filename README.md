@@ -504,11 +504,11 @@ Contributions and issue reports are welcome. Please keep each change focused, ad
 
 Install the tools described in [PRECOMMIT.md](PRECOMMIT.md), then run:
 
-~~~
+```shell
 pre-commit run --all-files
 terraform init -backend=false -input=false
 terraform test -verbose
-~~~
+```
 
 ## Releases
 

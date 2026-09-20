@@ -6,14 +6,12 @@
 
 The below documentation was generated via Terraform docs using pre-commit
 
-
 ## Requirements
 
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.14.0, < 2.0.0 |
 | <a name="requirement_azuredevops"></a> [azuredevops](#requirement\_azuredevops) | >= 1.16.0, < 2.0.0 |
-
 
 ```hcl
 module "azdo_naming" {
@@ -56,8 +54,6 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 }
 ```
 
-
-
 ## Resources
 
 | Name | Type |
@@ -66,23 +62,19 @@ resource "azuredevops_git_repository_branch" "feature_branch" {
 | [azuredevops_git_repository_branch.feature_branch](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/git_repository_branch) | resource |
 | [azuredevops_project.example_2](https://registry.terraform.io/providers/microsoft/azuredevops/latest/docs/resources/project) | resource |
 
-
 ## Inputs
 
 No inputs.
 
-
 ## Outputs
 
 No outputs.
-
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
 | <a name="module_azdo_naming"></a> [azdo\_naming](#module\_azdo\_naming) | DownAtTheBottomOfTheMoleHole/naming/azuredevops | >= 11.0.0, < 12.0.0 |
-
 
 ## Documentation maintenance
 
