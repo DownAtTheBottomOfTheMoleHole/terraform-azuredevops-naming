@@ -29,7 +29,7 @@ output "elastic_pool" {
 }
 
 output "environment" {
-  description = "The name of the environment in Azure DevOps"
+  description = "Compatibility alias for environment_apply; both outputs generate the same apply-environment names in Azure DevOps"
   sensitive   = false
   value       = local.azdo.environment
 }
@@ -101,25 +101,25 @@ output "git_repository_bug_branch_slash" {
 }
 
 output "git_repository_dev_branch_dash" {
-  description = "The development branch of the Git repository in Azure DevOps, with dashes"
+  description = "The dev- branch of the Git repository in Azure DevOps, formatted with dashes"
   sensitive   = false
   value       = local.azdo.git_repository_dev_branch_dash
 }
 
 output "git_repository_dev_branch_slash" {
-  description = "The development branch of the Git repository in Azure DevOps, with slashes"
+  description = "The dev/ branch of the Git repository in Azure DevOps, formatted with slashes"
   sensitive   = false
   value       = local.azdo.git_repository_dev_branch_slash
 }
 
 output "git_repository_development_branch_dash" {
-  description = "The development branch of the Git repository in Azure DevOps, with dashes"
+  description = "The development- branch of the Git repository in Azure DevOps, formatted with dashes"
   sensitive   = false
   value       = local.azdo.git_repository_development_branch_dash
 }
 
 output "git_repository_development_branch_slash" {
-  description = "The development branch of the Git repository in Azure DevOps, formatted with slashes"
+  description = "The development/ branch of the Git repository in Azure DevOps, formatted with slashes"
   sensitive   = false
   value       = local.azdo.git_repository_development_branch_slash
 }
@@ -461,13 +461,13 @@ output "variable_group" {
 }
 
 output "unique_seed" {
-  description = "A custom value for generating random characters, used when a unique seed is not provided"
+  description = "The effective seed source: unique_seed when set, otherwise the module-generated random value. Generated name suffixes use its first unique_length characters."
   sensitive   = false
   value       = coalesce(var.unique_seed, local.random_safe_generation)
 }
 
 output "validation" {
-  description = "The validation rules that have been applied"
+  description = "Validation data keyed by naming definition. Most entries report valid_name and valid_name_unique booleans; environment_work_item retains its generated naming metadata shape for backward compatibility."
   sensitive   = false
   value       = local.validation
 }

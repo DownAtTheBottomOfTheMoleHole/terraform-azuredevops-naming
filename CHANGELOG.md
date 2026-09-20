@@ -4,6 +4,43 @@ All notable changes to this module are documented here. The format follows [Keep
 
 <!-- markdownlint-disable MD024 -->
 
+## [Unreleased]
+
+### Added
+
+- Automatically create a SemVer tag and GitHub release after each successful merge to `main`; `module-release:major` and `module-release:minor` select larger increments, with patch as the default.
+- Add unit coverage for strict tag parsing, release increments, merge provenance, backlog ordering, conflicting labels, tag collisions, and deterministic release plans.
+- Document the immutable-tag workflow used by the Terraform Registry to discover module releases.
+
+### Changed
+
+- Audit the README, migration guide, test guide, contribution guidance, issue forms, pull-request template, and generated-documentation templates for the current module behaviour.
+- Clearly document the eight reserved list inputs that are accepted but do not yet affect outputs.
+- Reject fractional `unique_length` values with a clear validation error and make explicit nulls on consumed optional inputs fall back to their documented defaults.
+- Commit the root provider lock file so documentation fixtures and CI resolve the same provider package; keep Terraform apply-based fixture generation as an explicit manual local hook.
+- Pin the isolated Go toolchain used to build the repository's terraform-docs pre-commit hook so it remains reproducible on machines without Go and with newer system Go releases.
+
+### Security
+
+- Disable the unused MegaLinter GitHub status reporter and remove its unnecessary write permission from pull-request checks.
+- Bind release-planner code and tests to the exact commit being tagged in push, scheduled, and manual runs, and clean generated state between commit validations.
+
+## [11.0.5] — 2026-09-20
+
+### Added
+
+- Add a native `terraform test` suite and run validation, tests, documentation checks, and security analysis in CI. (#270)
+- Add a security policy with private vulnerability-reporting guidance. (#270)
+
+### Changed
+
+- Pin third-party GitHub Actions and reusable workflows to immutable revisions. (#270)
+- Validate SemVer tags, changelog entries, `main` ancestry, formatting, configuration, and tests before publishing a release. (#270)
+
+### Security
+
+- Apply explicit least-privilege permissions to workflow jobs, gate privileged operations on trusted events, restrict secret synchronisation to an allowlist, and harden SARIF upload behaviour. (#270)
+
 ## [11.0.4] — 2026-05-03
 
 ### Fixed
@@ -33,15 +70,15 @@ All notable changes to this module are documented here. The format follows [Keep
 
 ### Highlights
 
-- **Strictly additive release.** No existing v10 output was renamed, removed, or had its type or shape changed.
-- 30+ new resource naming definitions covering both the `microsoft/azuredevops` provider surface and useful conceptual types.
-- 8 new optional input lists (all default to `[]`) that pave the way for upcoming `for_each`-style outputs.
+- **Output-compatible release.** No existing v10 naming output was renamed, removed, or had its type or shape changed; the minimum Terraform and `hashicorp/random` versions were raised.
+- New naming definitions for a broad set of commonly used Azure DevOps resources and useful conceptual types.
+- 8 reserved optional input lists (all default to `[]`) that pave the way for future `for_each`-style outputs; they do not affect outputs in v11.0.0.
 - Modernised README hero, badges, and quick start.
 
 ### Added
 
 - 11 service-endpoint naming definitions (Azure RM, AWS, GitHub, Docker Registry, Kubernetes, generic, etc.). (#244)
-- 18 additional provider-backed resource naming definitions including environment, agent pool / queue, multiple branch policy variants, variable group, dashboard, feed, wiki page. (#245)
+- Additional resource naming definitions including environment, agent pool / queue, the build-validation branch policy, variable group, dashboard, feed, and wiki page. (#245)
 - 12 conceptual resource naming definitions:
   - `pipeline_stage`, `pipeline_job`, `pipeline_variable`, `pipeline_matrix`
   - `artifact_package` (lower-cased)

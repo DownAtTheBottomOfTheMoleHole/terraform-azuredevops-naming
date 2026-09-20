@@ -11,7 +11,9 @@ sections:
   #hide-all: false # deprecated in v0.13.0, removed in v0.15.0
   #show-all: true  # deprecated in v0.13.0, removed in v0.15.0
 content: |-
-  {{ .Header }}
+  ## Terraform
+
+  This reference is generated with [terraform-docs](https://terraform-docs.io/) through pre-commit.
 
   ---
 
@@ -34,27 +36,19 @@ content: |-
   <!-- consuming terraform-azuredevops-naming -->
   ### Consuming terraform-azuredevops-naming
 
-    To consume this module add the following to your module.tf:
-  ```hcl
-    module "azdo_naming" {
-      {{"\t"}} source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
-      {{"\t"}} version  = "{{ include "terraform-docs/module_version.txt" }}"
-  {{- if .Module.RequiredInputs }}
-      {{"\n\t"}} # Required variables
-      {{- range .Module.RequiredInputs }}
-      {{"\t"}} {{ .Name }}  = {{ .GetValue }}
-      {{- end }}
-      {{- end }}
-  {{- if .Module.OptionalInputs }}
-      {{"\n\t"}} # Optional variables
-      {{- range .Module.OptionalInputs }}
-      {{"\t"}} {{ .Name }}  = {{ .GetValue | printf "%s" }}
-      {{- end }}
-      {{- end }}
-    }
-    ```
+  Add the module to your Terraform configuration and pin an appropriate version range:
 
-  ## Creating a project
+  ```hcl
+  module "azdo_naming" {
+    source  = "DownAtTheBottomOfTheMoleHole/naming/azuredevops"
+    version = "{{ include "terraform-docs/module_version.txt" }}"
+
+    prefix = ["dbmh"]
+    suffix = ["my-project"]
+  }
+  ```
+
+  ### Creating a project
 
   ```hcl
   {{ include "examples/example1/main.tf" }}
@@ -68,12 +62,9 @@ content: |-
 
   ---
 
-  ## Creating a unique branch name
+  ### Creating a unique branch name
 
-  this shows creating:
-   - a project
-   - git repository inside the project
-   - a feature branch based on the default branch with a unique name
+  This example creates a project, a Git repository inside it, and a uniquely named feature branch based on the default branch.
 
   ```hcl
   {{ include "examples/example2/main.tf" }}
@@ -127,7 +118,9 @@ content: |-
 
   ---
 
-  {{ .Footer }}
+  ### Documentation maintenance
+
+  The Terraform reference is generated from module source. After changing inputs, outputs, examples, or metadata, run `pre-commit run --all-files` and commit the regenerated documentation.
 
   ---
 

@@ -4,7 +4,7 @@
 <!-- start_of_terraform_docs -->
 # Terraform
 
-The below documentation was generated via Terraform docs using pre-commit
+This reference is generated with [terraform-docs](https://terraform-docs.io/) through pre-commit.
 
 ## Requirements
 
@@ -67,7 +67,7 @@ No outputs.
 
 ## Documentation maintenance
 
-The Terraform reference is generated from the module source with [terraform-docs](https://github.com/terraform-docs/terraform-docs). After changing inputs, outputs, or metadata, run the terraform-docs pre-commit hooks and commit the resulting documentation.
+The Terraform reference is generated from module source. After changing inputs, outputs, examples, or metadata, run `pre-commit run --all-files` and commit the regenerated documentation.
 <!-- end_of_terraform_docs -->
 <!-- markdownlint-enable -->
 <!-- prettier-ignore-end -->

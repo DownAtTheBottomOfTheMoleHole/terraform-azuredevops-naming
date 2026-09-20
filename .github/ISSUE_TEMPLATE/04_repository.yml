@@ -1,42 +1,67 @@
-name: "Repository/Meta"
-description: Choose this option when the issue has to do with the repository itself, including GitHub Actions, labels, workflows, etc.
+name: Repository or automation issue
+description: Report a problem with CI, releases, labels, templates, or repository maintenance.
 title: "[Repo]: "
 labels: ["repository"]
 body:
   - type: markdown
     attributes:
       value: |
-        # Thank you for opening an issue!
+        Use this form for repository automation and maintenance. Use the documentation form for wording or generated-reference problems.
 
-        This form is for issues pertaining to the repository itself. This might include changes to GitHub Actions, labels, procedures, etc. For issues with the contribution documentation, please use the "Report a Documentation Error" form.
+        Do not disclose a vulnerability in a public issue. Use [private vulnerability reporting](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/security/advisories/new) instead.
 
-  - type: textarea
-    id: description
+  - type: dropdown
+    id: repository_area
     attributes:
-      label: Description
-      description: Please leave a brief description of the issue or proposed change.
+      label: Repository area
+      options:
+        - Pull-request checks
+        - Release automation
+        - Scheduled maintenance
+        - Labels or templates
+        - Dependency automation
+        - Other repository maintenance
     validations:
       required: true
 
   - type: textarea
-    id: references
+    id: current_behaviour
     attributes:
-      label: References
-      description: |
-        Where possible, please supply links to vendor documentation, other GitHub issues (open or closed) or pull requests that give additional context.
+      label: Current behaviour
+      description: Describe what is happening, including the relevant workflow run or file link.
+    validations:
+      required: true
 
-        [Information about referencing Github Issues](https://help.github.com/articles/basic-writing-and-formatting-syntax/#referencing-issues-and-pull-requests)
+  - type: textarea
+    id: desired_outcome
+    attributes:
+      label: Desired outcome
+      description: Describe the behaviour you expected or the maintenance change you propose.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction_details
+    attributes:
+      label: Reproduction details
+      description: Include event type, branch, relevant labels, and redacted logs when applicable.
+    validations:
+      required: false
+
+  - type: textarea
+    id: supporting_references
+    attributes:
+      label: Supporting references
+      description: Link to relevant runs, GitHub documentation, issues, or pull requests.
     validations:
       required: false
 
   - type: dropdown
-    id: will_contribute
+    id: contribution_intent
     attributes:
-      label: Would you like to implement a fix?
-      description: |
-        If you plan to implement a fix for this, check this box to let the maintainers and community know (you can update this later if you change your mind). If this would be your first contribution, refer to the [contribution guide](https://hashicorp.github.io/terraform-provider-aws/) for tips on getting started.
+      label: Would you like to submit the repository change?
       options:
         - "No"
         - "Yes"
     validations:
-      required: false
+      required: true

@@ -1,64 +1,75 @@
-name: "Request an Enhancement"
-description: "Choose this option when you would like to request an enhancement to an existing resource, data source, or the provider itself."
+name: Request an enhancement
+description: Propose a new naming definition, input, output, validation, or module capability.
 title: "[Enhancement]: "
 labels: ["enhancement"]
 body:
   - type: markdown
     attributes:
       value: |
-        # Thank you for opening an enhancement request!
+        Use this form for improvements to the naming module. If an existing output is incorrect, use the bug form instead.
 
-        This form is intended as a way to request additional functionality for existing resources, data sources, or the provider itself. This may include requests such as adding additional arguments or attributes enabled by upstream API changes, additional validation for arguments, etc.
-
-        If the absence of the requested feature is causing unexpected behavior in the provider, the "Report a Bug" form should be used. For entirely new resources, data sources, or services, please use the Request a "New Resource, Data Source, or AWS Service" form.
+        Do not disclose a vulnerability in a public issue. Use [private vulnerability reporting](https://github.com/DownAtTheBottomOfTheMoleHole/terraform-azuredevops-naming/security/advisories/new) instead.
 
   - type: textarea
-    id: description
+    id: use_case
     attributes:
-      label: Description
-      description: Please leave a brief description of the requested change.
+      label: Use case
+      description: Explain the problem this change would solve for module consumers.
     validations:
       required: true
 
   - type: textarea
-    id: affected
+    id: affected_interface
     attributes:
-      label: Affected Resource(s) and/or Data Source(s)
-      placeholder: "* aws_xxx_yyy"
+      label: Affected or proposed inputs and outputs
+      description: List existing names that would change or proposed public names to add.
+      placeholder: "New output: serviceendpoint_example\nRelated inputs: prefix, suffix"
     validations:
-      required: false
+      required: true
 
   - type: textarea
-    id: tf_config
+    id: proposed_behaviour
     attributes:
-      label: Potential Terraform Configuration
-      description: |
-        If this request was implemented, what might the Terraform configuration look like? A best guess is helpful, even if you're unsure of exactly what the end result will look like. This helps maintainers and the community better understand how you (someone who is in need of this feature) envisions it.
-
-        **Note:** This field will render in HCL, so there is no need to add a [code fence](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks).
-      render: terraform
+      label: Proposed behaviour
+      description: Describe the expected name, slug, scope, length, and validation rules where applicable.
     validations:
-      required: false
+      required: true
 
   - type: textarea
-    id: references
+    id: potential_configuration
     attributes:
-      label: References
-      description: |
-        Where possible, please supply links to vendor documentation, other GitHub issues (open or closed) or pull requests that give additional context.
-
-        [Information about referencing Github Issues](https://help.github.com/articles/basic-writing-and-formatting-syntax/#referencing-issues-and-pull-requests)
+      label: Potential Terraform configuration
+      description: Show how a consumer would use the enhancement. Remove secrets and unrelated resources.
+      render: hcl
     validations:
       required: false
 
   - type: dropdown
-    id: will_contribute
+    id: compatibility_impact
     attributes:
-      label: Would you like to implement a fix?
-      description: |
-        If you plan to implement a fix for this, check this box to let the maintainers and community know (you can update this later if you change your mind). If this would be your first contribution, refer to the [contribution guide](https://hashicorp.github.io/terraform-provider-aws/) for tips on getting started.
+      label: Compatibility impact
+      description: Select the closest expected impact on current consumers.
+      options:
+        - Additive and backward compatible
+        - Changes existing behaviour or output shape
+        - Unsure
+    validations:
+      required: true
+
+  - type: textarea
+    id: supporting_references
+    attributes:
+      label: Supporting references
+      description: Link to Azure DevOps naming restrictions, provider documentation, related issues, or examples.
+    validations:
+      required: false
+
+  - type: dropdown
+    id: contribution_intent
+    attributes:
+      label: Would you like to submit this enhancement?
       options:
         - "No"
         - "Yes"
     validations:
-      required: false
+      required: true

@@ -1,3 +1,3 @@
 # Terraform
 
-The below documentation was generated via Terraform docs using pre-commit
+This reference is generated with [terraform-docs](https://terraform-docs.io/) through pre-commit.
