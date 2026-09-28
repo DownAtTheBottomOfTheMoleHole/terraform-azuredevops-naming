@@ -47,7 +47,7 @@ jobs:
   megalinter-nightly:
     name: MegaLinter (Full Codebase)
     if: github.event_name != 'push'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@8044b6ab0eab9e24684f61367991cc97ef43aa17 # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@2eac39a4eb2feea2ba99d596b52a4cb81af95156 # main
     permissions:
       contents: write
       issues: write
@@ -124,28 +124,28 @@ jobs:
 
       - name: Upload SecretLint SARIF
         if: steps.sarif.outputs.secretlint == 'true'
-        uses: github/codeql-action/upload-sarif@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
+        uses: github/codeql-action/upload-sarif@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
         with:
           sarif_file: megalinter-artifacts/megalinter-reports/sarif/REPOSITORY_SECRETLINT.sarif
           category: megalinter-secretlint
 
       - name: Upload Trivy SARIF
         if: steps.sarif.outputs.trivy == 'true'
-        uses: github/codeql-action/upload-sarif@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
+        uses: github/codeql-action/upload-sarif@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
         with:
           sarif_file: megalinter-artifacts/megalinter-reports/sarif/REPOSITORY_TRIVY.sarif
           category: megalinter-trivy
 
       - name: Upload TFLint SARIF
         if: steps.sarif.outputs.tflint == 'true'
-        uses: github/codeql-action/upload-sarif@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
+        uses: github/codeql-action/upload-sarif@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
         with:
           sarif_file: megalinter-artifacts/megalinter-reports/sarif/TERRAFORM_TFLINT_LINT.sarif
           category: megalinter-tflint
 
       - name: Upload TFLint error SARIF
         if: steps.sarif.outputs.tflint_errors == 'true'
-        uses: github/codeql-action/upload-sarif@1c5b675653bb5c22dbe9b12b556ec555138e09fd # v4.38.1
+        uses: github/codeql-action/upload-sarif@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
         with:
           sarif_file: megalinter-artifacts/megalinter-reports/sarif/TERRAFORM_TFLINT_ERRORS.sarif
           category: megalinter-tflint-errors
@@ -212,7 +212,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4
         with:
-          terraform_version: "v1.16.3" # required_version floor
+          terraform_version: "v1.16.4" # required_version floor
           terraform_wrapper: false
 
       - name: Validate example against this checkout
@@ -222,7 +222,7 @@ jobs:
   stale:
     name: Mark and Close Stale
     if: github.event_name != 'push'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/stale.yml@8044b6ab0eab9e24684f61367991cc97ef43aa17 # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/stale.yml@2eac39a4eb2feea2ba99d596b52a4cb81af95156 # main
     permissions:
       issues: write
       pull-requests: write
@@ -231,7 +231,7 @@ jobs:
   scorecard:
     name: OSSF Scorecard
     if: github.event_name != 'push'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/scorecard.yml@8044b6ab0eab9e24684f61367991cc97ef43aa17 # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/scorecard.yml@2eac39a4eb2feea2ba99d596b52a4cb81af95156 # main
     permissions:
       security-events: write
       id-token: write
@@ -260,7 +260,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4
         with:
-          terraform_version: "v1.16.3" # required_version floor
+          terraform_version: "v1.16.4" # required_version floor
           terraform_wrapper: false
 
       - name: Refresh generated output values
