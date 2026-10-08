@@ -47,7 +47,7 @@ jobs:
   megalinter-nightly:
     name: MegaLinter (Full Codebase)
     if: github.event_name != 'push'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@2eac39a4eb2feea2ba99d596b52a4cb81af95156 # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/megalinter.yml@895c777f5f9e026c987625127653c349a860922d # main
     permissions:
       contents: write
       issues: write
@@ -77,7 +77,7 @@ jobs:
           persist-credentials: false
 
       - name: Download MegaLinter report
-        uses: actions/download-artifact@3e5f45b2cfb9172054b4087a40e8e0b5a5461e7c # v8.0.1
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
           name: megalinter-reports
           path: megalinter-artifacts
@@ -124,28 +124,28 @@ jobs:
 
       - name: Upload SecretLint SARIF
         if: steps.sarif.outputs.secretlint == 'true'
-        uses: github/codeql-action/upload-sarif@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
+        uses: github/codeql-action/upload-sarif@24c54180a607b1449ed407dd24f251e4e9147c8d # v4.38.3
         with:
           sarif_file: megalinter-artifacts/megalinter-reports/sarif/REPOSITORY_SECRETLINT.sarif
           category: megalinter-secretlint
 
       - name: Upload Trivy SARIF
         if: steps.sarif.outputs.trivy == 'true'
-        uses: github/codeql-action/upload-sarif@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
+        uses: github/codeql-action/upload-sarif@24c54180a607b1449ed407dd24f251e4e9147c8d # v4.38.3
         with:
           sarif_file: megalinter-artifacts/megalinter-reports/sarif/REPOSITORY_TRIVY.sarif
           category: megalinter-trivy
 
       - name: Upload TFLint SARIF
         if: steps.sarif.outputs.tflint == 'true'
-        uses: github/codeql-action/upload-sarif@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
+        uses: github/codeql-action/upload-sarif@24c54180a607b1449ed407dd24f251e4e9147c8d # v4.38.3
         with:
           sarif_file: megalinter-artifacts/megalinter-reports/sarif/TERRAFORM_TFLINT_LINT.sarif
           category: megalinter-tflint
 
       - name: Upload TFLint error SARIF
         if: steps.sarif.outputs.tflint_errors == 'true'
-        uses: github/codeql-action/upload-sarif@2892aa5e19bbd11bc0cff5427e3b750a04d9e3c2 # v4.38.2
+        uses: github/codeql-action/upload-sarif@24c54180a607b1449ed407dd24f251e4e9147c8d # v4.38.3
         with:
           sarif_file: megalinter-artifacts/megalinter-reports/sarif/TERRAFORM_TFLINT_ERRORS.sarif
           category: megalinter-tflint-errors
@@ -212,7 +212,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4
         with:
-          terraform_version: "v1.16.4" # required_version floor
+          terraform_version: "v1.16.5" # required_version floor
           terraform_wrapper: false
 
       - name: Validate example against this checkout
@@ -222,7 +222,7 @@ jobs:
   stale:
     name: Mark and Close Stale
     if: github.event_name != 'push'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/stale.yml@2eac39a4eb2feea2ba99d596b52a4cb81af95156 # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/stale.yml@895c777f5f9e026c987625127653c349a860922d # main
     permissions:
       issues: write
       pull-requests: write
@@ -231,7 +231,7 @@ jobs:
   scorecard:
     name: OSSF Scorecard
     if: github.event_name != 'push'
-    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/scorecard.yml@2eac39a4eb2feea2ba99d596b52a4cb81af95156 # main
+    uses: DownAtTheBottomOfTheMoleHole/.github/.github/workflows/scorecard.yml@895c777f5f9e026c987625127653c349a860922d # main
     permissions:
       security-events: write
       id-token: write
@@ -260,7 +260,7 @@ jobs:
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@dfe3c3f87815947d99a8997f908cb6525fc44e9e # v4
         with:
-          terraform_version: "v1.16.4" # required_version floor
+          terraform_version: "v1.16.5" # required_version floor
           terraform_wrapper: false
 
       - name: Refresh generated output values
